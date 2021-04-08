@@ -12,7 +12,7 @@
 
 
 
-public class Aszteroidaöv {
+public class Aszteroidaov {
 	public void DoNapvihar() {
 	}
 	

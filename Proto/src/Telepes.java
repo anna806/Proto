@@ -12,12 +12,12 @@
 
 
 
-public class Telepes extends Entitás {
-	private Aszteroidaöv telepesek;
+public class Telepes extends Entitas {
+	private Aszteroidaov telepesek;
 	public void Felrobban() {
 	}
 	
-	public void Mozgas(Szomszéd a) {
+	public void Mozgas(Szomszed a) {
 	}
 	
 	public void Banyaszat() {

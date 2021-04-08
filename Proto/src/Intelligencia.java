@@ -13,6 +13,6 @@
 
 
 public class Intelligencia {
-	public void RandomMozgas(Szomszéd a) {
+	public void RandomMozgas(Szomszed a) {
 	}
 }

@@ -12,24 +12,24 @@
 
 
 
-public class Teleportkapu extends Szomszéd implements Intelligencia {
+public class Teleportkapu extends Szomszed implements Intelligencia {
 	private boolean megkergult;
 	private Teleportkapu parja;
 	private Telepes kapuk;
-	private Aszteroidaöv kapuk;
+	private Aszteroidaov kapuk;
 	public Aszteroida ParHelye() {
 	}
 	
 	public void Robban() {
 	}
 	
-	public void Befogad(Entitás a) {
+	public void Befogad(Entitas a) {
 	}
 	
 	public void Napvihar() {
 	}
 	
-	public void RandomMozgas(Szomszéd a) {
+	public void RandomMozgas(Szomszed a) {
 	}
 	
 	public void KapuBefogad(Teleportkapu k) {
@@ -38,7 +38,7 @@ public class Teleportkapu extends Szomszéd implements Intelligencia {
 	public void Robban() {
 	}
 	
-	public void Befogad(Entitás a) {
+	public void Befogad(Entitas a) {
 	}
 	
 	public void Napvihar() {

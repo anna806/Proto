@@ -12,7 +12,7 @@
 
 
 
-public abstract class Entitás {
+public abstract class Entitas {
 	private Aszteroida aszteroida;
 	public abstract void Furas();
 	public abstract void Halal();

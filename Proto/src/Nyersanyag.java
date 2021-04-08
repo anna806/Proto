@@ -15,7 +15,7 @@
 public abstract class Nyersanyag {
 	private Aszteroida belsoAnyag;
 	private Telepes nyersanyagok;
-	private Ufó nyersanyagok;
+	private Ufo nyersanyagok;
 	public abstract void Betolt(Telepes a);
 	public abstract void Napkozel();
 	public abstract boolean Kompatibilis(Nyersanyag ny);

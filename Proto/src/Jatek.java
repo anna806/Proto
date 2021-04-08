@@ -12,8 +12,8 @@
 
 
 
-public class Játék {
-	private Aszteroidaöv jatekter;
+public class Jatek {
+	private Aszteroidaov jatekter;
 	public void Start() {
 	}
 	

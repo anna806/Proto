@@ -12,25 +12,25 @@
 
 
 
-public class Aszteroida extends Szomszéd {
+public class Aszteroida extends Szomszed {
 	private int kopenyVastagsag;
 	private boolean napkozel;
-	private Aszteroidaöv aszteroidak;
-	private Entitás entitasok;
-	private Szomszéd szomszedok;
+	private Aszteroidaov aszteroidak;
+	private Entitas entitasok;
+	private Szomszed szomszedok;
 	public Nyersanyag AnyagKinyeres() {
 	}
 	
-	public void Ledob(Entitás a) {
+	public void Ledob(Entitas a) {
 	}
 	
-	public void Befogad(Entitás a) {
+	public void Befogad(Entitas a) {
 	}
 	
 	public void Napvihar() {
 	}
 	
-	public void SzomszedTorol(Szomszéd a) {
+	public void SzomszedTorol(Szomszed a) {
 	}
 	
 	public void BazisEpit() {
@@ -60,7 +60,7 @@ public class Aszteroida extends Szomszéd {
 	public void Robban() {
 	}
 	
-	public void Befogad(Entitás a) {
+	public void Befogad(Entitas a) {
 	}
 	
 	public void Napvihar() {

@@ -12,9 +12,9 @@
 
 
 
-public class Ufó extends Entitás implements Intelligencia {
-	private Aszteroidaöv ufok;
-	public void RandomMozgas(Szomszéd a) {
+public class Ufo extends Entitas implements Intelligencia {
+	private Aszteroidaov ufok;
+	public void RandomMozgas(Szomszed a) {
 	}
 	
 	public void Halal() {

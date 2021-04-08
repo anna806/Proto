@@ -12,7 +12,7 @@
 
 
 
-public class Útmutató {
+public class Utmutato {
 	private Nyersanyag hozzavalok;
 	private Nyersanyag megvanLista;
 	public boolean MindMegvan(Nyersanyag ny) {

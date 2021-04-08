@@ -12,7 +12,7 @@
 
 
 
-public class Urán extends Nyersanyag {
+public class Uran extends Nyersanyag {
 	private int expozicio;
 	public void Betolt(Telepes a) {
 	}

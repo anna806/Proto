@@ -12,9 +12,9 @@
 
 
 
-public class Robot extends Entitás implements Intelligencia {
-	private Aszteroidaöv robotok;
-	public void RandomMozgas(Szomszéd a) {
+public class Robot extends Entitas implements Intelligencia {
+	private Aszteroidaov robotok;
+	public void RandomMozgas(Szomszed a) {
 	}
 	
 	public void Felrobban() {
