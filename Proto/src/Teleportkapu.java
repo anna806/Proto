@@ -15,8 +15,7 @@
 public class Teleportkapu extends Szomszed implements Intelligencia {
 	private boolean megkergult;
 	private Teleportkapu parja;
-	private Telepes kapuk;
-	private Aszteroidaov kapuk;
+	
 	public Aszteroida ParHelye() {
 	}
 	

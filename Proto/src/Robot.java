@@ -13,7 +13,7 @@
 
 
 public class Robot extends Entitas implements Intelligencia {
-	private Aszteroidaov robotok;
+	
 	public void RandomMozgas(Szomszed a) {
 	}
 	

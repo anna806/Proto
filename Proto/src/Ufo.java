@@ -13,7 +13,7 @@
 
 
 public class Ufo extends Entitas implements Intelligencia {
-	private Aszteroidaov ufok;
+	
 	public void RandomMozgas(Szomszed a) {
 	}
 	

@@ -14,19 +14,11 @@
 
 public class Uran extends Nyersanyag {
 	private int expozicio;
-	public void Betolt(Telepes a) {
-	}
-	
-	public void NapKozel() {
-	}
-	
-	public boolean Kompatibilis(Nyersanyag ny) {
-	}
 	
 	public void Betolt(Telepes a) {
 	}
 	
-	public void Napkozel() {
+	public void Napkozel(Aszteroida a) {
 	}
 	
 	public boolean Kompatibilis(Nyersanyag ny) {
