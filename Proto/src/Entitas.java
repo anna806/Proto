@@ -16,5 +16,5 @@ public abstract class Entitas {
 		aszteroida = a;
 	}
 	
-	public abstract void BazisEpit();
+	//public abstract void BazisEpit();
 }

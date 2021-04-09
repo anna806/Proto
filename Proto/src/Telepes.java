@@ -106,6 +106,10 @@ public class Telepes extends Entitas {
 		nyersanyagok.add(ny);
 	}
 	
+	public void RemoveNyersanyag(Nyersanyag ny) {
+		nyersanyagok.remove(ny);
+	}
+	
 	public void AddKapu(Teleportkapu k) {
 		kapuk.add(k);
 	}

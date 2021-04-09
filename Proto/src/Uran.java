@@ -19,6 +19,9 @@ public class Uran extends Nyersanyag {
 	}
 	
 	public void Napkozel(Aszteroida a) {
+		if(expozicio>=3) {
+			a.Robban();
+		}
 	}
 	
 	public boolean Kompatibilis(Nyersanyag ny) {

@@ -14,33 +14,31 @@
 
 public class Ufo extends Entitas implements Intelligencia {
 	
+	//???? vagy ezt nem is kell ideírni?
 	public void RandomMozgas(Szomszed a) {
+		aszteroida.Ledob(this);
+		a.Befogad(this);
 	}
 	
 	public void Halal() {
 	}
 	
 	public void Felrobban() {
+		Halal();
 	}
 	
 	public void Lep() {
+		Szomszed b = aszteroida.SzomszedotAd();
+		RandomMozgas(b);
 	}
 	
 	public void Banyaszat() {
+		Nyersanyag belsoAnyag = aszteroida.AnyagKinyeres();
+		aszteroida.AnyagTorol();
 	}
+	
 	
 	public void Furas() {
 	}
 	
-	public void Furas() {
-	}
-	
-	public void Halal() {
-	}
-	
-	public void Felrobban() {
-	}
-	
-	public void Lep() {
-	}
 }
