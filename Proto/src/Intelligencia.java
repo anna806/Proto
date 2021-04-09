@@ -2,7 +2,8 @@
 
 public class Intelligencia {
 	
-	public void RandomMozgas() {
+	public void RandomMozgas(Szomszed a) {
+		//???
 	}
 	
 }
