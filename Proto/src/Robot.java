@@ -14,7 +14,7 @@
 
 public class Robot extends Entitas implements Intelligencia {
 	
-	public void RandomMozgas(Szomszed a) {
+	public void RandomMozgas() {
 	}
 	
 	public void Felrobban() {
