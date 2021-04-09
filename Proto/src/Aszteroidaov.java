@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 //
 //
@@ -8,7 +9,7 @@ import java.util.List;
 //  @ Project : Untitled
 //  @ File Name : Aszteroidaöv.java
 //  @ Date : 2021. 04. 08.
-//  @ Author : 
+//  @ Author : Luca
 //
 //
 
@@ -19,13 +20,66 @@ public class Aszteroidaov {
 	private List<Robot> robotok = new ArrayList<>();
 	private List<Telepes> telepesek = new ArrayList<>();
 	private List<Ufo> ufok = new ArrayList<>();
+	private List<Aszteroida> aszteroidak = new ArrayList<>();
+	private List<Teleportkapu> kapuk = new ArrayList<>();
+	
+	public List<Telepes> getTelep(){
+		return telepesek;
+	}
+	
+	public void setTelep(List<Telepes> lista) {
+		telepesek=lista;
+	}
+	
+	public List<Robot> getRobot(){
+		return robotok;
+	}
+	
+	public void setRobot(List<Robot> lista) {
+		robotok=lista;
+	}
+	
+	public List<Ufo> getUfos(){
+		return ufok;
+	}
+	
+	public void setUfos(List<Ufo> lista) {
+		ufok=lista;
+	}
+	
+	public List<Aszteroida> getAszter(){
+		return aszteroidak;
+	}
+	
+	public void setAszter(List<Aszteroida> lista) {
+		aszteroidak=lista;
+	}
+	
+	public List<Teleportkapu> getKapuk(){
+		return kapuk;
+	}
+	
+	public void setKapuk(List<Teleportkapu> lista) {
+		kapuk=lista;
+	}
 	
 	public void DoNapvihar() {
+		Random rand = new Random();
+		int n= rand.nextInt(aszteroidak.size());
+		(aszteroidak.get(n)).StartNapvihar();
 	}
 	
 	public void MinuszAszteroida(Aszteroida a) {
+		aszteroidak.remove(a);
+		
 	}
 	
 	public void DoNapkozel() {
+		for (Aszteroida x : aszteroidak)
+		{
+			Random rand= new Random();
+			if(rand.nextInt()%2==0) x.setNapkozel(true);
+			else x.setNapkozel(false);
+		}
 	}
 }

@@ -14,7 +14,11 @@
 
 public abstract class Szomszed {
 	public abstract void Robban();
+	
 	public abstract void Befogad(Entitas a);
+	
 	public abstract void Napvihar();
+	
 	public abstract void KapuBefogad(Teleportkapu k);
+	
 }

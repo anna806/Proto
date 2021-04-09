@@ -26,6 +26,10 @@ public class Aszteroida extends Szomszed {
 		return szomszedok;
 	}
 	
+	public void setNapkozel(boolean b) {
+		napkozel=b;
+	}
+	
 	public Nyersanyag AnyagKinyeres() {
 	}
 	
@@ -61,7 +65,7 @@ public class Aszteroida extends Szomszed {
 		}
 	}
 	
-	public void Robban() {
+	public void Robban() {   
 		for(Entitas e: entitasok) {
 			e.Felrobban();
 		}

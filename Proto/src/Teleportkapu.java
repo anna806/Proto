@@ -13,13 +13,33 @@
 
 
 public class Teleportkapu extends Szomszed implements Intelligencia {
+	private 
+	Aszteroida aszteroida;
 	private boolean megkergult;
 	private Teleportkapu parja;
 	
+	public Teleportkapu getParja() {
+		return parja;
+	}
+	
+	public void setParja(Teleportkapu par) {
+		parja=par;
+	}
+	
+	public Aszteroida getAszter() {
+		return aszteroida;
+	}
+	
+	public void setAszter(Aszteroida a) {
+		aszteroida=a;
+	}
+	
 	public Aszteroida ParHelye() {
+		return this.getParja().getAszter();
 	}
 	
 	public void Robban() {
+		
 	}
 	
 	public void Befogad(Entitas a) {
@@ -34,15 +54,5 @@ public class Teleportkapu extends Szomszed implements Intelligencia {
 	public void KapuBefogad(Teleportkapu k) {
 	}
 	
-	public void Robban() {
-	}
 	
-	public void Befogad(Entitas a) {
-	}
-	
-	public void Napvihar() {
-	}
-	
-	public void KapuBefogad(Teleportkapu k) {
-	}
 }
