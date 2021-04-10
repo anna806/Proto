@@ -67,6 +67,10 @@ public class Aszteroida extends Szomszed {
 	}
 	
 	public void BazisEpit() {
+		Utmutato base = new Utmutato();
+		for(Entitas e: entitasok) {
+			e.BazisEpit();
+		}
 	}
 	
 	public void KeregCsokken() {
@@ -106,5 +110,6 @@ public class Aszteroida extends Szomszed {
 	}	
 	
 	public void KapuBefogad(Teleportkapu k) {
+		szomszedok.add(k);
 	}
 }
