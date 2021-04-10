@@ -14,11 +14,14 @@
 
 public class Vizjeg extends Nyersanyag {
 	public void Betolt(Telepes a) {
+		a.AddNyersanyag(this);
 	}
 	
 	public void Napkozel(Aszteroida a) {
+		a.AnyagTorol();
 	}
 	
 	public boolean Kompatibilis(Nyersanyag ny) {
+		return ny instanceof Vizjeg;
 	}
 }

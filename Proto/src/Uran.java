@@ -16,14 +16,18 @@ public class Uran extends Nyersanyag {
 	private int expozicio;
 	
 	public void Betolt(Telepes a) {
+		a.AddNyersanyag(this);
 	}
 	
 	public void Napkozel(Aszteroida a) {
 		if(expozicio>=3) {
 			a.Robban();
 		}
+		else
+			expozicio++;
 	}
 	
 	public boolean Kompatibilis(Nyersanyag ny) {
+		return ny instanceof Uran;
 	}
 }

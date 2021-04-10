@@ -9,9 +9,6 @@
 //
 //
 
-
-
-
 public abstract class Nyersanyag {
 	
 	public abstract void Betolt(Telepes a);
