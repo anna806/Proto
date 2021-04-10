@@ -35,10 +35,12 @@ public class Aszteroida extends Szomszed {
 	}
 	
 	public List<Teleportkapu> getKapuk(){		//ezt is
-		return null
+		return null;
 	}
 	
 	public Nyersanyag AnyagKinyeres() {
+		belsoAnyag = null;
+		return belsoAnyag;
 	}
 	
 	//ez így helyes?
