@@ -15,6 +15,10 @@
 public class Uran extends Nyersanyag {
 	private int expozicio;
 	
+	public Uran() {
+		expozicio=0;
+	}
+	
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);
 	}
