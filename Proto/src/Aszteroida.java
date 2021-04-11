@@ -30,13 +30,6 @@ public class Aszteroida extends Szomszed {
 		napkozel=b;
 	}
 	
-	public void setKapuk(List<Teleportkapu> kp) {		//ezeket csak beraktam hogy ne jelezzen hibát
-		
-	}
-	
-	public List<Teleportkapu> getKapuk(){		//ezt is
-		return null;
-	}
 	
 	public Nyersanyag AnyagKinyeres() {
 		belsoAnyag = null;
@@ -67,6 +60,7 @@ public class Aszteroida extends Szomszed {
 	}
 	
 	public void BazisEpit() {
+		//List<Nyersanyag> = new List<Nyersanyag>();
 		Utmutato base = new Utmutato();
 		for(Entitas e: entitasok) {
 			e.BazisEpit();
