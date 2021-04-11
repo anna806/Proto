@@ -23,45 +23,8 @@ public class Aszteroidaov {
 	private List<Aszteroida> aszteroidak = new ArrayList<>();
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	
-	public List<Telepes> getTelep(){
-		return telepesek;
-	}
 	
-	public void setTelep(List<Telepes> lista) {
-		telepesek=lista;
-	}
 	
-	public List<Robot> getRobot(){
-		return robotok;
-	}
-	
-	public void setRobot(List<Robot> lista) {
-		robotok=lista;
-	}
-	
-	public List<Ufo> getUfos(){
-		return ufok;
-	}
-	
-	public void setUfos(List<Ufo> lista) {
-		ufok=lista;
-	}
-	
-	public List<Aszteroida> getAszter(){
-		return aszteroidak;
-	}
-	
-	public void setAszter(List<Aszteroida> lista) {
-		aszteroidak=lista;
-	}
-	
-	public List<Teleportkapu> getKapuk(){
-		return kapuk;
-	}
-	
-	public void setKapuk(List<Teleportkapu> lista) {
-		kapuk=lista;
-	}
 	
 	public void DoNapvihar() {
 		Random rand = new Random();

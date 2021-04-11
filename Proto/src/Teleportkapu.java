@@ -49,12 +49,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia {
 	}
 	
 	public void Robban() {
-		List<Teleportkapu> kk= new ArrayList<>();
-		kk= aszteroida.getKapuk();
-		kk.remove(this);
-		aszteroida.setKapuk(kk);
-		//itt még valahogy az aszteroidaövbõl is ki kéne szedni a kaput
-		
+		aszteroida.SzomszedTorol(this);
 		parja.setParja(parja);
 	}
 	
@@ -70,16 +65,9 @@ public class Teleportkapu extends Szomszed implements Intelligencia {
 	}
 	
 	public void RandomMozgas() {   //kivettem a paramétert mert szerintem nem hasznos
-		Random rand= new Random();
-		List<Szomszed> szomsz = new ArrayList<>();
-		szomsz= aszteroida.getSzomszedok();
-		int rn=rand.nextInt(szomsz.size());
-		List<Teleportkapu> kk= new ArrayList<>();
-		kk= aszteroida.getKapuk();
-		kk.remove(this);
-		aszteroida.setKapuk(kk);
-		
-		szomsz.get(rn).KapuBefogad(this);
+		Szomszed cel= aszteroida.SzomszedotAd();
+		aszteroida.SzomszedTorol(this);
+		cel.KapuBefogad(this);
 		          
 	}
 	
