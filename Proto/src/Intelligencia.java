@@ -1,9 +1,9 @@
 
 
-public class Intelligencia {
+public interface Intelligencia {
 	
-	public void RandomMozgas(Szomszed a) {
-		//??? 
-	}
+	public void RandomMozgas();
+		
+	
 	
 }

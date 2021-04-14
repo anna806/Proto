@@ -45,4 +45,16 @@ public class Aszteroidaov {
 			else x.setNapkozel(false);
 		}
 	}
+	
+	public void MinuszTelepes(Telepes t) {
+		telepesek.remove(t);
+	}
+	
+	public void MinuszRobot(Robot r) {
+		robotok.remove(r);
+	}
+	
+	public void MinuszUfo(Ufo u) {
+		ufok.remove(u);
+	}
 }
