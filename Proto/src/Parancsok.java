@@ -16,12 +16,19 @@ public class Parancsok {
 	}
 	static void ParancsErtelmezo(String p) {
 		//do while?
-		String[] tokens = p.split(" ", 2);
-		if(tokens.length!=2){throw new IllegalArgumentException();}
-		String command = tokens[0];
-		String code = tokens[1];
+		String[] com = p.split(" ", 2);
+		if(com.length!=2){throw new IllegalArgumentException();}
+		String command = com[0];
+		//String code = tokens[1];
 		switch(command){
-		case "telepes_mozog": break;
+		case "telepes_mozog":
+			Telepes t = new Telepes(); //ezt elvileg a pályafájl hozza létre?
+			String[] tID = com[1].split("0");
+			t.SetId((int)tID[1]); //ilyen függvény az valid ugye?
+			String[] hID = com[1].split("0");
+			//kapukat aszteroidákat külön jelölni?
+			t.Mozgas((int)hID[1]);
+			break;
 		case "robot_mozog": break;
 		case "ufo_mozog": break;
 		case "telepes_fur": break;
@@ -39,7 +46,7 @@ public class Parancsok {
 		case "plusz_ufo": break;
 		case "plusz_nyersanyag": break;
 		case "plusz_teleportkapu": break;
-		case "expozcio": break;
+		case "expozicio": break;
 		case "informaciok": break;
 		case "informaciok_jatek": break;
 		case "list": break;
