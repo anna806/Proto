@@ -1,5 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+import szkeleton.game.Entitas;
+import szkeleton.game.Main;
+import szkeleton.game.Nyersanyag;
+import szkeleton.game.Szen;
+import szkeleton.game.Szomszed;
+import szkeleton.game.Teleportkapu;
+import szkeleton.game.Uran;
+import szkeleton.game.Utmutato;
+import szkeleton.game.Vas;
+import szkeleton.game.Vizjeg;
 
 //
 //
@@ -21,6 +34,12 @@ public class Aszteroida extends Szomszed {
 	private List<Entitas> entitasok = new ArrayList<>();
 	private List<Szomszed> szomszedok = new ArrayList<>();
 	private Nyersanyag belsoAnyag;
+	
+	public Aszteroida() {
+		entitasok = new ArrayList<Entitas>();
+		szomszedok = new ArrayList<Szomszed>();
+		napkozel = false;
+	}
 	
 	List<Szomszed> getSzomszedok(){
 		return szomszedok;
@@ -60,16 +79,37 @@ public class Aszteroida extends Szomszed {
 	}
 	
 	public void BazisEpit() {
-		//List<Nyersanyag> = new List<Nyersanyag>();
-		Utmutato base = new Utmutato();
-		for(Entitas e: entitasok) {
-			e.BazisEpit();
+		List<Nyersanyag> kell = new ArrayList<Nyersanyag>();
+			
+		kell.add(new Uran());
+		kell.add(new Uran());
+		kell.add(new Uran());
+		
+		kell.add(new Vas());
+		kell.add(new Vas());
+		kell.add(new Vas());
+		
+		kell.add(new Vizjeg());
+		kell.add(new Vizjeg());
+		kell.add(new Vizjeg());
+		
+		kell.add(new Szen());
+		kell.add(new Szen());
+		kell.add(new Szen());
+		
+		Utmutato tkapu = new Utmutato(kell);
+		
+		for (int j = 0; j < entitasok.size(); j++) {
+			entitasok.get(j).BazisEpit();
 		}
 	}
 	
 	public void KeregCsokken() {
-		if(kopenyVastagsag != 0) {
-			kopenyVastagsag--;
+		kopenyVastagsag--;
+		if (kopenyVastagsag == 0 && belsoAnyag != null) {
+			if (napkozel) {
+				this.belsoAnyag.Napkozel(this);
+			}
 		}
 	}
 	
@@ -77,15 +117,19 @@ public class Aszteroida extends Szomszed {
 		for(Entitas e: entitasok) {
 			e.Felrobban();
 		}
+		AnyagTorol();
 	}
 	
 	public Szomszed SzomszedotAd() {
-		return null;
+		Random rand = new Random();
+		int i = rand.nextInt(szomszedok.size());
+		return szomszedok.get(i);
 	}
 	
 	public void Raktaroz(Nyersanyag a, Telepes t) {
 		if(belsoAnyag == null && kopenyVastagsag == 0) {
 			t.RemoveNyersanyag(a);
+			this.belsoAnyag = a;
 		}
 		if(napkozel) {
 			belsoAnyag.Napkozel(this);
