@@ -20,8 +20,8 @@ import szkeleton.game.Nyersanyag;
 
 
 public class Utmutato {
-	private List<Nyersanyag> hozzavalok = new List<Nyersanyag>() ;
-	private List<Nyersanyag> megvanLista = new List<Nyersanyag>();
+	private List<Nyersanyag> hozzavalok = new ArrayList<Nyersanyag>() ;
+	private List<Nyersanyag> megvanLista = new ArrayList<Nyersanyag>();
 	
 	//ezt biztos hogy nem így kell, de akkor paraméterben listát adjunk át?
 	Utmutato(List<Nyersanyag> kellenek){
