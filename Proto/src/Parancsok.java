@@ -23,17 +23,14 @@ public class Parancsok {
 		String command = com[0];
 		switch(command){
 		case "telepes_mozog":
+			//telepes_mozog t01 a05
 			Aszteroidaov ov = jatek.GetOv();
 			List<Telepes> tList = new ArrayList<Telepes>();
-			ov.tele
-			String[] tID = com[1].split("0");
-			foreach()
-			Telepes t = new Telepes(); //ezt elvileg a pályafájl hozza létre?
-			String[] tID = com[1].split("0");
-			t.SetId((int)tID[1]); //ilyen függvény az valid ugye?
-			String[] hID = com[1].split("0");
-			//kapukat aszteroidákat külön jelölni?
-			t.Mozgas((int)hID[1]);
+			String[] param = com[1].split(" ");
+			String[] tID = param[0].split("0");
+			Telepes t = ov.GetTelepes(Integer.parseInt(tID[1]));
+			t.
+			
 			break;
 		case "robot_mozog": break;
 		case "ufo_mozog": break;
