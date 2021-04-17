@@ -39,10 +39,10 @@ public class Parancsok {
 
 			break;
 		case "robot_mozog": 
-			Main.game.GetOv().GetRobot(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
+			Main.game.GetOv().GetRobot(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));    //itt
 			break;
 		case "ufo_mozog": 
-			Main.game.GetOv().GetUfo(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
+			Main.game.GetOv().GetUfo(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));      //meg itt miért nem randommozgast hívunk?
 			break;
 		case "telepes_fur": 
 			Main.game.GetOv().GetTelepes(com[1]).Furas();
