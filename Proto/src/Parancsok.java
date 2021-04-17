@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parancsok {
+	//args = be, ki, parancs
+	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
 	private Jatek jatek;
 	public static void main(String[] args) {
 		try {
-			BufferedReader bir = new BufferedReader(new FileReader("Input\\"+args[0]+".txt"));
+			BufferedReader bir = new BufferedReader(new FileReader(args[0]+".txt"));
 			String line = bir.readLine();
 			while(line != null && line.length() != 0) {
 				ParancsErtelmezo(line);
