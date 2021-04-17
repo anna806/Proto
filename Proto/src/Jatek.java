@@ -17,6 +17,7 @@ public class Jatek {
 	
 	public void Vege(boolean a) {
 	}
+<<<<<<< HEAD
 	
 	public void init() {
 		Aszteroidaov ov = new Aszteroidaov();
@@ -132,5 +133,9 @@ public class Jatek {
 		catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
+	}
+
+	public Aszteroidaov GetOv() {
+		return jatekter;
 	}
 }

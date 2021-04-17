@@ -1,8 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Parancsok {
 	//cél hogy konzolra és fájlba is írjon
+	private Jatek jatek;
 	public static void main(String[] args) {
 		try {
 			BufferedReader bir = new BufferedReader(new FileReader("Input\\"+args[0]+".txt"));
@@ -14,23 +17,20 @@ public class Parancsok {
 			bir.close();
 		}catch(Exception e){}
 	}
-	static void ParancsErtelmezo(String p) {
-		//do while?
+	void ParancsErtelmezo(String p) {
 		String[] com = p.split(" ", 2);
 		if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
-		//String code = tokens[1];
 		switch(command){
 		case "telepes_mozog":
-			Telepes t = new Telepes(); //ezt elvileg a pályafájl hozza létre?
-			String[] tID = com[1].split("0");
-			t.SetId((int)tID[1]); //ilyen függvény az valid ugye?
-			//t.SetId(Integer.parseInt(tID[1]));   //ez lehet kicsit szebb, mint a kasztolás
-			String[] hID = com[1].split("0");
-			//kapukat aszteroidákat külön jelölni?
-			t.Mozgas((int)hID[1]);
-			//lehet megkereshetnénk az azószteroidöv listáiban, hogy melyik szomszédnak van ez az id-je, és azt a szomszédot
-			//átadni a mozgásnak
+			//telepes_mozog t01 a05
+			Aszteroidaov ov = jatek.GetOv();
+			List<Telepes> tList = new ArrayList<Telepes>();
+			String[] param = com[1].split(" ");
+			String[] tID = param[0].split("0");
+			Telepes t = ov.GetTelepes(Integer.parseInt(tID[1]));
+			t.
+
 			break;
 		case "robot_mozog": break;
 		case "ufo_mozog": break;

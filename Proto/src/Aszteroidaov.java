@@ -74,4 +74,8 @@ public class Aszteroidaov implements Serializable{
 	public void addTelepes(Telepes t) {
 		telepesek.add(t);
 	}
+	
+	public Telepes GetTelepes(int i) {
+		return telepesek.get(i);
+	}
 }
