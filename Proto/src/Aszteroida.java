@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -28,12 +29,17 @@ import szkeleton.game.Vizjeg;
 
 
 
-public class Aszteroida extends Szomszed {
+public class Aszteroida extends Szomszed{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3753080766421296425L;
 	private int kopenyVastagsag;
 	private boolean napkozel;
 	private List<Entitas> entitasok = new ArrayList<>();
 	private List<Szomszed> szomszedok = new ArrayList<>();
 	private Nyersanyag belsoAnyag;
+	private int ID;
 	
 	public Aszteroida() {
 		entitasok = new ArrayList<Entitas>();
@@ -149,5 +155,21 @@ public class Aszteroida extends Szomszed {
 	
 	public void KapuBefogad(Teleportkapu k) {
 		szomszedok.add(k);
+	}
+	
+	public void setNyersanyag(Nyersanyag ny) {
+		belsoAnyag = ny;
+	}
+	
+	public void setID(int id) {
+		ID = id;
+	}
+	
+	public void setKopenyVastagsag(int kv) {
+		kopenyVastagsag = kv;
+	}
+	
+	public void addSzomszed(Szomszed sz) {
+		szomszedok.add(sz);
 	}
 }

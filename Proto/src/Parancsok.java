@@ -25,9 +25,12 @@ public class Parancsok {
 			Telepes t = new Telepes(); //ezt elvileg a pályafájl hozza létre?
 			String[] tID = com[1].split("0");
 			t.SetId((int)tID[1]); //ilyen függvény az valid ugye?
+			//t.SetId(Integer.parseInt(tID[1]));   //ez lehet kicsit szebb, mint a kasztolás
 			String[] hID = com[1].split("0");
 			//kapukat aszteroidákat külön jelölni?
 			t.Mozgas((int)hID[1]);
+			//lehet megkereshetnénk az azószteroidöv listáiban, hogy melyik szomszédnak van ez az id-je, és azt a szomszédot
+			//átadni a mozgásnak
 			break;
 		case "robot_mozog": break;
 		case "ufo_mozog": break;

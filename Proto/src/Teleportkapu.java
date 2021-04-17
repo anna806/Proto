@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,9 +17,12 @@ import java.util.Random;
 
 
 
-public class Teleportkapu extends Szomszed implements Intelligencia {
-	private 
-	Aszteroida aszteroida;
+public class Teleportkapu extends Szomszed implements Intelligencia{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4398516018408113362L;
+	private Aszteroida aszteroida;
 	private boolean megkergult;
 	private Teleportkapu parja;
 	

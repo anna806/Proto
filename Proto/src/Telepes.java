@@ -4,6 +4,7 @@ import java.util.List;
 public class Telepes extends Entitas {
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	private List<Nyersanyag> nyersanyagok = new ArrayList<>();
+	private int ID;
 	
 	public void Felrobban() {
 		for(int i = 0; i < kapuk.size(); i++) {
@@ -112,5 +113,9 @@ public class Telepes extends Entitas {
 	
 	public void AddKapu(Teleportkapu k) {
 		kapuk.add(k);
+	}
+	
+	public void SetId(int id) {
+		ID = id;
 	}
 }

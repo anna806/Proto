@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,7 +17,11 @@ import java.util.Random;
 
 
 
-public class Aszteroidaov {
+public class Aszteroidaov implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5429131727800928080L;
 	private List<Robot> robotok = new ArrayList<>();
 	private List<Telepes> telepesek = new ArrayList<>();
 	private List<Ufo> ufok = new ArrayList<>();
@@ -56,5 +61,17 @@ public class Aszteroidaov {
 	
 	public void MinuszUfo(Ufo u) {
 		ufok.remove(u);
+	}
+	
+	public void addAszteroida(Aszteroida a) {
+		aszteroidak.add(a);
+	}
+	
+	public void addKapu(Teleportkapu tk) {
+		kapuk.add(tk);
+	}
+	
+	public void addTelepes(Telepes t) {
+		telepesek.add(t);
 	}
 }
