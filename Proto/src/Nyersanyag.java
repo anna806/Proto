@@ -17,7 +17,17 @@ public abstract class Nyersanyag implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 4128594175231573747L;
+	protected String ID;
+	
 	public abstract void Betolt(Telepes a);
 	public abstract void Napkozel(Aszteroida a);
 	public abstract boolean Kompatibilis(Nyersanyag ny);
+	
+	public String getID() {
+		return ID;
+	}
+	
+	public void setID(String id) {
+		ID = id;
+	}
 }

@@ -34,4 +34,8 @@ public class Uran extends Nyersanyag {
 	public boolean Kompatibilis(Nyersanyag ny) {
 		return ny instanceof Uran;
 	}
+	
+	public void setExp(int i) {
+		expozicio = i;
+	}
 }

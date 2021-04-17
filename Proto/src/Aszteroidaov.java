@@ -75,7 +75,51 @@ public class Aszteroidaov implements Serializable{
 		telepesek.add(t);
 	}
 	
+	public void addRobot(Robot r) {
+		robotok.add(r);
+	}
+	
+	public void addUfo(Ufo u) {
+		ufok.add(u);
+	}
+	
 	public Telepes GetTelepes(int i) {
+		return telepesek.get(i);
+	}
+	
+	public Robot GetRobot(String ID) {
+		for(Robot r : robotok) {
+			if(r.getID().equals(ID))
+				return r;
+		}
+		return null;
+	}
+	
+	public Ufo GetUfo(String ID) {
+		for(Ufo u : ufok) {
+			if(u.getID().equals(ID))
+				return u;
+		}
+		return null;
+	}
+	
+	public Entitas GetEntitas(String ID) {
+		for(Robot r : robotok) {
+			if(r.getID().equals(ID))
+				return r;
+		}
+		for(Telepes t : telepesek) {
+			if(t.getID().equals(ID))
+				return t;
+		}
+		for(Ufo u : ufok) {
+			if(u.getID().equals(ID))
+				return u;
+		}
+		return null;
+	}
+	
+	public Telepes GetT(int i) {
 		return telepesek.get(i);
 	}
 }

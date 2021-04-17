@@ -3,6 +3,7 @@
 public abstract class Entitas {
 	
 	protected Aszteroida aszteroida;
+	protected String ID;
 	
 	public abstract void Furas();
 	
@@ -17,4 +18,16 @@ public abstract class Entitas {
 	}
 	
 	public abstract void BazisEpit();
+	
+	public void SetID(String id) {
+		ID = id;
+	}
+	
+	public String getID() {
+		return ID;
+	}
+	
+	public Aszteroida getAszteroida() {
+		return aszteroida;
+	}
 }

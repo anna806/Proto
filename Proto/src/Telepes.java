@@ -115,7 +115,11 @@ public class Telepes extends Entitas {
 		kapuk.add(k);
 	}
 	
-	public void SetId(int id) {
-		ID = id;
+	public Nyersanyag getNyersanyag(String ID) {
+		for(Nyersanyag ny : nyersanyagok) {
+			if(ny.getID().equals(ID))
+				return ny;
+		}
+		return null;
 	}
 }
