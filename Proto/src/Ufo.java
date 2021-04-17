@@ -40,8 +40,10 @@ public class Ufo extends Entitas implements Intelligencia {
 	
 	
 	public void Furas() {
-		;
 	}
-	//bazisepit
+	
+	public void BazisEpit() {
+		
+	}
 	
 }

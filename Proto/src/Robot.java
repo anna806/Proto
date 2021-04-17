@@ -29,15 +29,7 @@ public class Robot extends Entitas implements Intelligencia {
 	public void Furas() {
 	}
 	
-	public void Furas() {
-	}
-	
-	public void Halal() {
-	}
-	
-	public void Felrobban() {
-	}
-	
-	public void Lep() {
+	public void BazisEpit() {
+		
 	}
 }

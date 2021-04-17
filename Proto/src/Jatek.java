@@ -54,7 +54,7 @@ public class Jatek {
 		System.exit(0);
 	}
 	
-	public void init() {
+	public Aszteroidaov init() {
 		Aszteroidaov ov = new Aszteroidaov();
 		Aszteroida a0 = new Aszteroida();
 		Aszteroida a1 = new Aszteroida();
@@ -130,6 +130,7 @@ public class Jatek {
 		ov.addKapu(k1);
 		ov.addKapu(k2);
 		ov.addKapu(k3);
+		return ov;
 	}
 	
 	public void newAszteroida(Aszteroida a, Nyersanyag ny, boolean napkozel, int kv, List<Szomszed> szomszedok) {
@@ -140,11 +141,11 @@ public class Jatek {
 			a.addSzomszed(sz);
 	}
 	
-	public void ser(Aszteroidaov ao) {
-		File tmp = new File(System.getProperty("user.dir") + File.separator + "map.txt");
+	public void ser(Aszteroidaov ao, String filename) {
+		File tmp = new File(System.getProperty("user.dir") + File.separator + filename);
 		try {
 			if(tmp.exists()) {
-				FileOutputStream f = new FileOutputStream("map.txt");
+				FileOutputStream f = new FileOutputStream(filename);
 				ObjectOutputStream out = new ObjectOutputStream(f);
 				out.writeObject(ao);
 				out.close();
@@ -155,11 +156,11 @@ public class Jatek {
 		}
 	}
 	
-	public void load() {
-		File tmp = new File(System.getProperty("user.dir") + File.separator + "map.txt");
+	public void load(String filename) {
+		File tmp = new File(System.getProperty("user.dir") + File.separator + filename);
 		try {
 			if(tmp.exists()) {
-				FileInputStream f = new FileInputStream("map.txt");
+				FileInputStream f = new FileInputStream(filename);
 				ObjectInputStream in = new ObjectInputStream(f);
 				jatekter = (Aszteroidaov)in.readObject();
 				in.close();
@@ -175,7 +176,13 @@ public class Jatek {
 	}
 
 	public void field(String[] args) {
-		load();
+		Aszteroidaov ov = init();
+		ser(ov, "map.txt");
+		load("map.txt");
 		Parancsok.main(args);
+	}
+	
+	public void setOv(Aszteroidaov ov) {
+		jatekter = ov;
 	}
 }
