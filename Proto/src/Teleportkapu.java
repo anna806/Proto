@@ -68,10 +68,12 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		megkergult=true;
 	}
 	
-	public void RandomMozgas() {   //kivettem a paramétert mert szerintem nem hasznos
-		Szomszed cel= aszteroida.SzomszedotAd();
-		aszteroida.SzomszedTorol(this);
-		cel.KapuBefogad(this);
+	public void RandomMozgas() {   
+		if(megkergult==true) {
+			Szomszed cel= aszteroida.SzomszedotAd();
+			aszteroida.SzomszedTorol(this);
+			cel.KapuBefogad(this);
+		}
 		          
 	}
 	

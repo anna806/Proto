@@ -10,12 +10,48 @@ import java.util.List;
 public class Jatek {
 	private Aszteroidaov jatekter;
 	public void Start() {
+		while (true) {
+			Kor();
+		}
 	}
 	
 	public void Kor() {
+		
+	 
+	jatekter.DoNapkozel();
+	
+	jatekter.DoNapvihar();
+		
+	int i =0;
+	 while(jatekter.GetTelepes(i)!=null) {
+		 jatekter.GetTelepes(i).Lep();
+		 i++;
+	 }
+	 i=0;
+	 while (jatekter.GetRobot(i)!=null) {
+		 jatekter.GetRobot(i).Lep();
+		 i++;
+	 }
+	 i=0;
+	 while (jatekter.GetUfo(i)!=null) {
+		 jatekter.GetUfo(i).Lep();
+		 i++;
+	 }
+	 i=0;
+	 while (jatekter.GetKapu(i)!=null){
+		 jatekter.GetKapu(i).RandomMozgas();
+	 }
 	}
 	
 	public void Vege(boolean a) {
+		if (a==true) {
+			System.out.println("Gyõzelem! Gratulálunk, megnyerték a játékot!");
+			
+		}
+		else {
+			System.out.println("A játék véget ért, sajnos vesztettek");
+		}
+		System.exit(0);
 	}
 	
 	public void init() {

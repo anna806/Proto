@@ -78,4 +78,16 @@ public class Aszteroidaov implements Serializable{
 	public Telepes GetTelepes(int i) {
 		return telepesek.get(i);
 	}
+	public Robot GetRobot(int i) {
+		return robotok.get(i);
+	}
+	public Aszteroida GetAszteroida(int i) {
+		return aszteroidak.get(i);
+	}
+	public Ufo GetUfo(int i) {
+		return ufok.get(i);
+	}
+	public Teleportkapu GetKapu(int i) {
+		return kapuk.get(i);
+	}
 }
