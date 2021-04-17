@@ -17,7 +17,6 @@ public class Jatek {
 	
 	public void Vege(boolean a) {
 	}
-<<<<<<< HEAD
 	
 	public void init() {
 		Aszteroidaov ov = new Aszteroidaov();
@@ -137,5 +136,10 @@ public class Jatek {
 
 	public Aszteroidaov GetOv() {
 		return jatekter;
+	}
+
+	public void field(String[] args) {
+		load();
+		Parancsok.main(args);
 	}
 }
