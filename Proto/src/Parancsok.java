@@ -1,8 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Parancsok {
 	//cél hogy konzolra és fájlba is írjon
+	private Jatek jatek;
 	public static void main(String[] args) {
 		try {
 			BufferedReader bir = new BufferedReader(new FileReader("Input\\"+args[0]+".txt"));
@@ -14,14 +17,17 @@ public class Parancsok {
 			bir.close();
 		}catch(Exception e){}
 	}
-	static void ParancsErtelmezo(String p) {
-		//do while?
+	void ParancsErtelmezo(String p) {
 		String[] com = p.split(" ", 2);
 		if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
-		//String code = tokens[1];
 		switch(command){
 		case "telepes_mozog":
+			Aszteroidaov ov = jatek.GetOv();
+			List<Telepes> tList = new ArrayList<Telepes>();
+			ov.tele
+			String[] tID = com[1].split("0");
+			foreach()
 			Telepes t = new Telepes(); //ezt elvileg a pályafájl hozza létre?
 			String[] tID = com[1].split("0");
 			t.SetId((int)tID[1]); //ilyen függvény az valid ugye?

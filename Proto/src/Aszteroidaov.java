@@ -57,4 +57,7 @@ public class Aszteroidaov {
 	public void MinuszUfo(Ufo u) {
 		ufok.remove(u);
 	}
+	public Telepes GetTelepes(int i) {
+		return telepesek.get(i);
+	}
 }

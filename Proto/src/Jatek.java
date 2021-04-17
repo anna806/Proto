@@ -22,4 +22,7 @@ public class Jatek {
 	
 	public void Vege(boolean a) {
 	}
+	public Aszteroidaov GetOv() {
+		return jatekter;
+	}
 }
