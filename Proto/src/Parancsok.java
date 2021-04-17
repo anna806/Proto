@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Parancsok {
 	//args = be, ki, parancs
+	//be = 0 konzol
+	//be = 1 parancsszám
+	//ki = 0 konzolra
+	//ki = 1 outputfájlba
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
 	private Jatek jatek;
@@ -20,18 +24,18 @@ public class Parancsok {
 		}catch(Exception e){}
 	}
 	void ParancsErtelmezo(String p) {
-		String[] com = p.split(" ", 2);
+		String[] com = p.split(" ");
 		if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
 		switch(command){
 		case "telepes_mozog":
 			//telepes_mozog t01 a05
-			Aszteroidaov ov = jatek.GetOv();
+			/*Aszteroidaov ov = jatek.GetOv();
 			List<Telepes> tList = new ArrayList<Telepes>();
 			String[] param = com[1].split(" ");
 			String[] tID = param[0].split("0");
 			Telepes t = ov.GetTelepes(Integer.parseInt(tID[1]));
-			t.
+			t.*/
 
 			break;
 		case "robot_mozog": break;
