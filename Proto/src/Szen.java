@@ -57,4 +57,11 @@ public class Szen extends Nyersanyag {
 	public boolean Kompatibilis(Nyersanyag ny) {
 		return ny instanceof Szen;
 	}
+	/**
+	 * Amennyiben van expozicioja a nyersanyagnak, akkor azt megnöveli.
+	 * @param A szám, amivel növelje az expoziciot.
+	 */
+	public void setExp(int i) {
+		
+	}
 }

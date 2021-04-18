@@ -26,4 +26,5 @@ public abstract class Nyersanyag implements Serializable{
 	public String getID() {
 		return ID;
 	}
+	protected abstract void setExp(int i);
 }
