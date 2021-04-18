@@ -113,9 +113,11 @@ public class Aszteroida extends Szomszed{
 		boolean bazisepitheto = false;
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! útmutató
+			if(bazisepitheto) {
+				Main.game.Vege(bazisepitheto);
+				break;
+			}
 		}
-		if(bazisepitheto) Main.game.Vege(bazisepitheto); 
-		
 	}
 	
 	/**
