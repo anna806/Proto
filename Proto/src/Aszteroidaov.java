@@ -314,6 +314,10 @@ public class Aszteroidaov implements Serializable{
 		if(GetKapuByID(id) != null)
 			GetKapuByID(id).kiir();
 	}
+	
+	/**
+	 * Kiírja a játék aktuális állapotát
+	 */
 	public void Helyzet() {
 		
 		System.out.println("Kor szama: "+ Main.game.getKor() + "/n");
