@@ -103,12 +103,12 @@ public class Aszteroida extends Szomszed{
 		kell.add(new Szen());
 		kell.add(new Szen());
 		
-		Utmutato bazis = new Utmutato(kell); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		Utmutato bazis = new Utmutato(kell);
 		boolean bazisepitheto = false;
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! bekerült az útmutató
 		}
-		if(bazisepitheto) game.Vege(bazisepitheto); //??????
+		if(bazisepitheto) Main.game.Vege(bazisepitheto); //??????
 		
 	}
 	
