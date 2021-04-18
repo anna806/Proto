@@ -84,8 +84,12 @@ public class Aszteroidaov implements Serializable{
 	public Robot GetRobot(int i) {
 		return robotok.get(i);
 	}
-	public Aszteroida GetAszteroida(int i) {
-		return aszteroidak.get(i);
+	public Aszteroida GetAszteroida(String ID) {
+		for(Aszteroida a : aszteroidak) {
+			if(a.getID().equals(ID))
+				return a;
+		}
+		return null;
 	}
 	public Ufo GetUfo(int i) {
 		return ufok.get(i);
@@ -110,6 +114,14 @@ public class Aszteroidaov implements Serializable{
 		return null;
 	}
 	
+	public Telepes GetTelepesByID(String ID) {
+		for(Telepes t : telepesek) {
+			if(t.getID().equals(ID))
+				return t;
+		}
+		return null;
+	}
+	
 	public Entitas GetEntitas(String ID) {
 		for(Robot r : robotok) {
 			if(r.getID().equals(ID))
@@ -126,8 +138,4 @@ public class Aszteroidaov implements Serializable{
 		return null;
 	}
 	
-	public Telepes GetT(int i) {
-		return telepesek.get(i);
-
-	}
 }

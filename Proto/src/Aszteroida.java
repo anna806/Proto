@@ -39,7 +39,7 @@ public class Aszteroida extends Szomszed{
 	private List<Entitas> entitasok = new ArrayList<>();
 	private List<Szomszed> szomszedok = new ArrayList<>();
 	private Nyersanyag belsoAnyag;
-	private int ID;
+	private String ID;
 	
 	public Aszteroida() {
 		entitasok = new ArrayList<Entitas>();
@@ -161,8 +161,11 @@ public class Aszteroida extends Szomszed{
 		belsoAnyag = ny;
 	}
 	
-	public void setID(int id) {
+	public void setID(String id) {
 		ID = id;
+	}
+	public String getID() {
+		return ID;
 	}
 	
 	public int getKopenyVastagsag() {

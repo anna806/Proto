@@ -122,4 +122,7 @@ public class Telepes extends Entitas {
 		}
 		return null;
 	}
+	public String getID(String id) {
+		return ID;
+	}
 }
