@@ -19,13 +19,14 @@ public class Parancsok {
 	private Jatek jatek;
 	public static void main(String[] args) {
 		try {
-			BufferedReader bir = new BufferedReader(new FileReader(args[0]+".txt"));
+			BufferedReader bir = new BufferedReader(new FileReader(args[2]+".txt"));
 			String line = bir.readLine();
 			while(line != null && line.length() != 0) {
 				ParancsErtelmezo(line);
 				line = bir.readLine();
 			}
 			bir.close();
+			Output(args[2]);
 		}catch(Exception e){}
 	}
 	static void ParancsErtelmezo(String p) {
@@ -127,7 +128,7 @@ public class Parancsok {
 		}
 	}
 	//JSONBE KIIRATNI!!!
-	void Output(int p) {
+	public static void Output(String p) {
 		String ID = "a02";
 		try {
 			writeAszteroida("out"+p+".txt", ID);
