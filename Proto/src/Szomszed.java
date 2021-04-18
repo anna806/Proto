@@ -28,6 +28,11 @@ public abstract class Szomszed implements Serializable{
 	public abstract void Napvihar();
 	
 	public abstract void KapuBefogad(Teleportkapu k);
+	
+	public  abstract void MegKergul();
+	
+	public  abstract void SzomszedTorol(Szomszed a);
+
 
 	public String getID() {
 		return ID;

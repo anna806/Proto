@@ -68,6 +68,9 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	}
 	
 	public void Napvihar() {
+		MegKergul();
+	}
+	public void MegKergul() {
 		megkergult=true;
 	}
 	
@@ -89,4 +92,6 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	public String getID() {
 		return ID;
 	}
+	
+	public void SzomszedTorol(Szomszed a) {}
 }
