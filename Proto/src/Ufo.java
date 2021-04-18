@@ -11,16 +11,25 @@ public class Ufo extends Entitas implements Intelligencia {
 		ID="uf0"+count++;
 	}
 	
+	/**
+	 *véletlenszerû mozgást valósít meg az aszteroida egy szomszédjára
+	 */
 	public void RandomMozgas() {
 		Szomszed b = aszteroida.SzomszedotAd();
 		aszteroida.Ledob(this);
 		b.Befogad(this);	
 	}
 	
+	/**
+	 *Az ufo halálát megvalósító fv, az aszteroidaöv ufok listájából kitörli az egyedet
+	 */
 	public void Halal() {	
-		;
+		Main.game.GetOv().MinuszUfo(this);
 	}
 	
+	/**
+	 *
+	 */
 	public void Felrobban() {
 		Halal();
 	}
