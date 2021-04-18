@@ -211,6 +211,11 @@ public class Jatek {
 			a.addSzomszed(sz);
 	}
 	*/
+	/**
+	 * a kapott aszteroidaövet a kapott nevû fájlba szerializálja, ezzel menthetõ egy játékállás
+	 * @param ao a kiírandó aszteroidaöv
+	 * @param filename a célfájl, ahová szerializáljuk az aszteroidaövet
+	 */
 	public void ser(Aszteroidaov ao, String filename) {
 		File tmp = new File(getAddress(filename));
 		try {
@@ -252,10 +257,10 @@ public class Jatek {
 		return jatekter;
 	}
 
-	/*public void field(String[] args) {
+	public void field(String[] args) {
 		load("map.txt");
 		Parancsok.main(args);
-	}*/
+	}
 	
 	/**
 	 * @param ov: a paraméterként kapott aszteroidaövet beállítja a játék jatekter változójaként
@@ -264,6 +269,11 @@ public class Jatek {
 		jatekter = ov;
 	}
 	
+	/**
+	 * lekérdezi és visszaadja azt az utat, ahová a fájlt ki kell írni
+	 * @param filename : a kapott fájl neve
+	 * @return az elkészíttett path
+	 */
 	public static String getAddress(String filename) {
 		String addr1 = System.getProperty("user.dir");
 		String[] address = addr1.split("\\\\");
