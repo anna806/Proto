@@ -246,7 +246,7 @@ public class Jatek {
 	}
 
 	/**
-	 * @return jatekter: visszaadja az aszteroidaövet, amelyben a játék zajlik
+	 * @return jatekter: visszaadja az aszteroidaövet, amelyben a játék zajlik.
 	 */
 	public Aszteroidaov GetOv() {
 		return jatekter;
