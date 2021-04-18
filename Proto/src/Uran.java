@@ -13,20 +13,48 @@
 
 
 public class Uran extends Nyersanyag {
+	
+	/**
+	 * A szerializálást elõsegítõ ID
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * A nyersanyag expozícióját számláló szám.
+	 */
 	private int expozicio;
+	
+	/**
+	 * az id egyediségét biztosító számláló
+	 */
 	private static int count =0;
+	
+	/**
+	 * A nyersanyag azonosítására szolgáló ID
+	 */
 	private String ID;
 	
+	/**
+	 * Az Uran osztály konstruktora.
+	 */
 	public Uran() {
 		super();
 		expozicio=0;
 		ID="u0"+count++;
 	}
 	
+	/**
+	 * A Nyersanyag betöltését végzi a telepes inventoryjába.
+	 * @param a : A Telepes, aki bányászik.
+	 */
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);
 	}
 	
+	/**
+	 * A nyersanyag napközelbe kerülését végzõ függvény.
+	 * @param a : Az aszteroida, amiben a nyersanyag van.
+	 */
 	public void Napkozel(Aszteroida a) {
 		if(expozicio>=3) {
 			a.Robban();
@@ -35,10 +63,19 @@ public class Uran extends Nyersanyag {
 			expozicio++;
 	}
 	
+	/**
+	 * A Nyersanyagok összehasonlítását végzõ függvény.
+	 * @param ny : A Nyersanyag, amivel össze kell hasonlítania önmagát.
+	 * @return Egy logikai változó, ami megmondja, hogy ugyanolyan fajátjúak-e az összehasonlított Nyersanyagok.
+	 */
 	public boolean Kompatibilis(Nyersanyag ny) {
 		return ny instanceof Uran;
 	}
 	
+	/**
+	 * A nyersanyag expozíciós számát beállítja egy kiválasztott értékre.
+	 * @param i : a kiválasztott érték
+	 */
 	public void setExp(int i) {
 		expozicio = i;
 	}
