@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import szkeleton.game.Main;
+import szkeleton.game.Szen;
+import szkeleton.game.Uran;
+import szkeleton.game.Vas;
+import szkeleton.game.Vizjeg;
+
 public class Telepes extends Entitas {
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	private List<Nyersanyag> nyersanyagok = new ArrayList<>();
@@ -85,7 +91,13 @@ public class Telepes extends Entitas {
 		}
 	}
 	
-	public void BazisEpit() {
+	public boolean BazisEpit(Utmutato bazis) {
+		boolean kesz = false;
+		for(Nyersanyag ny: nyersanyagok) {
+			kesz = bazis.MindMegvan(ny);
+		}
+		return kesz;
+	
 	}
 	
 	public void Halal() {
