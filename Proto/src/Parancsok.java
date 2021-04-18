@@ -150,7 +150,7 @@ public class Parancsok {
 					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
 			}}																						  //az osszes nyersanyagban?
 			break;
-		case "informaciok": //jsonosen?
+		case "informaciok": 
 			Main.game.GetOv().Kiir(com[1]);
 			break;
 		case "informaciok_jatek": break;
