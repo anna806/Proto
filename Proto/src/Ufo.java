@@ -28,12 +28,15 @@ public class Ufo extends Entitas implements Intelligencia {
 	}
 	
 	/**
-	 *
+	 *az ufo felrobbanását megvalósító fv, meghívja a Halal() függvényt
 	 */
 	public void Felrobban() {
 		Halal();
 	}
 	
+	/**
+	 *az ufo lépése: ugyanolyan valószínûséggel bányászik, mint hogy tovább lép egy random aszteroidára
+	 */
 	public void Lep() {
 		Random rand = new Random();
 		int r = rand.nextInt();
@@ -43,7 +46,10 @@ public class Ufo extends Entitas implements Intelligencia {
 			RandomMozgas();
 	}
 	
-	public void Banyaszat() {
+	/**
+	 *bányászat: az aktuális aszteroidán megpróbál anyagot kinyerni
+	 */
+	public void Banyaszat() { 
 		Nyersanyag belsoAnyag = aszteroida.AnyagKinyeres();
 		aszteroida.AnyagTorol();
 	}
