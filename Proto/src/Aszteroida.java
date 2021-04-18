@@ -412,12 +412,14 @@ public class Aszteroida extends Szomszed{
 	private List<Entitas> entitasok = new ArrayList<>();
 	private List<Szomszed> szomszedok = new ArrayList<>();
 	private Nyersanyag belsoAnyag;
+	private static int count=0;
 	private String ID;
 	
 	public Aszteroida() {
 		entitasok = new ArrayList<Entitas>();
 		szomszedok = new ArrayList<Szomszed>();
 		napkozel = false;
+		ID="a0"+count++;
 	}
 	
 	List<Szomszed> getSzomszedok(){

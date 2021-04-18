@@ -22,6 +22,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 * 
 	 */
 	private static final long serialVersionUID = 4398516018408113362L;
+	private static int count=0;
 	private Aszteroida aszteroida;
 	private boolean megkergult;
 	private Teleportkapu parja;
@@ -31,6 +32,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		aszteroida=null;
 		megkergult=false;
 		parja=null;
+		ID="tk0"+count++;
 	}
 	
 	public Teleportkapu getParja() {

@@ -10,7 +10,13 @@ import szkeleton.game.Vizjeg;
 public class Telepes extends Entitas {
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	private List<Nyersanyag> nyersanyagok = new ArrayList<>();
+	private static int count=0;
 	private String ID;
+	
+	Telepes(){
+		super();
+		ID="t0"+count++;
+	}
 	
 	public void Felrobban() {
 		for(int i = 0; i < kapuk.size(); i++) {

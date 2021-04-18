@@ -13,8 +13,10 @@ public class Jatek {
 	private int szamlalo=0;									
 	private Aszteroidaov jatekter;
 	
+	/**
+	 * A játék kezdetekor létrehozza a pályát 20 és 50közötti aszteroidával, beállítja a szomszédságokat és ufokat helyez el egyes aszteroidákon
+	 */
 	public void Start() {
-		int id = 0;
 		Random rand = new Random();
 		int db= 20+rand.nextInt(30);
 		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
@@ -42,8 +44,7 @@ public class Jatek {
 			int kop= 2+ rand.nextInt(3);
 			uj.setKopenyVastagsag(kop);
 			
-			uj.setID(id);									//beállítja az id-t
-			id++;
+			
 			if (rand.nextInt()%4==0) {						//0.25 valószínûséggel tesz az aszteroidára ufot
 				Ufo ufo=new Ufo();
 				uj.Befogad(ufo);

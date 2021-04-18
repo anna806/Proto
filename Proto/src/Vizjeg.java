@@ -13,6 +13,14 @@
 
 
 public class Vizjeg extends Nyersanyag {
+	private static int count=0;
+	private String ID;
+	
+	Vizjeg(){
+		super();
+		ID="vj0"+count++;
+	}
+	
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);
 	}

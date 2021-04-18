@@ -14,9 +14,13 @@
 
 public class Uran extends Nyersanyag {
 	private int expozicio;
+	private static int count =0;
+	private String ID;
 	
 	public Uran() {
+		super();
 		expozicio=0;
+		ID="u0"+count++;
 	}
 	
 	public void Betolt(Telepes a) {

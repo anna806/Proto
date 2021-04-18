@@ -14,6 +14,13 @@
 
 public class Vas extends Nyersanyag {
 	
+	private static int count=0;
+	private String ID;
+	
+	public Vas() {
+		super();
+		ID="v0"+count++;
+	}
 	
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);

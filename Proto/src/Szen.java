@@ -14,6 +14,13 @@
 
 public class Szen extends Nyersanyag {
 	
+	private static int count=0;
+	private String ID;
+	
+	Szen(){
+		super();
+		ID="sz0"+count++;
+	}
 	
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);

@@ -13,6 +13,12 @@
 
 
 public class Robot extends Entitas implements Intelligencia {
+	private static int count=0;
+	private String ID;
+	Robot(){
+		super();
+		ID="r0"+count++;
+	}
 	
 	public void RandomMozgas() {
 		Szomszed b = aszteroida.SzomszedotAd();
