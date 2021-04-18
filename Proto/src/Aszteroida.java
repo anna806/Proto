@@ -169,7 +169,16 @@ public class Aszteroida extends Szomszed{
 		kopenyVastagsag = kv;
 	}
 	
+	private boolean SzomszedExist(Szomszed sz) {
+		for (Szomszed s : szomszedok) {
+			if(s.equals(sz))
+					return true;
+		}
+		return false;
+	}
+	
 	public void addSzomszed(Szomszed sz) {
-		szomszedok.add(sz);
+		if( SzomszedExist(sz)==false)
+			szomszedok.add(sz);
 	}
 }
