@@ -75,8 +75,10 @@ public class Aszteroida extends Szomszed{
 		}
 	}
 	
-	public void MegKergul() {
-	}
+	/**
+	 *Üres törzsû függvény, mert az Aszteroida nem tud megkergülni
+	 */
+	public void MegKergul() {}
 	
 	/**
 	 * A paraméterként kapott szomszédot törli a szomszéd listából
@@ -209,12 +211,12 @@ public class Aszteroida extends Szomszed{
 		belsoAnyag = ny;
 	}
 	
-	public void setID(String id) {
+	/*public void setID(String id) {
 		ID = id;
 	}
 	public String getID() {
 		return ID;
-	}
+	}*/
 	
 	/**
 	 * @return visszatérési értékében megadja az aszteroida köpenyének vastagságát
@@ -239,6 +241,10 @@ public class Aszteroida extends Szomszed{
 		szomszedok.add(sz);
 	}
 
+	/**
+	 * Visszaadja, hogy napközelben van-e az adott aszteroida
+	 * @return az aszteroida napkozel tagváltozója String-ben
+	 */
 	public String getNapkozel() {
 		if(napkozel) {
 			return "true";
@@ -247,6 +253,10 @@ public class Aszteroida extends Szomszed{
 		}
 	}
 
+	/**
+	 * Visszaadja az aszteroida belsõ anyagának nevét
+	 * @return az aszteroida belsoanyaga Stringként
+	 */
 	public String getBelsoAnyagString() {
 		if(belsoAnyag == null) {
 			return "Ureges";
@@ -254,28 +264,52 @@ public class Aszteroida extends Szomszed{
 			return belsoAnyag.toString();
 		}
 	}
+	
+	/**
+	 * Visszaadja az aszteroida belsõ anyagát
+	 * @return az aszteroida belsoanyag paramétere
+	 */
 	public Nyersanyag getBelsoAnyag() {
 		return belsoAnyag;
 	}
 
+	/**
+	 * Visszaadja az entitasok lista méretét
+	 * @return az entitasok lista mérete
+	 */
 	public int EntitasokSize() {
 		return entitasok.size();
 	}
 
+	/**
+	 * Visszaadja az entitások listából a paraméterben kapott helyen lévõ entitás ID-jét
+	 * @param i az entitás sorszáma a listában
+	 * @return az entitás ID-je
+	 */
 	public String getEntitas(int i) {
 		return entitasok.get(i).getID();
 	}
 
+	/**
+	 * Visszaadja a szomszedok lista méretét
+	 * @return a szomszedok lista mérete
+	 */
 	public int SzomszedokSize() {
 		return szomszedok.size();
 	}
 
+	/**
+	 * Visszaadja a szomszedok listából a paraméterként kapott helyen lévõ szomszéd ID-jét
+	 * @param i a szomszéd sorszáma a listában
+	 * @return a szomszéd ID-je
+	 */
 	public String getSzomszed(int i) {
 		return szomszedok.get(i).getID();
 	}
 
-
-
+	/**
+	 * Kiirja az adott aszteroida külünbüzõ tulajdonágait
+	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		for(int i = 0; i < szomszedok.size(); i++)
