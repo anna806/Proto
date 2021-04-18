@@ -43,7 +43,7 @@ public class Parancsok {
 			}
 			file.close();
 			console.close();
-			Output(args[2], args[1]);
+			Output(args[2], args[1]); //tesztesetnél
 		}catch(Exception e){}
 	}
 	static void ParancsErtelmezo(String p) {
@@ -151,7 +151,7 @@ public class Parancsok {
 			}}																						  //az osszes nyersanyagban?
 			break;
 		case "informaciok": //jsonosen?
-			
+			Main.game.GetOv().Kiir(com[1]);
 			break;
 		case "informaciok_jatek": break;
 		case "list": //itt be kell írni hogy Telepes? Ufo?
