@@ -106,9 +106,9 @@ public class Aszteroida extends Szomszed{
 		Utmutato bazis = new Utmutato(kell);
 		boolean bazisepitheto = false;
 		for (int j = 0; j < entitasok.size(); j++) {
-			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! bekerült az útmutató
+			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! útmutató
 		}
-		if(bazisepitheto) Main.game.Vege(bazisepitheto); //??????
+		if(bazisepitheto) Main.game.Vege(bazisepitheto); 
 		
 	}
 	
