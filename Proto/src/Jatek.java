@@ -67,6 +67,14 @@ public class Jatek {
 		
 	}
 	
+	/**
+	 * Minden kör elején sorsolódik, hogy az adott körben mely aszteroidák vannak napközelben, 
+	 * valamint az 5. körtõl kezdve napvihar is létrejöhet egy véletlenszerûen kiválasztott aszteroida környezetében
+	 * A játék során körök futnak le, amelyekben a játék minden résztvevõje sorrakerül.
+	 * elõször a telepesek léphetnek - a  játékosok irányításával
+	 * ezután a robotok, az ufok, és a megkergült teleportkapuk
+	 * a számláló körönként eggyel nõ
+	 */
 	public void Kor() {
 		
 	 
@@ -98,6 +106,11 @@ public class Jatek {
 	 szamlalo+=1;
 	}
 	
+	/**
+	 * A játék végét intézõ függvény, amely a kapott logikai értéktõl függõen vagy gyõzelemmel, 
+	 * vagy vereséggel zárja le a játékmenetet.
+	 * @param a a kapott logikai érték
+	 */
 	public void Vege(boolean a) {
 		if (a==true) {
 			System.out.println("Gyõzelem! Gratulálunk, megnyerték a játékot!");
@@ -109,6 +122,7 @@ public class Jatek {
 		System.exit(0);
 	}
 	
+	/*
 	public Aszteroidaov init() {
 		Aszteroidaov ov = new Aszteroidaov();
 		Aszteroida a0 = new Aszteroida();
@@ -186,8 +200,9 @@ public class Jatek {
 		ov.addKapu(k2);
 		ov.addKapu(k3);
 		return ov;
-	}
+	} */
 	
+	/*
 	public void newAszteroida(Aszteroida a, Nyersanyag ny, boolean napkozel, int kv, List<Szomszed> szomszedok) {
 		a.setNyersanyag(ny);
 		a.setKopenyVastagsag(kv);
@@ -195,7 +210,7 @@ public class Jatek {
 		for(Szomszed sz : szomszedok)
 			a.addSzomszed(sz);
 	}
-	
+	*/
 	public void ser(Aszteroidaov ao, String filename) {
 		File tmp = new File(getAddress(filename));
 		try {
@@ -211,6 +226,10 @@ public class Jatek {
 		}
 	}
 	
+	/**
+	 * a paraméterként kapott fájlból betölthetünk egy mentett játékállást
+	 * @param filename: a fájl neve, ahonnan be szeretnénk tölteni a játékállást
+	 */
 	public void load(String filename) {
 		File tmp = new File(getAddress(filename));
 		try {
@@ -226,17 +245,21 @@ public class Jatek {
 		}
 	}
 
+	/**
+	 * @return jatekter: visszaadja az aszteroidaövet, amelyben a játék zajlik
+	 */
 	public Aszteroidaov GetOv() {
 		return jatekter;
 	}
 
-	public void field(String[] args) {
-		Aszteroidaov ov = init();
-		ser(ov, "map.txt");
+	/*public void field(String[] args) {
 		load("map.txt");
 		Parancsok.main(args);
-	}
+	}*/
 	
+	/**
+	 * @param ov: a paraméterként kapott aszteroidaövet beállítja a játék jatekter változójaként
+	 */
 	public void setOv(Aszteroidaov ov) {
 		jatekter = ov;
 	}
