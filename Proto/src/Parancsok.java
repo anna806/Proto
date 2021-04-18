@@ -180,42 +180,25 @@ public class Parancsok {
 	}
 	
 	public static void writeUran(String filename, String ID) throws Exception {
-		Uran u = Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
+		//illegál?
+		Uran u = (Uran) Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
 	    JSONObject uran = new JSONObject();
-	    telepes.put("ID", t.getID());
-	    telepes.put("aszteroida", t.getAszteroida());
-	    	    
-	    JSONArray nyersanyagok = new JSONArray();
-	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
-	    	nyersanyagok.add(t.getNyersanyagok(i));
-	    }
-	    JSONArray kapuk = new JSONArray();
-	    for(int i = 0; i<t.KapukSize(); i++) {
-	    	kapuk.add(t.getKapuk(i));
-	    }
-	    telepes.put("nyersanyagok:", nyersanyagok);
-	    telepes.put("kapuk:", kapuk);
-	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
-	    System.out.println(telepes);
+	    uran.put("ID", u.getID());
+	    uran.put("expozicio", u.getExpozicio()); 	    
+	    
+	    Files.write(Paths.get(filename), uran.toJSONString().getBytes());
+	    System.out.println(uran);
 	}
 	public static void writeKapu(String filename, String ID) throws Exception {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
 	    JSONObject kapu = new JSONObject();
-	    telepes.put("ID", t.getID());
-	    telepes.put("aszteroida", t.getAszteroida());
-	    	    
-	    JSONArray nyersanyagok = new JSONArray();
-	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
-	    	nyersanyagok.add(t.getNyersanyagok(i));
-	    }
-	    JSONArray kapuk = new JSONArray();
-	    for(int i = 0; i<t.KapukSize(); i++) {
-	    	kapuk.add(t.getKapuk(i));
-	    }
-	    telepes.put("nyersanyagok:", nyersanyagok);
-	    telepes.put("kapuk:", kapuk);
-	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
-	    System.out.println(telepes);
+	    kapu.put("ID", t.getID());
+	    kapu.put("kergult", t.getMegkergult());
+	    kapu.put("parja", t.getParja());
+	    kapu.put("aszteroida", t.getAszter());
+	    
+	    Files.write(Paths.get(filename), kapu.toJSONString().getBytes());
+	    System.out.println(kapu);
 	}
 }
 

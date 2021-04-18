@@ -42,4 +42,8 @@ public class Uran extends Nyersanyag {
 	public void setExp(int i) {
 		expozicio = i;
 	}
+
+	public Object getExpozicio() {
+		return expozicio;
+	}
 }
