@@ -74,8 +74,8 @@ public class Telepes extends Entitas {
 			if(done) {
 				Teleportkapu k1 = new Teleportkapu();
 				Teleportkapu k2 = new Teleportkapu();
-				k1.SetParja(k2);
-				k2.SetParja(k1);
+				k1.setParja(k2);
+				k2.setParja(k1);
 			}
 		}
 	}
@@ -83,7 +83,7 @@ public class Telepes extends Entitas {
 	public void KapuLerak() {
 		if(kapuk.size() != 0) {
 			aszteroida.getSzomszedok().add(kapuk.get(kapuk.size() - 1));
-			kapuk.get(kapuk.size() - 1).SetAszteroida(aszteroida);
+			kapuk.get(kapuk.size() - 1).setAszter(aszteroida);
 			Aszteroida parhelye = kapuk.get(kapuk.size() - 1).ParHelye();
 			if(parhelye != null)
 				parhelye.getSzomszedok().add(kapuk.get(kapuk.size() - 1).getParja());	

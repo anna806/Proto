@@ -69,7 +69,9 @@ public class Parancsok {
 		case "bazis_epites": 
 			Main.game.GetOv().GetTelepesByID(com[1]).BazisEpit();
 			break;
-		case "teleportkapu_elhelyezes": break;
+		case "teleportkapu_elhelyezes": 
+			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
+			break;
 		case "visszatoltes": 
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
