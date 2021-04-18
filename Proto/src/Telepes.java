@@ -1,12 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import szkeleton.game.Main;
-import szkeleton.game.Szen;
-import szkeleton.game.Uran;
-import szkeleton.game.Vas;
-import szkeleton.game.Vizjeg;
-
 public class Telepes extends Entitas {
 	/**
 	 * A telepes inventoryjában található kapuk
