@@ -19,6 +19,7 @@ public class Parancsok {
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
 	private static Jatek jatek;
+	private static boolean fejlesztoi;
 	public static void main(String[] args) {
 		try {
 			String line = "";
@@ -134,7 +135,11 @@ public class Parancsok {
 			Main.game.load("map.txt");
 			break; //létrehozza az objektumokat?
 		case "veletlen": break;
-		case "fejlesztoi_mod": break;
+		case "fejlesztoi_mod": 
+			if(com[1].equals("true")){
+				fejlesztoi = true;
+			}
+			break;
 		case "betolt": 
 			Main.game.load("jatek.txt");
 			break;

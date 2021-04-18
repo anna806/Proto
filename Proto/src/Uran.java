@@ -76,4 +76,18 @@ public class Uran extends Nyersanyag {
 	public void setExp(int i) {
 		expozicio = i;
 	}
+	/**
+	 * Az urán expozíciós számát adja vissza.
+	 *
+	 */
+	public int getExpozicio() {
+		return expozicio;
+	}
+	/**
+	 * A nyersanyag egyedi azonosítóját adja vissza.
+	 *@return Egyedi azonosítója.
+	 */
+	public String getID() {
+		return ID;
+	}
 }
