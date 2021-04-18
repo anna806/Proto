@@ -197,10 +197,10 @@ public class Jatek {
 	}
 	
 	public void ser(Aszteroidaov ao, String filename) {
-		File tmp = new File(System.getProperty("user.dir") + File.separator + filename);
+		File tmp = new File(getAddress(filename));
 		try {
 			if(tmp.exists()) {
-				FileOutputStream f = new FileOutputStream(filename);
+				FileOutputStream f = new FileOutputStream(getAddress(filename));
 				ObjectOutputStream out = new ObjectOutputStream(f);
 				out.writeObject(ao);
 				out.close();
@@ -212,10 +212,10 @@ public class Jatek {
 	}
 	
 	public void load(String filename) {
-		File tmp = new File(System.getProperty("user.dir") + File.separator + filename);
+		File tmp = new File(getAddress(filename));
 		try {
 			if(tmp.exists()) {
-				FileInputStream f = new FileInputStream(filename);
+				FileInputStream f = new FileInputStream(getAddress(filename));
 				ObjectInputStream in = new ObjectInputStream(f);
 				jatekter = (Aszteroidaov)in.readObject();
 				in.close();
@@ -239,5 +239,19 @@ public class Jatek {
 	
 	public void setOv(Aszteroidaov ov) {
 		jatekter = ov;
+	}
+	
+	public static String getAddress(String filename) {
+		String addr1 = System.getProperty("user.dir");
+		String[] address = addr1.split("\\\\");
+		String addr2 = "";
+		for(int i = 0; i < address.length - 1; i++) {
+			if(i == 0)
+				addr2 = address[i];
+			else
+				addr2 = addr2 + File.separator + address[i];
+		}
+		addr2 = addr2 + File.separator + filename;
+		return addr2;
 	}
 }
