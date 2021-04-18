@@ -14,25 +14,47 @@
 
 public class Vizjeg extends Nyersanyag {
 	/**
-	 * 
+	 * A szerializálást elõsegítõ ID
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * az id egyediségét biztosító számláló
+	 */
 	private static int count=0;
+	/**
+	 * A nyersanyag azonosítására szolgáló ID
+	 */
 	private String ID;
 	
+	/**
+	 * A Vizjeg osztály konstruktora.
+	 */
 	Vizjeg(){
 		super();
 		ID="vj0"+count++;
 	}
 	
+	/**
+	 * A Nyersanyag betöltését végzi a telepes inventoryjába.
+	 * @param A Telepes, aki bányászik.
+	 */
 	public void Betolt(Telepes a) {
 		a.AddNyersanyag(this);
 	}
 	
+	/**
+	 * A nyersanyag napközelbe kerülését végzõ függvény.
+	 * @param Az aszteroida, amiben a nyersanyag van.
+	 */
 	public void Napkozel(Aszteroida a) {
 		a.AnyagTorol();
 	}
 	
+	/**
+	 * A Nyersanyagok összehasonlítását végzõ függvény.
+	 * @param A Nyersanyag, amivel össze kell hasonlítania önmagát.
+	 * @return Egy logikai változó, ami megmondja, hogy ugyanolyan fajátjúak-e az összehasonlított Nyersanyagok.
+	 */
 	public boolean Kompatibilis(Nyersanyag ny) {
 		return ny instanceof Vizjeg;
 	}

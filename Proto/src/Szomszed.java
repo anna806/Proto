@@ -37,5 +37,7 @@ public abstract class Szomszed implements Serializable{
 	public String getID() {
 		return ID;
 	}
+
+	
 	
 }
