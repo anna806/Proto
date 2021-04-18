@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Aszteroida extends Szomszed{
 	/**
-	 * 
+	 * megvalsósítja az aszteroidákat
 	 */
 	private static final long serialVersionUID = 3753080766421296425L;
 	private int kopenyVastagsag;
