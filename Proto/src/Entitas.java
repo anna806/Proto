@@ -3,7 +3,7 @@
 public abstract class Entitas {
 	
 	protected Aszteroida aszteroida;
-	protected String ID;
+	protected static String ID;
 	
 	public abstract void Furas();
 	
@@ -17,7 +17,7 @@ public abstract class Entitas {
 		aszteroida = a;
 	}
 	
-	public abstract void BazisEpit();
+	public abstract boolean BazisEpit(Utmutato u);
 	
 	public void SetID(String id) {
 		ID = id;

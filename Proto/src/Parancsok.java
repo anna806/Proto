@@ -36,7 +36,7 @@ public class Parancsok {
 			String[] tID = param[0].split("0");
 			Telepes t = ov.GetTelepes(Integer.parseInt(tID[1]));
 			t.*/
-
+			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			break;
 		case "robot_mozog": 
 			Main.game.GetOv().GetRobot(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));    //itt
@@ -45,7 +45,7 @@ public class Parancsok {
 			Main.game.GetOv().GetUfo(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));      //meg itt miért nem randommozgast hívunk?
 			break;
 		case "telepes_fur": 
-			Main.game.GetOv().GetTelepes(com[1]).Furas();
+			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
 			break;
 		case "robot_fur": 
 			Main.game.GetOv().GetRobot(com[1]).Furas();
@@ -61,15 +61,19 @@ public class Parancsok {
 			Main.game.GetOv().GetAszteroida(com[1]).setNapkozel(true);
 			break;
 		case "teleportkapu_epites": 
-			Main.game.GetOv().GetTelepes(com[1]).KapuEpit();
+			Main.game.GetOv().GetTelepesByID(com[1]).KapuEpit();
 			break;
 		case "robot_epites": 
-			Main.game.GetOv().GetTelepes(com[1]).RobotEpit();
+			Main.game.GetOv().GetTelepesByID(com[1]).RobotEpit();
 			break;
-		case "bazis_epites": break;
-		case "teleportkapu_elhelyezes": break;
+		case "bazis_epites": 
+			Main.game.GetOv().GetTelepesByID(com[1]).BazisEpit();
+			break;
+		case "teleportkapu_elhelyezes": 
+			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
+			break;
 		case "visszatoltes": 
-			Main.game.GetOv().GetTelepes(com[1]).Visszatolt();
+			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
 		case "plusz_telepes": 
 			Telepes t = new Telepes();
@@ -91,17 +95,17 @@ public class Parancsok {
 			break;
 		case "plusz_nyersanyag": 
 			for(int i = 2; i < com.length; i++)
-				Main.game.GetOv().GetTelepes(com[1]).addNyersanyag() //ide még kellenek dolgok
+				Main.game.GetOv().GetTelepesByID(com[1]).addNyersanyag() //ide még kellenek dolgok
 			break;
 		case "plusz_teleportkapu": 
 			Teleportkapu tk = new Teleportkapu();
-			tk.setAszter(Main.game.GetOv().GetTelepes(com[1]).getAszteroida());
-			Main.game.GetOv().GetTelepes(com[1]).AddKapu(tk);
+			tk.setAszter(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida());
+			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
 			break;
 		case "expozicio": 
-			for(int i = 0; i < Main.game.GetOv().GetTelepesek().size(); i++) {
-				if(Main.game.GetOv().GetT(i).getNyersanyag(com[1]).getID().equals(com[1]))
-					Main.game.GetOv().GetT(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
+			for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
+				if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1]))
+					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
 			}																						  //az osszes nyersanyagban?
 			break;
 		case "informaciok": break;

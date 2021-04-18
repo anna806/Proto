@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Random;
 
 
+
 public class Jatek {
-	private int szamlalo=0;
+	private int szamlalo=0;									
 	private Aszteroidaov jatekter;
 	
 	public void Start() {
@@ -43,6 +44,10 @@ public class Jatek {
 			
 			uj.setID(id);									//beállítja az id-t
 			id++;
+			if (rand.nextInt()%4==0) {						//0.25 valószínûséggel tesz az aszteroidára ufot
+				Ufo ufo=new Ufo();
+				uj.Befogad(ufo);
+			}
 			jatekter.addAszteroida(uj);						//hozzáadja az aszteroidaövhöz
 		}	
 		for (int j=0; j<db; j++) {							//beállítja a szomszédságokat 0.5 valószínûséggel
@@ -68,6 +73,7 @@ public class Jatek {
 	
 	if(szamlalo>=5){
 	jatekter.DoNapvihar();
+	}
 		
 	int i =0;
 	 while(jatekter.GetTelepes(i)!=null) {

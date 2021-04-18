@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import szkeleton.game.Main;
+import szkeleton.game.Szen;
+import szkeleton.game.Uran;
+import szkeleton.game.Vas;
+import szkeleton.game.Vizjeg;
+
 public class Telepes extends Entitas {
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	private List<Nyersanyag> nyersanyagok = new ArrayList<>();
@@ -68,8 +74,8 @@ public class Telepes extends Entitas {
 			if(done) {
 				Teleportkapu k1 = new Teleportkapu();
 				Teleportkapu k2 = new Teleportkapu();
-				k1.SetParja(k2);
-				k2.SetParja(k1);
+				k1.setParja(k2);
+				k2.setParja(k1);
 			}
 		}
 	}
@@ -77,7 +83,7 @@ public class Telepes extends Entitas {
 	public void KapuLerak() {
 		if(kapuk.size() != 0) {
 			aszteroida.getSzomszedok().add(kapuk.get(kapuk.size() - 1));
-			kapuk.get(kapuk.size() - 1).SetAszteroida(aszteroida);
+			kapuk.get(kapuk.size() - 1).setAszter(aszteroida);
 			Aszteroida parhelye = kapuk.get(kapuk.size() - 1).ParHelye();
 			if(parhelye != null)
 				parhelye.getSzomszedok().add(kapuk.get(kapuk.size() - 1).getParja());	
@@ -85,7 +91,13 @@ public class Telepes extends Entitas {
 		}
 	}
 	
-	public void BazisEpit() {
+	public boolean BazisEpit(Utmutato bazis) {
+		boolean kesz = false;
+		for(Nyersanyag ny: nyersanyagok) {
+			kesz = bazis.MindMegvan(ny);
+		}
+		return kesz;
+	
 	}
 	
 	public void Halal() {
@@ -121,5 +133,8 @@ public class Telepes extends Entitas {
 				return ny;
 		}
 		return null;
+	}
+	public String getID(String id) {
+		return ID;
 	}
 }
