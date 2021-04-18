@@ -88,11 +88,11 @@ public class Telepes extends Entitas {
 	
 	public void KapuLerak() {
 		if(kapuk.size() != 0) {
-			aszteroida.getSzomszedok().add(kapuk.get(kapuk.size() - 1));
+			aszteroida.addSzomszed(kapuk.get(kapuk.size() - 1));
 			kapuk.get(kapuk.size() - 1).setAszter(aszteroida);
 			Aszteroida parhelye = kapuk.get(kapuk.size() - 1).ParHelye();
 			if(parhelye != null)
-				parhelye.getSzomszedok().add(kapuk.get(kapuk.size() - 1).getParja());	
+				parhelye.addSzomszed(kapuk.get(kapuk.size() - 1).getParja());	
 			kapuk.remove(kapuk.size() - 1);
 		}
 	}
@@ -142,5 +142,22 @@ public class Telepes extends Entitas {
 	}
 	public String getID(String id) {
 		return ID;
+	}
+
+	public int NyersanyagokSize() {
+		return nyersanyagok.size();
+	}
+
+	public String getNyersanyagok(int i) {
+		return nyersanyagok.get(i).toString();
+	}
+
+	
+	public int KapukSize() {
+		return kapuk.size();
+	}
+
+	public String getKapuk(int i) {
+		return kapuk.get(i).getID();
 	}
 }

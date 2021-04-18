@@ -9,9 +9,6 @@
 //
 //
 
-
-
-
 public class Uran extends Nyersanyag {
 	
 	/**

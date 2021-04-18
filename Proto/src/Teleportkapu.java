@@ -89,4 +89,9 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	public String getID() {
 		return ID;
 	}
+	
+	public String getMegkergult() {
+		if(megkergult) return "true";
+		else return "false";
+	}
 }
