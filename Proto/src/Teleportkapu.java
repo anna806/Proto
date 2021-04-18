@@ -121,7 +121,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	
 	/**
 	 * a paraméterként kapott teleportkaput átirányítja arra azz aszteroidár, 
-	 * amely rajta keresztül elérhetõ
+	 * amely rajta keresztül elérhetõ.
 	 *@param k: kapott kapu
 	 */
 	public void KapuBefogad(Teleportkapu k) {
