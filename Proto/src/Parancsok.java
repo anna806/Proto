@@ -44,10 +44,10 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			break;
 		case "robot_mozog": 
-			Main.game.GetOv().GetRobot(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));    //itt
+			Main.game.GetOv().GetRobot(com[1]).RandomMozgas();    //itt
 			break;
 		case "ufo_mozog": 
-			Main.game.GetOv().GetUfo(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));      //meg itt miért nem randommozgast hívunk?
+			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();      //meg itt miért nem randommozgast hívunk?
 			break;
 		case "telepes_fur": 
 			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
@@ -136,7 +136,12 @@ public class Parancsok {
 	//JSONBE KIIRATNI!!!
 	void Output(int p) {
 		String ID = "a02";
-		writeAszteroida("example.json", ID);
+		try {
+			writeAszteroida("example.json", ID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static void writeAszteroida(String filename, String ID) throws Exception {
@@ -149,11 +154,11 @@ public class Parancsok {
 	    
 	    JSONArray entitasok = new JSONArray();
 	    for(int i = 0; i<a.EntitasokSize(); i++) {
-	    	entitasok.add("ID", a.getEntitas(i));
+	    	entitasok.add(a.getEntitas(i));
 	    }
 	    JSONArray szomszedok = new JSONArray();
 	    for(int i = 0; i<a.SzomszedokSize(); i++) {
-	    	entitasok.add("ID", a.getSzomszed(i));
+	    	entitasok.add(a.getSzomszed(i));
 	    }
 	    aszteroida.put("entitasok:", entitasok);
 	    aszteroida.put("szomszedok:", szomszedok);

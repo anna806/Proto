@@ -156,5 +156,37 @@ public class Aszteroida extends Szomszed{
 	public void addSzomszed(Szomszed sz) {
 		szomszedok.add(sz);
 	}
+
+	public String getNapkozel() {
+		if(napkozel) {
+			return "true";
+		} else {
+			return "false";
+		}
+	}
+
+	public String getBelsoAnyag() {
+		if(belsoAnyag == null) {
+			return "Ureges";
+		} else {
+			return belsoAnyag.toString();
+		}
+	}
+
+	public int EntitasokSize() {
+		return entitasok.size();
+	}
+
+	public String getEntitas(int i) {
+		return entitasok.get(i).getID();
+	}
+
+	public int SzomszedokSize() {
+		return szomszedok.size();
+	}
+
+	public String getSzomszed(int i) {
+		return szomszedok.get(i).getID();
+	}
 	
 }

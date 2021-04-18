@@ -19,6 +19,7 @@ public abstract class Szomszed implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -7002053200057188774L;
+	private String ID;
 
 	public abstract void Robban();
 	
@@ -27,5 +28,9 @@ public abstract class Szomszed implements Serializable{
 	public abstract void Napvihar();
 	
 	public abstract void KapuBefogad(Teleportkapu k);
+
+	public String getID() {
+		return ID;
+	}
 	
 }
