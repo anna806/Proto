@@ -141,4 +141,11 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		else return "false";
 	
 	}
+
+	public void kiir() {
+		System.out.println(this + ": " + ID);
+		System.out.println("Aszteroida: " + aszteroida.getID());
+		System.out.println("Parja: " + parja.ID);
+		System.out.println("Kergult - e: " + megkergult);
+	}
 }
