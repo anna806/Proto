@@ -28,26 +28,19 @@ public class Parancsok {
 			bir.close();
 		}catch(Exception e){}
 	}
-	void ParancsErtelmezo(String p) {
+	static void ParancsErtelmezo(String p) {
 		String[] com = p.split(" ");
 		if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
 		switch(command){
 		case "telepes_mozog":
-			//telepes_mozog t01 a05
-			/*Aszteroidaov ov = jatek.GetOv();
-			List<Telepes> tList = new ArrayList<Telepes>();
-			String[] param = com[1].split(" ");
-			String[] tID = param[0].split("0");
-			Telepes t = ov.GetTelepes(Integer.parseInt(tID[1]));
-			t.*/
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			break;
 		case "robot_mozog": 
-			Main.game.GetOv().GetRobot(com[1]).RandomMozgas();    //itt
+			Main.game.GetOv().GetRobot(com[1]).RandomMozgas();    
 			break;
 		case "ufo_mozog": 
-			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();      //meg itt miért nem randommozgast hívunk?
+			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();      
 			break;
 		case "telepes_fur": 
 			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
@@ -137,7 +130,8 @@ public class Parancsok {
 	void Output(int p) {
 		String ID = "a02";
 		try {
-			writeAszteroida("example.json", ID);
+			writeAszteroida("out"+p+".txt", ID);
+			writeTelepes("out"+p+".txt", ID);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -158,12 +152,32 @@ public class Parancsok {
 	    }
 	    JSONArray szomszedok = new JSONArray();
 	    for(int i = 0; i<a.SzomszedokSize(); i++) {
-	    	entitasok.add(a.getSzomszed(i));
+	    	szomszedok.add(a.getSzomszed(i));
 	    }
 	    aszteroida.put("entitasok:", entitasok);
 	    aszteroida.put("szomszedok:", szomszedok);
 	    Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
 	    System.out.println(aszteroida);
+	}
+	
+	public static void writeTelepes(String filename, String ID) throws Exception {
+		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
+	    JSONObject telepes = new JSONObject();
+	    telepes.put("ID", t.getID());
+	    telepes.put("aszteroida", t.getAszteroida());
+	    	    
+	    JSONArray nyersanyagok = new JSONArray();
+	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
+	    	nyersanyagok.add(t.getNyersanyagok(i));
+	    }
+	    JSONArray kapuk = new JSONArray();
+	    for(int i = 0; i<t.KapukSize(); i++) {
+	    	kapuk.add(t.getKapuk(i));
+	    }
+	    telepes.put("nyersanyagok:", nyersanyagok);
+	    telepes.put("kapuk:", kapuk);
+	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
+	    System.out.println(telepes);
 	}
 }
 

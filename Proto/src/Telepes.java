@@ -143,4 +143,21 @@ public class Telepes extends Entitas {
 	public String getID(String id) {
 		return ID;
 	}
+
+	public int NyersanyagokSize() {
+		return nyersanyagok.size();
+	}
+
+	public String getNyersanyagok(int i) {
+		return nyersanyagok.get(i).toString();
+	}
+
+	
+	public int KapukSize() {
+		return kapuk.size();
+	}
+
+	public String getKapuk(int i) {
+		return kapuk.get(i).getID();
+	}
 }
