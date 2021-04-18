@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,15 +20,24 @@ public class Parancsok {
 	//cél hogy konzolra és fájlba is írjon
 	private Jatek jatek;
 	public static void main(String[] args) {
+		String line;
+		BufferedReader file;
+		BufferedReader console;
 		try {
-			BufferedReader bir = new BufferedReader(new FileReader(args[2]+".txt"));
-			String line = bir.readLine();
+			if(args[0].equals("0")) {
+				console = new BufferedReader(new InputStreamReader(System.in)); 
+				line = console.readLine();
+			} else if(args[0].equals("1")) {
+				file = new BufferedReader(new FileReader(args[2]+".txt"));
+				line = file.readLine();
+			}
+			
 			while(line != null && line.length() != 0) {
 				ParancsErtelmezo(line);
-				line = bir.readLine();
+				line = file.readLine();
 			}
-			bir.close();
-			Output(args[2]);
+			file.close();
+			Output(args[2], args[1]);
 		}catch(Exception e){}
 	}
 	static void ParancsErtelmezo(String p) {
@@ -128,17 +139,17 @@ public class Parancsok {
 		}
 	}
 	//JSONBE KIIRATNI!!!
-	public static void Output(String p) {
+	public static void Output(String p, String out) {
 		String ID = "a02";
 		try {
-			writeAszteroida("out"+p+".txt", ID);
-			writeTelepes("out"+p+".txt", ID);
+			writeAszteroida("out"+p+".txt", ID, out);
+			writeTelepes("out"+p+".txt", ID, out);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public static void writeAszteroida(String filename, String ID) throws Exception {
+	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
 		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
 	    JSONObject aszteroida = new JSONObject();
 	    aszteroida.put("ID", a.getID());
@@ -156,11 +167,17 @@ public class Parancsok {
 	    }
 	    aszteroida.put("entitasok:", entitasok);
 	    aszteroida.put("szomszedok:", szomszedok);
-	    Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
-	    System.out.println(aszteroida);
+	    if(out.equals("0")) {
+	    	System.out.println(aszteroida);
+	    } else {
+	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
+	    }
+	    
+	    
+	    
 	}
 	
-	public static void writeTelepes(String filename, String ID) throws Exception {
+	public static void writeTelepes(String filename, String ID, String out) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
 	    JSONObject telepes = new JSONObject();
 	    telepes.put("ID", t.getID());
@@ -176,30 +193,43 @@ public class Parancsok {
 	    }
 	    telepes.put("nyersanyagok:", nyersanyagok);
 	    telepes.put("kapuk:", kapuk);
-	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
-	    System.out.println(telepes);
+	    if(out.equals("0")) {
+	    	System.out.println(telepes);
+	    } else {
+	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
+	    }
+	    
+	    
 	}
 	
-	public static void writeUran(String filename, String ID) throws Exception {
+	public static void writeUran(String filename, String ID, String out) throws Exception {
 		//illegál?
 		Uran u = (Uran) Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
 	    JSONObject uran = new JSONObject();
 	    uran.put("ID", u.getID());
 	    uran.put("expozicio", u.getExpozicio()); 	    
+	    if(out.equals("0")) {
+	    	System.out.println(uran);
+	    } else {
+	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes());
+	    }
 	    
-	    Files.write(Paths.get(filename), uran.toJSONString().getBytes());
-	    System.out.println(uran);
+	    
 	}
-	public static void writeKapu(String filename, String ID) throws Exception {
+	public static void writeKapu(String filename, String ID, String out) throws Exception {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
 	    JSONObject kapu = new JSONObject();
 	    kapu.put("ID", t.getID());
 	    kapu.put("kergult", t.getMegkergult());
 	    kapu.put("parja", t.getParja());
 	    kapu.put("aszteroida", t.getAszter());
+		if(out.equals("0")) {
+			System.out.println(kapu);
+		} else {
+			Files.write(Paths.get(filename), kapu.toJSONString().getBytes());
+		}
+	   
 	    
-	    Files.write(Paths.get(filename), kapu.toJSONString().getBytes());
-	    System.out.println(kapu);
 	}
 }
 
