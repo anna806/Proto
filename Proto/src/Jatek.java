@@ -5,14 +5,65 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 
 
 public class Jatek {
+	private int szamlalo=0;									
 	private Aszteroidaov jatekter;
+	
 	public void Start() {
-		while (true) {
+		int id = 0;
+		Random rand = new Random();
+		int db= 20+rand.nextInt(30);
+		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
+			Aszteroida uj= new Aszteroida();
+			Random mag= new Random();
+			if(mag.nextInt()%5==0) {
+				Uran u= new Uran();
+				uj.setNyersanyag(u);
+			}
+			if(mag.nextInt()%5==1) {
+				Vizjeg j= new Vizjeg();
+				uj.setNyersanyag(j);
+			}
+			if(mag.nextInt()%5==2) {
+				Szen sz= new Szen();
+				uj.setNyersanyag(sz);
+			}
+			if(mag.nextInt()%3==0) {
+				Vas v= new Vas();
+				uj.setNyersanyag(v);
+			}
+			if(mag.nextInt()%4==0) {
+				uj.setNyersanyag(null);
+			}
+			int kop= 2+ rand.nextInt(3);
+			uj.setKopenyVastagsag(kop);
+			
+			uj.setID(id);									//beállítja az id-t
+			id++;
+			if (rand.nextInt()%4==0) {						//0.25 valószínûséggel tesz az aszteroidára ufot
+				Ufo ufo=new Ufo();
+				uj.Befogad(ufo);
+			}
+			jatekter.addAszteroida(uj);						//hozzáadja az aszteroidaövhöz
+		}	
+		for (int j=0; j<db; j++) {							//beállítja a szomszédságokat 0.5 valószínûséggel
+			for (int k=0; k<db; j++) {
+				if(j!=k) {
+					if( rand.nextInt()%2==0) {
+						jatekter.GetAszteroida(j).addSzomszed(jatekter.GetAszteroida(k));
+						jatekter.GetAszteroida(k).addSzomszed(jatekter.GetAszteroida(j));
+					}
+				}
+			}
+		}
+		while(true) {
 			Kor();
 		}
+		
 	}
 	
 	public void Kor() {
@@ -20,7 +71,9 @@ public class Jatek {
 	 
 	jatekter.DoNapkozel();
 	
+	if(szamlalo>=5){
 	jatekter.DoNapvihar();
+	}
 		
 	int i =0;
 	 while(jatekter.GetTelepes(i)!=null) {
@@ -41,6 +94,7 @@ public class Jatek {
 	 while (jatekter.GetKapu(i)!=null){
 		 jatekter.GetKapu(i).RandomMozgas();
 	 }
+	 szamlalo+=1;
 	}
 	
 	public void Vege(boolean a) {

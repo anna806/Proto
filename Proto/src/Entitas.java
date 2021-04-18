@@ -3,7 +3,7 @@
 public abstract class Entitas {
 	
 	protected Aszteroida aszteroida;
-	protected String ID;
+	protected static String ID;
 	
 	public abstract void Furas();
 	
