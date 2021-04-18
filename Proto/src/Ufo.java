@@ -46,7 +46,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	public boolean BazisEpit(Utmutato u) { return false; }
 
 	public void kiir() {
-		System.out.println(this);
+		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());
 	}
 	

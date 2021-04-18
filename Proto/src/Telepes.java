@@ -248,4 +248,13 @@ public class Telepes extends Entitas {
 	public String getKapuk(int i) {
 		return kapuk.get(i).getID();
 	}
+	
+	public void kiir() {
+		System.out.println(this + ": " + ID);
+		System.out.println("Aszteroida: " + aszteroida.getID());
+		for(int i = 0; i < nyersanyagok.size(); i++)
+			System.out.println("Nyersanyag: " + nyersanyagok.get(i).getID());
+		for(int i = 0; i < kapuk.size(); i++)
+			System.out.println("Kapu: " + kapuk.get(i).getID());
+	}
 }
