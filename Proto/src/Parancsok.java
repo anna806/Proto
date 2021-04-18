@@ -18,25 +18,30 @@ public class Parancsok {
 	//ki = 1 outputfájlba
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
-	private Jatek jatek;
+	private static Jatek jatek;
 	public static void main(String[] args) {
-		String line;
-		BufferedReader file;
-		BufferedReader console;
 		try {
+			String line = "";
+			BufferedReader file = new BufferedReader(new FileReader(args[2]+".txt"));
+			BufferedReader console = new BufferedReader(new InputStreamReader(System.in)); 
 			if(args[0].equals("0")) {
-				console = new BufferedReader(new InputStreamReader(System.in)); 
 				line = console.readLine();
+				jatek = new Jatek();
+				jatek.Start();
 			} else if(args[0].equals("1")) {
-				file = new BufferedReader(new FileReader(args[2]+".txt"));
 				line = file.readLine();
 			}
 			
 			while(line != null && line.length() != 0) {
 				ParancsErtelmezo(line);
-				line = file.readLine();
+				if(args[0].equals("0")) {
+					line = console.readLine();
+				} else if(args[0].equals("1")) {
+					line = file.readLine();
+				}
 			}
 			file.close();
+			console.close();
 			Output(args[2], args[1]);
 		}catch(Exception e){}
 	}
@@ -125,7 +130,9 @@ public class Parancsok {
 		case "list": //itt be kell írni hogy Telepes? Ufo?
 			Main.game.GetOv().List(com[1]);
 			break;
-		case "palya_betoltes": break; //létrehozza az objektumokat?
+		case "palya_betoltes": 
+			Main.game.load("map.txt");
+			break; //létrehozza az objektumokat?
 		case "veletlen": break;
 		case "fejlesztoi_mod": break;
 		case "betolt": 
@@ -169,11 +176,9 @@ public class Parancsok {
 	    aszteroida.put("szomszedok:", szomszedok);
 	    if(out.equals("0")) {
 	    	System.out.println(aszteroida);
-	    } else {
+	    } else if(out.equals("1")) {
 	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
 	    }
-	    
-	    
 	    
 	}
 	
@@ -195,11 +200,10 @@ public class Parancsok {
 	    telepes.put("kapuk:", kapuk);
 	    if(out.equals("0")) {
 	    	System.out.println(telepes);
-	    } else {
+	    } else if(out.equals("1")) {
 	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
 	    }
-	    
-	    
+  
 	}
 	
 	public static void writeUran(String filename, String ID, String out) throws Exception {
@@ -210,11 +214,10 @@ public class Parancsok {
 	    uran.put("expozicio", u.getExpozicio()); 	    
 	    if(out.equals("0")) {
 	    	System.out.println(uran);
-	    } else {
+	    } else if(out.equals("1")){
 	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes());
 	    }
-	    
-	    
+
 	}
 	public static void writeKapu(String filename, String ID, String out) throws Exception {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
@@ -225,11 +228,9 @@ public class Parancsok {
 	    kapu.put("aszteroida", t.getAszter());
 		if(out.equals("0")) {
 			System.out.println(kapu);
-		} else {
+		} else if(out.equals("1")) {
 			Files.write(Paths.get(filename), kapu.toJSONString().getBytes());
 		}
-	   
-	    
 	}
 }
 
