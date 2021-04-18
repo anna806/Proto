@@ -3,17 +3,15 @@ import java.util.List;
 import java.util.Random;
 
 public class Aszteroida extends Szomszed{
-	/**
-	 * megvalsósítja az aszteroidákat
-	 */
+	
 	private static final long serialVersionUID = 3753080766421296425L;
-	private int kopenyVastagsag;
-	private boolean napkozel;
-	private List<Entitas> entitasok = new ArrayList<>();
-	private List<Szomszed> szomszedok = new ArrayList<>();
-	private Nyersanyag belsoAnyag;
-	private static int count=0;
-	private String ID;
+	private int kopenyVastagsag;								// az aszteroida köpenyének vastagsága
+	private boolean napkozel;									//megadja, hogy az aszzteroida napközelben van-e
+	private List<Entitas> entitasok = new ArrayList<>();		//az aszteroidán tartózkodó entitások listája
+	private List<Szomszed> szomszedok = new ArrayList<>();		//az aszteroida szomszédainak listája
+	private Nyersanyag belsoAnyag;								//az aszteroida belsõ anyaga
+	private static int count=0;									//számolja, hogy hányszor példányosították az osztályt
+	private String ID;											//az aszteroida egyedi azonosítója
 	
 	/**
 	 * aszteroida konstruktora, létrehozza az entitasok, szomszedok listákat, 
