@@ -168,4 +168,12 @@ public class Aszteroidaov implements Serializable{
 		}
 		return out;
 	}
+
+	public Teleportkapu GetKapuByID(String ID) {
+		for(Teleportkapu k : kapuk) {
+			if(k.getID().equals(ID))
+				return k;
+		}
+		return null;
+	}
 }

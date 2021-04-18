@@ -165,12 +165,15 @@ public class Aszteroida extends Szomszed{
 		}
 	}
 
-	public String getBelsoAnyag() {
+	public String getBelsoAnyagString() {
 		if(belsoAnyag == null) {
 			return "Ureges";
 		} else {
 			return belsoAnyag.toString();
 		}
+	}
+	public Nyersanyag getBelsoAnyag() {
+		return belsoAnyag;
 	}
 
 	public int EntitasokSize() {

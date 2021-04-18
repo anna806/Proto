@@ -133,7 +133,6 @@ public class Parancsok {
 			writeAszteroida("out"+p+".txt", ID);
 			writeTelepes("out"+p+".txt", ID);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -144,7 +143,7 @@ public class Parancsok {
 	    aszteroida.put("ID", a.getID());
 	    aszteroida.put("napkozel", a.getNapkozel());
 	    aszteroida.put("keregvastagsag", a.getKopenyVastagsag());
-	    aszteroida.put("belsoAnyag", a.getBelsoAnyag());
+	    aszteroida.put("belsoAnyag", a.getBelsoAnyagString());
 	    
 	    JSONArray entitasok = new JSONArray();
 	    for(int i = 0; i<a.EntitasokSize(); i++) {
@@ -163,6 +162,45 @@ public class Parancsok {
 	public static void writeTelepes(String filename, String ID) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
 	    JSONObject telepes = new JSONObject();
+	    telepes.put("ID", t.getID());
+	    telepes.put("aszteroida", t.getAszteroida());
+	    	    
+	    JSONArray nyersanyagok = new JSONArray();
+	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
+	    	nyersanyagok.add(t.getNyersanyagok(i));
+	    }
+	    JSONArray kapuk = new JSONArray();
+	    for(int i = 0; i<t.KapukSize(); i++) {
+	    	kapuk.add(t.getKapuk(i));
+	    }
+	    telepes.put("nyersanyagok:", nyersanyagok);
+	    telepes.put("kapuk:", kapuk);
+	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
+	    System.out.println(telepes);
+	}
+	
+	public static void writeUran(String filename, String ID) throws Exception {
+		Uran u = Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
+	    JSONObject uran = new JSONObject();
+	    telepes.put("ID", t.getID());
+	    telepes.put("aszteroida", t.getAszteroida());
+	    	    
+	    JSONArray nyersanyagok = new JSONArray();
+	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
+	    	nyersanyagok.add(t.getNyersanyagok(i));
+	    }
+	    JSONArray kapuk = new JSONArray();
+	    for(int i = 0; i<t.KapukSize(); i++) {
+	    	kapuk.add(t.getKapuk(i));
+	    }
+	    telepes.put("nyersanyagok:", nyersanyagok);
+	    telepes.put("kapuk:", kapuk);
+	    Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
+	    System.out.println(telepes);
+	}
+	public static void writeKapu(String filename, String ID) throws Exception {
+		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
+	    JSONObject kapu = new JSONObject();
 	    telepes.put("ID", t.getID());
 	    telepes.put("aszteroida", t.getAszteroida());
 	    	    
