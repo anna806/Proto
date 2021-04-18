@@ -27,7 +27,7 @@ public class Parancsok {
 			BufferedReader console = new BufferedReader(new InputStreamReader(System.in)); 
 			if(args[0].equals("0")) {
 				line = console.readLine();
-				jatek = new Jatek();
+				jatek = new Jatek(); ///????
 				jatek.Start();
 			} else if(args[0].equals("1")) {
 				line = file.readLine();
@@ -147,18 +147,23 @@ public class Parancsok {
 			if(fejlesztoi) {
 			for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
 				if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1]))
-					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
-			}}																						  //az osszes nyersanyagban?
+					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); 
+			}}																						 
 			break;
 		case "informaciok": 
+			if(fejlesztoi) {
 			Main.game.GetOv().Kiir(com[1]);
+			}
 			break;
-		case "informaciok_jatek": break;
-		case "list": //itt be kell írni hogy Telepes? Ufo?
+		case "informaciok_jatek": 
+			if(fejlesztoi) {
+			Main.game.GetOv().Helyzet();
+			}
+			break;
+		case "list": 
 			if(fejlesztoi) {
 				Main.game.GetOv().List(com[1]); //!!!!!!!!!!!!!!!!
 			}
-			
 			break;
 		case "palya_betoltes": 
 			Main.game.load("map.txt");
@@ -183,8 +188,8 @@ public class Parancsok {
 	public static void Output(String p, String out) {
 		String ID = "a02";
 		try {
-			writeAszteroida("out"+p+".txt", ID, out);
-			writeTelepes("out"+p+".txt", ID, out);
+			writeAszteroida("out"+p+".json", ID, out);
+			writeTelepes("out"+p+".json", ID, out);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

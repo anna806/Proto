@@ -287,4 +287,11 @@ public class Jatek {
 		addr2 = addr2 + File.separator + filename;
 		return addr2;
 	}
+	
+	/**
+	 * Visszaadja az aktuális kör számát
+	 */
+	public int getKor() {
+		return szamlalo;
+	}
 }

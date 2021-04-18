@@ -1,3 +1,4 @@
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -312,5 +313,14 @@ public class Aszteroidaov implements Serializable{
 			GetAszteroida(id).kiir();
 		if(GetKapuByID(id) != null)
 			GetKapuByID(id).kiir();
+	}
+	public void Helyzet() {
+		
+		System.out.println("Kor szama: "+ Main.game.getKor() + "/n");
+		System.out.println("Telepesek: "+ telepesek.size() + "/n");
+		System.out.println("Robotok: "+ robotok.size() + "/n");
+		System.out.println("Ufok: "+ ufok.size() + "/n");
+		System.out.println("Kapuk: "+ kapuk.size() + "/n");
+		System.out.println("Aszteroidak: "+ aszteroidak.size() + "/n");
 	}
 }
