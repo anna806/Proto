@@ -138,4 +138,7 @@ public class Aszteroidaov implements Serializable{
 		return null;
 	}
 	
+	public int GetTelepesekSize() {
+		return telepesek.size();
+	}
 }

@@ -103,7 +103,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
 			break;
 		case "expozicio": 
-			for(int i = 0; i < Main.game.GetOv().GetTelepesek().size(); i++) {
+			for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
 				if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1]))
 					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
 			}																						  //az osszes nyersanyagban?
