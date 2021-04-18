@@ -67,6 +67,7 @@ public class Parancsok {
 			Main.game.GetOv().GetRobot(com[1]).Furas();
 			break;
 		case "nyersanyag_kinyeres": 
+			//Betegyünk egy absztrakt függvényt a bánászásra is, hogy meg lehessen egy sorból szépen csinálni?
 			Main.game.GetOv().GetEntitas(com[1]).Banyaszat();
 			break;
 		case "napvihar": 
@@ -91,44 +92,58 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
 		case "plusz_telepes": 
+			if(fejlesztoi) {
 			Telepes t = new Telepes();
 			t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
+			}
 			break;
 		case "plusz_robot": 
+			if(fejlesztoi) {
 			Robot r = new Robot();
 			r.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			r.SetID(com[2]);
 			Main.game.GetOv().addRobot(r);
+			}
 			break;
 		case "plusz_ufo": 
+			if(fejlesztoi) {
 			Ufo u = new Ufo();
 			u.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			u.SetID(com[2]);
 			Main.game.GetOv().addUfo(u);
+			}
 			break;
 		case "plusz_nyersanyag": 
+			if(fejlesztoi) {
 			for(int i = 2; i < com.length; i++)
 				Main.game.GetOv().GetTelepesByID(com[1]).addNyersanyag() //ide még kellenek dolgok
+			}
 			break;
 		case "plusz_teleportkapu": 
+			if(fejlesztoi) {
 			Teleportkapu tk = new Teleportkapu();
 			tk.setAszter(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida());
 			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
+			}
 			break;
 		case "expozicio": 
+			if(fejlesztoi) {
 			for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
 				if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1]))
 					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
-			}																						  //az osszes nyersanyagban?
+			}}																						  //az osszes nyersanyagban?
 			break;
 		case "informaciok": //jsonosen?
 			
 			break;
 		case "informaciok_jatek": break;
 		case "list": //itt be kell írni hogy Telepes? Ufo?
-			Main.game.GetOv().List(com[1]);
+			if(fejlesztoi) {
+				Main.game.GetOv().List(com[1]); //!!!!!!!!!!!!!
+			}
+			
 			break;
 		case "palya_betoltes": 
 			Main.game.load("map.txt");
