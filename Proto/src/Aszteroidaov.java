@@ -14,9 +14,6 @@ public class Aszteroidaov implements Serializable{
 	private List<Aszteroida> aszteroidak = new ArrayList<>();
 	private List<Teleportkapu> kapuk = new ArrayList<>();
 	
-	
-	
-	
 	public void DoNapvihar() {
 		Random rand = new Random();
 		int n= rand.nextInt(aszteroidak.size());
@@ -25,7 +22,6 @@ public class Aszteroidaov implements Serializable{
 	
 	public void MinuszAszteroida(Aszteroida a) {
 		aszteroidak.remove(a);
-		
 	}
 	
 	public void DoNapkozel() {
@@ -175,5 +171,10 @@ public class Aszteroidaov implements Serializable{
 				return k;
 		}
 		return null;
+	}
+	
+	public void Kiir(String id) {
+		if(GetTelepesByID(id) != null)
+			GetTelepesByID()
 	}
 }

@@ -19,6 +19,7 @@ public class Parancsok {
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
 	private static Jatek jatek;
+	private static boolean fejlesztoi;
 	public static void main(String[] args) {
 		try {
 			String line = "";
@@ -66,8 +67,7 @@ public class Parancsok {
 			Main.game.GetOv().GetRobot(com[1]).Furas();
 			break;
 		case "nyersanyag_kinyeres": 
-			//Betegyünk egy absztrakt függvényt a bánászásra is, hogy meg lehessen egy sorból szépen csinálni?
-			Nyersanyag ny = Main.game.GetOv().GetEntitas(com[1]).Banyaszat();
+			Main.game.GetOv().GetEntitas(com[1]).Banyaszat();
 			break;
 		case "napvihar": 
 			Main.game.GetOv().GetAszteroida(com[1]).StartNapvihar();
@@ -82,7 +82,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).RobotEpit();
 			break;
 		case "bazis_epites": 
-			Main.game.GetOv().GetTelepesByID(com[1]).BazisEpit();
+			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().BazisEpit();
 			break;
 		case "teleportkapu_elhelyezes": 
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
@@ -134,7 +134,11 @@ public class Parancsok {
 			Main.game.load("map.txt");
 			break; //létrehozza az objektumokat?
 		case "veletlen": break;
-		case "fejlesztoi_mod": break;
+		case "fejlesztoi_mod": 
+			if(com[1].equals("true")){
+				fejlesztoi = true;
+			}
+			break;
 		case "betolt": 
 			Main.game.load("jatek.txt");
 			break;
