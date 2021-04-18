@@ -165,6 +165,10 @@ public class Aszteroida extends Szomszed{
 		ID = id;
 	}
 	
+	public int getKopenyVastagsag() {
+		return kopenyVastagsag;
+	}
+	
 	public void setKopenyVastagsag(int kv) {
 		kopenyVastagsag = kv;
 	}
