@@ -141,7 +141,7 @@ public class Parancsok {
 		case "informaciok_jatek": break;
 		case "list": //itt be kell írni hogy Telepes? Ufo?
 			if(fejlesztoi) {
-				Main.game.GetOv().List(com[1]); //!!!!!!!!!!!!!
+				Main.game.GetOv().List(com[1]); //!!!!!!!!!!!!!!!!
 			}
 			
 			break;
