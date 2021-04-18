@@ -13,6 +13,8 @@ public abstract class Entitas {
 	
 	public abstract void Lep();
 	
+	public abstract void Banyaszat();
+	
 	public void SetAszteroida(Aszteroida a) {
 		aszteroida = a;
 	}

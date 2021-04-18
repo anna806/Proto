@@ -13,6 +13,10 @@
 
 
 public class Vizjeg extends Nyersanyag {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static int count=0;
 	private String ID;
 	
