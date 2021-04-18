@@ -137,23 +137,28 @@ public class Parancsok {
 	void Output(int p) {
 		String ID = "a02";
 		writeAszteroida("example.json", ID);
-		
-		JSONObject jsonObject = (JSONObject) readJsonSimpleDemo("example.json");
-	    System.out.println(jsonObject);
-	    System.out.println(jsonObject.get("age"));
 	}
 	
 	public static void writeAszteroida(String filename, String ID) throws Exception {
-	    JSONObject sampleObject = new JSONObject();
-	    sampleObject.put("name", "Stackabuser");
-	    sampleObject.put("age", 35);
-
-	    JSONArray messages = new JSONArray();
-	    messages.add("Hey!");
-	    messages.add("What's up?!");
-
-	    sampleObject.put("messages", messages);
-	    Files.write(Paths.get(filename), sampleObject.toJSONString().getBytes());
+		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
+	    JSONObject aszteroida = new JSONObject();
+	    aszteroida.put("ID", a.getID());
+	    aszteroida.put("napkozel", a.getNapkozel());
+	    aszteroida.put("keregvastagsag", a.getKopenyVastagsag());
+	    aszteroida.put("belsoAnyag", a.getBelsoAnyag());
+	    
+	    JSONArray entitasok = new JSONArray();
+	    for(int i = 0; i<a.EntitasokSize(); i++) {
+	    	entitasok.add("ID", a.getEntitas(i));
+	    }
+	    JSONArray szomszedok = new JSONArray();
+	    for(int i = 0; i<a.SzomszedokSize(); i++) {
+	    	entitasok.add("ID", a.getSzomszed(i));
+	    }
+	    aszteroida.put("entitasok:", entitasok);
+	    aszteroida.put("szomszedok:", szomszedok);
+	    Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
+	    System.out.println(aszteroida);
 	}
 }
 
