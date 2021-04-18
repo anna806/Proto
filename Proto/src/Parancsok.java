@@ -117,8 +117,23 @@ public class Parancsok {
 			break;
 		case "plusz_nyersanyag": 
 			if(fejlesztoi) {
-			for(int i = 2; i < com.length; i++)
-				Main.game.GetOv().GetTelepesByID(com[1]).addNyersanyag() //ide még kellenek dolgok
+			for(int i = 2; i < com.length; i++) {
+				switch(com[i].charAt(0)) {
+				case 'v':
+					if(com[i].charAt(1)=='j') {
+						Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Vizjeg());
+					} else {
+						Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Vas());
+					}
+					break;
+				case 'u': 
+					Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Uran());
+					break;
+				case 's': 
+					Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Szen());
+					break;
+				}
+			}	
 			}
 			break;
 		case "plusz_teleportkapu": 
