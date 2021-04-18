@@ -1,7 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class Parancsok {
 	//fejlesztõi mód?
@@ -133,6 +137,10 @@ public class Parancsok {
 	void Output(int p) {
 		String ID = "a02";
 		writeAszteroida("example.json", ID);
+		
+		JSONObject jsonObject = (JSONObject) readJsonSimpleDemo("example.json");
+	    System.out.println(jsonObject);
+	    System.out.println(jsonObject.get("age"));
 	}
 	
 	public static void writeAszteroida(String filename, String ID) throws Exception {
