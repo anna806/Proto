@@ -181,4 +181,5 @@ public class Aszteroida extends Szomszed{
 	public void addSzomszed(Szomszed sz) {
 		szomszedok.add(sz);
 	}
+	
 }

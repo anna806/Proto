@@ -25,6 +25,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	private Aszteroida aszteroida;
 	private boolean megkergult;
 	private Teleportkapu parja;
+	private String ID;
 	
 	public Teleportkapu() {
 		aszteroida=null;
@@ -83,5 +84,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		a.KapuBefogad(k);
 	}
 	
-	
+	public String getID() {
+		return ID;
+	}
 }

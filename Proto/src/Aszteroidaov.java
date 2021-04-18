@@ -141,4 +141,36 @@ public class Aszteroidaov implements Serializable{
 	public int GetTelepesekSize() {
 		return telepesek.size();
 	}
+	
+	public String List(String type) {
+		String out = "List: ";
+		switch(type) {
+		case "Aszteroida":
+			for(Aszteroida a : aszteroidak) {
+				out += " " + a.getID();
+			}
+			break;
+		case "Telepes": 
+			for(Telepes t : telepesek) {
+				out += " " + t.getID();
+			}
+			break;
+		case "Robot": 
+			for(Robot r: robotok) {
+				out += " " + r.getID();
+			}
+			break;
+		case "Ufo": 
+			for(Ufo u: ufok) {
+				out += " " + u.getID();
+			}
+			break;
+		case "Teleportkapu": 
+			for(Teleportkapu k: kapuk) {
+				out += " " + k.getID();
+			}
+			break;
+		}
+		return out;
+	}
 }

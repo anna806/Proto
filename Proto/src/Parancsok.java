@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parancsok {
+	//fejlesztõi mód?
 	//args = be, ki, parancs
 	//be = 0 konzol
 	//be = 1 parancsszám
@@ -108,9 +109,13 @@ public class Parancsok {
 					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); //lehet expozicio novelo
 			}																						  //az osszes nyersanyagban?
 			break;
-		case "informaciok": break;
+		case "informaciok": //jsonosen?
+			
+			break;
 		case "informaciok_jatek": break;
-		case "list": break;
+		case "list": //itt be kell írni hogy Telepes? Ufo?
+			Main.game.GetOv().List(com[1]);
+			break;
 		case "palya_betoltes": break; //létrehozza az objektumokat?
 		case "veletlen": break;
 		case "fejlesztoi_mod": break;
