@@ -175,6 +175,14 @@ public class Aszteroidaov implements Serializable{
 	
 	public void Kiir(String id) {
 		if(GetTelepesByID(id) != null)
-			GetTelepesByID()
+			GetTelepesByID(id).kiir();
+		if(GetRobot(id) != null)
+			GetRobot(id).kiir();
+		if(GetUfo(id) != null)
+			GetUfo(id).kiir();
+		if(GetAszteroida(id) != null)
+			GetAszteroida(id).kiir();
+		if(GetKapuByID(id) != null)
+			GetKapuByID(id).kiir();
 	}
 }

@@ -54,4 +54,18 @@ public class Robot extends Entitas implements Intelligencia {
 	public boolean BazisEpit(Utmutato u) { return false; }
 
 	public void Banyaszat() {}
+
+	public void kiir() {
+		System.out.println(this);
+		System.out.println("Aszteroitda: " + aszteroida.getID());
+	}
+	
+	public void kiir() {
+		System.out.println(this + ":");
+		System.out.println("Aszteroida: " + aszteroida.getID());
+		for(int i = 0; i < nyersanyagok.size(); i++)
+			System.out.println("Nyersanyag: " + nyersanyagok.get(i).getID());
+		for(int i = 0; i < kapuk.size(); i++)
+			System.out.println("Kapu: " + kapuk.get(i).getID());
+	}
 }

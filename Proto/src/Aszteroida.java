@@ -273,5 +273,12 @@ public class Aszteroida extends Szomszed{
 	public String getSzomszed(int i) {
 		return szomszedok.get(i).getID();
 	}
+
+
+
+	public void kiir() {
+		System.out.println(this);
+		for(int i = 0; i )
+	}
 	
 }
