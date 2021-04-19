@@ -143,12 +143,14 @@ public class Aszteroida extends Szomszed{
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! útmutató
 			if(bazisepitheto) {
-				//for(int i = 0; i < entitasok.size(); i++) {
-					//if(entitasok.get(i).AnyagokTorol(bazis)) {
+				for(int i = 0; i < entitasok.size(); i++) {
+					System.out.println("Itt is vagyok");
+					if(entitasok.get(i).AnyagokTorol(bazis)) {
+						System.out.println("Itt vagyok");
 						Main.game.Vege(bazisepitheto);
-						//break;
-					//}
-				//}
+						break;
+					}
+				}
 				break;
 			}
 		}

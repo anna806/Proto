@@ -43,13 +43,21 @@ public class Utmutato {
 		return hozzavalok.size() == 0;
 	}
 	
-	public boolean MindTorol(Nyersanyag ny, Telepes t) {
-		for(Nyersanyag n : megvanLista) {
-			if(n.Kompatibilis(ny)) {
-				t.RemoveNyersanyag(n);
-				megvanLista.remove(n);
+	public boolean MindTorol(Nyersanyag ny, List<Nyersanyag> torlendo) {
+		//for(Nyersanyag n : megvanLista) {
+		for(int i = 0; i < megvanLista.size(); i++) {
+			if(megvanLista.get(i).Kompatibilis(ny)) {
+				System.out.println(megvanLista.get(i).getID());
+				System.out.println(ny.getID());
+				//t.RemoveNyersanyag(megvanLista.get(i));
+				//megvanLista.remove(megvanLista.get(i));
+				//t.RemoveNyersanyag(ny);
+				torlendo.add(ny);
+				megvanLista.remove(i);
+				break;
 			}
 		}
+		System.out.println(megvanLista.size() == 0);
 		return megvanLista.size() == 0;
 	}
 }

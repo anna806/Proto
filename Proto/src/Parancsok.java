@@ -69,14 +69,10 @@ public class Parancsok {
 		case "telepes_mozog":
 			try {
 				if(com.length != 3)
-					throw new Exception("Index 2 out of bounds for length 2");
+					throw new Exception("Tul keves argumentum");
 				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			} catch(Exception e) {
-				System.out.println(e.getMessage());
-//				if(e.equals("Index 2 out of bounds for length 2")) {
-//					Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null); //21-esben nem hal meg a telepes
-//					System.out.println("Ide jottem");
-//				}				
+				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);				
 			}
 			break;
 		case "robot_mozog": 

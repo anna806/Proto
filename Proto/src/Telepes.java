@@ -14,7 +14,7 @@ public class Telepes extends Entitas {
 	/**
 	 * Az id egyediségét biztosító számláló
 	 */
-	private static int count=0;
+	private static int count=1;
 	/**
 	 * A telepest azonosító ID
 	 */
@@ -46,7 +46,6 @@ public class Telepes extends Entitas {
 	public void Mozgas(Szomszed a) {
 		if(a==null) {
 			Halal();
-			System.out.println("Meghaltam");
 		} else {
 			aszteroida.Ledob(this);
 			a.Befogad(this);
@@ -84,16 +83,21 @@ public class Telepes extends Entitas {
 		kell.add(new Uran());
 		boolean done = false;
 		Utmutato robot = new Utmutato(kell);
+		kiir();
 		for(int i = 0; i < nyersanyagok.size(); i++) {
 			if(robot.MindMegvan(nyersanyagok.get(i))) {
 				done = true;
 				break;
 			}	
 		}
+		System.out.println(done);
 		if(done) {
+			AnyagokTorol(robot);
+			System.out.println("Megepultem.");
 			Robot r = new Robot();
 			r.SetAszteroida(aszteroida);
 			aszteroida.Befogad(r);
+			Main.game.GetOv().addRobot(r);
 		}
 	}
 	
@@ -119,6 +123,7 @@ public class Telepes extends Entitas {
 				}
 			}
 			if(done) {
+				AnyagokTorol(tkapu);
 				Teleportkapu k1 = new Teleportkapu();
 				Teleportkapu k2 = new Teleportkapu();
 				k1.setParja(k2);
@@ -161,11 +166,14 @@ public class Telepes extends Entitas {
 	}
 	
 	public boolean AnyagokTorol(Utmutato bazis) {
-//		boolean kesz = false;
-//		for(Nyersanyag ny: nyersanyagok)
-//			kesz = bazis.MindTorol(ny, this);
-//		return kesz;
-		return false;
+		boolean kesz = false;
+		System.out.println("Utmutatoo");
+		List <Nyersanyag> torol = new ArrayList<>();
+		for(Nyersanyag ny: nyersanyagok)
+			kesz = bazis.MindTorol(ny, torol);
+		for(Nyersanyag ny: torol)
+			nyersanyagok.remove(ny);
+		return kesz;
 	}
 	
 	/**
