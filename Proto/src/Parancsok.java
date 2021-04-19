@@ -18,17 +18,18 @@ public class Parancsok {
 	//ki = 1 outputfájlba
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
-	private static Jatek jatek;
 	private static boolean fejlesztoi;
-	public static void main(String[] args) {
+	public void Main(String[] args) {
 		try {
 			String line = "";
-			BufferedReader file = new BufferedReader(new FileReader(args[2]+".txt"));
+			int arg = Integer.parseInt(args[2]);
+			BufferedReader file = null;
+			if(arg > 0)
+			file = new BufferedReader(new FileReader(args[2]+".txt"));
 			BufferedReader console = new BufferedReader(new InputStreamReader(System.in)); 
 			if(args[0].equals("0")) {
 				line = console.readLine();
-				jatek = new Jatek(); ///????
-				jatek.Start();
+				//Main.game.Start();
 			} else if(args[0].equals("1")) {
 				line = file.readLine();
 			}
@@ -44,7 +45,9 @@ public class Parancsok {
 			file.close();
 			console.close();
 			Output(args[2], args[1]); //tesztesetnél
-		}catch(Exception e){}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
 	static void ParancsErtelmezo(String p) {
 		String[] com = p.split(" ");
@@ -152,6 +155,7 @@ public class Parancsok {
 			break;
 		case "informaciok": 
 			if(fejlesztoi) {
+				System.out.println("Itt vagyok");
 			Main.game.GetOv().Kiir(com[1]);
 			}
 			break;

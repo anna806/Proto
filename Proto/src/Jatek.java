@@ -23,6 +23,7 @@ public class Jatek {
 	 * A játék kezdetekor létrehozza a pályát 20 és 50közötti aszteroidával, beállítja a szomszédságokat és ufokat helyez el egyes aszteroidákon
 	 */
 	public void Start() {
+		jatekter = new Aszteroidaov();
 		Random rand = new Random();
 		int db= 20+rand.nextInt(30);
 		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
@@ -57,8 +58,13 @@ public class Jatek {
 			}
 			jatekter.addAszteroida(uj);						//hozzáadja az aszteroidaövhöz
 		}	
+		Telepes t = new Telepes();
+	    jatekter.addTelepes(t);
+	    jatekter.GetAszteroida(db - 1).Befogad(t);
+	    t.kiir();
+	    jatekter.Kiir("t00");
 		for (int j=0; j<db; j++) {							//beállítja a szomszédságokat 0.5 valószínûséggel
-			for (int k=0; k<db; j++) {
+			for (int k=0; k<db; k++) {
 				if(j!=k) {
 					if( rand.nextInt()%2==0) {
 						jatekter.GetAszteroida(j).addSzomszed(jatekter.GetAszteroida(k));
@@ -67,9 +73,9 @@ public class Jatek {
 				}
 			}
 		}
-		while(true) {
-			Kor();
-		}
+//		while(true) {
+//			Kor();
+//		}
 		
 	}
 	
@@ -91,22 +97,22 @@ public class Jatek {
 	}
 		
 	int i =0;
-	 while(jatekter.GetTelepes(i)!=null) {
+	 while(i < jatekter.GetTelepesekSize()) {
 		 jatekter.GetTelepes(i).Lep();
 		 i++;
 	 }
 	 i=0;
-	 while (jatekter.GetRobot(i)!=null) {
+	 while (i < jatekter.GetRobotokSize()) {
 		 jatekter.GetRobot(i).Lep();
 		 i++;
 	 }
 	 i=0;
-	 while (jatekter.GetUfo(i)!=null) {
+	 while (i < jatekter.GetUfokSize()) {
 		 jatekter.GetUfo(i).Lep();
 		 i++;
 	 }
 	 i=0;
-	 while (jatekter.GetKapu(i)!=null){
+	 while (i < jatekter.GetKapukSize()){
 		 jatekter.GetKapu(i).RandomMozgas();
 	 }
 	 szamlalo+=1;
@@ -270,11 +276,13 @@ public class Jatek {
 	 * @param args a paraméterek, amit feldolgoz a Parancsok osztály main függvénye
 	 */
 	public void field(String[] args) {
-//		if(args[0].equals("1"))
-//			Start();
-//		else 
+		if(args[0].equals("0"))
+			Start();
+		else 
 			load("map.txt");
-		Parancsok.main(args);
+		System.out.println("Idaig eljutottam");
+		Parancsok p = new Parancsok();
+		p.Main(args);
 	}
 	
 	/**

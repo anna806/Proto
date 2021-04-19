@@ -125,7 +125,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja a megindexelt telepest az aszteroidaövbõl
 	 * @param i : index
-	 * @return Az kért telepes
+	 * @return A kért telepes
 	 */
 	public Telepes GetTelepes(int i) {
 		return telepesek.get(i);
@@ -134,7 +134,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja a megindexelt aszteroidát az aszteroidaövbõl
 	 * @param i : index
-	 * @return Az kért aszteroida
+	 * @return A kért aszteroida
 	 */
 	public Aszteroida GetAszteroida(int i) {
 		return aszteroidak.get(i);
@@ -152,7 +152,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja az azonos ID-vel rendelkezõ aszteroidát az aszteroidaövbõl
 	 * @param ID : ID
-	 * @return Az keresett aszteroida
+	 * @return A keresett aszteroida
 	 */
 	public Aszteroida GetAszteroida(String ID) {
 		for(Aszteroida a : aszteroidak) {
@@ -165,7 +165,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja a megindexelt ufót az aszteroidaövbõl
 	 * @param i : index
-	 * @return Az kért  ufó
+	 * @return A kért  ufó
 	 */
 	public Ufo GetUfo(int i) {
 		return ufok.get(i);
@@ -174,7 +174,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja a megindexelt kaput az aszteroidaövbõl
 	 * @param i : index
-	 * @return Az kért kapu
+	 * @return A kért kapu
 	 */
 	public Teleportkapu GetKapu(int i) {
 		return kapuk.get(i);
@@ -183,7 +183,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja az azonos ID-vel rendelkezõ robotot az aszteroidaövbõl
 	 * @param ID : ID
-	 * @return Az keresett robot
+	 * @return A keresett robot
 	 */
 	public Robot GetRobot(String ID) {
 		for(Robot r : robotok) {
@@ -196,7 +196,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja az azonos ID-vel rendelkezõ ufót az aszteroidaövbõl
 	 * @param ID : ID
-	 * @return Az keresett ufó
+	 * @return A keresett ufó
 	 */
 	public Ufo GetUfo(String ID) {
 		for(Ufo u : ufok) {
@@ -209,7 +209,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja az azonos ID-vel rendelkezõ telepest az aszteroidaövbõl
 	 * @param ID : ID
-	 * @return Az keresett telepes
+	 * @return A keresett telepes
 	 */
 	public Telepes GetTelepesByID(String ID) {
 		for(Telepes t : telepesek) {
@@ -222,7 +222,7 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja az azonos ID-vel rendelkezõ entitás az aszteroidaövbõl
 	 * @param ID : ID
-	 * @return Az keresett entitás
+	 * @return A keresett entitás
 	 */
 	public Entitas GetEntitas(String ID) {
 		for(Robot r : robotok) {
@@ -246,6 +246,18 @@ public class Aszteroidaov implements Serializable{
 	 */
 	public int GetTelepesekSize() {
 		return telepesek.size();
+	}
+	
+	public int GetRobotokSize() {
+		return robotok.size();
+	}
+	
+	public int GetUfokSize() {
+		return ufok.size();
+	}
+	
+	public int GetKapukSize() {
+		return kapuk.size();
 	}
 	
 	/**

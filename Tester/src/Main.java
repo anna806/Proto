@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -45,15 +46,25 @@ public class Main {
 //        else {
 //            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
 //        }
+    	Runtime process = Runtime.getRuntime();
+    	
+    	System.out.println("Hello2");
     	final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
+    	System.out.println(parentPath);
     	String runProto_parancs;
     	
-    	runProto_parancs = "java -jar " + parenPath + "\\file.jar 1 1 1";
+    	runProto_parancs = "java -jar " + parentPath + "\\test.jar";
+    	System.out.println(runProto_parancs);
+    	//int exit = process.exec(runProto_parancs).waitFor();
+    	//System.out.println(exit);
+    	//runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 >" + parentPath + "\\a.txt";
     	
-    	ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/C", runProto_parancs);
+    	ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", runProto_parancs);
     	Process z = builder.start();
+    	int exit = z.waitFor();
+    	System.out.println(exit);
         
     }
 }
