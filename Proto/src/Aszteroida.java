@@ -369,4 +369,8 @@ public class Aszteroida extends Szomszed{
 	public String toString() {
 		return "Aszteroida";
 	}
+	
+	public String getBelsoID() {
+		return belsoAnyag.getID();
+	}
 }
