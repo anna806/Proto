@@ -175,10 +175,10 @@ public class Aszteroida extends Szomszed{
 			e.Felrobban();
 		}
 		AnyagTorol();
-		
 		for(Szomszed e: szomszedok) {
 			e.SzomszedTorol(this);
 		}
+		Main.game.GetOv().MinuszAszteroida(this);
 	}
 	
 	/**
@@ -200,7 +200,7 @@ public class Aszteroida extends Szomszed{
 	public void Raktaroz(Nyersanyag a, Telepes t) {
 		if(belsoAnyag == null && kopenyVastagsag == 0) {
 			t.RemoveNyersanyag(a);
-			this.belsoAnyag = a;
+			belsoAnyag = a;
 		}
 		if(napkozel) {
 			belsoAnyag.Napkozel(this);
