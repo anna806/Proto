@@ -45,7 +45,8 @@ public class Telepes extends Entitas {
 	 */
 	public void Mozgas(Szomszed a) {
 		if(a==null) {
-			this.Halal();
+			Halal();
+			System.out.println("Meghaltam");
 		} else {
 			aszteroida.Ledob(this);
 			a.Befogad(this);
@@ -175,7 +176,8 @@ public class Telepes extends Entitas {
 			kapuk.get(i).Robban();
 		}
 		nyersanyagok.removeAll(nyersanyagok);
-		
+		aszteroida.Ledob(this);
+		Main.game.GetOv().MinuszTelepes(this);
 	}
 	
 	
