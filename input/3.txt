@@ -1,4 +1,5 @@
 palya_betoltes
+fejlesztoi_mod true
 plusz_telepes a03 t01
 plusz_nyersanyag t01 vj01 u01 vj02 sz01
 visszatoltes t01
