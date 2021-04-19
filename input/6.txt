@@ -1,6 +1,7 @@
 palya_betoltes
+fejlesztoi_mod true
 plusz_telepes a06 t01
 plusz_nyersanyag t01 v01 u01 sz01 vj01 v02 v03 u02 vj02 sz02 u03
 nyersanyag_kinyeres t01
-kiir a06
+kiir a06 
 kiir t01
