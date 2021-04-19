@@ -19,14 +19,13 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 */
 	private Aszteroida aszteroida;					
 	/**
-	 * //megadja, hogy a teleportkapu meg van-e kergülve
+	 * megadja, hogy a teleportkapu meg van-e kergülve
 	 */
 	private boolean megkergult;						
 	/**
-	 * //a teleportkapu párja
+	 * a teleportkapu párja
 	 */
-	private Teleportkapu parja;						
-	//private String ID;								//a teleportkapu egyedi azonosítója
+	private Teleportkapu parja;	
 	
 	/**
 	 * default constructor, beállítja az akapértelmezett értékeketés az egyedi azonosítót
@@ -93,9 +92,6 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	public void Befogad(Entitas a) {
 		a.SetAszteroida(this.ParHelye());
 		ParHelye().Befogad(a);
-		//Aszteroida x= new Aszteroida();
-		//x= this.ParHelye();
-		//x.Befogad(a);
 	}
 	
 	/**
@@ -130,14 +126,8 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 *@param k: kapott kapu
 	 */
 	public void KapuBefogad(Teleportkapu k) {
-		//Aszteroida a= this.ParHelye();
-		//a.KapuBefogad(k);
 		ParHelye().KapuBefogad(k);
 	}
-	
-//	public String getID() {
-//		return ID;
-//	}
 	
 	/**
 	 *Üres törzsû függvény, mert a Teleportkapu nem tud Szomszédot törölni

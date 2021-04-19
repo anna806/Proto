@@ -50,8 +50,6 @@ public class Telepes extends Entitas {
 			aszteroida.Ledob(this);
 			a.Befogad(this);
 		}
-		
-		
 	}
 	
 	/**

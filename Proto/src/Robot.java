@@ -7,9 +7,7 @@ public class Robot extends Entitas implements Intelligencia {
 	/**
 	 * azt számolja, hogy hányszor példányosították az osztályt
 	 */
-	private static int count=1;				
-	//private String ID;						//a Robot egyedi azonosítója
-	
+	private static int count=1;
 	
 	/**
 	 * A Robot osztály konstruktora, meghívja az õsosztály konstruktorát

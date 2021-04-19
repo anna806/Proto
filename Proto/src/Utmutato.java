@@ -44,14 +44,10 @@ public class Utmutato {
 	}
 	
 	public boolean MindTorol(Nyersanyag ny, List<Nyersanyag> torlendo) {
-		//for(Nyersanyag n : megvanLista) {
 		for(int i = 0; i < megvanLista.size(); i++) {
 			if(megvanLista.get(i).Kompatibilis(ny)) {
 				System.out.println(megvanLista.get(i).getID());
 				System.out.println(ny.getID());
-				//t.RemoveNyersanyag(megvanLista.get(i));
-				//megvanLista.remove(megvanLista.get(i));
-				//t.RemoveNyersanyag(ny);
 				torlendo.add(ny);
 				megvanLista.remove(i);
 				break;

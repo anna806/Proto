@@ -30,7 +30,6 @@ public class Uran extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	//private String ID;
 	
 	/**
 	 * Az Uran osztály konstruktora.

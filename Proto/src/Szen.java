@@ -59,7 +59,6 @@ public class Szen extends Nyersanyag {
 
 	@Override
 	protected int getExp() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

@@ -32,8 +32,7 @@ public class Aszteroida extends Szomszed{
 	/**
 	 * számolja, hogy hányszor példányosították az osztályt
 	 */
-	private static int count=0;									
-	//private String ID;											//az aszteroida egyedi azonosítója
+	private static int count=0;
 	
 	/**
 	 * aszteroida konstruktora, létrehozza az entitasok, szomszedok listákat, 
@@ -141,7 +140,7 @@ public class Aszteroida extends Szomszed{
 		Utmutato bazis = new Utmutato(kell);
 		boolean bazisepitheto = false;
 		for (int j = 0; j < entitasok.size(); j++) {
-			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! útmutató
+			bazisepitheto = entitasok.get(j).BazisEpit(bazis);
 			if(bazisepitheto) {
 				for(int i = 0; i < entitasok.size(); i++) {
 					System.out.println("Itt is vagyok");
@@ -199,9 +198,6 @@ public class Aszteroida extends Szomszed{
 		else {
 			return null;
 		}
-		
-		
-		
 	}
 	
 	/**
@@ -254,13 +250,6 @@ public class Aszteroida extends Szomszed{
 	public void setNyersanyag(Nyersanyag ny) {
 		belsoAnyag = ny;
 	}
-	
-	/*public void setID(String id) {
-		ID = id;
-	}
-	public String getID() {
-		return ID;
-	}*/
 	
 	/**
 	 * @return visszatérési értékében megadja az aszteroida köpenyének vastagságát
@@ -367,10 +356,6 @@ public class Aszteroida extends Szomszed{
 		else
 			System.out.println("Nyersanyag: ureges");
 	}
-	
-//	public String toString() {
-//		return "Aszteroida";
-//	}
 	
 	@Override
 	public String toString() {

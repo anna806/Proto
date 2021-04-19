@@ -40,7 +40,6 @@ public class Parancsok {
 			BufferedReader console = new BufferedReader(new InputStreamReader(System.in)); 
 			if(args[0].equals("0")) {
 				line = console.readLine();
-				//Main.game.Start();
 			} else if(args[0].equals("1")) {
 				line = file.readLine();
 			}
@@ -57,14 +56,12 @@ public class Parancsok {
 			}
 			file.close();
 			console.close();
-			//Output(args[2], args[1]); //tesztesetnél
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
 	}
 	static void ParancsErtelmezo(String p, String ps, String ki) {
 		String[] com = p.split(" ");
-		//if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
 		switch(command){
 		case "telepes_mozog":
@@ -100,7 +97,6 @@ public class Parancsok {
 			break;
 		case "napkozel": 
 			Main.game.GetOv().GetAszteroida(com[1]).setNapkozel(true);
-			//Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().setExp(Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().getExp() + 1);
 			Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().Napkozel(Main.game.GetOv().GetAszteroida(com[1]));
 			break;
 		case "teleportkapu_epites": 
@@ -125,7 +121,6 @@ public class Parancsok {
 			if(fejlesztoi) {
 				
 			Telepes t = new Telepes();
-			//t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			Main.game.GetOv().GetAszteroida(com[1]).Befogad(t);
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
@@ -178,7 +173,6 @@ public class Parancsok {
 			Teleportkapu tkpar = new Teleportkapu();
 			tkpar.setAszter(Main.game.GetOv().GetAszteroida("a07"));
 			tk.setParja(tkpar);
-			//tk.setAszter(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida());
 			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
 			
 			}
@@ -186,7 +180,6 @@ public class Parancsok {
 		case "expozicio": 
 			if(fejlesztoi) {
 				for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
-					//if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1])) {
 					if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]) != null) {
 						Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); 
 						break;
@@ -207,13 +200,13 @@ public class Parancsok {
 			break;
 		case "list": 
 			if(fejlesztoi) {
-				Main.game.GetOv().List(com[1]); //!!!!!!!!!!!!!!!!
+				Main.game.GetOv().List(com[1]);
 			}
 			break;
 		case "palya_betoltes": 
 			Main.game.load("map.txt");
 			System.out.println("Betoltottem a palyat");
-			break; //létrehozza az objektumokat?
+			break;
 		case "veletlen": break;
 		case "fejlesztoi_mod": 
 			if(com[1].equals("true")){
@@ -233,20 +226,6 @@ public class Parancsok {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-//			String out1 = "";
-//			int size = com.length;
-//			for(int i = 0; i < size; i++) {
-//				if(i + 1 == size)
-//					break;
-//				out1 = out1 + " " + com[i + 1];
-//			}
-//			String[] out2 = out1.split(" ");
-//			try {
-//				Output(ps, ki, out2);
-//			}
-//			catch(Exception e) {
-//				e.printStackTrace();
-//			}
 			break;
 			
 		}
@@ -316,9 +295,6 @@ public class Parancsok {
 	    	String dir = System.getProperty("user.dir");
 	    	File dirf = new File(dir);
 	    	String parentPath = dirf.getParent();
-//	    	FileWriter file = new FileWriter(parentPath + "\\output\\" + filename);
-//	    	file.write(aszteroida.toString());
-//	    	file.close();
 	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
 	    
@@ -352,7 +328,7 @@ public class Parancsok {
 	public static void writeUran(String filename, String ID, String out) throws Exception {
 		//nyersanyagid megy be
 		String s = Main.game.GetOv().GetNyersanyagByID(ID);
-		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); //Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
+		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
 	    JSONObject uran = new JSONObject();
 	    uran.put("ID", u.getID());
 	    uran.put("expozicio", u.getExp()); 	    

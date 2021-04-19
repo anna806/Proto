@@ -24,7 +24,6 @@ public class Vizjeg extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	//private String ID;
 	
 	/**
 	 * A Vizjeg osztály konstruktora.
@@ -72,7 +71,6 @@ public class Vizjeg extends Nyersanyag {
 
 	@Override
 	protected int getExp() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

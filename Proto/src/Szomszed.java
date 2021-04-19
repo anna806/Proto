@@ -12,9 +12,6 @@ import java.io.Serializable;
 //
 //
 
-
-
-
 public abstract class Szomszed implements Serializable{
 	/**
 	 * A szerializáláshoz szükséges ID
@@ -72,7 +69,4 @@ public abstract class Szomszed implements Serializable{
 	 * Az adott Szomszéd egyedi azonosítóját állítja be a paraméterben kapott String-re
 	 * @param id a String, ami a Szomszéd egyedi azonosítója lesz
 	 */
-//	public void setID(String id) {
-//		ID = id;
-//	}
 }

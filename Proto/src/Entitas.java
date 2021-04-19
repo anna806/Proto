@@ -80,5 +80,5 @@ public abstract class Entitas {
 		return aszteroida;
 	}
 	
-	public abstract boolean AnyagokTorol(Utmutato bazis);   //!!!!!!!!!!!!!!!!!!!!
+	public abstract boolean AnyagokTorol(Utmutato bazis);
 }

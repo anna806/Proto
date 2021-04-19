@@ -25,7 +25,6 @@ public class Vas extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	//private String ID;
 	
 	/**
 	 * A Vas osztály konstruktora.
@@ -73,7 +72,6 @@ public class Vas extends Nyersanyag {
 
 	@Override
 	protected int getExp() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }
