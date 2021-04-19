@@ -8,7 +8,7 @@ public class Szen extends Nyersanyag {
 	/**
 	 * az id egyediségét biztosító számláló
 	 */
-	private static int count=0;
+	private static int count=1;
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */

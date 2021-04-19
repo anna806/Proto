@@ -117,6 +117,7 @@ public class Parancsok {
 			break;
 		case "visszatoltes": 
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
+			System.out.println(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().getBelsoAnyag().getExp());
 			break;
 		case "plusz_telepes": 
 			
@@ -183,10 +184,14 @@ public class Parancsok {
 			break;
 		case "expozicio": 
 			if(fejlesztoi) {
-			for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
-				if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1]))
-					Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); 
-			}}																						 
+				for(int i = 0; i < Main.game.GetOv().GetTelepesekSize(); i++) {
+					//if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).getID().equals(com[1])) {
+					if(Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]) != null) {
+						Main.game.GetOv().GetTelepes(i).getNyersanyag(com[1]).setExp(Integer.parseInt(com[2])); 
+						break;
+					}
+				}
+			}
 			break;
 		case "informaciok": 
 			if(fejlesztoi) {
