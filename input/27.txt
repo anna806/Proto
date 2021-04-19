@@ -1,0 +1,15 @@
+palya_betoltes
+plusz_telepes a01 t01
+plusz_robot a01 r01
+plusz_ufo a01 u01
+plusz_nyersanyag t01 v01 sz01 u01
+napkozel a01
+kiir a00
+kiir a02
+kiir a03
+kiir a04
+kiir a05
+kiir a06
+kiir a07
+kiir a08
+kiir a09

@@ -1,0 +1,6 @@
+palya_betoltes
+plusz_telepes a06 t01
+plusz_nyersanyag t01 v01 u01
+nyersanyag_kinyeres t01
+kiir a06
+kiir t01

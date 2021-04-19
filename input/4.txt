@@ -1,0 +1,6 @@
+palya_betoltes
+plusz_telepes a04 t01
+plusz_nyersanyag t01 vj01 sz01 v01 u01
+visszatoltes t01
+kiir a04
+kiir t01

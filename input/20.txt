@@ -1,0 +1,6 @@
+palya_betoltes
+plusz_telepes a08 t01
+telepes_mozog t01 a05
+kiir a08
+kiir a05
+kiir t01

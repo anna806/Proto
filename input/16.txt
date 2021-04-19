@@ -1,0 +1,8 @@
+palya_betoltes
+plusz_telepes a03 t01
+plusz_robot a03 r01
+plusz_telepes a04 t02
+plusz_ufo a04 u01
+napvihar a03
+kiir a03
+kiir a04

@@ -1,0 +1,6 @@
+palya_betoltes
+plusz_telepes a08 t01
+plusz_teleportkapu t01
+teleportkapu_elhelyezes t01
+kiir a08
+kiir t01
