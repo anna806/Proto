@@ -24,7 +24,7 @@ public class Vizjeg extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	private String ID;
+	//private String ID;
 	
 	/**
 	 * A Vizjeg osztály konstruktora.

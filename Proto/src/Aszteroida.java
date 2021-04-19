@@ -4,14 +4,35 @@ import java.util.Random;
 
 public class Aszteroida extends Szomszed{
 	
+	/**
+	 * a szerializáláshoz szükséges ID
+	 */
 	private static final long serialVersionUID = 3753080766421296425L;
-	private int kopenyVastagsag;								// az aszteroida köpenyének vastagsága
-	private boolean napkozel;									//megadja, hogy az aszzteroida napközelben van-e
-	private List<Entitas> entitasok = new ArrayList<>();		//az aszteroidán tartózkodó entitások listája
-	private List<Szomszed> szomszedok = new ArrayList<>();		//az aszteroida szomszédainak listája
-	private Nyersanyag belsoAnyag;								//az aszteroida belsõ anyaga
-	private static int count=0;									//számolja, hogy hányszor példányosították az osztályt
-	private String ID;											//az aszteroida egyedi azonosítója
+	/**
+	 * az aszteroida köpenyének vastagsága
+	 */
+	private int kopenyVastagsag;								
+	/**
+	 * megadja, hogy az aszzteroida napközelben van-e
+	 */
+	private boolean napkozel;									
+	/**
+	 * az aszteroidán tartózkodó entitások listája
+	 */
+	private List<Entitas> entitasok = new ArrayList<>();		
+	/**
+	 * az aszteroida szomszédainak listája
+	 */
+	private List<Szomszed> szomszedok = new ArrayList<>();		
+	/**
+	 * az aszteroida belsõ anyaga
+	 */
+	private Nyersanyag belsoAnyag;								
+	/**
+	 * számolja, hogy hányszor példányosították az osztályt
+	 */
+	private static int count=0;									
+	//private String ID;											//az aszteroida egyedi azonosítója
 	
 	/**
 	 * aszteroida konstruktora, létrehozza az entitasok, szomszedok listákat, 
@@ -308,7 +329,7 @@ public class Aszteroida extends Szomszed{
 	}
 
 	/**
-	 * Kiirja az adott aszteroida külünbüzõ tulajdonágait
+	 * Kiirja az adott aszteroida külünbüzõ tulajdonágait a konzolra
 	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);

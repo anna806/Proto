@@ -9,7 +9,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	/**
 	 * Az azonosításhoz szükséges ID
 	 */
-	private String ID;
+	//private String ID;
 	
 	/**
 	 * Ufó konstruktora

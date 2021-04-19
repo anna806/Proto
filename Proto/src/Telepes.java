@@ -17,7 +17,7 @@ public class Telepes extends Entitas {
 	/**
 	 * A telepest azonosító ID
 	 */
-	private String ID;
+	//private String ID;
 	
 	/**
 	 * A telepes konstruktora

@@ -4,24 +4,28 @@ import java.util.List;
 import java.util.Random;
 
 
-
-
-
-
-/**
- * @author Luca
- *
- */
 public class Teleportkapu extends Szomszed implements Intelligencia{
 	/**
-	 * 
+	 * A szerializálást elõsegítõ ID
 	 */
 	private static final long serialVersionUID = 4398516018408113362L;
-	private static int count=0;						//számolja, hányszor példányosították az osztályt
-	private Aszteroida aszteroida;					//az aszteroida, amelyen a telepes tartózkodik
-	private boolean megkergult;						//megadja, hogy a teleportkapu meg van-e kergülve
-	private Teleportkapu parja;						//a teleportkapu párja
-	private String ID;								//a teleportkapu egyedi azonosítója
+	/**
+	 * számolja, hányszor példányosították az osztályt
+	 */
+	private static int count=0;						
+	/**
+	 * az aszteroida, amelyen a telepes tartózkodik
+	 */
+	private Aszteroida aszteroida;					
+	/**
+	 * //megadja, hogy a teleportkapu meg van-e kergülve
+	 */
+	private boolean megkergult;						
+	/**
+	 * //a teleportkapu párja
+	 */
+	private Teleportkapu parja;						
+	//private String ID;								//a teleportkapu egyedi azonosítója
 	
 	/**
 	 * default constructor, beállítja az akapértelmezett értékeketés az egyedi azonosítót
@@ -87,9 +91,10 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 */
 	public void Befogad(Entitas a) {
 		a.SetAszteroida(this.ParHelye());
-		Aszteroida x= new Aszteroida();
-		x= this.ParHelye();
-		x.Befogad(a);
+		ParHelye().Befogad(a);
+		//Aszteroida x= new Aszteroida();
+		//x= this.ParHelye();
+		//x.Befogad(a);
 	}
 	
 	/**
@@ -115,8 +120,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 			Szomszed cel= aszteroida.SzomszedotAd();
 			aszteroida.SzomszedTorol(this);
 			cel.KapuBefogad(this);
-		}
-		          
+		}         
 	}
 	
 	/**
@@ -125,23 +129,33 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 *@param k: kapott kapu
 	 */
 	public void KapuBefogad(Teleportkapu k) {
-		
-		Aszteroida a= this.ParHelye();
-		a.KapuBefogad(k);
+		//Aszteroida a= this.ParHelye();
+		//a.KapuBefogad(k);
+		ParHelye().KapuBefogad(k);
 	}
 	
-	public String getID() {
-		return ID;
-	}
+//	public String getID() {
+//		return ID;
+//	}
 	
+	/**
+	 *Üres törzsû függvény, mert a Teleportkapu nem tud Szomszédot törölni
+	 */
 	public void SzomszedTorol(Szomszed a) {}
 	
+	/**
+	 * Visszaadja, hogy az adott Teleportkapu kergült-e vagy sem
+	 * @return a Teleportkapu megkergult tagváltozója
+	 */
 	public String getMegkergult() {
 		if(megkergult) return "true";
 		else return "false";
 	
 	}
 
+	/**
+	 * Kiirja az adott Teleportkapu külünbüzõ tulajdonágait a konzolra
+	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());

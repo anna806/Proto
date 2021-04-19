@@ -25,7 +25,7 @@ public class Vas extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	private String ID;
+	//private String ID;
 	
 	/**
 	 * A Vas osztály konstruktora.

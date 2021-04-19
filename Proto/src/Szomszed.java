@@ -16,28 +16,62 @@ import java.io.Serializable;
 
 public abstract class Szomszed implements Serializable{
 	/**
-	 * 
+	 * A szerializáláshoz szükséges ID
 	 */
 	private static final long serialVersionUID = -7002053200057188774L;
-	private String ID;
+	/**
+	 * A Szomszéd egyedi azonosítója
+	 */
+	protected String ID;
 
+	/**
+	 * Absztrakt függvény a Szomszéd robbanására, amit a leszármazottak valósítanak meg
+	 */
 	public abstract void Robban();
 	
+	/**
+	 * Absztrakt függvény a Szomszéd egyik játékban lévõ Entitás befogadására, 
+	 * amit a leszármazottak valósítanak meg
+	 * @param a az Entitás, amelyik rákerül az adott Szomszédra
+	 */
 	public abstract void Befogad(Entitas a);
 	
+	/**
+	 * Absztrakt függvény a Szomszéd napvihar kezelésére, amit a leszármazottak valósítanak meg
+	 */
 	public abstract void Napvihar();
 	
+	/**
+	 * Absztrakt függvény a Szomszéd egyik Teleportkapu befogadására, 
+	 * amit a leszármazottak valósítanak meg
+	 * @param k a Teleportkapu, amelyik rákerül az adott Szomszédra
+	 */
 	public abstract void KapuBefogad(Teleportkapu k);
 	
+	/**
+	 * Absztrakt függvény a Szomszéd megkergülésére, amit a leszármazottak valósítanak meg
+	 */
 	public  abstract void MegKergul();
 	
+	/**
+	 * Absztrakt függvény a Szomszéd egyik szomszédjának törlésére, amit a leszármazottak valósítanak meg
+	 * @param a a Szomszéd, amely már nem lesz többé a szomszédja
+	 */
 	public  abstract void SzomszedTorol(Szomszed a);
 
-
+	/**
+	 * Visszaadja az adott Szomszéd egyedi azonosítóját
+	 * @return a Szomszéd egyedi azonosítója
+	 */
 	public String getID() {
 		return ID;
 	}
-
 	
-	
+	/**
+	 * Az adott Szomszéd egyedi azonosítóját állítja be a paraméterben kapott String-re
+	 * @param id a String, ami a Szomszéd egyedi azonosítója lesz
+	 */
+//	public void setID(String id) {
+//		ID = id;
+//	}
 }

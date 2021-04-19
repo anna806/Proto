@@ -24,7 +24,7 @@ public class Szen extends Nyersanyag {
 	/**
 	 * A nyersanyag azonosítására szolgáló ID
 	 */
-	private String ID;
+	//private String ID;
 	
 	/**
 	 * A Szén osztály konstruktora.
