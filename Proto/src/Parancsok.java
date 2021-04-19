@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.Console;
+import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -24,8 +25,11 @@ public class Parancsok {
 			String line = "";
 			int arg = Integer.parseInt(args[2]);
 			BufferedReader file = null;
+			final String dir = System.getProperty("user.dir");
+	    	File dirf = new File(dir);
+	    	String parentPath = dirf.getParent();
 			if(arg > 0)
-			file = new BufferedReader(new FileReader(args[2]+".txt"));
+			file = new BufferedReader(new FileReader(parentPath + "\\input\\" + args[2]+".txt"));
 			BufferedReader console = new BufferedReader(new InputStreamReader(System.in)); 
 			if(args[0].equals("0")) {
 				line = console.readLine();
@@ -172,6 +176,7 @@ public class Parancsok {
 			break;
 		case "palya_betoltes": 
 			Main.game.load("map.txt");
+			System.out.println("Betoltottem a palyat");
 			break; //létrehozza az objektumokat?
 		case "veletlen": break;
 		case "fejlesztoi_mod": 

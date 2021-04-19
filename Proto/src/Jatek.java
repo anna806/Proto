@@ -151,8 +151,8 @@ public class Jatek {
 		System.exit(0);
 	}
 	
-	/*
-	public Aszteroidaov init() {
+	
+	/*public Aszteroidaov init() {
 		Aszteroidaov ov = new Aszteroidaov();
 		Aszteroida a0 = new Aszteroida();
 		Aszteroida a1 = new Aszteroida();
@@ -229,27 +229,34 @@ public class Jatek {
 		ov.addKapu(k2);
 		ov.addKapu(k3);
 		return ov;
-	} */
+	}*/
 	
-	/*
-	public void newAszteroida(Aszteroida a, Nyersanyag ny, boolean napkozel, int kv, List<Szomszed> szomszedok) {
+	
+	/*public void newAszteroida(Aszteroida a, Nyersanyag ny, boolean napkozel, int kv, List<Szomszed> szomszedok) {
 		a.setNyersanyag(ny);
 		a.setKopenyVastagsag(kv);
 		a.setNapkozel(napkozel);
-		for(Szomszed sz : szomszedok)
-			a.addSzomszed(sz);
-	}
-	*/
+		if(szomszedok != null) {
+			for(Szomszed sz : szomszedok)
+				a.addSzomszed(sz);
+		}
+	}*/
+	
 	/**
 	 * a kapott aszteroidaövet a kapott nevû fájlba szerializálja, ezzel menthetõ egy játékállás
 	 * @param ao a kiírandó aszteroidaöv
 	 * @param filename a célfájl, ahová szerializáljuk az aszteroidaövet
 	 */
 	public void ser(Aszteroidaov ao, String filename) {
-		File tmp = new File(getAddress(filename));
+		//File tmp = new File(getAddress(filename));
+		final String dir = System.getProperty("user.dir");
+    	File dirf = new File(dir);
+    	String parentPath = dirf.getParent();
+    	System.out.print(parentPath);
 		try {
-			if(tmp.exists()) {
-				FileOutputStream f = new FileOutputStream(getAddress(filename));
+			//if(tmp.exists()) {
+			if(dirf.exists()) {
+				FileOutputStream f = new FileOutputStream(parentPath + "\\" + filename);
 				ObjectOutputStream out = new ObjectOutputStream(f);
 				out.writeObject(ao);
 				out.close();
@@ -265,10 +272,13 @@ public class Jatek {
 	 * @param filename: a fájl neve, ahonnan be szeretnénk tölteni a játékállást
 	 */
 	public void load(String filename) {
-		File tmp = new File(getAddress(filename));
+		//File tmp = new File(getAddress(filename));
+		final String dir = System.getProperty("user.dir");
+    	File dirf = new File(dir);
+    	String parentPath = dirf.getParent();
 		try {
-			if(tmp.exists()) {
-				FileInputStream f = new FileInputStream(getAddress(filename));
+			if(dirf.exists()) {
+				FileInputStream f = new FileInputStream(parentPath + "\\" + filename);
 				ObjectInputStream in = new ObjectInputStream(f);
 				jatekter = (Aszteroidaov)in.readObject();
 				in.close();
