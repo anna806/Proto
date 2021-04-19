@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		//System.out.println("Hello");
 		//System.out.println("Mukodik" + args[0] + args[1]);
-		String[] args1 = {"1", "1", "28"}; 
+		String[] args1 = {"1", "1", "25"};
 		game.field(args1);
 		//if(args[0].equals('a')) System.exit(1);
 		//game.field(args1);

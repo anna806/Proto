@@ -175,6 +175,7 @@ public class Telepes extends Entitas {
 			kapuk.get(i).Robban();
 		}
 		nyersanyagok.removeAll(nyersanyagok);
+		
 	}
 	
 	
