@@ -35,7 +35,9 @@ public class Parancsok {
 			}
 			
 			while(line != null && line.length() != 0) {
-				ParancsErtelmezo(line);
+				String parancsszam = args[2];
+				String ki = args[1];
+				ParancsErtelmezo(line, parancsszam, ki);
 				if(args[0].equals("0")) {
 					line = console.readLine();
 				} else if(args[0].equals("1")) {
@@ -44,12 +46,12 @@ public class Parancsok {
 			}
 			file.close();
 			console.close();
-			Output(args[2], args[1]); //tesztesetnél
+			//Output(args[2], args[1]); //tesztesetnél
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
 	}
-	static void ParancsErtelmezo(String p) {
+	static void ParancsErtelmezo(String p, String ps, String ki) {
 		String[] com = p.split(" ");
 		//if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
@@ -183,19 +185,34 @@ public class Parancsok {
 		case "mentes": 
 			Main.game.ser(Main.game.GetOv(), "jatek.txt");
 			break;
-		
+		case "kiir": 
+			try {
+				Output(ps, ki, com[1]);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 			
 		}
 	}
 	//JSONBE KIIRATNI!!!
-	public static void Output(String p, String out) {
-		String ID = "a02";
-		try {
-			writeAszteroida("out"+p+".json", ID, out);
-			writeTelepes("out"+p+".json", ID, out);
-		} catch (Exception e) {
-			e.printStackTrace();
+	public static void Output(String p, String out, String obj) throws Exception {
+		
+		switch(obj.charAt(0)) {
+		case 't':
+			writeTelepes("out"+p+".json", obj, out);
+			break;
+		case 'a':
+			writeAszteroida("out"+p+".json", obj, out);
+			break;
+		case 'u':
+			writeUran("out"+p+".json", obj, out);
+			break;
+		case 'k':
+			writeKapu("out"+p+".json", obj, out);
+			break;
 		}
+
 	}
 	
 	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
