@@ -1,10 +1,12 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.simple.JSONArray;
@@ -96,6 +98,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().BazisEpit();
 			break;
 		case "teleportkapu_elhelyezes": 
+			
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
 			break;
 		case "visszatoltes": 
@@ -151,8 +154,12 @@ public class Parancsok {
 		case "plusz_teleportkapu": 
 			if(fejlesztoi) {
 			Teleportkapu tk = new Teleportkapu();
-			tk.setAszter(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida());
+			Teleportkapu tkpar = new Teleportkapu();
+			tkpar.setAszter(Main.game.GetOv().GetAszteroida("a07"));
+			tk.setParja(tkpar);
+			//tk.setAszter(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida());
 			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
+			
 			}
 			break;
 		case "expozicio": 
@@ -281,7 +288,7 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(aszteroida);
 	    } else if(out.equals("1")) {
-	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes());
+	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
 	    
 	}
@@ -306,7 +313,7 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(telepes);
 	    } else if(out.equals("1")) {
-	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes());
+	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
   
 	}
@@ -320,7 +327,7 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(uran);
 	    } else if(out.equals("1")){
-	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes());
+	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
 
 	}
@@ -334,7 +341,7 @@ public class Parancsok {
 		if(out.equals("0")) {
 			System.out.println(kapu);
 		} else if(out.equals("1")) {
-			Files.write(Paths.get(filename), kapu.toJSONString().getBytes());
+			Files.write(Paths.get(filename), kapu.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 		}
 	}
 }

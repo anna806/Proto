@@ -126,14 +126,17 @@ public class Telepes extends Entitas {
 	 * amin éppen tartózkodik, és beállítja a kapuk szükséges tagváltozóit.
 	 */
 	public void KapuLerak() {
+		
 		if(kapuk.size() != 0) {
-			aszteroida.addSzomszed(kapuk.get(kapuk.size() - 1));
+			aszteroida.addSzomszed(kapuk.get(kapuk.size() - 1));	
 			kapuk.get(kapuk.size() - 1).setAszter(aszteroida);
-			Aszteroida parhelye = kapuk.get(kapuk.size() - 1).ParHelye();
-			if(parhelye != null)
-				parhelye.addSzomszed(kapuk.get(kapuk.size() - 1).getParja());	
+			if(kapuk.get(kapuk.size() - 1).ParHelye() != null) {
+				kapuk.get(kapuk.size() - 1).ParHelye().addSzomszed(kapuk.get(kapuk.size() - 1).getParja());	
+			}
 			kapuk.remove(kapuk.size() - 1);
+			
 		}
+		
 	}
 	
 	/**
@@ -274,4 +277,6 @@ public class Telepes extends Entitas {
 	public String toString() {
 		return "Telepes";
 	}
+	
+	
 }
