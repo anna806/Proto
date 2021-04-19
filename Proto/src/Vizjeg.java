@@ -69,4 +69,10 @@ public class Vizjeg extends Nyersanyag {
 	public String toString() {
 		return "Vizjeg";
 	}
+
+	@Override
+	protected int getExp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

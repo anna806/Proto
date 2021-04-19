@@ -93,6 +93,7 @@ public class Parancsok {
 			break;
 		case "napkozel": 
 			Main.game.GetOv().GetAszteroida(com[1]).setNapkozel(true);
+			//Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().setExp(Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().getExp() + 1);
 			Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().Napkozel(Main.game.GetOv().GetAszteroida(com[1]));
 			break;
 		case "teleportkapu_epites": 

@@ -95,4 +95,8 @@ public class Uran extends Nyersanyag {
 	public String toString() {
 		return "Uran";
 	}
+
+	protected int getExp() {
+		return expozicio;
+	}
 }

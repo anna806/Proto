@@ -70,4 +70,10 @@ public class Vas extends Nyersanyag {
 	public String toString() {
 		return "Vas";
 	}
+
+	@Override
+	protected int getExp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

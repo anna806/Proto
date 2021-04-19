@@ -1,4 +1,5 @@
 palya_betoltes
-plusz_telepes a07 t01
-ufo_mozog t01
+fejlesztoi_mod true
+plusz_ufo a07 u01
+ufo_mozog u01
 kiir a07

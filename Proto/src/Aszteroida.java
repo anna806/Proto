@@ -54,6 +54,7 @@ public class Aszteroida extends Szomszed{
 	 */
 	public void setNapkozel(boolean b) {
 		napkozel=b;
+		belsoAnyag.setExp(belsoAnyag.getExp() + 1);
 	}
 	
 	
@@ -111,6 +112,7 @@ public class Aszteroida extends Szomszed{
 	 */
 	public void SzomszedTorol(Szomszed a) {
 		szomszedok.remove(a);
+		
 	}
 	
 	/**
@@ -185,12 +187,14 @@ public class Aszteroida extends Szomszed{
 	 * @return visszaad egy szomszédot véletlenszerûen a szomszédok közül
 	 */
 	public Szomszed SzomszedotAd() {
+		System.out.println("Megprobalok szoomszedot adni");
 		Random rand = new Random();
 		int i = 0;
 		if(!szomszedok.isEmpty()) {
 			i = rand.nextInt(szomszedok.size());
 			return szomszedok.get(i);
-		} else {
+		} 
+		else {
 			return null;
 		}
 		

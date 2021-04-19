@@ -25,8 +25,12 @@ public class Ufo extends Entitas implements Intelligencia {
 	 */
 	public void RandomMozgas() {
 		//Szomszed b = aszteroida.SzomszedotAd();
+		System.out.println("Megprobalok randommozogni");
 		aszteroida.Ledob(this);
-		aszteroida.SzomszedotAd().Befogad(this);	
+		if(aszteroida.SzomszedotAd() != null)
+			aszteroida.SzomszedotAd().Befogad(this);
+		else
+			Halal();
 	}
 	
 	/**

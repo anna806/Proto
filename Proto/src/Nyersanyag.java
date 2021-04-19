@@ -53,4 +53,6 @@ public abstract class Nyersanyag implements Serializable{
 	 * @param i : a kívánt érték
 	 */
 	protected abstract void setExp(int i);
+	
+	protected abstract int getExp();
 }

@@ -56,4 +56,10 @@ public class Szen extends Nyersanyag {
 	public String toString() {
 		return "Szen";
 	}
+
+	@Override
+	protected int getExp() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
