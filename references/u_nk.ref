@@ -1,0 +1,24 @@
+Aszteroida
+{
+ 	  “ID”: “a00”,
+   “napkozel”: “true”,
+ 	  “keregvastagsag”: 0,
+ 	  “belsoAnyag”: “Uran”,
+ 	  “entitasok”:  []
+    	 “szomszedok”:  [
+        		{
+        	  	   “ID”: “a06”
+        		 },
+        	 	{
+          	   	   “ID”: a02”
+        	 	}
+{
+        	     	  “ID”: “k03”
+        		 }
+    	   ]
+}
+Uran
+{
+  “ID”: “u01”
+  “expozicio”:”2”
+}

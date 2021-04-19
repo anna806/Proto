@@ -148,7 +148,7 @@ public class Jatek {
 		else {
 			System.out.println("A játék véget ért, sajnos vesztettek");
 		}
-		System.exit(0);
+		//System.exit(0);
 	}
 	
 	

@@ -1,0 +1,26 @@
+Aszteroida
+{
+   “ID”: “a05”,
+   “napkozel”: “false”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: “Szen”,
+   “entitasok”:  []
+   “szomszedok”:  [
+         	{
+               “ID”: “a02”
+         	},
+         	{
+	   “ID”: “a08”
+        	 },
+	{
+	   “ID”: “k01”
+        	 }	 
+      ]
+   }
+Teleportkapu
+{
+   “ID”: “k01”
+   “kergult”: true
+   “parja”: “k02”
+   “aszteroida”: “a05”
+ }

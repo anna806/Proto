@@ -9,46 +9,6 @@ public class Main {
     
     public static void main (String[] args) throws Exception {
         
-//        final String dir = System.getProperty("user.dir");
-//        String runProto_parancs;
-//        
-//        runProto_parancs = "java -cp " + dir + " Main"; // ha csak class fileok vannak, ez mukodik parancssorbol
-//        runProto_parancs = "java -cp " + dir + "\\test.jar Main"; // ha van jar file, ez mukodik parancssorbol
-//        
-//        Scanner scan = new Scanner(System.in);
-//        
-//        System.out.println("Honnan olvasson be a program? (0 = konzolról / 1 = parancs sorszám alapján) ");
-//        int be = scan.nextInt();
-//        runProto_parancs += " " + be;
-//        
-//        System.out.println("Hova írja a kimenetet a program? (0 = konzolra / 1 = output file-ba) ");
-//        int ki = scan.nextInt();
-//        runProto_parancs += " " + ki;
-//        
-//        int kod;
-//        if (be == 0)
-//            kod = -1;
-//        else {
-//            System.out.println("Futtatandó teszt sorszáma: ");
-//            kod = scan.nextInt();            
-//        }
-//        runProto_parancs += " " + kod;
-//        
-//        scan.close();
-//        
-//        System.out.println("A lefuttatott parancs: \"" + runProto_parancs + "\"");
-//        process.exec(runProto_parancs).waitFor();
-//        
-//        
-//        if (ki == 1) {
-//            // TODO: Itt kell a komparátort megkérdezni, jó e a kimenet, argumentumként < kod + "_out" > -ot kell átadni
-//        }
-//        else {
-//            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
-//        }
-    	Runtime process = Runtime.getRuntime();
-    	
-    	System.out.println("Hello2");
     	final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
@@ -56,15 +16,89 @@ public class Main {
     	String runProto_parancs;
     	
     	runProto_parancs = "java -jar " + parentPath + "\\test.jar";
-    	System.out.println(runProto_parancs);
-    	//int exit = process.exec(runProto_parancs).waitFor();
-    	//System.out.println(exit);
-    	//runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 >" + parentPath + "\\a.txt";
-    	
-    	ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", runProto_parancs);
-    	Process z = builder.start();
-    	int exit = z.waitFor();
+
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Honnan olvasson be a program? (0 = konzolról / 1 = parancs sorszám alapján) ");
+        int be = scan.nextInt();
+        runProto_parancs += " " + be;
+        
+        System.out.println("Hova írja a kimenetet a program? (0 = konzolra / 1 = output file-ba) ");
+        int ki = scan.nextInt();
+        runProto_parancs += " " + ki;
+        
+        int kod;
+        if (be == 0)
+            kod = -1;
+        else {
+            System.out.println("Futtatandó teszt sorszáma: ");
+            kod = scan.nextInt();            
+        }
+        runProto_parancs += " " + kod;
+        
+        scan.close();
+        if(kod == 0) {
+        	osszesTeszt(parentPath, runProto_parancs, ki);
+        }
+        else {
+        System.out.println("A lefuttatott parancs: \"" + runProto_parancs + "\"");
+//      process.exec(runProto_parancs).waitFor();
+        int exit = process.exec(runProto_parancs).waitFor();
     	System.out.println(exit);
         
+        if (ki == 1 && exit != 1) {
+            // TODO: Itt kell a komparátort megkérdezni, jó e a kimenet, argumentumként < kod + "_out" > -ot kell átadni
+        	String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + kod;
+        	int exit2 = process.exec(runComp_parancs).waitFor();
+        	if(exit2 == 0 && kod != 0) {
+        		System.out.println(kod + ".teszteset sikeres");
+        	}
+        	else if(exit2 == 1 && kod != 0) {
+        		System.out.println(kod + ".teszteset sikertelen\nA hibas sorok:\n");
+        		File error = new File(parentPath + "\\Tester\\errors.txt");
+        		Scanner myReader = new Scanner(error);
+        		while(myReader.hasNextLine())
+        			System.out.println(myReader.nextLine());
+        		myReader.close();
+        	}
+        }
+        else if(ki == 0){
+            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
+        }
+        else if(ki == 1 && exit == 1)
+        	System.out.println("A teszt nem tudott lefutni");
+        }
+//        System.out.println(runProto_parancs);    
+    }
+    
+    public static void osszesTeszt(String parentPath, String runProto_parancs, int ki) {
+    	int i = 0;
+    	int fails = 0;
+    	File input = new File(parentPath + "\\input\\" + (i + 1) +".txt");
+    	while(input.exists() && i < 33) {
+    		try {
+    			fails += process.exec(runProto_parancs).waitFor();
+    			if(ki == 1) {
+    				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + i;
+    	        	int exit2 = process.exec(runComp_parancs).waitFor();
+    	        	if(exit2 == 0) {
+    	        		System.out.println(i + ".teszteset sikeres");
+    	        	}
+    	        	else if(exit2 == 1) {
+    	        		System.out.println(i + ".teszteset sikertelen\nA hibas sorok:\n");
+    	        		File error = new File(parentPath + "\\Tester\\errors.txt");
+    	        		Scanner myReader = new Scanner(error);
+    	        		while(myReader.hasNextLine())
+    	        			System.out.println(myReader.nextLine());
+    	        		myReader.close();
+    	        	}
+    			}
+    		}
+    		catch(Exception e) {
+    			System.out.println(e.getMessage());
+    		}
+    		i++;
+    	}
+    	
     }
 }

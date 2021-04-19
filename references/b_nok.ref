@@ -1,0 +1,64 @@
+Aszteroida
+{
+   “ID”: “a06”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: “Ureges”,
+   “entitasok”:  [
+       {
+          “ID”: “t01“
+        },
+    ]
+     “szomszedok”:  [
+        {
+           “ID”: “a00”
+        },
+         {
+            “ID”: “a03”
+         },
+         {
+            “ID”: “a08”
+         },
+         {
+          	            “ID”: “a09”
+        	         }
+     ]
+}
+Telepes
+{
+   “ID”: “t01”,
+   “aszteroida”: “a06”,
+   “nyersanyagok”:  [
+       {
+          “Nev”: “Vas“
+        },
+        {
+           “Nev”: “Uran“
+        },
+        {
+          “Nev”: “Szen“
+        },
+        {
+          “Nev”: “Vizjeg“
+        },
+        {
+          “Nev”: “Vas“
+        },
+        {
+          “Nev”: “Vas“
+        },
+        {
+          “Nev”: “Uran“
+        },
+        {
+          “Nev”: “Vizjeg“
+        },
+        {
+          “Nev”: “Szen“
+        },
+        {
+          “Nev”: "Uran"
+        }
+       ]
+     “kapuk”:  []
+}

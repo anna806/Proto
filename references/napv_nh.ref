@@ -1,0 +1,49 @@
+Aszteroida
+{
+   “ID”: “a03”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: “Ureges”,
+   “entitasok”:  [
+{
+	   “ID”: “t01“
+        	},
+	{
+	   “ID”: “r01“
+        	}
+     ]
+     “szomszedok”:  [
+         	{
+   “ID”: “a04”
+         	},
+         	{
+    “ID”: “a06”
+        	 },
+	{
+	    “ID”: “k02”
+	 }
+      ]
+   }
+Aszteroida
+{
+   “ID”: “a04”,
+   “napkozel”: “false”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: “Ureges”,
+   “entitasok”:  [
+	{
+	   “ID”: “t02“
+        	},
+	{
+	   “ID”: “u01“
+        	}
+     ]
+     “szomszedok”:  [
+         {
+“ID”: “a03”
+         },
+         {
+	“ID”: “a01”
+         }
+      ]
+   }

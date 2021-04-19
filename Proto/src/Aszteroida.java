@@ -61,7 +61,10 @@ public class Aszteroida extends Szomszed{
 	 */
 	public Nyersanyag AnyagKinyeres() {
 		//belsoAnyag = null;
-		return belsoAnyag;
+		if(kopenyVastagsag == 0)
+			return belsoAnyag;
+		else
+			return null;
 	}
 	
 	
@@ -137,7 +140,12 @@ public class Aszteroida extends Szomszed{
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis); //!!!!!!!!!!!!!!!!! útmutató
 			if(bazisepitheto) {
-				Main.game.Vege(bazisepitheto);
+				//for(int i = 0; i < entitasok.size(); i++) {
+					//if(entitasok.get(i).AnyagokTorol(bazis)) {
+						Main.game.Vege(bazisepitheto);
+						//break;
+					//}
+				//}
 				break;
 			}
 		}

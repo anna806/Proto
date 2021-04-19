@@ -1,0 +1,37 @@
+Telepes
+{
+ 	  “ID”: “t01”,
+  	 “aszteroida”: “a08”,
+ 	  “nyersanyagok”:  [
+    	   	{
+      	    	   “Nev”: “Vas“
+       	 	},
+      	  	{
+       	   	   “Nev”: “Vizjeg“
+     	   	},
+  	{
+       	    	   “Nev”: “Uran“
+     	   	},
+	  	{
+       	    	   “Nev”: “Szen“
+     	   	}
+ 	    ]
+   	  “kapuk”:  []
+}
+Telepes
+{
+ 	  “ID”: “t02”,
+  	 “aszteroida”: “a08”,
+ 	  “nyersanyagok”:  [
+    	   	{
+      	    	   “Nev”: “Uran“
+       		 },
+      	  	{
+       	    	   “Nev”: “Vas“
+     	   	},
+	  	{
+       	    	   “Nev”: “Vizjeg“
+     	   	}
+ 	    ]
+   	  “kapuk”:  []
+}

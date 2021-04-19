@@ -115,6 +115,8 @@ public class Telepes extends Entitas {
 				Teleportkapu k2 = new Teleportkapu();
 				k1.setParja(k2);
 				k2.setParja(k1);
+				kapuk.add(k1);
+				kapuk.add(k2);
 			}
 		}
 	}
@@ -124,14 +126,17 @@ public class Telepes extends Entitas {
 	 * amin éppen tartózkodik, és beállítja a kapuk szükséges tagváltozóit.
 	 */
 	public void KapuLerak() {
+		
 		if(kapuk.size() != 0) {
-			aszteroida.addSzomszed(kapuk.get(kapuk.size() - 1));
+			aszteroida.addSzomszed(kapuk.get(kapuk.size() - 1));	
 			kapuk.get(kapuk.size() - 1).setAszter(aszteroida);
-			Aszteroida parhelye = kapuk.get(kapuk.size() - 1).ParHelye();
-			if(parhelye != null)
-				parhelye.addSzomszed(kapuk.get(kapuk.size() - 1).getParja());	
+			if(kapuk.get(kapuk.size() - 1).ParHelye() != null) {
+				kapuk.get(kapuk.size() - 1).ParHelye().addSzomszed(kapuk.get(kapuk.size() - 1).getParja());	
+			}
 			kapuk.remove(kapuk.size() - 1);
+			
 		}
+		
 	}
 	
 	/**
@@ -145,7 +150,14 @@ public class Telepes extends Entitas {
 			kesz = bazis.MindMegvan(ny);
 		}
 		return kesz;
+	}
 	
+	public boolean AnyagokTorol(Utmutato bazis) {
+//		boolean kesz = false;
+//		for(Nyersanyag ny: nyersanyagok)
+//			kesz = bazis.MindTorol(ny, this);
+//		return kesz;
+		return false;
 	}
 	
 	/**
@@ -265,4 +277,6 @@ public class Telepes extends Entitas {
 	public String toString() {
 		return "Telepes";
 	}
+	
+	
 }

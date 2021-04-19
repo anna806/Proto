@@ -84,5 +84,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	public String toString() {
 		return "Ufo";
 	}
+
+	public boolean AnyagokTorol(Utmutato bazis) { return false; }
 	
 }

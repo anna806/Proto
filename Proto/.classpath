@@ -6,6 +6,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/Proto/json-simple-1.1.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Lenovo/source/repos/Proto_jo/Proto/json-simple-1.1.jar"/>
+>>>>>>> branch 'master' of https://github.com/anna806/Proto.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,156 @@
+Aszteroida
+{
+   “ID”: “a00”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: "Uran",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a05”
+         },
+         {
+            “ID”: “a09”
+         },
+         {
+             “ID”: “k03”
+         }
+     ]
+}
+Aszteroida
+{
+   “ID”: “a02”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 1,
+   “belsoAnyag”: "Vizjeg",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a05”
+         },
+         {
+            “ID”: “a09”
+         },
+         {
+             “ID”: “a00”
+         }
+     ]
+}
+Aszteroida
+{
+   “ID”: “a03”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: "Ureges",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a04”
+         },
+         {
+            “ID”: “a06”
+         },
+         {
+            “ID”: “k02”
+         }
+    ]
+}
+Aszteroida
+{
+   “ID”: “a04”,
+   “napkozel”: “false”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: "Ureges",
+   “entitasok”:  [
+{
+“ID”: “r01”
+}
+     ]
+   “szomszedok”:  [
+{
+            “ID”: “a03”
+        	}
+      ]
+}
+Aszteroida
+{
+   “ID”: “a05”,
+   “napkozel”: “false”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: "Szen",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a02”
+         },
+         {
+            “ID”: “a08”
+         },
+         {
+            “ID”: “k01”
+         }
+                 ]
+}
+Aszteroida
+{
+   “ID”: “a06”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: "Vas",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a03”
+         },
+         {
+            “ID”: “a08”
+         },
+        {
+	"ID": "a09"
+         },
+         {
+          	“ID”: “a00”
+          }
+    ]
+}
+Aszteroida
+{
+   “ID”: “a07”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: "Szen",
+   “entitasok”:  []
+   “szomszedok”:  []
+}
+Aszteroida
+{
+   “ID”: “a08”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: "Vas",
+   “entitasok”:  []
+   “szomszedok”:  [
+        {
+            “ID”: “a05”
+         },
+         {
+            “ID”: “a06”
+         }
+                 ]
+}
+Aszteroida
+{
+   “ID”: “a09”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 1,
+   “belsoAnyag”: "Uran",
+   “entitasok”:  []
+   “szomszedok”:  [
+         {
+            “ID”: “a02”
+         },
+         {
+            “ID”: “a06”
+         }
+     ]
+}
