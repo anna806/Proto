@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -312,6 +313,12 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(aszteroida);
 	    } else if(out.equals("1")) {
+	    	String dir = System.getProperty("user.dir");
+	    	File dirf = new File(dir);
+	    	String parentPath = dirf.getParent();
+//	    	FileWriter file = new FileWriter(parentPath + "\\output\\" + filename);
+//	    	file.write(aszteroida.toString());
+//	    	file.close();
 	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
 	    

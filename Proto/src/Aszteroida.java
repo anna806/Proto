@@ -368,8 +368,18 @@ public class Aszteroida extends Szomszed{
 			System.out.println("Nyersanyag: ureges");
 	}
 	
+//	public String toString() {
+//		return "Aszteroida";
+//	}
+	
+	@Override
 	public String toString() {
-		return "Aszteroida";
+		return "Aszteroida{" +
+                "ID='" + ID +
+                ", keregvastagsag=" + kopenyVastagsag +
+                ", napkozel=" + napkozel +
+                ", belsoanyag=" + belsoAnyag +
+                '}';
 	}
 	
 	public String getBelsoID() {
