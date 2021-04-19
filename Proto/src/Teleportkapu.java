@@ -34,7 +34,7 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		aszteroida=null;
 		megkergult=false;
 		parja=null;
-		ID="tk0"+count++;
+		ID="k0"+count++;
 	}
 	
 	/**

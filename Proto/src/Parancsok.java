@@ -70,7 +70,9 @@ public class Parancsok {
 			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();
 			break;
 		case "telepes_fur": 
+			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().kiir();
 			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
+			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().kiir();
 			break;
 		case "robot_fur": 
 			Main.game.GetOv().GetRobot(com[1]).Furas();
@@ -102,9 +104,11 @@ public class Parancsok {
 		case "plusz_telepes": 
 			if(fejlesztoi) {
 			Telepes t = new Telepes();
-			t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
+			//t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
+			Main.game.GetOv().GetAszteroida(com[1]).Befogad(t);
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
+			Main.game.GetOv().GetTelepesByID(com[2]).kiir();
 			}
 			break;
 		case "plusz_robot": 
@@ -182,6 +186,7 @@ public class Parancsok {
 		case "fejlesztoi_mod": 
 			if(com[1].equals("true")){
 				fejlesztoi = true;
+				System.out.println("fejlesztoi - aktiv");
 			}
 			break;
 		case "betolt": 
@@ -250,7 +255,7 @@ public class Parancsok {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
 	    JSONObject telepes = new JSONObject();
 	    telepes.put("ID", t.getID());
-	    telepes.put("aszteroida", t.getAszteroida());
+	    telepes.put("aszteroida", t.getAszteroida().getID());
 	    	    
 	    JSONArray nyersanyagok = new JSONArray();
 	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
@@ -262,6 +267,7 @@ public class Parancsok {
 	    }
 	    telepes.put("nyersanyagok:", nyersanyagok);
 	    telepes.put("kapuk:", kapuk);
+	    
 	    if(out.equals("0")) {
 	    	System.out.println(telepes);
 	    } else if(out.equals("1")) {

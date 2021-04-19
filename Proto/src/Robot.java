@@ -85,4 +85,8 @@ public class Robot extends Entitas implements Intelligencia {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());
 	}
+	
+	public String toString() {
+		return "Robot";
+	}
 }

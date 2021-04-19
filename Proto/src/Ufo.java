@@ -16,7 +16,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	 */
 	Ufo(){
 		super();
-		ID="uf0"+count++;
+		ID="u0"+count++;
 	}
 	
 	/**
@@ -79,6 +79,10 @@ public class Ufo extends Entitas implements Intelligencia {
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());
+	}
+	
+	public String toString() {
+		return "Ufo";
 	}
 	
 }

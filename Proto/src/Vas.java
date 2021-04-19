@@ -66,4 +66,8 @@ public class Vas extends Nyersanyag {
 	public void setExp(int i) {
 		
 	}
+	
+	public String toString() {
+		return "Vas";
+	}
 }

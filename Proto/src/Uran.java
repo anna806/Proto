@@ -90,4 +90,8 @@ public class Uran extends Nyersanyag {
 	public String getID() {
 		return ID;
 	}
+	
+	public String toString() {
+		return "Uran";
+	}
 }

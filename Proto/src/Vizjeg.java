@@ -65,4 +65,8 @@ public class Vizjeg extends Nyersanyag {
 	public void setExp(int i) {
 		
 	}
+	
+	public String toString() {
+		return "Vizjeg";
+	}
 }

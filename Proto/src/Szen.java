@@ -64,4 +64,8 @@ public class Szen extends Nyersanyag {
 	public void setExp(int i) {
 		
 	}
+	
+	public String toString() {
+		return "Szen";
+	}
 }

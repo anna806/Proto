@@ -179,7 +179,7 @@ public class Jatek {
 		newAszteroida(a0, new Uran(), true, 0, szomszedok);
 		szomszedok.removeAll(szomszedok);
 		szomszedok.add(a4);
-		newAszteroida(a4, new Uran(), true, 0, szomszedok);
+		newAszteroida(a1, new Uran(), true, 0, szomszedok);
 		szomszedok.removeAll(szomszedok);
 		szomszedok.add(a5);
 		szomszedok.add(a0);
@@ -230,7 +230,6 @@ public class Jatek {
 		ov.addKapu(k3);
 		return ov;
 	}*/
-	
 	
 	/*public void newAszteroida(Aszteroida a, Nyersanyag ny, boolean napkozel, int kv, List<Szomszed> szomszedok) {
 		a.setNyersanyag(ny);
