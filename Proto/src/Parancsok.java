@@ -285,7 +285,7 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(uran);
 	    } else if(out.equals("1")){
-	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes());
+	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes()); 
 	    }
 
 	}
