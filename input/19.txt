@@ -1,4 +1,5 @@
 palya_betoltes
+fejlesztoi_mod true
 plusz_robot a07 r01
 robot_mozog r01
 kiir a07

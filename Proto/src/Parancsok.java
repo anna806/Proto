@@ -26,6 +26,9 @@ public class Parancsok {
 		try {
 			String line = "";
 			int arg = Integer.parseInt(args[2]);
+			
+			Files.deleteIfExists(Paths.get("out"+arg+".json"));
+			
 			BufferedReader file = null;
 			final String dir = System.getProperty("user.dir");
 	    	File dirf = new File(dir);
@@ -105,13 +108,16 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
 		case "plusz_telepes": 
+			System.out.println("okok");
 			if(fejlesztoi) {
+				
 			Telepes t = new Telepes();
 			//t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			Main.game.GetOv().GetAszteroida(com[1]).Befogad(t);
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
 			Main.game.GetOv().GetTelepesByID(com[2]).kiir();
+			
 			}
 			break;
 		case "plusz_robot": 
@@ -327,6 +333,9 @@ public class Parancsok {
 	    if(out.equals("0")) {
 	    	System.out.println(uran);
 	    } else if(out.equals("1")){
+
+	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes()); 
+
 	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
 

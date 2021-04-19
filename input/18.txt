@@ -1,4 +1,5 @@
 palya_betoltes
+fejlesztoi_mod true
 plusz_telepes a08 t01
 plusz_nyersanyag t01 v01 sz01 u01 v02
 robot_epites t01
