@@ -201,6 +201,20 @@ public class Parancsok {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+//			String out1 = "";
+//			int size = com.length;
+//			for(int i = 0; i < size; i++) {
+//				if(i + 1 == size)
+//					break;
+//				out1 = out1 + " " + com[i + 1];
+//			}
+//			String[] out2 = out1.split(" ");
+//			try {
+//				Output(ps, ki, out2);
+//			}
+//			catch(Exception e) {
+//				e.printStackTrace();
+//			}
 			break;
 			
 		}
@@ -224,6 +238,27 @@ public class Parancsok {
 		}
 
 	}
+	
+//	public static void Output(String p, String out, String[] obj) throws Exception {
+//		
+//		for(int i = 0; i < obj.length; i++) {
+//			System.out.println("Itt vagyok " + obj[i]);
+//			switch(obj[i].charAt(0)) {
+//			case 't':
+//				writeTelepes("out"+p+".json", obj[i], out);
+//				break;
+//			case 'a':
+//				writeAszteroida("out"+p+".json", obj[i], out);
+//				break;
+//			case 'u':
+//				writeUran("out"+p+".json", obj[i], out);
+//				break;
+//			case 'k':
+//				writeKapu("out"+p+".json", obj[i], out);
+//				break;
+//			}
+//		}
+//	}
 	
 	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
 		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);

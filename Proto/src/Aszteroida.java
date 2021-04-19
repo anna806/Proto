@@ -61,7 +61,10 @@ public class Aszteroida extends Szomszed{
 	 */
 	public Nyersanyag AnyagKinyeres() {
 		//belsoAnyag = null;
-		return belsoAnyag;
+		if(kopenyVastagsag == 0)
+			return belsoAnyag;
+		else
+			return null;
 	}
 	
 	
