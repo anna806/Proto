@@ -1,4 +1,5 @@
 palya_betoltes
+fejlesztoi_mod true
 plusz_telepes a03 t01
 plusz_robot a03 r01
 plusz_telepes a04 t02

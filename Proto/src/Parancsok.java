@@ -108,13 +108,16 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
 		case "plusz_telepes": 
+			System.out.println("okok");
 			if(fejlesztoi) {
+				
 			Telepes t = new Telepes();
 			//t.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			Main.game.GetOv().GetAszteroida(com[1]).Befogad(t);
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
 			Main.game.GetOv().GetTelepesByID(com[2]).kiir();
+			
 			}
 			break;
 		case "plusz_robot": 

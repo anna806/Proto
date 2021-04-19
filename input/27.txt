@@ -1,4 +1,5 @@
 palya_betoltes
+fejlesztoi_mode
 plusz_telepes a01 t01
 plusz_robot a01 r01
 plusz_ufo a01 u01
