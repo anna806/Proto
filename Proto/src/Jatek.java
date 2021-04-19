@@ -63,6 +63,7 @@ public class Jatek {
 	    jatekter.GetAszteroida(db - 1).Befogad(t);
 	    t.kiir();
 	    jatekter.Kiir("t00");
+	    
 		for (int j=0; j<db; j++) {							//beállítja a szomszédságokat 0.5 valószínûséggel
 			for (int k=0; k<db; k++) {
 				if(j!=k) {
@@ -73,6 +74,7 @@ public class Jatek {
 				}
 			}
 		}
+		jatekter.GetAszteroida(db - 1).kiir();
 //		while(true) {
 //			Kor();
 //		}
@@ -280,7 +282,6 @@ public class Jatek {
 			Start();
 		else 
 			load("map.txt");
-		System.out.println("Idaig eljutottam");
 		Parancsok p = new Parancsok();
 		p.Main(args);
 	}

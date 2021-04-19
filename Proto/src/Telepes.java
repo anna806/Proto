@@ -260,4 +260,8 @@ public class Telepes extends Entitas {
 		for(int i = 0; i < kapuk.size(); i++)
 			System.out.println("Kapu: " + kapuk.get(i).getID());
 	}
+	
+	public String toString() {
+		return "Telepes";
+	}
 }

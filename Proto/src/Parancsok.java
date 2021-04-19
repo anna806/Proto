@@ -51,8 +51,9 @@ public class Parancsok {
 	}
 	static void ParancsErtelmezo(String p) {
 		String[] com = p.split(" ");
-		if(com.length!=2){throw new IllegalArgumentException();}
+		//if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
+		System.out.println(com[0]);
 		switch(command){
 		case "telepes_mozog":
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));

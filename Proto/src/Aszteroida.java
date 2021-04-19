@@ -339,7 +339,13 @@ public class Aszteroida extends Szomszed{
 			System.out.println("Entitas: " + entitasok.get(i).getID());
 		System.out.println("Kopenyvastagsag: " + kopenyVastagsag);
 		System.out.println("Napkozel: " + napkozel);
-		System.out.println("Nyersanyag: " + belsoAnyag.getID());
+		if(belsoAnyag != null)
+			System.out.println("Nyersanyag: " + belsoAnyag.getID());
+		else
+			System.out.println("Nyersanyag: ureges");
 	}
 	
+	public String toString() {
+		return "Aszteroida";
+	}
 }
