@@ -186,8 +186,16 @@ public class Aszteroida extends Szomszed{
 	 */
 	public Szomszed SzomszedotAd() {
 		Random rand = new Random();
-		int i = rand.nextInt(szomszedok.size());
-		return szomszedok.get(i);
+		int i = 0;
+		if(!szomszedok.isEmpty()) {
+			i = rand.nextInt(szomszedok.size());
+			return szomszedok.get(i);
+		} else {
+			return null;
+		}
+		
+		
+		
 	}
 	
 	/**
@@ -338,7 +346,7 @@ public class Aszteroida extends Szomszed{
 	}
 
 	/**
-	 * Kiirja az adott aszteroida külünbüzõ tulajdonágait a konzolra
+	 * Kiírja az adott aszteroida különbözõ tulajdonágait a konzolra
 	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);

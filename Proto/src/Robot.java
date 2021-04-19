@@ -25,9 +25,14 @@ public class Robot extends Entitas implements Intelligencia {
 	 *amire átmozog
 	 */
 	public void RandomMozgas() {
-		//Szomszed b = aszteroida.SzomszedotAd();
 		aszteroida.Ledob(this);
-		aszteroida.SzomszedotAd().Befogad(this);
+		Szomszed sz = aszteroida.SzomszedotAd();
+		if(sz == null) {
+			this.Halal();
+		} else {
+			sz.Befogad(this);
+		}
+		
 	}
 	
 	/**

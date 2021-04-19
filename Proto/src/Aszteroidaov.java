@@ -185,13 +185,12 @@ public class Aszteroidaov implements Serializable{
 	 * @return A keresett robot
 	 */
 	public Robot GetRobot(String ID) {
-		System.out.println("Itt vagyok");
 		for(Robot r : robotok) {
 			System.out.println(r.getID() + " " + ID);
 			if(r.getID().equals(ID))
 				return r;
 		}
-		System.out.println("Null-nal lepek ki.");
+		//System.out.println("Null-nal lepek ki.");
 		return null;
 	}
 	
