@@ -127,6 +127,7 @@ public class Parancsok {
 			Robot r = new Robot();
 			r.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			r.SetID(com[2]);
+			Main.game.GetOv().GetAszteroida(com[1]).Befogad(r);
 			Main.game.GetOv().addRobot(r);
 			}
 			break;
@@ -135,6 +136,7 @@ public class Parancsok {
 			Ufo u = new Ufo();
 			u.SetAszteroida(Main.game.GetOv().GetAszteroida(com[1]));
 			u.SetID(com[2]);
+			Main.game.GetOv().GetAszteroida(com[1]).Befogad(u);
 			Main.game.GetOv().addUfo(u);
 			}
 			break;
