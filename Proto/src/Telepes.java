@@ -115,6 +115,8 @@ public class Telepes extends Entitas {
 				Teleportkapu k2 = new Teleportkapu();
 				k1.setParja(k2);
 				k2.setParja(k1);
+				kapuk.add(k1);
+				kapuk.add(k2);
 			}
 		}
 	}
@@ -145,7 +147,14 @@ public class Telepes extends Entitas {
 			kesz = bazis.MindMegvan(ny);
 		}
 		return kesz;
+	}
 	
+	public boolean AnyagokTorol(Utmutato bazis) {
+//		boolean kesz = false;
+//		for(Nyersanyag ny: nyersanyagok)
+//			kesz = bazis.MindTorol(ny, this);
+//		return kesz;
+		return false;
 	}
 	
 	/**

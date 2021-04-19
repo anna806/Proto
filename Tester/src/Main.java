@@ -46,7 +46,7 @@ public class Main {
 //        else {
 //            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
 //        }
-    	Runtime process = Runtime.getRuntime();
+    	//Runtime process = Runtime.getRuntime();
     	
     	System.out.println("Hello2");
     	final String dir = System.getProperty("user.dir");
@@ -55,15 +55,19 @@ public class Main {
     	System.out.println(parentPath);
     	String runProto_parancs;
     	
-    	runProto_parancs = "java -jar " + parentPath + "\\test.jar";
-    	System.out.println(runProto_parancs);
-    	//int exit = process.exec(runProto_parancs).waitFor();
-    	//System.out.println(exit);
-    	//runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 >" + parentPath + "\\a.txt";
+//    	runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 12";
+//    	System.out.println(runProto_parancs);
+//    	//int exit = process.exec(runProto_parancs).waitFor();
+//    	Process p = Runtime.getRuntime().exec(runProto_parancs);
+//    	int exit = p.waitFor();
+//    	System.out.println(exit);
+    	runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 1 > " + parentPath + "\\a.txt";
     	
     	ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", runProto_parancs);
+    	System.out.println(runProto_parancs);
     	Process z = builder.start();
-    	int exit = z.waitFor();
+    	z.waitFor();
+    	int exit = z.exitValue();
     	System.out.println(exit);
         
     }

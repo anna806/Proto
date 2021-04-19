@@ -42,4 +42,14 @@ public class Utmutato {
 		}
 		return hozzavalok.size() == 0;
 	}
+	
+	public boolean MindTorol(Nyersanyag ny, Telepes t) {
+		for(Nyersanyag n : megvanLista) {
+			if(n.Kompatibilis(ny)) {
+				t.RemoveNyersanyag(n);
+				megvanLista.remove(n);
+			}
+		}
+		return megvanLista.size() == 0;
+	}
 }

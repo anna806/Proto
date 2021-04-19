@@ -89,4 +89,8 @@ public class Robot extends Entitas implements Intelligencia {
 	public String toString() {
 		return "Robot";
 	}
+
+	public boolean AnyagokTorol(Utmutato bazis) {
+		return false;
+	}
 }
