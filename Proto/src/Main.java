@@ -1,4 +1,4 @@
-
+package src;
 
 public class Main {
 	public static Jatek game = new Jatek();

@@ -1,3 +1,4 @@
+package src;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -164,16 +165,16 @@ public class Jatek {
 		Aszteroida a7 = new Aszteroida();
 		Aszteroida a8 = new Aszteroida();
 		Aszteroida a9 = new Aszteroida();
-		Teleportkapu k3 = new Teleportkapu();
-		k3.setAszter(a0);
+		Teleportkapu k0 = new Teleportkapu();
+		k0.setAszter(a5);
 		Teleportkapu k1 = new Teleportkapu();
 		Teleportkapu k2 = new Teleportkapu();
-		k1.setParja(k1);
-		k2.setParja(k2);
-		k1.setAszter(a5);
-		k2.setAszter(a3);
+		k1.setParja(k2);
+		k2.setParja(k1);
+		k1.setAszter(a3);
+		k2.setAszter(a0);
 		List<Szomszed> szomszedok = new ArrayList<Szomszed>();
-		szomszedok.add(k3);
+		szomszedok.add(k2);
 		szomszedok.add(a2);
 		szomszedok.add(a6);
 		newAszteroida(a0, new Uran(), true, 0, szomszedok);
