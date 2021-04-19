@@ -1,7 +1,7 @@
 palya_betoltes 
 fejlesztoi_mod true
 plusz_telepes a08 t01
-plusz_nyersanyag t01 v01 v02 vj01 u01 sz01
+plusz_nyersanyag t01 v01 v02 sz01 vj01
 teleportkapu_epites t01
 kiir a08
 kiir t01
