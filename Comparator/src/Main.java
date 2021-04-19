@@ -43,17 +43,16 @@ public class Main {
 		}
 		
 		if(failed) {
-			BufferedWriter writer;
 			try {
-				writer = new BufferedWriter(new FileWriter("errors.txt"));
-				for(int i = 0; i< errors.size(); i++) {
-					writer.write(errors.get(i));
-				}
-				writer.close();
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
+			      FileWriter myWriter = new FileWriter("errors.txt");
+			      for(int i = 0; i< errors.size(); i++) {
+						myWriter.write(errors.get(i));
+					}
+			      myWriter.close();
+			    } catch (IOException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
 			System.exit(1);
 		}
 		else {
