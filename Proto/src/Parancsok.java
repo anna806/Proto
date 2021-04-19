@@ -338,16 +338,14 @@ public class Parancsok {
 	}
 	
 	public static void writeUran(String filename, String ID, String out) throws Exception {
-		//illegál?
+		//nyersanyagid megy be
 		Nyersanyag u =  Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
 	    JSONObject uran = new JSONObject();
 	    uran.put("ID", u.getID());
-	    uran.put("expozicio", u.getExpozicio()); 	    
+	    uran.put("expozicio", u.getExp()); 	    
 	    if(out.equals("0")) {
 	    	System.out.println(uran);
 	    } else if(out.equals("1")){
-
-	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes()); 
 
 	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 	    }
