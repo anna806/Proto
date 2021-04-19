@@ -57,8 +57,10 @@ public class Main {
         		System.out.println(kod + ".teszteset sikertelen\nA hibas sorok:\n");
         		File error = new File(parentPath + "\\Tester\\errors.txt");
         		Scanner myReader = new Scanner(error);
-        		while(myReader.hasNextLine())
-        			System.out.println(myReader.nextLine());
+        		while(myReader.hasNextLine()) {
+        			System.out.println("Elvart: " + myReader.nextLine());
+        			//System.out.println("Kapott: " + myReader.nextLine());
+        		}
         		myReader.close();
         	}
         }
@@ -82,14 +84,16 @@ public class Main {
     				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + i;
     	        	int exit2 = process.exec(runComp_parancs).waitFor();
     	        	if(exit2 == 0) {
-    	        		System.out.println(i + ".teszteset sikeres");
+    	        		System.out.println((i + 1) + ".teszteset sikeres");
     	        	}
     	        	else if(exit2 == 1) {
     	        		System.out.println(i + ".teszteset sikertelen\nA hibas sorok:\n");
     	        		File error = new File(parentPath + "\\Tester\\errors.txt");
     	        		Scanner myReader = new Scanner(error);
-    	        		while(myReader.hasNextLine())
-    	        			System.out.println(myReader.nextLine());
+    	        		while(myReader.hasNextLine()) {
+    	        			System.out.println("Elvart: " + myReader.nextLine());
+    	        			System.out.println("Kapott: " + myReader.nextLine());
+    	        		}
     	        		myReader.close();
     	        	}
     			}
