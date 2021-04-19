@@ -344,7 +344,8 @@ public class Parancsok {
 	
 	public static void writeUran(String filename, String ID, String out) throws Exception {
 		//nyersanyagid megy be
-		Nyersanyag u =  Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
+		String s = Main.game.GetOv().GetNyersanyagByID(ID);
+		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); //Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
 	    JSONObject uran = new JSONObject();
 	    uran.put("ID", u.getID());
 	    uran.put("expozicio", u.getExp()); 	    

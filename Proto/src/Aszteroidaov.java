@@ -342,4 +342,13 @@ public class Aszteroidaov implements Serializable{
 		System.out.println("Kapuk: "+ kapuk.size());
 		System.out.println("Aszteroidak: "+ aszteroidak.size());
 	}
+
+	public String GetNyersanyagByID(String ID) {
+		for(Aszteroida a: aszteroidak) {
+			if(a.getBelsoID().equals(ID)){
+				return a.getID();
+			}
+		}
+		return null;
+	}
 }
