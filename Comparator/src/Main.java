@@ -1,11 +1,14 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	
-	public static boolean main (String args[]) {
+	public static void main (String args[]) {
 		ArrayList<String> ourfiles = new ArrayList<String>(); 
 		ArrayList<String> testfiles = new ArrayList<String>();
 		ArrayList<String> errors = new ArrayList<String>(); 
@@ -40,15 +43,21 @@ public class Main {
 		}
 		
 		if(failed) {
-			System.out.println("A "+ args[0] +" Teszt hibasan futott le!");
-			for(int i = 0; i< errors.size(); i+=2) {
-				System.out.println("Elvárt: " +  errors.get(i) + " \t Kapott: " + errors.get(i+1));
+			BufferedWriter writer;
+			try {
+				writer = new BufferedWriter(new FileWriter("errors.txt"));
+				for(int i = 0; i< errors.size(); i++) {
+					writer.write(errors.get(i));
+				}
+				writer.close();
 			}
-			return false;
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			System.exit(1);
 		}
 		else {
-			System.out.println("A "+ args[0] +" Teszt sikeresen lefutott!");
-			return true;
+			System.exit(0);
 		}
 	}
 }
