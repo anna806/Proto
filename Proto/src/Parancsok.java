@@ -67,7 +67,13 @@ public class Parancsok {
 		String command = com[0];
 		switch(command){
 		case "telepes_mozog":
+			try {
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
+			} catch(Exception e) {
+				if(e.equals("Index 2 out of bounds for length 2")) {
+					Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);
+				}				
+			}
 			break;
 		case "robot_mozog": 
 			

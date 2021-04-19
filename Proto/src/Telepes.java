@@ -44,8 +44,14 @@ public class Telepes extends Entitas {
 	 * @param Az a szomszéd a paraméter, amelyre az Telepes mozogni fog.
 	 */
 	public void Mozgas(Szomszed a) {
-		aszteroida.Ledob(this);
-		a.Befogad(this);
+		if(a==null) {
+			this.Halal();
+		} else {
+			aszteroida.Ledob(this);
+			a.Befogad(this);
+		}
+		
+		
 	}
 	
 	/**

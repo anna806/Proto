@@ -213,8 +213,10 @@ public class Aszteroidaov implements Serializable{
 	 * @return A keresett telepes
 	 */
 	public Telepes GetTelepesByID(String ID) {
+		
 		for(Telepes t : telepesek) {
 			if(t.getID().equals(ID))
+				//System.out.println("telepesid");
 				return t;
 		}
 		return null;
