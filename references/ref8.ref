@@ -1,14 +1,1 @@
-Telepes
-{
- 	  “ID”: “t01”,
-  	 “aszteroida”: “a08”,
- 	  “nyersanyagok”:  []
-   	  “kapuk”:  []
-}
-Telepes
-{
- 	  “ID”: “t02”,
-  	 “aszteroida”: “a08”,
- 	  “nyersanyagok”:  []
-   	  “kapuk”:  []
-}
+{"nyersanyagok:":[],"aszteroida":"a08","kapuk:":[],"ID":"t01"}{"nyersanyagok:":[],"aszteroida":"a08","kapuk:":[],"ID":"t02"}
