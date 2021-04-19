@@ -249,6 +249,9 @@ public class Telepes extends Entitas {
 		return kapuk.get(i).getID();
 	}
 	
+	/**
+	 * Kiírja a telepes tulajdonságait a kimenetre
+	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());

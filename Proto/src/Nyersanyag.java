@@ -17,14 +17,39 @@ public abstract class Nyersanyag implements Serializable{
 	 * A szerializálást elõsegítõ ID
 	 */
 	private static final long serialVersionUID = 4128594175231573747L;
+	/**
+	 * Az azonosítást elõsegítõ ID
+	 */
 	protected String ID;
 	
+	/**
+	 * Betölti a nyersanyagot a telepes Inventory-jába. A leszármazottak valósítják meg.
+	 * @param a : A Telepes
+	 */
 	public abstract void Betolt(Telepes a);
+	/**
+	 * Végrehajtja a nyersanyag napközeli tevékenységét.  A leszármazottak valósítják meg.
+	 * @param a : az aszteroida, amiben a nyersanyag van.
+	 */
 	public abstract void Napkozel(Aszteroida a);
+	/**
+	 * Megadja, hogy kompatibilis e az adott nyersanyag, a kapottal
+	 * @param ny : a megkapott nyersanyag
+	 * @return Azonos típusúak-e
+	 */
 	public abstract boolean Kompatibilis(Nyersanyag ny);
 	
+	/**
+	 * Az ID megszerzésére szolgáló függvény
+	 * @return az ID
+	 */
 	public String getID() {
 		return ID;
 	}
+	
+	/**
+	 * Beállítja a nyersanyag expozíciós számát a kívántértékre. A leszármazottak valósítják meg.
+	 * @param i : a kívánt érték
+	 */
 	protected abstract void setExp(int i);
 }

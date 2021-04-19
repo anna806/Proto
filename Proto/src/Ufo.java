@@ -2,10 +2,18 @@ import java.util.Random;
 
 public class Ufo extends Entitas implements Intelligencia {
 	
-	
+	/**
+	 * Az id egyediségét biztosító számláló
+	 */
 	private static int count=0;
+	/**
+	 * Az azonosításhoz szükséges ID
+	 */
 	private String ID;
 	
+	/**
+	 * Ufó konstruktora
+	 */
 	Ufo(){
 		super();
 		ID="uf0"+count++;
@@ -54,12 +62,20 @@ public class Ufo extends Entitas implements Intelligencia {
 		aszteroida.AnyagTorol();
 	}
 	
-	
+	/**
+	 * A fúráshoz szükséges függvény - az ufó nem tud fúrni
+	 */
 	public void Furas() {
 	}
-
+	
+	/**
+	 * A bázisépítéshez szükséges függvény - az ufó nem tud bázist építeni
+	 */
 	public boolean BazisEpit(Utmutato u) { return false; }
 
+	/**
+	 * Kiírja az ufó tulajdonságait a kimenetre
+	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());
