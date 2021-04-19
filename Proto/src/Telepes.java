@@ -52,9 +52,10 @@ public class Telepes extends Entitas {
      * akkor belerakja, ha nem, kitörli.
      */
 	public void Banyaszat() {
-		Nyersanyag belsoAnyag = aszteroida.AnyagKinyeres();
-		if(nyersanyagok.size() < 10) 
-			belsoAnyag.Betolt(this);
+		if(nyersanyagok.size() < 10 && aszteroida.AnyagKinyeres() != null) {
+			System.out.println("Ide azert meg elertem.");
+			aszteroida.AnyagKinyeres().Betolt(this);
+		}
 		aszteroida.AnyagTorol();
 	}
 	

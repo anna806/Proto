@@ -9,7 +9,7 @@ public abstract class Entitas {
 	/**
 	 * az Entitás egyedi azonosítója
 	 */
-	protected static String ID;
+	protected String ID;
 	
 	/**
 	 * absztrakt függvény az Entitások fúrás mûveletére,

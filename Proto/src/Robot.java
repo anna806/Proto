@@ -24,9 +24,9 @@ public class Robot extends Entitas implements Intelligencia {
 	 *amire átmozog
 	 */
 	public void RandomMozgas() {
-		Szomszed b = aszteroida.SzomszedotAd();
+		//Szomszed b = aszteroida.SzomszedotAd();
 		aszteroida.Ledob(this);
-		b.Befogad(this);
+		aszteroida.SzomszedotAd().Befogad(this);
 	}
 	
 	/**
@@ -83,6 +83,6 @@ public class Robot extends Entitas implements Intelligencia {
 	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
-		System.out.println("Aszteroitda: " + aszteroida.getID());
+		System.out.println("Aszteroida: " + aszteroida.getID());
 	}
 }

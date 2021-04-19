@@ -53,16 +53,15 @@ public class Parancsok {
 		String[] com = p.split(" ");
 		//if(com.length!=2){throw new IllegalArgumentException();}
 		String command = com[0];
-		System.out.println(com[0]);
 		switch(command){
 		case "telepes_mozog":
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			break;
 		case "robot_mozog": 
-			Main.game.GetOv().GetRobot(com[1]).RandomMozgas();    
+			Main.game.GetOv().GetRobot(com[1]).RandomMozgas(); 
 			break;
 		case "ufo_mozog": 
-			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();      
+			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();
 			break;
 		case "telepes_fur": 
 			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
@@ -71,7 +70,6 @@ public class Parancsok {
 			Main.game.GetOv().GetRobot(com[1]).Furas();
 			break;
 		case "nyersanyag_kinyeres": 
-			//Betegyünk egy absztrakt függvényt a bánászásra is, hogy meg lehessen egy sorból szépen csinálni?
 			Main.game.GetOv().GetEntitas(com[1]).Banyaszat();
 			break;
 		case "napvihar": 

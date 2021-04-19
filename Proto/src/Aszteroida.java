@@ -60,7 +60,7 @@ public class Aszteroida extends Szomszed{
 	 * @return visszaadja az aszteroidában lévõ nyersanyagot
 	 */
 	public Nyersanyag AnyagKinyeres() {
-		belsoAnyag = null;
+		//belsoAnyag = null;
 		return belsoAnyag;
 	}
 	
@@ -202,7 +202,7 @@ public class Aszteroida extends Szomszed{
 	 * kitörli az aszteroida belsõ anyagát, ha a kéregvastagság 0
 	 */
 	public void AnyagTorol() {
-		if (this.kopenyVastagsag==0)
+		if (kopenyVastagsag==0)
 		belsoAnyag = null;
 	}
 	

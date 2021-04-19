@@ -55,15 +55,27 @@ public class Jatek {
 			if (rand.nextInt()%4==0) {						//0.25 valószínûséggel tesz az aszteroidára ufot
 				Ufo ufo=new Ufo();
 				uj.Befogad(ufo);
+				jatekter.addUfo(ufo);
 			}
 			jatekter.addAszteroida(uj);						//hozzáadja az aszteroidaövhöz
 		}	
 		Telepes t = new Telepes();
+		t.AddNyersanyag(new Uran());
 	    jatekter.addTelepes(t);
 	    jatekter.GetAszteroida(db - 1).Befogad(t);
-	    t.kiir();
-	    jatekter.Kiir("t00");
-	    
+	    //t.kiir();	    
+	    Robot r = new Robot();
+	    jatekter.addRobot(r);
+	    jatekter.GetAszteroida(db - 2).Befogad(r);
+	    r.kiir();
+	    System.out.println("Elso");
+	    for(int i = 0; i < jatekter.GetRobotokSize(); i++)
+			jatekter.GetRobot(i).kiir();
+	    Ufo u = new Ufo();
+	    jatekter.addUfo(u);
+	    jatekter.GetAszteroida(db - 3).Befogad(u);
+	    r.kiir();
+	    u.kiir();
 		for (int j=0; j<db; j++) {							//beállítja a szomszédságokat 0.5 valószínûséggel
 			for (int k=0; k<db; k++) {
 				if(j!=k) {
@@ -74,7 +86,10 @@ public class Jatek {
 				}
 			}
 		}
-		jatekter.GetAszteroida(db - 1).kiir();
+		//.GetAszteroida(db - 3).kiir();
+		System.out.println("Masodik");
+		for(int i = 0; i < jatekter.GetRobotokSize(); i++)
+			jatekter.GetRobot(i).kiir();
 //		while(true) {
 //			Kor();
 //		}

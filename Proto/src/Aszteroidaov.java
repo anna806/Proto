@@ -186,10 +186,13 @@ public class Aszteroidaov implements Serializable{
 	 * @return A keresett robot
 	 */
 	public Robot GetRobot(String ID) {
+		System.out.println("Itt vagyok");
 		for(Robot r : robotok) {
+			System.out.println(r.getID() + " " + ID);
 			if(r.getID().equals(ID))
 				return r;
 		}
+		System.out.println("Null-nal lepek ki.");
 		return null;
 	}
 	
@@ -332,11 +335,11 @@ public class Aszteroidaov implements Serializable{
 	 */
 	public void Helyzet() {
 		
-		System.out.println("Kor szama: "+ Main.game.getKor() + "/n");
-		System.out.println("Telepesek: "+ telepesek.size() + "/n");
-		System.out.println("Robotok: "+ robotok.size() + "/n");
-		System.out.println("Ufok: "+ ufok.size() + "/n");
-		System.out.println("Kapuk: "+ kapuk.size() + "/n");
-		System.out.println("Aszteroidak: "+ aszteroidak.size() + "/n");
+		System.out.println("Kor szama: "+ Main.game.getKor());
+		System.out.println("Telepesek: "+ telepesek.size());
+		System.out.println("Robotok: "+ robotok.size());
+		System.out.println("Ufok: "+ ufok.size());
+		System.out.println("Kapuk: "+ kapuk.size());
+		System.out.println("Aszteroidak: "+ aszteroidak.size());
 	}
 }

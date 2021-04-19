@@ -23,9 +23,9 @@ public class Ufo extends Entitas implements Intelligencia {
 	 *véletlenszerû mozgást valósít meg az aszteroida egy szomszédjára
 	 */
 	public void RandomMozgas() {
-		Szomszed b = aszteroida.SzomszedotAd();
+		//Szomszed b = aszteroida.SzomszedotAd();
 		aszteroida.Ledob(this);
-		b.Befogad(this);	
+		aszteroida.SzomszedotAd().Befogad(this);	
 	}
 	
 	/**
