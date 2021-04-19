@@ -70,7 +70,9 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			break;
 		case "robot_mozog": 
+			
 			Main.game.GetOv().GetRobot(com[1]).RandomMozgas(); 
+			
 			break;
 		case "ufo_mozog": 
 			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();
@@ -110,7 +112,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
 			break;
 		case "plusz_telepes": 
-			System.out.println("okok");
+			
 			if(fejlesztoi) {
 				
 			Telepes t = new Telepes();
