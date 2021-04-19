@@ -130,18 +130,28 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 		a.KapuBefogad(k);
 	}
 	
-	public String getID() {
-		return ID;
-	}
+//	public String getID() {
+//		return ID;
+//	}
 	
+	/**
+	 *Üres törzsû függvény, mert a Teleportkapu nem tud Szomszédot törölni
+	 */
 	public void SzomszedTorol(Szomszed a) {}
 	
+	/**
+	 * Visszaadja, hogy az adott Teleportkapu kergült-e vagy sem
+	 * @return a Teleportkapu megkergult tagváltozója
+	 */
 	public String getMegkergult() {
 		if(megkergult) return "true";
 		else return "false";
 	
 	}
 
+	/**
+	 * Kiirja az adott Teleportkapu külünbüzõ tulajdonágait a konzolra
+	 */
 	public void kiir() {
 		System.out.println(this + ": " + ID);
 		System.out.println("Aszteroida: " + aszteroida.getID());

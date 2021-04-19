@@ -3,8 +3,11 @@ import java.util.Random;
 
 public class Robot extends Entitas implements Intelligencia {
 	
-	private static int count=0;				//azt számolja, hogy hányszor példányosították az osztályt
-	private String ID;						//a Robot egyedi azonosítója
+	/**
+	 * azt számolja, hogy hányszor példányosították az osztályt
+	 */
+	private static int count=0;				
+	//private String ID;						//a Robot egyedi azonosítója
 	
 	
 	/**

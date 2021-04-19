@@ -10,7 +10,13 @@ import java.util.Random;
 
 
 public class Jatek {
+	/**
+	 * A körök számát nyilvántartó számláló
+	 */
 	private int szamlalo=0;									
+	/**
+	 * Az aszteroidaöv, amiben a játék zajlik.
+	 */
 	private Aszteroidaov jatekter;
 	
 	/**
@@ -257,8 +263,17 @@ public class Jatek {
 		return jatekter;
 	}
 
+	/**
+	 * Ha tesztelés miatt indították el a programot (args[0] == 1), akkor betölti a teszteléshez szükséges pályafájlt, és 
+	 * átadja a paramétereket a parancsok osztály main függvényének, ami feldolgozza azokat.
+	 * Ha játék céljára indították el a programot (args[0] == 0), akkor a Start() függvény segítségével készíti el a pályát.
+	 * @param args a paraméterek, amit feldolgoz a Parancsok osztály main függvénye
+	 */
 	public void field(String[] args) {
-		load("map.txt");
+//		if(args[0].equals("1"))
+//			Start();
+//		else 
+			load("map.txt");
 		Parancsok.main(args);
 	}
 	
