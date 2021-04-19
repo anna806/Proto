@@ -1,0 +1,9 @@
+Aszteroida
+{
+   “ID”: “a07”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: “Szen”,
+   “entitasok”:  []
+   “szomszedok”:  []
+}

@@ -1,0 +1,30 @@
+Aszteroida
+{
+   “ID”: “a02”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: “Ureges”,
+   “entitasok”:  [
+ 	        {
+          “ID”: “t01“
+        },
+    ]
+     “szomszedok”:  [
+         {
+           “ID”: “a05”
+         },
+         {
+           “ID”: “a09”
+         },
+         {
+          	            “ID”: “a00”
+        	          }
+      ]
+}
+Telepes
+{
+   “ID”: “t01”,
+   “aszteroida”: “a02”,
+   “nyersanyagok”:  []
+   “kapuk”:  []
+}

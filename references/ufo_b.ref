@@ -1,0 +1,26 @@
+Aszteroida
+{
+ 	  “ID”: “a06”,
+   “napkozel”: “true”,
+ 	  “keregvastagsag”: 0,
+ 	  “belsoAnyag”: “Ureges”,
+ 	  “entitasok”:  [
+  	  	{
+         	 	   “ID”: “u01“
+       	   	}
+  	    ]
+    	 “szomszedok”:  [
+        		{
+        	   	   “ID”: “a00”
+        	 	},
+        	 	{
+          	    	   “ID”: “a03”
+        	 	},
+	 	{
+          	    	   “ID”: “a08”
+        	  	},
+ 	{
+          	    	   “ID”: “a09”
+        	 	}
+    	    ]
+}

@@ -14,22 +14,26 @@ public class Main {
 		ArrayList<String> errors = new ArrayList<String>(); 
 
 		try {
-		      File myObj = new File("Output\\"+ args[0]+".json");
-		      Scanner myReader = new Scanner(myObj);
-		      while (myReader.hasNextLine()) {
-		        ourfiles.add(myReader.nextLine());
-		      }
-		      myReader.close();
-		      myObj = new File("OutputTest\\"+ args[0]+"_test.json");
-		      Scanner myReader2 = new Scanner(myObj);
-		      while (myReader2.hasNextLine()) {
-		        testfiles.add(myReader2.nextLine());
-		      }
-		      myReader2.close();
-		    } catch (FileNotFoundException e) {
+			final String dir = System.getProperty("user.dir");
+	    	File dirf = new File(dir);
+	    	String parentPath = dirf.getParent();
+		    //File myObj = new File("Output\\"+ args[0]+".json");
+	    	File myObj = new File(parentPath + "\\Tester\\out" + args[0] + ".json");
+		    Scanner myReader = new Scanner(myObj);
+		    while (myReader.hasNextLine()) {
+		      ourfiles.add(myReader.nextLine());
+		    }
+		    myReader.close();
+		    myObj = new File(parentPath + "\\references\\ref" + args[0] + ".ref");
+		    Scanner myReader2 = new Scanner(myObj);
+		    while (myReader2.hasNextLine()) {
+		      testfiles.add(myReader2.nextLine());
+		    }
+		    myReader2.close();
+		 } catch (FileNotFoundException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();
-		    }
+		   }
 		
 		boolean failed = false;
 		for(int i = 0; i< ourfiles.size(); i++) {

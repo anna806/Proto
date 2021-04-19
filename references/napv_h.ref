@@ -1,0 +1,38 @@
+Aszteroida
+{
+   “ID”: “a08”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 3,
+   “belsoAnyag”: “Vas”,
+   “entitasok”:  []
+     “szomszedok”:  [
+         	{
+           	   “ID”: “a05”
+         	},
+         	{
+	   “ID”: “a06”
+        	 }
+      ]
+   }
+Aszteroida
+{
+   “ID”: “a06”,
+   “napkozel”: “true”,
+   “keregvastagsag”: 0,
+   “belsoAnyag”: “Vas”,
+   “entitasok”:  []
+     “szomszedok”:  [
+         	{
+           	   “ID”: “a00”
+         	},
+         	{
+	   “ID”: “a03”
+        	 },
+	 {
+               “ID”: “a08”
+         	},
+         	{
+	   “ID”: “a09”
+        	 }
+      ]
+   }

@@ -9,66 +9,54 @@ public class Main {
     
     public static void main (String[] args) throws Exception {
         
-//        final String dir = System.getProperty("user.dir");
-//        String runProto_parancs;
-//        
-//        runProto_parancs = "java -cp " + dir + " Main"; // ha csak class fileok vannak, ez mukodik parancssorbol
-//        runProto_parancs = "java -cp " + dir + "\\test.jar Main"; // ha van jar file, ez mukodik parancssorbol
-//        
-//        Scanner scan = new Scanner(System.in);
-//        
-//        System.out.println("Honnan olvasson be a program? (0 = konzolról / 1 = parancs sorszám alapján) ");
-//        int be = scan.nextInt();
-//        runProto_parancs += " " + be;
-//        
-//        System.out.println("Hova írja a kimenetet a program? (0 = konzolra / 1 = output file-ba) ");
-//        int ki = scan.nextInt();
-//        runProto_parancs += " " + ki;
-//        
-//        int kod;
-//        if (be == 0)
-//            kod = -1;
-//        else {
-//            System.out.println("Futtatandó teszt sorszáma: ");
-//            kod = scan.nextInt();            
-//        }
-//        runProto_parancs += " " + kod;
-//        
-//        scan.close();
-//        
-//        System.out.println("A lefuttatott parancs: \"" + runProto_parancs + "\"");
-//        process.exec(runProto_parancs).waitFor();
-//        
-//        
-//        if (ki == 1) {
-//            // TODO: Itt kell a komparátort megkérdezni, jó e a kimenet, argumentumként < kod + "_out" > -ot kell átadni
-//        }
-//        else {
-//            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
-//        }
-    	//Runtime process = Runtime.getRuntime();
-    	
-    	System.out.println("Hello2");
     	final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
     	System.out.println(parentPath);
     	String runProto_parancs;
     	
-    	runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 12";
-    	System.out.println(runProto_parancs);
-    	int exit = process.exec(runProto_parancs).waitFor();
-//    	Process p = Runtime.getRuntime().exec(runProto_parancs);
-//    	int exit = p.waitFor();
+    	runProto_parancs = "java -jar " + parentPath + "\\test.jar";
+
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Honnan olvasson be a program? (0 = konzolról / 1 = parancs sorszám alapján) ");
+        int be = scan.nextInt();
+        runProto_parancs += " " + be;
+        
+        System.out.println("Hova írja a kimenetet a program? (0 = konzolra / 1 = output file-ba) ");
+        int ki = scan.nextInt();
+        runProto_parancs += " " + ki;
+        
+        int kod;
+        if (be == 0)
+            kod = -1;
+        else {
+            System.out.println("Futtatandó teszt sorszáma: ");
+            kod = scan.nextInt();            
+        }
+        runProto_parancs += " " + kod;
+        
+        scan.close();
+        
+        System.out.println("A lefuttatott parancs: \"" + runProto_parancs + "\"");
+//        process.exec(runProto_parancs).waitFor();
+        int exit = process.exec(runProto_parancs).waitFor();
     	System.out.println(exit);
-//    	runProto_parancs = "java -jar " + parentPath + "\\test.jar 1 1 1 > " + parentPath + "\\a.txt";
-//    	
-//    	ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", runProto_parancs);
-//    	System.out.println(runProto_parancs);
-//    	Process z = builder.start();
-//    	z.waitFor();
-//    	int exit = z.exitValue();
-//    	System.out.println(exit);
+        
+        if (ki == 1) {
+            // TODO: Itt kell a komparátort megkérdezni, jó e a kimenet, argumentumként < kod + "_out" > -ot kell átadni
+        	String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + kod;
+        	int exit2 = process.exec(runComp_parancs).waitFor();
+        	if(!exit2) {
+        		
+        	}
+        }
+        else {
+            System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
+        }
+    	
+        System.out.println(runProto_parancs);
+    	
         
     }
 }
