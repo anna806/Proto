@@ -26,6 +26,9 @@ public class Parancsok {
 		try {
 			String line = "";
 			int arg = Integer.parseInt(args[2]);
+			
+			Files.deleteIfExists(Paths.get("out"+arg+".json"));
+			
 			BufferedReader file = null;
 			final String dir = System.getProperty("user.dir");
 	    	File dirf = new File(dir);
