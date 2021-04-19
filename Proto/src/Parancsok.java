@@ -71,7 +71,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
 			} catch(Exception e) {
 				if(e.equals("Index 2 out of bounds for length 2")) {
-					Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);
+					Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null); //21-esben nem hal meg a telepes
 				}				
 			}
 			break;
@@ -339,7 +339,7 @@ public class Parancsok {
 	
 	public static void writeUran(String filename, String ID, String out) throws Exception {
 		//illegál?
-		Uran u = (Uran) Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
+		Nyersanyag u =  Main.game.GetOv().GetAszteroida(ID).getBelsoAnyag();
 	    JSONObject uran = new JSONObject();
 	    uran.put("ID", u.getID());
 	    uran.put("expozicio", u.getExpozicio()); 	    
