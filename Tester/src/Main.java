@@ -37,26 +37,68 @@ public class Main {
         runProto_parancs += " " + kod;
         
         scan.close();
-        
+        if(kod == 0) {
+        	osszesTeszt(parentPath, runProto_parancs, ki);
+        }
+        else {
         System.out.println("A lefuttatott parancs: \"" + runProto_parancs + "\"");
-//        process.exec(runProto_parancs).waitFor();
+//      process.exec(runProto_parancs).waitFor();
         int exit = process.exec(runProto_parancs).waitFor();
     	System.out.println(exit);
         
-        if (ki == 1) {
+        if (ki == 1 && exit != 1) {
             // TODO: Itt kell a komparátort megkérdezni, jó e a kimenet, argumentumként < kod + "_out" > -ot kell átadni
         	String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + kod;
         	int exit2 = process.exec(runComp_parancs).waitFor();
-        	if(!exit2) {
-        		
+        	if(exit2 == 0 && kod != 0) {
+        		System.out.println(kod + ".teszteset sikeres");
+        	}
+        	else if(exit2 == 1 && kod != 0) {
+        		System.out.println(kod + ".teszteset sikertelen\nA hibas sorok:\n");
+        		File error = new File(parentPath + "\\Tester\\errors.txt");
+        		Scanner myReader = new Scanner(error);
+        		while(myReader.hasNextLine())
+        			System.out.println(myReader.nextLine());
+        		myReader.close();
         	}
         }
-        else {
+        else if(ki == 0){
             System.out.println("A kimenet csak a konzolon jelent meg, a helyessége nem ellenõrizhetõ.");
         }
+        else if(ki == 1 && exit == 1)
+        	System.out.println("A teszt nem tudott lefutni");
+        }
+//        System.out.println(runProto_parancs);    
+    }
+    
+    public static void osszesTeszt(String parentPath, String runProto_parancs, int ki) {
+    	int i = 0;
+    	int fails = 0;
+    	File input = new File(parentPath + "\\input\\" + (i + 1) +".txt");
+    	while(input.exists() && i < 33) {
+    		try {
+    			fails += process.exec(runProto_parancs).waitFor();
+    			if(ki == 1) {
+    				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + i;
+    	        	int exit2 = process.exec(runComp_parancs).waitFor();
+    	        	if(exit2 == 0) {
+    	        		System.out.println(i + ".teszteset sikeres");
+    	        	}
+    	        	else if(exit2 == 1) {
+    	        		System.out.println(i + ".teszteset sikertelen\nA hibas sorok:\n");
+    	        		File error = new File(parentPath + "\\Tester\\errors.txt");
+    	        		Scanner myReader = new Scanner(error);
+    	        		while(myReader.hasNextLine())
+    	        			System.out.println(myReader.nextLine());
+    	        		myReader.close();
+    	        	}
+    			}
+    		}
+    		catch(Exception e) {
+    			System.out.println(e.getMessage());
+    		}
+    		i++;
+    	}
     	
-        System.out.println(runProto_parancs);
-    	
-        
     }
 }
