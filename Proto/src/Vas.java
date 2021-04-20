@@ -66,10 +66,18 @@ public class Vas extends Nyersanyag {
 		
 	}
 	
+	/**
+	 * Visszaadja a nyersanyag típusát string ként
+	 * @return a nyersanyag típusa
+	 */
 	public String toString() {
 		return "Vas";
 	}
 
+	/**
+	 * Visszaadja a nyersanyag expozíciós számát
+	 * @return a vasnak nincs expozíciós száma, így 0-t ad vissza
+	 */
 	@Override
 	protected int getExp() {
 		return 0;

@@ -65,10 +65,18 @@ public class Vizjeg extends Nyersanyag {
 		
 	}
 	
+	/**
+	 * Visszaadja a nyersanyag típusát string ként
+	 * @return a nyersanyag típusa
+	 */
 	public String toString() {
 		return "Vizjeg";
 	}
 
+	/**
+	 * Visszaadja a nyersanyag expozíciós számát
+	 * @return a vízjégnek nincs expozíciós száma, így 0-t ad vissza
+	 */
 	@Override
 	protected int getExp() {
 		return 0;

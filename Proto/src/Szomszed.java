@@ -64,9 +64,4 @@ public abstract class Szomszed implements Serializable{
 	public String getID() {
 		return ID;
 	}
-	
-	/**
-	 * Az adott Szomszéd egyedi azonosítóját állítja be a paraméterben kapott String-re
-	 * @param id a String, ami a Szomszéd egyedi azonosítója lesz
-	 */
 }

@@ -86,10 +86,19 @@ public class Ufo extends Entitas implements Intelligencia {
 		System.out.println("Aszteroida: " + aszteroida.getID());
 	}
 	
+	/**
+	 * Visszaadja egy Stringben az entitás típusát
+	 * @return az entitás típusa stringben
+	 */
 	public String toString() {
 		return "Ufo";
 	}
 
+	/**
+	 * Az építés során  visszaadja, hogy teljesítve van e az útmutató.
+	 * @param bazis : Az útmutató az építéshez
+	 * @return a robot nem tud építeni, így nemmel tér vissza
+	 */
 	public boolean AnyagokTorol(Utmutato bazis) { return false; }
 	
 }

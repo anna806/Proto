@@ -53,10 +53,18 @@ public class Szen extends Nyersanyag {
 		
 	}
 	
+	/**
+	 * Visszaadja egy stringben a nyersanyag típusát
+	 * @return a nyersaynag típusa
+	 */
 	public String toString() {
 		return "Szen";
 	}
 
+	/**
+	 * Visszaadja a nyersanyag expozíciós számát
+	 * @return a szénnek nincs expozíciós száma, így 0-t ad vissza
+	 */
 	@Override
 	protected int getExp() {
 		return 0;

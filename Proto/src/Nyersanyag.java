@@ -48,6 +48,10 @@ public abstract class Nyersanyag implements Serializable{
 		return ID;
 	}
 	
+	/**
+	 *  Beállítja a nyersanyag ID-ját a kívántértékre. A leszármazottak valósítják meg.
+	 * @param s : a kívánt érték
+	 */
 	public void setID(String s) {
 		ID = s;
 	}
@@ -58,5 +62,9 @@ public abstract class Nyersanyag implements Serializable{
 	 */
 	protected abstract void setExp(int i);
 	
+	/**
+	 * Visszaadja a nyersanyag expozíciós számát. A leszármazottak valósítják meg.
+	 * @return A nyersanyag expozíciós száma.
+	 */
 	protected abstract int getExp();
 }

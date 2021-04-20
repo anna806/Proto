@@ -90,10 +90,19 @@ public class Robot extends Entitas implements Intelligencia {
 		System.out.println("Aszteroida: " + aszteroida.getID());
 	}
 	
+	/**
+	 * Kiírja az entitás fõ tulajdonságát
+	 * @return az entitás típusa
+	 */
 	public String toString() {
 		return "Robot";
 	}
-
+	
+	/**
+	 * Az építés során  visszaadja, hogy teljesítve van e az útmutató.
+	 * @param bazis : Az útmutató az építéshez
+	 * @return a robot nem tud építeni, így nemmel tér vissza
+	 */
 	public boolean AnyagokTorol(Utmutato bazis) {
 		return false;
 	}

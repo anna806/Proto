@@ -43,6 +43,13 @@ public class Utmutato {
 		return hozzavalok.size() == 0;
 	}
 	
+	/**
+	 * Megnézi, hogy az adott nyersanyagot ki kell e törölni a telepestõl, ha igen,
+	 * berakja a törlendõ listába és kiszedi a megvanlistából
+	 * @param ny : a telepesnél vizsgált nyersanyag
+	 * @param torlendo A telepes számára törlendõ anyagok listája
+	 * @return sikerült e kitörölni az összes szükséges nyersanyagot
+	 */
 	public boolean MindTorol(Nyersanyag ny, List<Nyersanyag> torlendo) {
 		for(int i = 0; i < megvanLista.size(); i++) {
 			if(megvanLista.get(i).Kompatibilis(ny)) {

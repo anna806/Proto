@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ticka/git/Proto/Proto/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ltama/OneDrive/Dokumentumok/GitHub/Proto/Proto/json-simple-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

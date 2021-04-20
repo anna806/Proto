@@ -80,5 +80,11 @@ public abstract class Entitas {
 		return aszteroida;
 	}
 	
+	/**
+	 * Az építés során kitörli az anyagokat az enititás inventoryjából és visszaadja,
+	 * hogy teljesítve van e az útmutató. A leszármazottak valósítják meg.
+	 * @param bazis : Az útmutató az építéshez
+	 * @return kitörölte-e az összes anyagot ami az útmutatóban van 
+	 */
 	public abstract boolean AnyagokTorol(Utmutato bazis);
 }

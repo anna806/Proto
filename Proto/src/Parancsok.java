@@ -23,6 +23,9 @@ public class Parancsok {
 	//ki = 1 outputfájlba
 	//id-k stringek!!
 	//cél hogy konzolra és fájlba is írjon
+	/**
+	 * megadja, hogy fejelesztõi módban tesztelünk-e
+	 */
 	private static boolean fejlesztoi;
 	public void Main(String[] args) {
 		try {
@@ -61,6 +64,13 @@ public class Parancsok {
 			System.exit(1);
 		}
 	}
+	
+	/**
+	 * Értelmezi a megkapott parancsot és végrehajtja a megfelelõ parancsot
+	 * @param p : a parancs
+	 * @param ps : A teszteset száma
+	 * @param ki : fájlba, vagy konzolra kell írnia a végeredményt?
+	 */
 	static void ParancsErtelmezo(String p, String ps, String ki) {
 		String[] com = p.split(" ");
 		String command = com[0];
@@ -241,6 +251,13 @@ public class Parancsok {
 		}
 	}
 	
+	/**
+	 * Kiiratja a kimenetre a megfelelõ objektumokat
+	 * @param p : a teszteset neve
+	 * @param out : a kimenet fájl, vagy konzol-e
+	 * @param obj : a kiirandó objektumok listája
+	 * @throws Exception
+	 */
 	public static void Output(String p, String out, String[] obj) throws Exception {
 		JSONObject ki = new JSONObject();
 		for(int i = 0; i < obj.length; i++) {
@@ -271,6 +288,16 @@ public class Parancsok {
 		}
 	}
 	
+	/**
+	 * Visszaad egy json objektumot, amibe belerak egy aszteroidát ID alapján
+	 * @param filename : a fájl neve
+	 * @param ID : az aszteroida ID-ja
+	 * @param out : fájlba, vagy konzolra írja
+	 * @param json : json objektum, amibe az adatokat rakjuk
+	 * @param i : a sorszáma
+	 * @return a fájlba írandó objektum
+	 * @throws Exception
+	 */
 	public static JSONObject writeAszteroida(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
 		String s = "Aszteroida" + i;
@@ -283,6 +310,16 @@ public class Parancsok {
 	    	return json;
 	}
 	
+	/**
+	 * Visszaad egy json objektumot, amibe belerak egy telepest ID alapján
+	 * @param filename : a fájl neve
+	 * @param ID : a telepes ID-ja
+	 * @param out : fájlba, vagy konzolra írja
+	 * @param json : json objektum, amibe az adatokat rakjuk
+	 * @param i : a sorszáma
+	 * @return a fájlba írandó objektum
+	 * @throws Exception
+	 */
 	public static JSONObject writeTelepes(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
 //	    JSONObject teleportkapu = new JSONObject();
@@ -298,6 +335,16 @@ public class Parancsok {
 	    	return json;
 	}
 	
+	/**
+	 * Visszaad egy json objektumot, amibe belerak egy kaput ID alapján
+	 * @param filename : a fájl neve
+	 * @param ID : a kapu ID-ja
+	 * @param out : fájlba, vagy konzolra írja
+	 * @param json : json objektum, amibe az adatokat rakjuk
+	 * @param i : a sorszáma
+	 * @return a fájlba írandó objektum
+	 * @throws Exception
+	 */ 
 	public static JSONObject writeKapu(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
 //	    JSONObject aszteroida = new JSONObject();
@@ -312,6 +359,16 @@ public class Parancsok {
 	    	return json;
 	}
 	
+	/**
+	 * Visszaad egy json objektumot, amibe belerak egy uránt ID alapján
+	 * @param filename : a fájl neve
+	 * @param ID : az urán ID-ja
+	 * @param out : fájlba, vagy konzolra írja
+	 * @param json : json objektum, amibe az adatokat rakjuk
+	 * @param i : a sorszáma
+	 * @return a fájlba írandó objektum
+	 * @throws Exception
+	 */
 	public static JSONObject writeUran(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		String s = Main.game.GetOv().GetNyersanyagByID(ID);
 		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 

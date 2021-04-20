@@ -164,6 +164,12 @@ public class Telepes extends Entitas {
 		return kesz;
 	}
 	
+	/**
+	 * Az építés során kitörli az anyagokat a telepes inventoryjából és visszaadja,
+	 * hogy teljesítve van e az útmutató
+	 * @param bazis : Az útmutató az építéshez
+	 * @return kitörölte-e az összes anyagot ami az útmutatóban van 
+	 */
 	public boolean AnyagokTorol(Utmutato bazis) {
 		boolean kesz = false;
 		System.out.println("Utmutatoo");
@@ -283,19 +289,13 @@ public class Telepes extends Entitas {
 	 * Kiírja a telepes tulajdonságait a kimenetre
 	 */
 	public void kiir() {
-//		System.out.println(this + ": " + ID);
-//		System.out.println("Aszteroida: " + aszteroida.getID());
-//		for(int i = 0; i < nyersanyagok.size(); i++)
-//			System.out.println("Nyersanyag: " + nyersanyagok.get(i).getID());
-//		for(int i = 0; i < kapuk.size(); i++)
-//			System.out.println("Kapu: " + kapuk.get(i).getID());
 		System.out.println("Telepes: " + this);
 	}
 	
-	/*public String toString() {
-		return "Telepes";
-	}*/
-	
+	/**
+	 * Kiírja egy Stringbe a telepes fő tulajdonságait és visszaadja a Stringet
+	 * @return a telepes tulajdonságait tartalmazó String
+	 */
 	public String toString() {
 		String s = "";
 		s += "\n\"ID\": \"" + ID + "\"\n\"aszteroida\": \"" + aszteroida.getID() +

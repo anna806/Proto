@@ -91,12 +91,19 @@ public class Uran extends Nyersanyag {
 		return ID;
 	}
 	
+	/**
+	 * Kiírja egy stringbe az urán legfontosabb tulajdonságait és visszadja azt.
+	 * @return az urán tulajdonságait tartalmazó string
+	 */
 	public String toString() {
 		String s = "\n\"ID\": \"" + ID + "\"\n\"expozicio\": \"" + expozicio  + "\n";
 		return s;
-//		return "Uran";
 	}
 
+	/**
+	 * Visszaadja az urán expozíciós számát
+	 * @return az urán expozíciós száma
+	 */
 	protected int getExp() {
 		return expozicio;
 	}
