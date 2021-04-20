@@ -5,12 +5,12 @@
 "kapuk": []
 ,"Uran2":
 "ID": "u01"
-"expozicio": "2
+"expozicio": "0
 ,"Aszteroida0":
 "ID": "a09"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "u02"
+"belsoAnyag": "u03"
 "entitasok": [
 	{
 		"ID: "t01"

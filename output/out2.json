@@ -2,7 +2,7 @@
 "ID": "a05"
 "keregvastagsag": 2
 "napkozel": "false"
-"belsoAnyag": "sz00"
+"belsoAnyag": "sz01"
 "entitasok": [
 	{
 		"ID: "t01"
@@ -18,7 +18,7 @@
 	},
 
 	{
-		"ID: "k01"
+		"ID: "k02"
 	},
 ]
 }

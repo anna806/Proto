@@ -1,13 +1,13 @@
 {"Teleportkapu1":
 "ID": "k01"
-"aszteroida": "a03
-"megkergult": "true"
+"aszteroida": "a05
+"megkergult": "false"
 "parja": "k02
 ,"Aszteroida0":
 "ID": "a05"
 "keregvastagsag": 3
 "napkozel": "false"
-"belsoAnyag": "sz00"
+"belsoAnyag": "sz01"
 "entitasok": []
 "szomszedok": [
 	{
@@ -19,7 +19,7 @@
 	},
 
 	{
-		"ID: "k01"
+		"ID: "k02"
 	},
 ]
 }

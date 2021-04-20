@@ -17,7 +17,7 @@
 "kapuk": []
 ,"Uran2":
 "ID": "u01"
-"expozicio": "2
+"expozicio": "0
 ,"Aszteroida0":
 "ID": "a03"
 "keregvastagsag": 0
@@ -30,7 +30,7 @@
 ]
 "szomszedok": [
 	{
-		"ID: "k02"
+		"ID: "k03"
 	},
 
 	{

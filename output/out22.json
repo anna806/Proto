@@ -9,7 +9,11 @@
 "napkozel": "true"
 "belsoAnyag": "Ureges"
 "
-"entitasok": []
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
 "szomszedok": [
 	{
 		"ID: "k02"
@@ -27,7 +31,7 @@
 "ID": "a05"
 "keregvastagsag": 3
 "napkozel": "false"
-"belsoAnyag": "sz00"
+"belsoAnyag": "sz01"
 "entitasok": [
 	{
 		"ID: "t01"
