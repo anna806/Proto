@@ -113,8 +113,10 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
 			break;
 		case "visszatoltes": 
+			System.out.println("Itt akadok el");
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
-			System.out.println(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().getBelsoAnyag().getExp());
+			//System.out.println(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().getBelsoAnyag().getExp());
+			System.out.println("Idaig eljutottam");
 			break;
 		case "plusz_telepes": 
 			

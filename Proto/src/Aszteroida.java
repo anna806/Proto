@@ -208,6 +208,7 @@ public class Aszteroida extends Szomszed{
 	 * ha az aszteroida épp napközelben van, a nyersanyag Napkozel függvénye hívódik meg
 	 */
 	public void Raktaroz(Nyersanyag a, Telepes t) {
+		System.out.println("Raktaroz fuggvenybe beleptem");
 		if(belsoAnyag == null && kopenyVastagsag == 0) {
 			t.RemoveNyersanyag(a);
 			belsoAnyag = a;
@@ -222,7 +223,7 @@ public class Aszteroida extends Szomszed{
 	 */
 	public void AnyagTorol() {
 		if (kopenyVastagsag==0)
-		belsoAnyag = null;
+			belsoAnyag = null;
 	}
 	
 	/**
@@ -362,11 +363,13 @@ public class Aszteroida extends Szomszed{
 	public String toString() {
 		String s = "";
 		s += "\n\"ID\": \"" + ID + "\"\n\"keregvastagsag\": " + kopenyVastagsag +
-				"\n\"napkozel\": \"" + napkozel; 
+				"\n\"napkozel\": \"" + napkozel;
+		System.out.println("Idaig eljutottam");
 		if(belsoAnyag != null)
 			s += "\"\n\"belsoAnyag\": \"" + belsoAnyag.getID();
 		if(belsoAnyag == null)
 			s += "\"\n\"belsoAnyag\": \"Ureges\"\n";
+		System.out.println("Ez is megvolt");
 		s += "\"\n\"entitasok\": [";
 		for(int i = 0; i < entitasok.size(); i++) {
 //			if(i == 0)
