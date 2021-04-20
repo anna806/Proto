@@ -2,5 +2,4 @@ palya_betoltes
 fejlesztoi_mod true
 plusz_telepes a02 t01
 telepes_fur t01
-kiir a02
-kiir t01
+kiir a02 t01

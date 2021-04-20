@@ -2,5 +2,4 @@ palya_betoltes
 fejlesztoi_mod true
 plusz_telepes a05 t01
 nyersanyag_kinyeres t01
-kiir a05
-kiir t01
+kiir a05 t01
