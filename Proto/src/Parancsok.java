@@ -68,7 +68,7 @@ public class Parancsok {
 			try {
 				if(com.length != 3)
 					throw new Exception("Tul keves argumentum");
-				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
+				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetSzomszed(com[2]));
 			} catch(Exception e) {
 				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);				
 			}
