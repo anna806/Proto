@@ -7,7 +7,7 @@
 "ID": "a05"
 "keregvastagsag": 3
 "napkozel": "false"
-"belsoAnyag": "sz00"
+"belsoAnyag": "sz01"
 "entitasok": [
 	{
 		"ID: "t01"
@@ -30,7 +30,7 @@
 "ID": "a08"
 "keregvastagsag": 3
 "napkozel": "true"
-"belsoAnyag": "v01"
+"belsoAnyag": "v02"
 "entitasok": []
 "szomszedok": [
 	{

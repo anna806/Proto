@@ -2,7 +2,7 @@
 "ID": "a08"
 "keregvastagsag": 3
 "napkozel": "true"
-"belsoAnyag": "v01"
+"belsoAnyag": "v02"
 "entitasok": [
 	{
 		"ID: "r01"
@@ -21,7 +21,7 @@
 "ID": "a06"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "v00"
+"belsoAnyag": "v01"
 "entitasok": [
 	{
 		"ID: "u01"
