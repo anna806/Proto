@@ -17,7 +17,7 @@ public class Main {
 
 		try {
 		    //File myObj = new File("Output\\"+ args[0]+".json");
-	    	File myObj = new File(parentPath + "\\output\\out" + args[0] + ".json");
+	    	File myObj = new File(parentPath + "\\Tester\\out" + args[0] + ".json");
 		    Scanner myReader = new Scanner(myObj);
 		    while (myReader.hasNextLine()) {
 		      ourfiles.add(myReader.nextLine());

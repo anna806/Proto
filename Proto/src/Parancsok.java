@@ -58,6 +58,7 @@ public class Parancsok {
 			console.close();
 		}catch(Exception e){
 			System.out.println(e.getMessage());
+			System.exit(1);
 		}
 	}
 	static void ParancsErtelmezo(String p, String ps, String ki) {
@@ -222,11 +223,6 @@ public class Parancsok {
 			Main.game.ser(Main.game.GetOv(), "jatek.txt");
 			break;
 		case "kiir": 
-//			try {
-//				Output(ps, ki, com[1]);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
 			String out1 = "";
 			for(int i = 1; i < com.length; i++)
 				out1 += com[i] + " ";
@@ -238,30 +234,12 @@ public class Parancsok {
 			}
 			catch(Exception e) {
 				e.printStackTrace();
+				System.exit(1);
 			}
 			break;
 			
 		}
 	}
-	//JSONBE KIIRATNI!!!
-//	public static void Output(String p, String out, String obj) throws Exception {
-//		
-//		switch(obj.charAt(0)) {
-//		case 't':
-//			writeTelepes("out"+p+".json", obj, out);
-//			break;
-//		case 'a':
-//			writeAszteroida("out"+p+".json", obj, out);
-//			break;
-//		case 'u':
-//			writeUran("out"+p+".json", obj, out);
-//			break;
-//		case 'k':
-//			writeKapu("out"+p+".json", obj, out);
-//			break;
-//		}
-//
-//	}
 	
 	public static void Output(String p, String out, String[] obj) throws Exception {
 		JSONObject ki = new JSONObject();
@@ -286,7 +264,7 @@ public class Parancsok {
 			String dir = System.getProperty("user.dir");
 	    	File dirf = new File(dir);
 	    	String parentPath = dirf.getParent();
-	    	FileWriter writer = new FileWriter(parentPath + "\\Tester\\" + "out" + p + ".json");
+	    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + "out" + p + ".json");
 	    	writer.write(ki.toJSONString());
 	    	writer.flush();
 	    	writer.close();
@@ -295,8 +273,6 @@ public class Parancsok {
 	
 	public static JSONObject writeAszteroida(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
-//	    JSONObject aszteroida = new JSONObject();
-//	    aszteroida.put("Aszteroida", a);
 		String s = "Aszteroida" + i;
 		json.put(s, a);
 	    if(out.equals("0")) {

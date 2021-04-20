@@ -1,1 +1,41 @@
-{"nyersanyagok:":["Vas","Vas","Szen","Vizjeg"],"aszteroida":"a08","kapuk:":[],"ID":"t01"}
+{"Telepes1":
+"ID": "t01"
+"aszteroida": "a08"
+"nyersanyagok": [
+	{
+		"ID: "v01"
+	},
+
+	{
+		"ID: "v02"
+	},
+
+	{
+		"ID: "sz01"
+	},
+
+	{
+		"ID: "vj01"
+	},
+]
+"kapuk": []
+,"Aszteroida0":
+"ID": "a08"
+"keregvastagsag": 3
+"napkozel": "true"
+"belsoAnyag": "v01"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a05"
+	},
+
+	{
+		"ID: "a06"
+	},
+]
+}

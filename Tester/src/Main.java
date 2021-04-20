@@ -34,7 +34,8 @@ public class Main {
             System.out.println("Futtatandó teszt sorszáma: ");
             kod = scan.nextInt();            
         }
-        runProto_parancs += " " + kod;
+        if(kod != 0)
+        	runProto_parancs += " " + kod;
         
         scan.close();
         if(kod == 0) {
@@ -84,18 +85,21 @@ public class Main {
     public static void osszesTeszt(String parentPath, String runProto_parancs, int ki) {
     	int i = 0;
     	int fails = 0;
+    	String s = runProto_parancs;
     	File input = new File(parentPath + "\\input\\" + (i + 1) +".txt");
     	while(input.exists() && i < 33) {
     		try {
-    			fails += process.exec(runProto_parancs).waitFor();
+    			String p = s + " " + (i + 1);
+    			System.out.println(p);
+    			fails += process.exec(p).waitFor();
     			if(ki == 1) {
-    				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + i;
+    				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + (i + 1);
     	        	int exit2 = process.exec(runComp_parancs).waitFor();
     	        	if(exit2 == 0) {
     	        		System.out.println((i + 1) + ".teszteset sikeres");
     	        	}
     	        	else if(exit2 == 1) {
-    	        		System.out.println(i + ".teszteset sikertelen\nA hibas sorok:\n");
+    	        		System.out.println((i + 1) + ".teszteset sikertelen\nA hibas sorok:\n");
     	        		File error = new File(parentPath + "\\Tester\\errors.txt");
     	        		Scanner myReader = new Scanner(error);
     	        		/*while(myReader.hasNextLine()) {
