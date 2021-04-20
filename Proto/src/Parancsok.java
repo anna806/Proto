@@ -68,7 +68,7 @@ public class Parancsok {
 			try {
 				if(com.length != 3)
 					throw new Exception("Tul keves argumentum");
-				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetAszteroida(com[2]));
+				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(Main.game.GetOv().GetSzomszed(com[2]));
 			} catch(Exception e) {
 				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);				
 			}
@@ -315,7 +315,7 @@ public class Parancsok {
 //	    teleportkapu.put("Teleportkapu", t);
 		String s = "Telepes" + i;
 		json.put(s, t);
-		System.out.println("Hozza adtam");
+		//System.out.println("Hozza adtam");
 	    if(out.equals("0")) {
 	    	System.out.println("Telepes: " + t);
 	    	return null;
@@ -328,7 +328,7 @@ public class Parancsok {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
 //	    JSONObject aszteroida = new JSONObject();
 //	    aszteroida.put("Aszteroida", a);
-		String s = "Teleportkpau" + i;
+		String s = "Teleportkapu" + i;
 		json.put(s, t);
 	    if(out.equals("0")) {
 	    	System.out.println("Teleportkapu: " + t);

@@ -351,4 +351,16 @@ public class Aszteroidaov implements Serializable{
 		}
 		return null;
 	}
+
+	public Szomszed GetSzomszed(String ID) {
+		for(Aszteroida a : aszteroidak) {
+			if(a.getID().equals(ID))
+				return a;
+		}		
+		for(Teleportkapu k : kapuk) {
+			if(k.getID().equals(ID))
+				return k;
+		}
+		return null;
+	}
 }

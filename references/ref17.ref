@@ -1,37 +1,33 @@
-Aszteroida
-{
-   “ID”: “a08”,
-   “napkozel”: “true”,
-   “keregvastagsag”: 3,
-   “belsoAnyag”: “Vas”,
-   “entitasok”:  [
+{"Telepes1":
+"ID": "t01"
+"aszteroida": "a08"
+"nyersanyagok": [
 	{
-                “ID”: “t01“
-       	 },
-    ]
-     “szomszedok”:  [
-          	{
-           	   “ID”: “a05”
-         	},
-          	{
-           	   “ID”: “a06”
-         	}
-      ]
-}
-Telepes
-{
-   “ID”: “t01”,
-   “aszteroida”: “a08”,
-   “nyersanyagok”:  [
-	{
-	    "Nev": "Vas"
+		"ID: "v02"
 	},
+]
+"kapuk": []
+,"Aszteroida0":
+"ID": "a08"
+"keregvastagsag": 3
+"napkozel": "true"
+"belsoAnyag": "v01"
+"entitasok": [
 	{
-	    "Nev": "Szen"
+		"ID: "t01"
 	},
+
 	{
-	    "Nev": "Vizjeg"
-	}
-   ]
-   “kapuk”:  [ ]
+		"ID: "r01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a05"
+	},
+
+	{
+		"ID: "a06"
+	},
+]
 }

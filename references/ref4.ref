@@ -1,1 +1,37 @@
-{"entitasok:":["t01"],"szomszedok:":["a03","a01"],"napkozel":"false","keregvastagsag":0,"belsoAnyag":"Uran","ID":"a04"}{"nyersanyagok:":["Vizjeg","Szen","Vas"],"aszteroida":"a04","kapuk:":[],"ID":"t01"}
+{"Telepes1":
+"ID": "t01"
+"aszteroida": "a04"
+"nyersanyagok": [
+	{
+		"ID: "vj01"
+	},
+
+	{
+		"ID: "sz01"
+	},
+
+	{
+		"ID: "v01"
+	},
+]
+"kapuk": []
+,"Aszteroida0":
+"ID": "a04"
+"keregvastagsag": 0
+"napkozel": "false"
+"belsoAnyag": "u01"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a01"
+	},
+]
+}
