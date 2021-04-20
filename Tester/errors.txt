@@ -1,2 +1,2 @@
-"belsoAnyag": "sz01"
-"belsoAnyag": "sz02"
+"expozicio": "2
+"expozicio": "0

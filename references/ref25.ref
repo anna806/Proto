@@ -5,11 +5,11 @@
 "ID": "a00"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "u00"
+"belsoAnyag": "u01"
 "entitasok": []
 "szomszedok": [
 	{
-		"ID: "k02"
+		"ID: "k03"
 	},
 
 	{

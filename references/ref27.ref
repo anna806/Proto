@@ -2,7 +2,7 @@
 "ID": "a09"
 "keregvastagsag": 1
 "napkozel": "true"
-"belsoAnyag": "u02"
+"belsoAnyag": "u03"
 "entitasok": []
 "szomszedok": [
 	{
@@ -17,7 +17,7 @@
 "ID": "a08"
 "keregvastagsag": 3
 "napkozel": "true"
-"belsoAnyag": "v01"
+"belsoAnyag": "v02"
 "entitasok": []
 "szomszedok": [
 	{
@@ -32,14 +32,14 @@
 "ID": "a07"
 "keregvastagsag": 3
 "napkozel": "true"
-"belsoAnyag": "sz01"
+"belsoAnyag": "sz02"
 "entitasok": []
 "szomszedok": []
 ,"Aszteroida5":
 "ID": "a06"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "v00"
+"belsoAnyag": "v01"
 "entitasok": []
 "szomszedok": [
 	{
@@ -62,7 +62,7 @@
 "ID": "a05"
 "keregvastagsag": 3
 "napkozel": "false"
-"belsoAnyag": "sz00"
+"belsoAnyag": "sz01"
 "entitasok": []
 "szomszedok": [
 	{
@@ -113,7 +113,7 @@
 "ID": "a02"
 "keregvastagsag": 1
 "napkozel": "true"
-"belsoAnyag": "vj00"
+"belsoAnyag": "vj01"
 "entitasok": []
 "szomszedok": [
 	{
@@ -132,11 +132,11 @@
 "ID": "a00"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "u00"
+"belsoAnyag": "u01"
 "entitasok": []
 "szomszedok": [
 	{
-		"ID: "k02"
+		"ID: "k03"
 	},
 
 	{
