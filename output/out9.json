@@ -1,0 +1,18 @@
+{"Telepes":
+"ID": "t02"
+"aszteroida": "a08"
+"nyersanyagok": [
+	{
+		"ID: "u02"
+	},
+
+	{
+		"ID: "v02"
+	},
+
+	{
+		"ID: "vj02"
+	},
+]
+"kapuk": []
+}

@@ -1,13 +1,9 @@
 {"Telepes":
 "ID": "t01"
-"aszteroida": "a08"
+"aszteroida": "a04"
 "nyersanyagok": [
 	{
-		"ID: "v01"
-	},
-
-	{
-		"ID: "v02"
+		"ID: "vj01"
 	},
 
 	{
@@ -15,15 +11,15 @@
 	},
 
 	{
-		"ID: "vj01"
+		"ID: "v01"
 	},
 ]
 "kapuk": []
 ,"Aszteroida":
-"ID": "a08"
-"keregvastagsag": 3
-"napkozel": "true"
-"belsoAnyag": "v01"
+"ID": "a04"
+"keregvastagsag": 0
+"napkozel": "false"
+"belsoAnyag": "u01"
 "entitasok": [
 	{
 		"ID: "t01"
@@ -31,11 +27,11 @@
 ]
 "szomszedok": [
 	{
-		"ID: "a05"
+		"ID: "a03"
 	},
 
 	{
-		"ID: "a06"
+		"ID: "a01"
 	},
 ]
 }

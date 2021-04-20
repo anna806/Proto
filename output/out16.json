@@ -1,0 +1,25 @@
+{"Aszteroida":
+"ID": "a04"
+"keregvastagsag": 0
+"napkozel": "false"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t02"
+	},
+
+	{
+		"ID: "u01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a01"
+	},
+]
+}

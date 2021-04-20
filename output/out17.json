@@ -3,19 +3,7 @@
 "aszteroida": "a08"
 "nyersanyagok": [
 	{
-		"ID: "v01"
-	},
-
-	{
 		"ID: "v02"
-	},
-
-	{
-		"ID: "sz01"
-	},
-
-	{
-		"ID: "vj01"
 	},
 ]
 "kapuk": []
@@ -27,6 +15,10 @@
 "entitasok": [
 	{
 		"ID: "t01"
+	},
+
+	{
+		"ID: "r01"
 	},
 ]
 "szomszedok": [

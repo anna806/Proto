@@ -1,11 +1,11 @@
 {"Aszteroida":
 "ID": "a08"
-"keregvastagsag": 2
+"keregvastagsag": 3
 "napkozel": "true"
 "belsoAnyag": "v01"
 "entitasok": [
 	{
-		"ID: "t01"
+		"ID: "u01"
 	},
 ]
 "szomszedok": [

@@ -1,0 +1,16 @@
+{"Aszteroida":
+"ID": "a09"
+"keregvastagsag": 1
+"napkozel": "true"
+"belsoAnyag": "u02"
+"entitasok": []
+"szomszedok": [
+	{
+		"ID: "a02"
+	},
+
+	{
+		"ID: "a06"
+	},
+]
+}

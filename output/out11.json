@@ -3,22 +3,18 @@
 "aszteroida": "a08"
 "nyersanyagok": [
 	{
-		"ID: "v01"
-	},
-
-	{
-		"ID: "v02"
-	},
-
-	{
 		"ID: "sz01"
 	},
+]
+"kapuk": [
+	{
+		"ID: "k01"
+	},
 
 	{
-		"ID: "vj01"
+		"ID: "k02"
 	},
 ]
-"kapuk": []
 ,"Aszteroida":
 "ID": "a08"
 "keregvastagsag": 3

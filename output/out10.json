@@ -11,14 +11,26 @@
 	},
 
 	{
-		"ID: "sz01"
+		"ID: "vj01"
 	},
 
 	{
-		"ID: "vj01"
+		"ID: "u01"
+	},
+
+	{
+		"ID: "sz01"
 	},
 ]
-"kapuk": []
+"kapuk": [
+	{
+		"ID: "k01"
+	},
+
+	{
+		"ID: "k03"
+	},
+]
 ,"Aszteroida":
 "ID": "a08"
 "keregvastagsag": 3
