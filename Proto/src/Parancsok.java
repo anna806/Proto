@@ -327,7 +327,7 @@ public class Parancsok {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
 //	    JSONObject aszteroida = new JSONObject();
 //	    aszteroida.put("Aszteroida", a);
-		String s = "Teleportkpau" + i;
+		String s = "Teleportkapu" + i;
 		json.put(s, t);
 	    if(out.equals("0")) {
 	    	System.out.println("Teleportkapu: " + t);

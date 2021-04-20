@@ -1,49 +1,53 @@
-Aszteroida
-{
-   “ID”: “a03”,
-   “napkozel”: “true”,
-   “keregvastagsag”: 0,
-   “belsoAnyag”: “Ureges”,
-   “entitasok”:  [
-{
-	   “ID”: “t01“
-        	},
+{"Aszteroida1":
+"ID": "a04"
+"keregvastagsag": 0
+"napkozel": "false"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
 	{
-	   “ID”: “r01“
-        	}
-     ]
-     “szomszedok”:  [
-         	{
-   “ID”: “a04”
-         	},
-         	{
-    “ID”: “a06”
-        	 },
+		"ID: "t02"
+	},
+
 	{
-	    “ID”: “k02”
-	 }
-      ]
-   }
-Aszteroida
-{
-   “ID”: “a04”,
-   “napkozel”: “false”,
-   “keregvastagsag”: 0,
-   “belsoAnyag”: “Ureges”,
-   “entitasok”:  [
+		"ID: "u01"
+	},
+]
+"szomszedok": [
 	{
-	   “ID”: “t02“
-        	},
+		"ID: "a03"
+	},
+
 	{
-	   “ID”: “u01“
-        	}
-     ]
-     “szomszedok”:  [
-         {
-“ID”: “a03”
-         },
-         {
-	“ID”: “a01”
-         }
-      ]
-   }
+		"ID: "a01"
+	},
+]
+,"Aszteroida0":
+"ID": "a03"
+"keregvastagsag": 0
+"napkozel": "true"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+
+	{
+		"ID: "r01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "k02"
+	},
+
+	{
+		"ID: "a06"
+	},
+
+	{
+		"ID: "a04"
+	},
+]
+}

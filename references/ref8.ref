@@ -1,1 +1,11 @@
-{"nyersanyagok:":[],"aszteroida":"a08","kapuk:":[],"ID":"t01"}{"nyersanyagok:":[],"aszteroida":"a08","kapuk:":[],"ID":"t02"}
+{"Telepes1":
+"ID": "t02"
+"aszteroida": "a08"
+"nyersanyagok": []
+"kapuk": []
+,"Telepes0":
+"ID": "t01"
+"aszteroida": "a08"
+"nyersanyagok": []
+"kapuk": []
+}

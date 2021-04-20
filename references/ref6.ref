@@ -1,1 +1,74 @@
-{"entitasok:":["t01"],"szomszedok:":["a03","a00","a09","a08"],"napkozel":"true","keregvastagsag":0,"belsoAnyag":"Ureges","ID":"a06"}{"nyersanyagok:":["Vas","Uran","Szen","Vizjeg","Vas","Vas","Uran","Vizjeg","Szen","Uran"],"aszteroida":"a06","kapuk:":[],"ID":"t01"}
+{"Telepes1":
+"ID": "t01"
+"aszteroida": "a06"
+"nyersanyagok": [
+	{
+		"ID: "v01"
+	},
+
+	{
+		"ID: "u01"
+	},
+
+	{
+		"ID: "sz01"
+	},
+
+	{
+		"ID: "vj01"
+	},
+
+	{
+		"ID: "v02"
+	},
+
+	{
+		"ID: "v03"
+	},
+
+	{
+		"ID: "u02"
+	},
+
+	{
+		"ID: "vj02"
+	},
+
+	{
+		"ID: "sz02"
+	},
+
+	{
+		"ID: "u03"
+	},
+]
+"kapuk": []
+,"Aszteroida0":
+"ID": "a06"
+"keregvastagsag": 0
+"napkozel": "true"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a00"
+	},
+
+	{
+		"ID: "a09"
+	},
+
+	{
+		"ID: "a08"
+	},
+]
+}
