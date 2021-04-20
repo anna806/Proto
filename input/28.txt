@@ -4,6 +4,4 @@ plusz_telepes a03 t01
 plusz_nyersanyag t01 v01 vj01 v02 u01
 expozicio u01 1
 visszatoltes t01
-kiir a03
-kiir t01
-kiir u01
+kiir a03 t01 u01
