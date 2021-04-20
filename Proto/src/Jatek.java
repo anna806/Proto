@@ -162,8 +162,8 @@ public class Jatek {
 		k0.setAszter(a5);
 		Teleportkapu k1 = new Teleportkapu();
 		Teleportkapu k2 = new Teleportkapu();
-		k1.setParja(k2);
-		k2.setParja(k1);
+		k0.setParja(k1);
+		k1.setParja(k0);
 		k1.setAszter(a3);
 		k2.setAszter(a0);
 		List<Szomszed> szomszedok = new ArrayList<Szomszed>();
