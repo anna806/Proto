@@ -45,8 +45,6 @@ public class Aszteroida extends Szomszed{
 		ID="a0"+count++;
 	}
 	
-	
-	
 	/**
 	 * beállítja a napkozel változó értékét
 	 * @param b ez a logikai érték lesza változó értéke

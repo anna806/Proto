@@ -15,7 +15,7 @@ public class Main {
     	System.out.println(parentPath);
     	String runProto_parancs;
     	
-    	runProto_parancs = "java -jar " + parentPath + "\\test.jar";
+    	runProto_parancs = "java -jar " + parentPath + "\\proto.jar";
 
         Scanner scan = new Scanner(System.in);
         
