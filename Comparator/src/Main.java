@@ -16,23 +16,19 @@ public class Main {
     	String parentPath = dirf.getParent();
 
 		try {
-		    //File myObj = new File("Output\\"+ args[0]+".json");
-	    	File myObj = new File(parentPath + "\\Tester\\out" + args[0] + ".json");
+	    	File myObj = new File(parentPath + "\\output\\out" + args[0] + ".json");
 		    Scanner myReader = new Scanner(myObj);
 		    while (myReader.hasNextLine()) {
 		      ourfiles.add(myReader.nextLine());
-		      System.out.println(ourfiles);
 		    }
 		    myReader.close();
 		    myObj = new File(parentPath + "\\references\\ref" + args[0] + ".ref");
 		    Scanner myReader2 = new Scanner(myObj);
 		    while (myReader2.hasNextLine()) {
 		      testfiles.add(myReader2.nextLine());
-		      System.out.println(testfiles);
 		    }
 		    myReader2.close();
 		 } catch (FileNotFoundException e) {
-		      System.out.println("An error occurred.");
 		      e.printStackTrace();
 		   }
 		

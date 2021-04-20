@@ -1,7 +1,7 @@
 {"Teleportkapu1":
 "ID": "k01"
 "aszteroida": "a05
-"megkergult": "false"
+"megkergult": "true"
 "parja": "k02
 ,"Aszteroida0":
 "ID": "a05"
@@ -19,7 +19,7 @@
 	},
 
 	{
-		"ID: "k02"
+		"ID: "k01"
 	},
 ]
 }

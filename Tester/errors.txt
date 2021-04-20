@@ -1,1 +1,2 @@
-{"Telepes1":{"nyersanyagok:":["Vas","Vas","Szen","Vizjeg"],"aszteroida":"a08","kapuk:":[],"ID":"t01"}
+"belsoAnyag": "sz01"
+"belsoAnyag": "sz02"
