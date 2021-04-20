@@ -358,6 +358,7 @@ public class Aszteroidaov implements Serializable{
 				return a;
 		}		
 		for(Teleportkapu k : kapuk) {
+			System.out.println(k.getID());
 			if(k.getID().equals(ID))
 				return k;
 		}
