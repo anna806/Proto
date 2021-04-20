@@ -9,10 +9,6 @@ public class Szen extends Nyersanyag {
 	 * az id egyediségét biztosító számláló
 	 */
 	private static int count=1;
-	/**
-	 * A nyersanyag azonosítására szolgáló ID
-	 */
-	//private String ID;
 	
 	/**
 	 * A Szén osztály konstruktora.

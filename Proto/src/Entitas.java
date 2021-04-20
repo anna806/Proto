@@ -29,7 +29,7 @@ public abstract class Entitas {
 	public abstract void Felrobban();
 	
 	/**
-	 * ény az Entitások léptetésére,
+	 * absztrakt függvény az Entitások léptetésére,
 	 * a absztrakt függvzármazottak valósítják meg
 	 */
 	public abstract void Lep();

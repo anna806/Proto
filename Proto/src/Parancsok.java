@@ -322,11 +322,8 @@ public class Parancsok {
 	 */
 	public static JSONObject writeTelepes(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
-//	    JSONObject teleportkapu = new JSONObject();
-//	    teleportkapu.put("Teleportkapu", t);
 		String s = "Telepes" + i;
 		json.put(s, t);
-		//System.out.println("Hozza adtam");
 	    if(out.equals("0")) {
 	    	System.out.println("Telepes: " + t);
 	    	return null;
@@ -347,8 +344,6 @@ public class Parancsok {
 	 */ 
 	public static JSONObject writeKapu(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
-//	    JSONObject aszteroida = new JSONObject();
-//	    aszteroida.put("Aszteroida", a);
 		String s = "Teleportkapu" + i;
 		json.put(s, t);
 	    if(out.equals("0")) {
@@ -381,93 +376,5 @@ public class Parancsok {
 	    else
 	    	return json;
 	}
-	
-//	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
-//		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
-//	    JSONObject aszteroida = new JSONObject();
-//	    aszteroida.put("ID", a.getID());
-//	    aszteroida.put("napkozel", a.getNapkozel());
-//	    aszteroida.put("keregvastagsag", a.getKopenyVastagsag());
-//	    aszteroida.put("belsoAnyag", a.getBelsoAnyagString());
-//	    
-//	    JSONArray entitasok = new JSONArray();
-//	    for(int i = 0; i<a.EntitasokSize(); i++) {
-//	    	entitasok.add(a.getEntitas(i));
-//	    }
-//	    JSONArray szomszedok = new JSONArray();
-//	    for(int i = 0; i<a.SzomszedokSize(); i++) {
-//	    	szomszedok.add(a.getSzomszed(i));
-//	    }
-//	    aszteroida.put("entitasok:", entitasok);
-//	    aszteroida.put("szomszedok:", szomszedok);
-//	    aszteroida.put("ID", a.getID());
-//		aszteroida.put("Aszteroida", a);
-//	    if(out.equals("0")) {
-//	    	System.out.println(aszteroida);
-//	    } else if(out.equals("1")) {
-//	    	String dir = System.getProperty("user.dir");
-//	    	File dirf = new File(dir);
-//	    	String parentPath = dirf.getParent();
-//	    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + filename);
-//	    	writer.write(aszteroida.toJSONString());
-//	    	writer.flush();
-//	    	writer.close();
-//	    	//Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-//	    } 
-//	}
-	
-//	public static void writeTelepes(String filename, String ID, String out) throws Exception {
-//		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
-//	    JSONObject telepes = new JSONObject();
-//	    telepes.put("ID", t.getID());
-//	    telepes.put("aszteroida", t.getAszteroida().getID());
-//	    	    
-//	    JSONArray nyersanyagok = new JSONArray();
-//	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
-//	    	nyersanyagok.add(t.getNyersanyagok(i));
-//	    }
-//	    JSONArray kapuk = new JSONArray();
-//	    for(int i = 0; i<t.KapukSize(); i++) {
-//	    	kapuk.add(t.getKapuk(i));
-//	    }
-//	    telepes.put("nyersanyagok:", nyersanyagok);
-//	    telepes.put("kapuk:", kapuk);
-//	    
-//	    if(out.equals("0")) {
-//	    	System.out.println(telepes);
-//	    } else if(out.equals("1")) {
-//	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-//	    }
-//  
-//	}
-	
-	/*public static void writeUran(String filename, String ID, String out) throws Exception {
-		//nyersanyagid megy be
-		String s = Main.game.GetOv().GetNyersanyagByID(ID);
-		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
-	    JSONObject uran = new JSONObject();
-	    uran.put("ID", u.getID());
-	    uran.put("expozicio", u.getExp()); 	    
-	    if(out.equals("0")) {
-	    	System.out.println(uran);
-	    } else if(out.equals("1")){
-
-	    	Files.write(Paths.get(filename), uran.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-	    }
-
-	}
-	public static void writeKapu(String filename, String ID, String out) throws Exception {
-		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
-	    JSONObject kapu = new JSONObject();
-	    kapu.put("ID", t.getID());
-	    kapu.put("kergult", t.getMegkergult());
-	    kapu.put("parja", t.getParja());
-	    kapu.put("aszteroida", t.getAszter());
-		if(out.equals("0")) {
-			System.out.println(kapu);
-		} else if(out.equals("1")) {
-			Files.write(Paths.get(filename), kapu.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-		}
-	}*/
 }
 

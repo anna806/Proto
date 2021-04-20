@@ -15,10 +15,6 @@ public class Telepes extends Entitas {
 	 * Az id egyediségét biztosító számláló
 	 */
 	private static int count=1;
-	/**
-	 * A telepest azonosító ID
-	 */
-	//private String ID;
 	
 	/**
 	 * A telepes konstruktora

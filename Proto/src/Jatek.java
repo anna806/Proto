@@ -158,7 +158,6 @@ public class Jatek {
     	String parentPath = dirf.getParent();
     	System.out.print(parentPath);
 		try {
-			//if(tmp.exists()) {
 			if(dirf.exists()) {
 				FileOutputStream f = new FileOutputStream(parentPath + "\\" + filename);
 				ObjectOutputStream out = new ObjectOutputStream(f);
