@@ -57,9 +57,17 @@ public class Main {
         		System.out.println(kod + ".teszteset sikertelen\nA hibas sorok:\n");
         		File error = new File(parentPath + "\\Tester\\errors.txt");
         		Scanner myReader = new Scanner(error);
+//        		while(myReader.hasNextLine()) {
+//        			System.out.println("Elvart: " + myReader.nextLine());
+//        			//System.out.println("Kapott: " + myReader.nextLine());
+//        		}
+        		int k = 0;
         		while(myReader.hasNextLine()) {
-        			System.out.println("Elvart: " + myReader.nextLine());
-        			//System.out.println("Kapott: " + myReader.nextLine());
+        			if(k %2 == 0)
+        				System.out.println("Elvart: " + myReader.nextLine());
+        			else
+	        			System.out.println("Kapott: " + myReader.nextLine());
+        			k++;
         		}
         		myReader.close();
         	}
@@ -90,9 +98,17 @@ public class Main {
     	        		System.out.println(i + ".teszteset sikertelen\nA hibas sorok:\n");
     	        		File error = new File(parentPath + "\\Tester\\errors.txt");
     	        		Scanner myReader = new Scanner(error);
-    	        		while(myReader.hasNextLine()) {
+    	        		/*while(myReader.hasNextLine()) {
     	        			System.out.println("Elvart: " + myReader.nextLine());
     	        			System.out.println("Kapott: " + myReader.nextLine());
+    	        		}*/
+    	        		int k = 0;
+    	        		while(myReader.hasNextLine()) {
+    	        			if(k %2 == 0)
+    	        				System.out.println("Elvart: " + myReader.nextLine());
+    	        			else
+        	        			System.out.println("Kapott: " + myReader.nextLine());
+    	        			k++;
     	        		}
     	        		myReader.close();
     	        	}

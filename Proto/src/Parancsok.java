@@ -72,11 +72,10 @@ public class Parancsok {
 			} catch(Exception e) {
 				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);				
 			}
+			Main.game.GetOv().GetTelepesByID(com[1]).kiir();
 			break;
 		case "robot_mozog": 
-			
 			Main.game.GetOv().GetRobot(com[1]).RandomMozgas(); 
-			
 			break;
 		case "ufo_mozog": 
 			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();
@@ -97,7 +96,9 @@ public class Parancsok {
 			break;
 		case "napkozel": 
 			Main.game.GetOv().GetAszteroida(com[1]).setNapkozel(true);
+			System.out.println("Itt vagyok");
 			Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().Napkozel(Main.game.GetOv().GetAszteroida(com[1]));
+			System.out.println("Ide is elertem");
 			break;
 		case "teleportkapu_epites": 
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuEpit();
@@ -287,7 +288,7 @@ public class Parancsok {
 			String dir = System.getProperty("user.dir");
 	    	File dirf = new File(dir);
 	    	String parentPath = dirf.getParent();
-	    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + "out" + p + ".json");
+	    	FileWriter writer = new FileWriter(parentPath + "\\Tester\\" + "out" + p + ".json");
 	    	writer.write(ki.toJSONString());
 	    	writer.flush();
 	    	writer.close();

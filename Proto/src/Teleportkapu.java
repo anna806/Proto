@@ -72,7 +72,10 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 * vagyis, hogy melyik aszteroida érhetõ el teleportálással
 	 */
 	public Aszteroida ParHelye() {
-		return this.getParja().getAszter();
+		if(parja == null)
+			return null;
+		else
+			return getParja().getAszter();
 	}
 	
 	/**
@@ -90,8 +93,11 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 *@param a: kapott entitás
 	 */
 	public void Befogad(Entitas a) {
-		a.SetAszteroida(this.ParHelye());
-		ParHelye().Befogad(a);
+		if(ParHelye() != null) {
+			a.SetAszteroida(ParHelye());
+			ParHelye().Befogad(a);
+		}
+		aszteroida.Befogad(a);
 	}
 	
 	/**

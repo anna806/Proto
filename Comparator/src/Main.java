@@ -11,22 +11,24 @@ public class Main {
 		ArrayList<String> ourfiles = new ArrayList<String>(); 
 		ArrayList<String> testfiles = new ArrayList<String>();
 		ArrayList<String> errors = new ArrayList<String>(); 
+		final String dir = System.getProperty("user.dir");
+    	File dirf = new File(dir);
+    	String parentPath = dirf.getParent();
 
 		try {
-			final String dir = System.getProperty("user.dir");
-	    	File dirf = new File(dir);
-	    	String parentPath = dirf.getParent();
 		    //File myObj = new File("Output\\"+ args[0]+".json");
-	    	File myObj = new File(parentPath + "\\Tester\\out" + args[0] + ".json");
+	    	File myObj = new File(parentPath + "\\output\\out" + args[0] + ".json");
 		    Scanner myReader = new Scanner(myObj);
 		    while (myReader.hasNextLine()) {
 		      ourfiles.add(myReader.nextLine());
+		      System.out.println(ourfiles);
 		    }
 		    myReader.close();
 		    myObj = new File(parentPath + "\\references\\ref" + args[0] + ".ref");
 		    Scanner myReader2 = new Scanner(myObj);
 		    while (myReader2.hasNextLine()) {
 		      testfiles.add(myReader2.nextLine());
+		      System.out.println(testfiles);
 		    }
 		    myReader2.close();
 		 } catch (FileNotFoundException e) {
@@ -35,7 +37,9 @@ public class Main {
 		   }
 		
 		boolean failed = false;
-		for(int i = 0; i< ourfiles.size(); i++) {
+		int max = ourfiles.size();
+		if(testfiles.size() < max) max = testfiles.size();
+		for(int i = 0; i< max; i++) {
 			testfiles.set(i, testfiles.get(i).trim());
 			ourfiles.set(i, ourfiles.get(i).trim());
 			if(!ourfiles.get(i).equals(testfiles.get(i))) {
@@ -47,7 +51,7 @@ public class Main {
 		
 		if(failed) {
 			try {
-			      FileWriter myWriter = new FileWriter("errors.txt");
+			      FileWriter myWriter = new FileWriter(parentPath + "\\Tester\\errors.txt");
 			      for(int i = 0; i< errors.size(); i++) {
 						myWriter.write(errors.get(i) + "\n");
 					}
