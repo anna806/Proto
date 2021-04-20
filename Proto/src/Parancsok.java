@@ -314,7 +314,7 @@ public class Parancsok {
 //	    teleportkapu.put("Teleportkapu", t);
 		String s = "Telepes" + i;
 		json.put(s, t);
-		System.out.println("Hozza adtam");
+		//System.out.println("Hozza adtam");
 	    if(out.equals("0")) {
 	    	System.out.println("Telepes: " + t);
 	    	return null;
