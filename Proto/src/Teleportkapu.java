@@ -155,13 +155,13 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 	 * Kiirja az adott Teleportkapu külünbüzõ tulajdonágait a konzolra
 	 */
 	public void kiir() {
-//		System.out.println(this + ": " + ID);
-//		System.out.println("Aszteroida: " + aszteroida.getID());
-//		System.out.println("Parja: " + parja.ID);
-//		System.out.println("Kergult - e: " + megkergult);
-		System.out.println("Teleportkapu: " + this);
+	System.out.println("Teleportkapu: " + this);
 	}
 	
+	/**
+	 * Kiírja egy stringbe a teleportkapu legfõbb tulajdonságait és visszaadja azt
+	 * @return a teleportkapu fõ tulajdonságai
+	 */
 	public String toString() {
 		String s = "\n\"ID\": \"" + ID + "\"\n\"aszteroida\": \"" + aszteroida.getID() +
 				"\n\"megkergult\": \"" + megkergult + "\"\n\"parja\": \"" + parja.getID() + "\n";

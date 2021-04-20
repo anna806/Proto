@@ -59,7 +59,6 @@ public class Aszteroida extends Szomszed{
 	 * @return visszaadja az aszteroidában lévõ nyersanyagot
 	 */
 	public Nyersanyag AnyagKinyeres() {
-		//belsoAnyag = null;
 		if(kopenyVastagsag == 0)
 			return belsoAnyag;
 		else
@@ -343,20 +342,13 @@ public class Aszteroida extends Szomszed{
 	 * Kiírja az adott aszteroida különbözõ tulajdonágait a konzolra
 	 */
 	public void kiir() {
-		/*System.out.println(this + ": " + ID);
-		for(int i = 0; i < szomszedok.size(); i++)
-			System.out.println("Szomszed: " + szomszedok.get(i).getID());
-		for(int i = 0; i < entitasok.size(); i++)
-			System.out.println("Entitas: " + entitasok.get(i).getID());
-		System.out.println("Kopenyvastagsag: " + kopenyVastagsag);
-		System.out.println("Napkozel: " + napkozel);
-		if(belsoAnyag != null)
-			System.out.println("Nyersanyag: " + belsoAnyag.getID());
-		else
-			System.out.println("Nyersanyag: ureges");*/
 		System.out.println("Aszteroida " + this);
 	}
 	
+	/**
+	 * Kiírja az adott aszteroida különbözõ tulajdonágait egy srtingbe és visszaadja azt
+	 * @return Az azsteroidát leíró string
+	 */
 	@Override
 	public String toString() {
 		String s = "";
@@ -370,29 +362,19 @@ public class Aszteroida extends Szomszed{
 		System.out.println("Ez is megvolt");
 		s += "\"\n\"entitasok\": [";
 		for(int i = 0; i < entitasok.size(); i++) {
-//			if(i == 0)
-//				s += "\n{\n";
 			s += "\n\t{\n\t\t\"ID: \"" + entitasok.get(i).getID() + "\"\n\t},\n";
-//			if(i == entitasok.size() - 1)
-//				s += "},\n";
 		}	
 		s += "]\n\"szomszedok\": [";
 		for(int i = 0; i < szomszedok.size(); i++)
-//			if(i == 0)
-//				s += "\n{\n";
 			s += "\n\t{\n\t\t\"ID: \"" + szomszedok.get(i).getID() + "\"\n\t},\n";
-//			if(i == szomszedok.size() - 1)
-//				s += 
 		s += "]\n";
-//		return "Aszteroida{" +
-//                "ID='" + ID +
-//                ", keregvastagsag=" + kopenyVastagsag +
-//                ", napkozel=" + napkozel +
-//                ", belsoanyag=" + belsoAnyag +
-//                '}';
 		return s;
 	}
 	
+	/**
+	 * Visszaadja a belsõ anyag ID-jét
+	 * @return belsõ anyag ID-je
+	 */
 	public String getBelsoID() {
 		return belsoAnyag.getID();
 	}

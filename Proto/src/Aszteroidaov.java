@@ -190,7 +190,6 @@ public class Aszteroidaov implements Serializable{
 			if(r.getID().equals(ID))
 				return r;
 		}
-		//System.out.println("Null-nal lepek ki.");
 		return null;
 	}
 	
@@ -216,7 +215,6 @@ public class Aszteroidaov implements Serializable{
 		
 		for(Telepes t : telepesek) {
 			if(t.getID().equals(ID))
-				//System.out.println("telepesid");
 				return t;
 		}
 		return null;
@@ -251,14 +249,26 @@ public class Aszteroidaov implements Serializable{
 		return telepesek.size();
 	}
 	
+	/**
+	 * Visszaadja a robotok számát
+	 * @return a robotok száma
+	 */
 	public int GetRobotokSize() {
 		return robotok.size();
 	}
 	
+	/**
+	 * Visszaadja az ufók számát
+	 * @return az ufó száma
+	 */
 	public int GetUfokSize() {
 		return ufok.size();
 	}
 	
+	/**
+	 * Visszaadja a kapuk számát
+	 * @return a kapuk száma
+	 */
 	public int GetKapukSize() {
 		return kapuk.size();
 	}
@@ -343,6 +353,11 @@ public class Aszteroidaov implements Serializable{
 		System.out.println("Aszteroidak: "+ aszteroidak.size());
 	}
 
+	/**
+	 * Visszaadja egy aszteroida belsejében lévõ nyersanyagot ID szerint
+	 * @param ID : a keresett nyersanyag ID-ja
+	 * @return Az aszteroida ID-ja amiben a nyersanyag van
+	 */
 	public String GetNyersanyagByID(String ID) {
 		for(Aszteroida a: aszteroidak) {
 			if(a.getBelsoID().equals(ID)){
@@ -352,6 +367,11 @@ public class Aszteroidaov implements Serializable{
 		return null;
 	}
 
+	/**
+	 * Visszaad egy zomszédot ID szerint
+	 * @param ID : a keresett szomszéd ID-ja
+	 * @return a szomszéd maga
+	 */
 	public Szomszed GetSzomszed(String ID) {
 		for(Aszteroida a : aszteroidak) {
 			if(a.getID().equals(ID))
