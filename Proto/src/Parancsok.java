@@ -274,29 +274,31 @@ public class Parancsok {
 				ki = writeAszteroida("out"+p+".json", obj[i], out, ki);
 				break;
 			case 'u':
-				writeUran("out"+p+".json", obj[i], out);
+				ki = writeUran("out"+p+".json", obj[i], out, ki);
 				break;
 			case 'k':
-				writeKapu("out"+p+".json", obj[i], out);
+				ki = writeKapu("out"+p+".json", obj[i], out, ki);
 				break;
 			}
 		}
-    	String dir = System.getProperty("user.dir");
-    	File dirf = new File(dir);
-    	String parentPath = dirf.getParent();
-    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + "out" + p + ".json");
-    	writer.write(ki.toJSONString());
-    	writer.flush();
-    	writer.close();
+		if(ki != null) {
+			String dir = System.getProperty("user.dir");
+	    	File dirf = new File(dir);
+	    	String parentPath = dirf.getParent();
+	    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + "out" + p + ".json");
+	    	writer.write(ki.toJSONString());
+	    	writer.flush();
+	    	writer.close();
+		}
 	}
 	
 	public static JSONObject writeAszteroida(String filename, String ID, String out, JSONObject json) throws Exception {
 		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
-	    JSONObject aszteroida = new JSONObject();
-	    aszteroida.put("Aszteroida", a);
+//	    JSONObject aszteroida = new JSONObject();
+//	    aszteroida.put("Aszteroida", a);
 		json.put("Aszteroida", a);
 	    if(out.equals("0")) {
-	    	System.out.println(a);
+	    	System.out.println("Aszteroida" + a);
 	    	return null;
 	    }
 	    else
@@ -305,17 +307,41 @@ public class Parancsok {
 	
 	public static JSONObject writeTelepes(String filename, String ID, String out, JSONObject json) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
-	    JSONObject telepes = new JSONObject();
-	    telepes.put("Telepes", t);
+//	    JSONObject teleportkapu = new JSONObject();
+//	    teleportkapu.put("Teleportkapu", t);
 		json.put("Telepes", t);
 	    if(out.equals("0")) {
-	    	System.out.println(t);
+	    	System.out.println("Telepes: " + t);
 	    	return null;
 	    }
 	    else
 	    	return json;
 	}
 	
+	public static JSONObject writeKapu(String filename, String ID, String out, JSONObject json) throws Exception {
+		Teleportkapu t = Main.game.GetOv().GetKapuByID(ID);
+//	    JSONObject aszteroida = new JSONObject();
+//	    aszteroida.put("Aszteroida", a);
+		json.put("Teleportkapu", t);
+	    if(out.equals("0")) {
+	    	System.out.println("Teleportkapu: " + t);
+	    	return null;
+	    }
+	    else
+	    	return json;
+	}
+	
+	public static JSONObject writeUran(String filename, String ID, String out, JSONObject json) throws Exception {
+		String s = Main.game.GetOv().GetNyersanyagByID(ID);
+		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
+		json.put("Uran", u);
+	    if(out.equals("0")) {
+	    	System.out.println("Uran: " + u);
+	    	return null;
+	    }
+	    else
+	    	return json;
+	}
 	
 //	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
 //		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);

@@ -362,8 +362,12 @@ public class Aszteroida extends Szomszed{
 	public String toString() {
 		String s = "";
 		s += "\n\"ID\": \"" + ID + "\"\n\"keregvastagsag\": " + kopenyVastagsag +
-				"\n\"napkozel\": \"" + napkozel + "\"\n\"belsoAnyag\": \"" + belsoAnyag + 
-				"\"\n\"entitasok\": [";
+				"\n\"napkozel\": \"" + napkozel; 
+		if(belsoAnyag != null)
+			s += "\"\n\"belsoAnyag\": \"" + belsoAnyag.getID();
+		if(belsoAnyag == null)
+			s += "\"\n\"belsoAnyag\": \"Ureges\"\n";
+		s += "\"\n\"entitasok\": [";
 		for(int i = 0; i < entitasok.size(); i++) {
 //			if(i == 0)
 //				s += "\n{\n";
@@ -378,7 +382,7 @@ public class Aszteroida extends Szomszed{
 			s += "\n\t{\n\t\t\"ID: \"" + szomszedok.get(i).getID() + "\"\n\t},\n";
 //			if(i == szomszedok.size() - 1)
 //				s += 
-		s += "]";
+		s += "]\n";
 //		return "Aszteroida{" +
 //                "ID='" + ID +
 //                ", keregvastagsag=" + kopenyVastagsag +

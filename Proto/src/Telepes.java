@@ -282,12 +282,13 @@ public class Telepes extends Entitas {
 	 * Kiírja a telepes tulajdonságait a kimenetre
 	 */
 	public void kiir() {
-		System.out.println(this + ": " + ID);
-		System.out.println("Aszteroida: " + aszteroida.getID());
-		for(int i = 0; i < nyersanyagok.size(); i++)
-			System.out.println("Nyersanyag: " + nyersanyagok.get(i).getID());
-		for(int i = 0; i < kapuk.size(); i++)
-			System.out.println("Kapu: " + kapuk.get(i).getID());
+//		System.out.println(this + ": " + ID);
+//		System.out.println("Aszteroida: " + aszteroida.getID());
+//		for(int i = 0; i < nyersanyagok.size(); i++)
+//			System.out.println("Nyersanyag: " + nyersanyagok.get(i).getID());
+//		for(int i = 0; i < kapuk.size(); i++)
+//			System.out.println("Kapu: " + kapuk.get(i).getID());
+		System.out.println("Telepes: " + this);
 	}
 	
 	/*public String toString() {
@@ -299,26 +300,12 @@ public class Telepes extends Entitas {
 		s += "\n\"ID\": \"" + ID + "\"\n\"aszteroida\": \"" + aszteroida.getID() +
 				"\"\n\"nyersanyagok\": [";
 		for(int i = 0; i < nyersanyagok.size(); i++) {
-//			if(i == 0)
-//				s += "\n{\n";
 			s += "\n\t{\n\t\t\"ID: \"" + nyersanyagok.get(i).getID() + "\"\n\t},\n";
-//			if(i == entitasok.size() - 1)
-//				s += "},\n";
 		}	
 		s += "]\n\"kapuk\": [";
 		for(int i = 0; i < kapuk.size(); i++)
-//			if(i == 0)
-//				s += "\n{\n";
 			s += "\n\t{\n\t\t\"ID: \"" + kapuk.get(i).getID() + "\"\n\t},\n";
-//			if(i == szomszedok.size() - 1)
-//				s += 
-		s += "]";
-//		return "Aszteroida{" +
-//                "ID='" + ID +
-//                ", keregvastagsag=" + kopenyVastagsag +
-//                ", napkozel=" + napkozel +
-//                ", belsoanyag=" + belsoAnyag +
-//                '}';
+		s += "]\n";
 		return s;
 	}
 	
