@@ -161,7 +161,7 @@ public class Aszteroida extends Szomszed{
 		kopenyVastagsag--;
 		if (kopenyVastagsag == 0 && belsoAnyag != null) {
 			if (napkozel) {
-				this.belsoAnyag.Napkozel(this);
+				belsoAnyag.Napkozel(this);
 			}
 		}
 	}
@@ -171,7 +171,7 @@ public class Aszteroida extends Szomszed{
 	 * és eltávolítja az aszteroida belsõ anyagát. ezután az aszteroida eltávolításra kerül az összes 
 	 * szomszéd szomszédai közül.
 	 */
-	public void Robban() {   
+	public void Robban() { 
 		for(Entitas e: entitasok) {
 			e.Felrobban();
 		}

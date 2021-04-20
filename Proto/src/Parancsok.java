@@ -96,9 +96,7 @@ public class Parancsok {
 			break;
 		case "napkozel": 
 			Main.game.GetOv().GetAszteroida(com[1]).setNapkozel(true);
-			System.out.println("Itt vagyok");
 			Main.game.GetOv().GetAszteroida(com[1]).getBelsoAnyag().Napkozel(Main.game.GetOv().GetAszteroida(com[1]));
-			System.out.println("Ide is elertem");
 			break;
 		case "teleportkapu_epites": 
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuEpit();
