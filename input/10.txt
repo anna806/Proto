@@ -5,5 +5,4 @@ plusz_teleportkapu t01
 plusz_teleportkapu t01
 plusz_nyersanyag t01 v01 v02 vj01 u01 sz01
 teleportkapu_epites t01
-kiir a08
-kiir t01
+kiir a08 t01

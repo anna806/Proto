@@ -5,5 +5,4 @@ plusz_robot a08 r01
 plusz_telepes a06 t02
 plusz_ufo a06 u01
 napvihar a08
-kiir a06
-kiir a08
+kiir a06 a08

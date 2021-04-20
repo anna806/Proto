@@ -7,5 +7,4 @@ plusz_ufo a08 u01
 plusz_nyersanyag t01 v01 vj01 u01 sz01 v02 u02 sz02
 plusz_nyersanyag t02 u03 v03 vj02 sz03 vj03
 bazis_epites t01
-kiir t01
-kiir t02
+kiir t01 t02
