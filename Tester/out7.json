@@ -1,0 +1,46 @@
+{"Telepes1":
+"ID": "t01"
+"aszteroida": "a06"
+"nyersanyagok": [
+	{
+		"ID: "v01"
+	},
+
+	{
+		"ID: "u01"
+	},
+
+	{
+		"ID: "v00"
+	},
+]
+"kapuk": []
+,"Aszteroida0":
+"ID": "a06"
+"keregvastagsag": 0
+"napkozel": "true"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a00"
+	},
+
+	{
+		"ID: "a09"
+	},
+
+	{
+		"ID: "a08"
+	},
+]
+}

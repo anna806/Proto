@@ -1,0 +1,53 @@
+{"Aszteroida1":
+"ID": "a04"
+"keregvastagsag": 0
+"napkozel": "false"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t02"
+	},
+
+	{
+		"ID: "u01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a01"
+	},
+]
+,"Aszteroida0":
+"ID": "a03"
+"keregvastagsag": 0
+"napkozel": "true"
+"belsoAnyag": "Ureges"
+"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+
+	{
+		"ID: "r01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "k02"
+	},
+
+	{
+		"ID: "a06"
+	},
+
+	{
+		"ID: "a04"
+	},
+]
+}
