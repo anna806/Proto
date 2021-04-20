@@ -1,4 +1,4 @@
-{"Aszteroida":
+{"Aszteroida1":
 "ID": "a08"
 "keregvastagsag": 3
 "napkozel": "true"
@@ -15,6 +15,33 @@
 
 	{
 		"ID: "a06"
+	},
+]
+,"Aszteroida0":
+"ID": "a06"
+"keregvastagsag": 0
+"napkozel": "true"
+"belsoAnyag": "v00"
+"entitasok": [
+	{
+		"ID: "u01"
+	},
+]
+"szomszedok": [
+	{
+		"ID: "a03"
+	},
+
+	{
+		"ID: "a00"
+	},
+
+	{
+		"ID: "a09"
+	},
+
+	{
+		"ID: "a08"
 	},
 ]
 }

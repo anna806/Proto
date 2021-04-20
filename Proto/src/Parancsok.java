@@ -409,7 +409,7 @@ public class Parancsok {
 //  
 //	}
 	
-	public static void writeUran(String filename, String ID, String out) throws Exception {
+	/*public static void writeUran(String filename, String ID, String out) throws Exception {
 		//nyersanyagid megy be
 		String s = Main.game.GetOv().GetNyersanyagByID(ID);
 		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
@@ -436,6 +436,6 @@ public class Parancsok {
 		} else if(out.equals("1")) {
 			Files.write(Paths.get(filename), kapu.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
 		}
-	}
+	}*/
 }
 
