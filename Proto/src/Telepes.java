@@ -54,7 +54,6 @@ public class Telepes extends Entitas {
      */
 	public void Banyaszat() {
 		if(nyersanyagok.size() < 10 && aszteroida.AnyagKinyeres() != null) {
-			System.out.println("Ide azert meg elertem.");
 			aszteroida.AnyagKinyeres().Betolt(this);
 		}
 		aszteroida.AnyagTorol();
@@ -64,7 +63,6 @@ public class Telepes extends Entitas {
      *  Visszatölti a telepes inventoryjában található utolsó anyagot az aszteroidába
      */
 	public void Visszatolt() {
-		System.out.println(nyersanyagok.get(nyersanyagok.size() - 1).getID());
 		aszteroida.Raktaroz(nyersanyagok.get(nyersanyagok.size() - 1), this);
 	}
 	
@@ -85,10 +83,8 @@ public class Telepes extends Entitas {
 				break;
 			}	
 		}
-		System.out.println(done);
 		if(done) {
 			AnyagokTorol(robot);
-			System.out.println("Megepultem.");
 			Robot r = new Robot();
 			r.SetAszteroida(aszteroida);
 			aszteroida.Befogad(r);
@@ -168,7 +164,6 @@ public class Telepes extends Entitas {
 	 */
 	public boolean AnyagokTorol(Utmutato bazis) {
 		boolean kesz = false;
-		System.out.println("Utmutatoo");
 		List <Nyersanyag> torol = new ArrayList<>();
 		for(Nyersanyag ny: nyersanyagok)
 			kesz = bazis.MindTorol(ny, torol);

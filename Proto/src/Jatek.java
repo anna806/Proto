@@ -69,7 +69,6 @@ public class Jatek {
 	    jatekter.addRobot(r);
 	    jatekter.GetAszteroida(db - 2).Befogad(r);
 	    r.kiir();
-	    System.out.println("Elso");
 	    for(int i = 0; i < jatekter.GetRobotokSize(); i++)
 			jatekter.GetRobot(i).kiir();
 	    Ufo u = new Ufo();
@@ -87,7 +86,6 @@ public class Jatek {
 				}
 			}
 		}
-		System.out.println("Masodik");
 		for(int i = 0; i < jatekter.GetRobotokSize(); i++)
 			jatekter.GetRobot(i).kiir();
 	}
@@ -152,11 +150,9 @@ public class Jatek {
 	 * @param filename a célfájl, ahová szerializáljuk az aszteroidaövet
 	 */
 	public void ser(Aszteroidaov ao, String filename) {
-		//File tmp = new File(getAddress(filename));
 		final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
-    	System.out.print(parentPath);
 		try {
 			if(dirf.exists()) {
 				FileOutputStream f = new FileOutputStream(parentPath + "\\" + filename);

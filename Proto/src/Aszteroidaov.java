@@ -186,7 +186,6 @@ public class Aszteroidaov implements Serializable{
 	 */
 	public Robot GetRobot(String ID) {
 		for(Robot r : robotok) {
-			System.out.println(r.getID() + " " + ID);
 			if(r.getID().equals(ID))
 				return r;
 		}
@@ -378,7 +377,6 @@ public class Aszteroidaov implements Serializable{
 				return a;
 		}		
 		for(Teleportkapu k : kapuk) {
-			System.out.println(k.getID());
 			if(k.getID().equals(ID))
 				return k;
 		}

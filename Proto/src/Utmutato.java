@@ -53,14 +53,11 @@ public class Utmutato {
 	public boolean MindTorol(Nyersanyag ny, List<Nyersanyag> torlendo) {
 		for(int i = 0; i < megvanLista.size(); i++) {
 			if(megvanLista.get(i).Kompatibilis(ny)) {
-				System.out.println(megvanLista.get(i).getID());
-				System.out.println(ny.getID());
 				torlendo.add(ny);
 				megvanLista.remove(i);
 				break;
 			}
 		}
-		System.out.println(megvanLista.size() == 0);
 		return megvanLista.size() == 0;
 	}
 }

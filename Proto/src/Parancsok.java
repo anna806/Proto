@@ -123,10 +123,7 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
 			break;
 		case "visszatoltes": 
-			System.out.println("Itt akadok el");
 			Main.game.GetOv().GetTelepesByID(com[1]).Visszatolt();
-			//System.out.println(Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().getBelsoAnyag().getExp());
-			System.out.println("Idaig eljutottam");
 			break;
 		case "plusz_telepes": 
 			
@@ -201,7 +198,6 @@ public class Parancsok {
 			break;
 		case "informaciok": 
 			if(fejlesztoi) {
-				System.out.println("Itt vagyok");
 			Main.game.GetOv().Kiir(com[1]);
 			}
 			break;
@@ -223,7 +219,6 @@ public class Parancsok {
 		case "fejlesztoi_mod": 
 			if(com[1].equals("true")){
 				fejlesztoi = true;
-				System.out.println("fejlesztoi - aktiv");
 			}
 			break;
 		case "betolt": 
@@ -237,8 +232,6 @@ public class Parancsok {
 			for(int i = 1; i < com.length; i++)
 				out1 += com[i] + " ";
 			String[] out2 = out1.split(" ");
-			for(int i = 0; i < out2.length; i++)
-				System.out.println(out2[i]);
 			try{
 				Output(ps, ki, out2);
 			}
@@ -261,7 +254,6 @@ public class Parancsok {
 	public static void Output(String p, String out, String[] obj) throws Exception {
 		JSONObject ki = new JSONObject();
 		for(int i = 0; i < obj.length; i++) {
-			System.out.println("Itt vagyok " + obj[i]);
 			switch(obj[i].charAt(0)) {
 			case 't':
 				ki = writeTelepes("out"+p+".json", obj[i], out, ki, i);

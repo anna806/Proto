@@ -140,9 +140,7 @@ public class Aszteroida extends Szomszed{
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis);
 			if(bazisepitheto) {
 				for(int i = 0; i < entitasok.size(); i++) {
-					System.out.println("Itt is vagyok");
 					if(entitasok.get(i).AnyagokTorol(bazis)) {
-						System.out.println("Itt vagyok");
 						Main.game.Vege(bazisepitheto);
 						break;
 					}
@@ -185,7 +183,6 @@ public class Aszteroida extends Szomszed{
 	 * @return visszaad egy szomszédot véletlenszerûen a szomszédok közül
 	 */
 	public Szomszed SzomszedotAd() {
-		System.out.println("Megprobalok szoomszedot adni");
 		Random rand = new Random();
 		int i = 0;
 		if(!szomszedok.isEmpty()) {
@@ -205,7 +202,6 @@ public class Aszteroida extends Szomszed{
 	 * ha az aszteroida épp napközelben van, a nyersanyag Napkozel függvénye hívódik meg
 	 */
 	public void Raktaroz(Nyersanyag a, Telepes t) {
-		System.out.println("Raktaroz fuggvenybe beleptem");
 		if(belsoAnyag == null && kopenyVastagsag == 0) {
 			t.RemoveNyersanyag(a);
 			belsoAnyag = a;
@@ -354,12 +350,10 @@ public class Aszteroida extends Szomszed{
 		String s = "";
 		s += "\n\"ID\": \"" + ID + "\"\n\"keregvastagsag\": " + kopenyVastagsag +
 				"\n\"napkozel\": \"" + napkozel;
-		System.out.println("Idaig eljutottam");
 		if(belsoAnyag != null)
 			s += "\"\n\"belsoAnyag\": \"" + belsoAnyag.getID();
 		if(belsoAnyag == null)
 			s += "\"\n\"belsoAnyag\": \"Ureges\"\n";
-		System.out.println("Ez is megvolt");
 		s += "\"\n\"entitasok\": [";
 		for(int i = 0; i < entitasok.size(); i++) {
 			s += "\n\t{\n\t\t\"ID: \"" + entitasok.get(i).getID() + "\"\n\t},\n";
