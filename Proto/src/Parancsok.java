@@ -221,9 +221,21 @@ public class Parancsok {
 			Main.game.ser(Main.game.GetOv(), "jatek.txt");
 			break;
 		case "kiir": 
-			try {
-				Output(ps, ki, com[1]);
-			} catch (Exception e) {
+//			try {
+//				Output(ps, ki, com[1]);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+			String out1 = "";
+			for(int i = 1; i < com.length; i++)
+				out1 += com[i] + " ";
+			String[] out2 = out1.split(" ");
+			for(int i = 0; i < out2.length; i++)
+				System.out.println(out2[i]);
+			try{
+				Output(ps, ki, out2);
+			}
+			catch(Exception e) {
 				e.printStackTrace();
 			}
 			break;
@@ -231,99 +243,138 @@ public class Parancsok {
 		}
 	}
 	//JSONBE KIIRATNI!!!
-	public static void Output(String p, String out, String obj) throws Exception {
-		
-		switch(obj.charAt(0)) {
-		case 't':
-			writeTelepes("out"+p+".json", obj, out);
-			break;
-		case 'a':
-			writeAszteroida("out"+p+".json", obj, out);
-			break;
-		case 'u':
-			writeUran("out"+p+".json", obj, out);
-			break;
-		case 'k':
-			writeKapu("out"+p+".json", obj, out);
-			break;
-		}
-
-	}
-	
-//	public static void Output(String p, String out, String[] obj) throws Exception {
+//	public static void Output(String p, String out, String obj) throws Exception {
 //		
-//		for(int i = 0; i < obj.length; i++) {
-//			System.out.println("Itt vagyok " + obj[i]);
-//			switch(obj[i].charAt(0)) {
-//			case 't':
-//				writeTelepes("out"+p+".json", obj[i], out);
-//				break;
-//			case 'a':
-//				writeAszteroida("out"+p+".json", obj[i], out);
-//				break;
-//			case 'u':
-//				writeUran("out"+p+".json", obj[i], out);
-//				break;
-//			case 'k':
-//				writeKapu("out"+p+".json", obj[i], out);
-//				break;
-//			}
+//		switch(obj.charAt(0)) {
+//		case 't':
+//			writeTelepes("out"+p+".json", obj, out);
+//			break;
+//		case 'a':
+//			writeAszteroida("out"+p+".json", obj, out);
+//			break;
+//		case 'u':
+//			writeUran("out"+p+".json", obj, out);
+//			break;
+//		case 'k':
+//			writeKapu("out"+p+".json", obj, out);
+//			break;
 //		}
+//
 //	}
 	
-	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
-		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
-	    JSONObject aszteroida = new JSONObject();
-	    aszteroida.put("ID", a.getID());
-	    aszteroida.put("napkozel", a.getNapkozel());
-	    aszteroida.put("keregvastagsag", a.getKopenyVastagsag());
-	    aszteroida.put("belsoAnyag", a.getBelsoAnyagString());
-	    
-	    JSONArray entitasok = new JSONArray();
-	    for(int i = 0; i<a.EntitasokSize(); i++) {
-	    	entitasok.add(a.getEntitas(i));
-	    }
-	    JSONArray szomszedok = new JSONArray();
-	    for(int i = 0; i<a.SzomszedokSize(); i++) {
-	    	szomszedok.add(a.getSzomszed(i));
-	    }
-	    aszteroida.put("entitasok:", entitasok);
-	    aszteroida.put("szomszedok:", szomszedok);
-	    if(out.equals("0")) {
-	    	System.out.println(aszteroida);
-	    } else if(out.equals("1")) {
-	    	String dir = System.getProperty("user.dir");
-	    	File dirf = new File(dir);
-	    	String parentPath = dirf.getParent();
-	    	Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
-	    }
-	    
+	public static void Output(String p, String out, String[] obj) throws Exception {
+		JSONObject ki = new JSONObject();
+		for(int i = 0; i < obj.length; i++) {
+			System.out.println("Itt vagyok " + obj[i]);
+			switch(obj[i].charAt(0)) {
+			case 't':
+				ki = writeTelepes("out"+p+".json", obj[i], out, ki);
+				break;
+			case 'a':
+				ki = writeAszteroida("out"+p+".json", obj[i], out, ki);
+				break;
+			case 'u':
+				writeUran("out"+p+".json", obj[i], out);
+				break;
+			case 'k':
+				writeKapu("out"+p+".json", obj[i], out);
+				break;
+			}
+		}
+    	String dir = System.getProperty("user.dir");
+    	File dirf = new File(dir);
+    	String parentPath = dirf.getParent();
+    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + "out" + p + ".json");
+    	writer.write(ki.toJSONString());
+    	writer.flush();
+    	writer.close();
 	}
 	
-	public static void writeTelepes(String filename, String ID, String out) throws Exception {
+	public static JSONObject writeAszteroida(String filename, String ID, String out, JSONObject json) throws Exception {
+		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
+	    JSONObject aszteroida = new JSONObject();
+	    aszteroida.put("Aszteroida", a);
+		json.put("Aszteroida", a);
+	    if(out.equals("0")) {
+	    	System.out.println(a);
+	    	return null;
+	    }
+	    else
+	    	return json;
+	}
+	
+	public static JSONObject writeTelepes(String filename, String ID, String out, JSONObject json) throws Exception {
 		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
 	    JSONObject telepes = new JSONObject();
-	    telepes.put("ID", t.getID());
-	    telepes.put("aszteroida", t.getAszteroida().getID());
-	    	    
-	    JSONArray nyersanyagok = new JSONArray();
-	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
-	    	nyersanyagok.add(t.getNyersanyagok(i));
-	    }
-	    JSONArray kapuk = new JSONArray();
-	    for(int i = 0; i<t.KapukSize(); i++) {
-	    	kapuk.add(t.getKapuk(i));
-	    }
-	    telepes.put("nyersanyagok:", nyersanyagok);
-	    telepes.put("kapuk:", kapuk);
-	    
+	    telepes.put("Telepes", t);
+		json.put("Telepes", t);
 	    if(out.equals("0")) {
-	    	System.out.println(telepes);
-	    } else if(out.equals("1")) {
-	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+	    	System.out.println(t);
+	    	return null;
 	    }
-  
+	    else
+	    	return json;
 	}
+	
+	
+//	public static void writeAszteroida(String filename, String ID, String out) throws Exception {
+//		Aszteroida a = Main.game.GetOv().GetAszteroida(ID);
+//	    JSONObject aszteroida = new JSONObject();
+//	    aszteroida.put("ID", a.getID());
+//	    aszteroida.put("napkozel", a.getNapkozel());
+//	    aszteroida.put("keregvastagsag", a.getKopenyVastagsag());
+//	    aszteroida.put("belsoAnyag", a.getBelsoAnyagString());
+//	    
+//	    JSONArray entitasok = new JSONArray();
+//	    for(int i = 0; i<a.EntitasokSize(); i++) {
+//	    	entitasok.add(a.getEntitas(i));
+//	    }
+//	    JSONArray szomszedok = new JSONArray();
+//	    for(int i = 0; i<a.SzomszedokSize(); i++) {
+//	    	szomszedok.add(a.getSzomszed(i));
+//	    }
+//	    aszteroida.put("entitasok:", entitasok);
+//	    aszteroida.put("szomszedok:", szomszedok);
+//	    aszteroida.put("ID", a.getID());
+//		aszteroida.put("Aszteroida", a);
+//	    if(out.equals("0")) {
+//	    	System.out.println(aszteroida);
+//	    } else if(out.equals("1")) {
+//	    	String dir = System.getProperty("user.dir");
+//	    	File dirf = new File(dir);
+//	    	String parentPath = dirf.getParent();
+//	    	FileWriter writer = new FileWriter(parentPath + "\\output\\" + filename);
+//	    	writer.write(aszteroida.toJSONString());
+//	    	writer.flush();
+//	    	writer.close();
+//	    	//Files.write(Paths.get(filename), aszteroida.toJSONString().getBytes(), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+//	    } 
+//	}
+	
+//	public static void writeTelepes(String filename, String ID, String out) throws Exception {
+//		Telepes t = Main.game.GetOv().GetTelepesByID(ID);
+//	    JSONObject telepes = new JSONObject();
+//	    telepes.put("ID", t.getID());
+//	    telepes.put("aszteroida", t.getAszteroida().getID());
+//	    	    
+//	    JSONArray nyersanyagok = new JSONArray();
+//	    for(int i = 0; i<t.NyersanyagokSize(); i++) {
+//	    	nyersanyagok.add(t.getNyersanyagok(i));
+//	    }
+//	    JSONArray kapuk = new JSONArray();
+//	    for(int i = 0; i<t.KapukSize(); i++) {
+//	    	kapuk.add(t.getKapuk(i));
+//	    }
+//	    telepes.put("nyersanyagok:", nyersanyagok);
+//	    telepes.put("kapuk:", kapuk);
+//	    
+//	    if(out.equals("0")) {
+//	    	System.out.println(telepes);
+//	    } else if(out.equals("1")) {
+//	    	Files.write(Paths.get(filename), telepes.toJSONString().getBytes(),  StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+//	    }
+//  
+//	}
 	
 	public static void writeUran(String filename, String ID, String out) throws Exception {
 		//nyersanyagid megy be

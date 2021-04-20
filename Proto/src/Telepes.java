@@ -290,8 +290,36 @@ public class Telepes extends Entitas {
 			System.out.println("Kapu: " + kapuk.get(i).getID());
 	}
 	
-	public String toString() {
+	/*public String toString() {
 		return "Telepes";
+	}*/
+	
+	public String toString() {
+		String s = "";
+		s += "\n\"ID\": \"" + ID + "\"\n\"aszteroida\": \"" + aszteroida.getID() +
+				"\"\n\"nyersanyagok\": [";
+		for(int i = 0; i < nyersanyagok.size(); i++) {
+//			if(i == 0)
+//				s += "\n{\n";
+			s += "\n\t{\n\t\t\"ID: \"" + nyersanyagok.get(i).getID() + "\"\n\t},\n";
+//			if(i == entitasok.size() - 1)
+//				s += "},\n";
+		}	
+		s += "]\n\"kapuk\": [";
+		for(int i = 0; i < kapuk.size(); i++)
+//			if(i == 0)
+//				s += "\n{\n";
+			s += "\n\t{\n\t\t\"ID: \"" + kapuk.get(i).getID() + "\"\n\t},\n";
+//			if(i == szomszedok.size() - 1)
+//				s += 
+		s += "]";
+//		return "Aszteroida{" +
+//                "ID='" + ID +
+//                ", keregvastagsag=" + kopenyVastagsag +
+//                ", napkozel=" + napkozel +
+//                ", belsoanyag=" + belsoAnyag +
+//                '}';
+		return s;
 	}
 	
 	

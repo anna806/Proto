@@ -344,7 +344,7 @@ public class Aszteroida extends Szomszed{
 	 * Kiírja az adott aszteroida különbözõ tulajdonágait a konzolra
 	 */
 	public void kiir() {
-		System.out.println(this + ": " + ID);
+		/*System.out.println(this + ": " + ID);
 		for(int i = 0; i < szomszedok.size(); i++)
 			System.out.println("Szomszed: " + szomszedok.get(i).getID());
 		for(int i = 0; i < entitasok.size(); i++)
@@ -354,17 +354,38 @@ public class Aszteroida extends Szomszed{
 		if(belsoAnyag != null)
 			System.out.println("Nyersanyag: " + belsoAnyag.getID());
 		else
-			System.out.println("Nyersanyag: ureges");
+			System.out.println("Nyersanyag: ureges");*/
+		System.out.println("Aszteroida " + this);
 	}
 	
 	@Override
 	public String toString() {
-		return "Aszteroida{" +
-                "ID='" + ID +
-                ", keregvastagsag=" + kopenyVastagsag +
-                ", napkozel=" + napkozel +
-                ", belsoanyag=" + belsoAnyag +
-                '}';
+		String s = "";
+		s += "\n\"ID\": \"" + ID + "\"\n\"keregvastagsag\": " + kopenyVastagsag +
+				"\n\"napkozel\": \"" + napkozel + "\"\n\"belsoAnyag\": \"" + belsoAnyag + 
+				"\"\n\"entitasok\": [";
+		for(int i = 0; i < entitasok.size(); i++) {
+//			if(i == 0)
+//				s += "\n{\n";
+			s += "\n\t{\n\t\t\"ID: \"" + entitasok.get(i).getID() + "\"\n\t},\n";
+//			if(i == entitasok.size() - 1)
+//				s += "},\n";
+		}	
+		s += "]\n\"szomszedok\": [";
+		for(int i = 0; i < szomszedok.size(); i++)
+//			if(i == 0)
+//				s += "\n{\n";
+			s += "\n\t{\n\t\t\"ID: \"" + szomszedok.get(i).getID() + "\"\n\t},\n";
+//			if(i == szomszedok.size() - 1)
+//				s += 
+		s += "]";
+//		return "Aszteroida{" +
+//                "ID='" + ID +
+//                ", keregvastagsag=" + kopenyVastagsag +
+//                ", napkozel=" + napkozel +
+//                ", belsoanyag=" + belsoAnyag +
+//                '}';
+		return s;
 	}
 	
 	public String getBelsoID() {
