@@ -1,6 +1,6 @@
 {"Telepes2":
 "ID": "t01"
-"aszteroida": "a03"
+"aszteroida": "a05"
 "nyersanyagok": []
 "kapuk": []
 ,"Aszteroida1":
@@ -31,8 +31,12 @@
 "ID": "a05"
 "keregvastagsag": 3
 "napkozel": "false"
-"belsoAnyag": "sz00"
-"entitasok": []
+"belsoAnyag": "sz01"
+"entitasok": [
+	{
+		"ID: "t01"
+	},
+]
 "szomszedok": [
 	{
 		"ID: "a02"

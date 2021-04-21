@@ -1,5 +1,5 @@
 palya_betoltes
 fejlesztoi_mod true
-plusz_telepes a05 t01
-telepes_mozog t01 k02
-kiir a05 a03 t01
+plusz_telepes a00 t01
+telepes_mozog t01 k03
+kiir a00 t01

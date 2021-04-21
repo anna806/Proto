@@ -16,13 +16,13 @@
 ]
 "kapuk": []
 ,"Uran2":
-"ID": "u01"
-"expozicio": "0
+"ID": "u05"
+"expozicio": 2
 ,"Aszteroida0":
 "ID": "a03"
 "keregvastagsag": 0
 "napkozel": "true"
-"belsoAnyag": "u01"
+"belsoAnyag": "u05"
 "entitasok": [
 	{
 		"ID: "t01"
