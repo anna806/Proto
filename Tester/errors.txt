@@ -1,2 +1,56 @@
-"expozicio": "2
-"expozicio": "0
+"aszteroida": "a00"
+"aszteroida": "a03"
+"entitasok": []
+"entitasok": [
+"szomszedok": [
+{
+{
+"ID: "t01"
+"ID: "k02"
+},
+},
+]
+
+"szomszedok": [
+"ID: "a06"
+"ID: "k02"
+"ID: "a04"
+"ID: "a06"
+]
+
+,"Aszteroida0":
+{
+"ID": "a05"
+"ID: "a04"
+"keregvastagsag": 3
+},
+"napkozel": "false"
+]
+"belsoAnyag": "sz00"
+,"Aszteroida0":
+"entitasok": []
+"ID": "a05"
+"szomszedok": [
+"keregvastagsag": 3
+{
+"napkozel": "false"
+"ID: "a02"
+"belsoAnyag": "sz01"
+},
+"entitasok": [
+
+{
+{
+"ID: "t01"
+"ID: "a08"
+},
+},
+]
+
+"szomszedok": [
+"ID: "k01"
+"ID: "a02"
+]
+
+}
+{

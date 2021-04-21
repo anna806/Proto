@@ -1,28 +1,18 @@
-
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class Parancsok {
-	//fejlesztõi mód?
 	//args = be, ki, parancs
 	//be = 0 konzol
 	//be = 1 parancsszám
 	//ki = 0 konzolra
 	//ki = 1 outputfájlba
-	//id-k stringek!!
-	//cél hogy konzolra és fájlba is írjon
 	/**
 	 * megadja, hogy fejelesztõi módban tesztelünk-e
 	 */
@@ -92,9 +82,7 @@ public class Parancsok {
 			Main.game.GetOv().GetUfo(com[1]).RandomMozgas();
 			break;
 		case "telepes_fur": 
-			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().kiir();
 			Main.game.GetOv().GetTelepesByID(com[1]).Furas();
-			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().kiir();
 			break;
 		case "robot_fur": 
 			Main.game.GetOv().GetRobot(com[1]).Furas();
@@ -119,7 +107,6 @@ public class Parancsok {
 			Main.game.GetOv().GetTelepesByID(com[1]).getAszteroida().BazisEpit();
 			break;
 		case "teleportkapu_elhelyezes": 
-			
 			Main.game.GetOv().GetTelepesByID(com[1]).KapuLerak();
 			break;
 		case "visszatoltes": 
@@ -133,7 +120,6 @@ public class Parancsok {
 			Main.game.GetOv().GetAszteroida(com[1]).Befogad(t);
 			t.SetID(com[2]);
 			Main.game.GetOv().addTelepes(t);
-			Main.game.GetOv().GetTelepesByID(com[2]).kiir();
 			
 			}
 			break;
@@ -167,7 +153,9 @@ public class Parancsok {
 					}
 					break;
 				case 'u': 
-					Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Uran());
+					Uran u = new Uran();
+					u.setID("u05");
+					Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(u);
 					break;
 				case 's': 
 					Main.game.GetOv().GetTelepesByID(com[1]).AddNyersanyag(new Szen());
@@ -213,7 +201,6 @@ public class Parancsok {
 			break;
 		case "palya_betoltes": 
 			Main.game.load("map.txt");
-			System.out.println("Betoltottem a palyat");
 			break;
 		case "veletlen": break;
 		case "fejlesztoi_mod": 
@@ -358,12 +345,14 @@ public class Parancsok {
 	 */
 	public static JSONObject writeUran(String filename, String ID, String out, JSONObject json, int i) throws Exception {
 		String s = Main.game.GetOv().GetNyersanyagByID(ID);
-		Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
+		//Nyersanyag u = Main.game.GetOv().GetAszteroida(s).getBelsoAnyag(); 
 		String s2 = "Uran" + i;
-		json.put(s2, u);
-	    if(out.equals("0")) {
-	    	System.out.println("Uran: " + u);
-	    	return null;
+		//json.put(s2, u);
+	    json.put(s2,  Main.game.GetOv().GetAszteroida(s).getBelsoAnyag());
+		if(out.equals("0")) {
+	    	//System.out.println("Uran: " + u);
+	    	System.out.println("Uran: " + Main.game.GetOv().GetAszteroida(s).getBelsoAnyag());
+			return null;
 	    }
 	    else
 	    	return json;

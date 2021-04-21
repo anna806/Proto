@@ -1,6 +1,11 @@
+import java.io.Serializable;
 
-public abstract class Entitas {
+public abstract class Entitas implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6752190916141032408L;
 	/**
 	 * az aszteroida, amin tartózkodik az adott Entitás
 	 */

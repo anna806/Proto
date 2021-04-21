@@ -96,7 +96,7 @@ public class Uran extends Nyersanyag {
 	 * @return az urán tulajdonságait tartalmazó string
 	 */
 	public String toString() {
-		String s = "\n\"ID\": \"" + ID + "\"\n\"expozicio\": \"" + expozicio  + "\n";
+		String s = "\n\"ID\": \"" + ID + "\"\n\"expozicio\": " + expozicio  + "\n";
 		return s;
 	}
 

@@ -275,38 +275,37 @@ public class Aszteroidaov implements Serializable{
 	/**
 	 * Visszaadja a beadott típusú Objektumok ID-jait az aszteroidaövben
 	 * @param type : A kiirandó objektum típusa
-	 * @return Azobjektumok ID-jának listája
 	 */
-	public String List(String type) {
-		String out = "List: ";
+	public void List(String type) {
+		String out = "List: \n";
 		switch(type) {
 		case "Aszteroida":
 			for(Aszteroida a : aszteroidak) {
-				out += " " + a.getID();
+				out += a.getID() + "\n";
 			}
 			break;
 		case "Telepes": 
 			for(Telepes t : telepesek) {
-				out += " " + t.getID();
+				out += t.getID() + "\n";
 			}
 			break;
 		case "Robot": 
 			for(Robot r: robotok) {
-				out += " " + r.getID();
+				out += r.getID() + "\n";
 			}
 			break;
 		case "Ufo": 
 			for(Ufo u: ufok) {
-				out += " " + u.getID();
+				out += u.getID() + "\n";
 			}
 			break;
 		case "Teleportkapu": 
 			for(Teleportkapu k: kapuk) {
-				out += " " + k.getID();
+				out += k.getID() + "\n";
 			}
 			break;
 		}
-		return out;
+		System.out.println(out);
 	}
 
 	/**
@@ -358,9 +357,9 @@ public class Aszteroidaov implements Serializable{
 	 * @return Az aszteroida ID-ja amiben a nyersanyag van
 	 */
 	public String GetNyersanyagByID(String ID) {
-		for(Aszteroida a: aszteroidak) {
-			if(a.getBelsoID().equals(ID)){
-				return a.getID();
+		for(int i = 0; i < aszteroidak.size(); i++) {
+			if(aszteroidak.get(i).getBelsoID().equals(ID)){
+				return aszteroidak.get(i).getID();
 			}
 		}
 		return null;

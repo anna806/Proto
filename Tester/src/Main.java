@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -42,7 +41,6 @@ public class Main {
         }
         else {
         int exit = process.exec(runProto_parancs).waitFor();
-    	System.out.println(exit);
         
         if (ki == 1 && exit != 1) {
         	String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + kod;
@@ -81,7 +79,6 @@ public class Main {
     	while(input.exists() && i < 33) {
     		try {
     			String p = s + " " + (i + 1);
-    			System.out.println(p);
     			fails += process.exec(p).waitFor();
     			if(ki == 1) {
     				String runComp_parancs = "java -jar " + parentPath + "\\comparator.jar " + (i + 1);

@@ -1,8 +1,11 @@
-
 import java.util.Random;
 
 public class Ufo extends Entitas implements Intelligencia {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7113210591588867962L;
 	/**
 	 * Az id egyediségét biztosító számláló
 	 */

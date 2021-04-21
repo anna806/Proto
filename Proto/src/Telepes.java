@@ -4,6 +4,10 @@ import java.util.List;
 
 public class Telepes extends Entitas {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2561586624364419032L;
+	/**
 	 * A telepes inventoryjában található kapuk
 	 */
 	private List<Teleportkapu> kapuk = new ArrayList<>();
@@ -180,7 +184,7 @@ public class Telepes extends Entitas {
 			kapuk.get(i).Robban();
 		}
 		nyersanyagok.removeAll(nyersanyagok);
-		aszteroida.Ledob(this);
+		//aszteroida.Ledob(this);
 		Main.game.GetOv().MinuszTelepes(this);
 	}
 	

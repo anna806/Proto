@@ -60,7 +60,7 @@ public class Jatek {
 			}
 			jatekter.addAszteroida(uj);
 		}	
-		Telepes t = new Telepes();
+		/*Telepes t = new Telepes();
 		t.AddNyersanyag(new Uran());
 	    jatekter.addTelepes(t);
 	    jatekter.GetAszteroida(db - 1).Befogad(t);
@@ -75,7 +75,7 @@ public class Jatek {
 	    jatekter.addUfo(u);
 	    jatekter.GetAszteroida(db - 3).Befogad(u);
 	    r.kiir();
-	    u.kiir();
+	    u.kiir();*/
 		for (int j=0; j<db; j++) {
 			for (int k=0; k<db; k++) {
 				if(j!=k) {
@@ -86,8 +86,6 @@ public class Jatek {
 				}
 			}
 		}
-		for(int i = 0; i < jatekter.GetRobotokSize(); i++)
-			jatekter.GetRobot(i).kiir();
 	}
 	
 	/**
@@ -171,7 +169,6 @@ public class Jatek {
 	 * @param filename: a fájl neve, ahonnan be szeretnénk tölteni a játékállást
 	 */
 	public void load(String filename) {
-		//File tmp = new File(getAddress(filename));
 		final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
@@ -202,12 +199,21 @@ public class Jatek {
 	 * @param args a paraméterek, amit feldolgoz a Parancsok osztály main függvénye
 	 */
 	public void field(String[] args) {
-		if(args[0].equals("0"))
+		if(args.length == 0) {
 			Start();
-		else 
-			load("map.txt");
-		Parancsok p = new Parancsok();
-		p.Main(args);
+			String[] args1 = {"0", "0", "-1"};
+			Parancsok p1 = new Parancsok();
+			p1.Main(args1);
+		}
+		else {
+			if(args[0].equals("0"))
+				Start();
+			else {
+				load("map.txt");
+			}
+			Parancsok p = new Parancsok();
+			p.Main(args);
+		}
 	}
 	
 	/**

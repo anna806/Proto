@@ -172,6 +172,7 @@ public class Aszteroida extends Szomszed{
 		for(Entitas e: entitasok) {
 			e.Felrobban();
 		}
+		entitasok.removeAll(entitasok);
 		AnyagTorol();
 		for(Szomszed e: szomszedok) {
 			e.SzomszedTorol(this);
@@ -370,6 +371,9 @@ public class Aszteroida extends Szomszed{
 	 * @return belsõ anyag ID-je
 	 */
 	public String getBelsoID() {
-		return belsoAnyag.getID();
+		if(belsoAnyag != null)
+			return belsoAnyag.getID();
+		else	
+			return "Ureges";
 	}
 }

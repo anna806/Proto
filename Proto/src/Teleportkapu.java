@@ -97,7 +97,8 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 			a.SetAszteroida(ParHelye());
 			ParHelye().Befogad(a);
 		}
-		aszteroida.Befogad(a);
+		else
+			aszteroida.Befogad(a);
 	}
 	
 	/**
