@@ -73,7 +73,6 @@ public class Parancsok {
 			} catch(Exception e) {
 				Main.game.GetOv().GetTelepesByID(com[1]).Mozgas(null);				
 			}
-			Main.game.GetOv().GetTelepesByID(com[1]).kiir();
 			break;
 		case "robot_mozog": 
 			Main.game.GetOv().GetRobot(com[1]).RandomMozgas(); 
@@ -171,7 +170,6 @@ public class Parancsok {
 			tkpar.setAszter(Main.game.GetOv().GetAszteroida("a07"));
 			tk.setParja(tkpar);
 			Main.game.GetOv().GetTelepesByID(com[1]).AddKapu(tk);
-			
 			}
 			break;
 		case "expozicio": 

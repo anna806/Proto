@@ -91,6 +91,7 @@ public class Aszteroida extends Szomszed{
 			for(Entitas e: entitasok) {
 				e.Halal();
 			}	
+			entitasok.removeAll(entitasok);
 		}
 		for(Szomszed sz: szomszedok) {
 			sz.MegKergul();

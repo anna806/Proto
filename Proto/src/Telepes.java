@@ -80,7 +80,6 @@ public class Telepes extends Entitas {
 		kell.add(new Uran());
 		boolean done = false;
 		Utmutato robot = new Utmutato(kell);
-		kiir();
 		for(int i = 0; i < nyersanyagok.size(); i++) {
 			if(robot.MindMegvan(nyersanyagok.get(i))) {
 				done = true;

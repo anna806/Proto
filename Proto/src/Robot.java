@@ -50,7 +50,7 @@ public class Robot extends Entitas implements Intelligencia {
 	 *az Aszteroidaöv robotok listájából
 	 */
 	public void Halal() {
-		aszteroida.Ledob(this);
+		//aszteroida.Ledob(this);
 		Main.game.GetOv().MinuszRobot(this);
 	}
 	

@@ -64,4 +64,12 @@ public abstract class Szomszed implements Serializable{
 	public String getID() {
 		return ID;
 	}
+	
+	/**
+	 * Beállítja a szomszéd egyedi azonosítóját
+	 * @param id a string, ami az egyedi azonosító lesz
+	 */
+	public void setID(String id) {
+		ID = id;
+	}
 }
