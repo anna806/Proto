@@ -3,11 +3,7 @@
 "keregvastagsag": 3
 "napkozel": "true"
 "belsoAnyag": "v02"
-"entitasok": [
-	{
-		"ID: "r01"
-	},
-]
+"entitasok": []
 "szomszedok": [
 	{
 		"ID: "a05"
@@ -22,11 +18,7 @@
 "keregvastagsag": 0
 "napkozel": "true"
 "belsoAnyag": "v01"
-"entitasok": [
-	{
-		"ID: "u01"
-	},
-]
+"entitasok": []
 "szomszedok": [
 	{
 		"ID: "a03"

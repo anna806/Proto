@@ -46,6 +46,7 @@ public class Telepes extends Entitas {
 	public void Mozgas(Szomszed a) {
 		if(a==null) {
 			Halal();
+			aszteroida.Ledob(this);
 		} else {
 			aszteroida.Ledob(this);
 			a.Befogad(this);
