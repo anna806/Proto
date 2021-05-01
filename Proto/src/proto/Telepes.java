@@ -1,3 +1,4 @@
+package proto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -305,5 +306,7 @@ public class Telepes extends Entitas {
 		return s;
 	}
 	
-	
+	public Nyersanyag getNy(int i) {
+		return nyersanyagok.get(i);
+	}
 }

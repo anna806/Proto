@@ -1,3 +1,4 @@
+package proto;
 import java.util.Random;
 
 public class Ufo extends Entitas implements Intelligencia {

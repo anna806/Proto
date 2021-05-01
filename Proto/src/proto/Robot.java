@@ -1,3 +1,4 @@
+package proto;
 
 import java.util.Random;
 

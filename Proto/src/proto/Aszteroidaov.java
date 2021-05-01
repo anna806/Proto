@@ -1,3 +1,4 @@
+package proto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,10 @@ public class Aszteroidaov implements Serializable{
 	 * A kapuk listája az aszteroidaövben
 	 */
 	private List<Teleportkapu> kapuk = new ArrayList<>();
-	
+	/**
+	 * Az adott körben lépõ telepes
+	 */
+	private Telepes aktualTelepes;
 	/**
 	 * Intézi az Aszteroidaövben a napvihart, meghívja az Aszteroidákon a Napvihar függvényüket.
 	 */
@@ -380,5 +384,9 @@ public class Aszteroidaov implements Serializable{
 				return k;
 		}
 		return null;
+	}
+	
+	public Telepes getAktual() {
+		return aktualTelepes;
 	}
 }

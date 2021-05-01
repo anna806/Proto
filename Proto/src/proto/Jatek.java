@@ -1,3 +1,4 @@
+package proto;
 
 import java.io.File;
 import java.io.FileInputStream;

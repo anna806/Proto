@@ -1,3 +1,4 @@
+package proto;
 import java.io.Serializable;
 
 public abstract class Entitas implements Serializable {
