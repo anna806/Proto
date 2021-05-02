@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import proto.Aszteroidaov;
@@ -41,13 +42,41 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	public void felepit(Aszteroidaov ov, Jatekter j) {
 		jatekter = ov;
 		jtk = j;
-		asas.setOnAction(this);
-		banyasz.setOnAction(this);
-		mozog.setOnAction(this);
-		robotep.setOnAction(this);
-		kapuep.setOnAction(this);
-		bazisep.setOnAction(this);
-		visszatolt.setOnAction(this);
+		
+		asas  = new Button("Furas");
+		asas.setStyle("-fx-background-color: DARKGOLDENROD");
+		asas.setTextFill(Color.WHITE);
+		asas.setMinSize(70, 45);
+		
+		banyasz = new Button("Banyaszas");
+		banyasz.setStyle("-fx-background-color: DARKGOLDENROD");
+		banyasz.setTextFill(Color.WHITE);
+		banyasz.setMinSize(70, 45);
+		
+		mozog = new Button("Mozgas");
+		mozog.setStyle("-fx-background-color: DARKGOLDENROD");
+		mozog.setTextFill(Color.WHITE);
+		mozog.setMinSize(70, 45);
+		
+		robotep = new Button("Robot");
+		robotep.setStyle("-fx-background-color: DARKGOLDENROD");
+		robotep.setTextFill(Color.WHITE);
+		robotep.setMinSize(70, 45);
+		
+		kapuep = new Button("Kapu");
+		kapuep.setStyle("-fx-background-color: DARKGOLDENROD");
+		kapuep.setTextFill(Color.WHITE);
+		kapuep.setMinSize(70, 45);
+		
+		bazisep = new Button("Bazis");
+		bazisep.setStyle("-fx-background-color: DARKGOLDENROD");
+		bazisep.setTextFill(Color.WHITE);
+		bazisep.setMinSize(70, 45);
+		
+		visszatolt = new Button("Visszatolt");
+		visszatolt.setStyle("-fx-background-color: DARKGOLDENROD");
+		visszatolt.setTextFill(Color.WHITE);
+		visszatolt.setMinSize(70, 45);
 		
 	}
 
