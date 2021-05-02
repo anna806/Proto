@@ -389,4 +389,8 @@ public class Aszteroidaov implements Serializable{
 	public Telepes getAktual() {
 		return aktualTelepes;
 	}
+	
+	public void aktualKesz() {
+		//soronkövetkezõ aktuálTelepes a listából
+	}
 }

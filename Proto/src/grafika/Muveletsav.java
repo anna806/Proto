@@ -2,12 +2,17 @@ package grafika;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
 import proto.Aszteroidaov;
 import proto.Nyersanyag;
 import proto.Szen;
@@ -41,58 +46,119 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	Jatekter jtk;
 
 	
-	public void felepit(Aszteroidaov ov, Jatekter j) {
+	public HBox felepit(Aszteroidaov ov, Jatekter j) {
 		jatekter = ov;
 		jtk = j;
+		
+		HBox root = new HBox(8);
+		
+		GridPane buttons2 = new GridPane();
+		buttons2.setPadding(new Insets(10, 10, 10, 10));
+		buttons2.setVgap(5); 
+	    buttons2.setHgap(5);
 		
 		asas  = new Button("Furas");
 		asas.setStyle("-fx-background-color: DARKGOLDENROD");
 		asas.setTextFill(Color.WHITE);
 		asas.setMinSize(70, 45);
+		asas.setOnAction(this);
 		
 		banyasz = new Button("Banyaszas");
 		banyasz.setStyle("-fx-background-color: DARKGOLDENROD");
 		banyasz.setTextFill(Color.WHITE);
 		banyasz.setMinSize(70, 45);
+		banyasz.setOnAction(this);
 		
 		mozog = new Button("Mozgas");
 		mozog.setStyle("-fx-background-color: DARKGOLDENROD");
 		mozog.setTextFill(Color.WHITE);
 		mozog.setMinSize(70, 45);
+		mozog.setOnAction(this);
 		
 		robotep = new Button("Robot");
 		robotep.setStyle("-fx-background-color: DARKGOLDENROD");
 		robotep.setTextFill(Color.WHITE);
 		robotep.setMinSize(70, 45);
+		robotep.setOnAction(this);
 		
 		kapuep = new Button("Kapu");
 		kapuep.setStyle("-fx-background-color: DARKGOLDENROD");
 		kapuep.setTextFill(Color.WHITE);
 		kapuep.setMinSize(70, 45);
+		kapuep.setOnAction(this);
 		
 		bazisep = new Button("Bazis");
 		bazisep.setStyle("-fx-background-color: DARKGOLDENROD");
 		bazisep.setTextFill(Color.WHITE);
 		bazisep.setMinSize(70, 45);
+		bazisep.setOnAction(this);
 		
 		visszatolt = new Button("Visszatolt");
 		visszatolt.setStyle("-fx-background-color: DARKGOLDENROD");
 		visszatolt.setTextFill(Color.WHITE);
 		visszatolt.setMinSize(70, 45);
+		visszatolt.setOnAction(this);
 		
+		ny1 = new Circle(20, Color.DIMGREY);
+		ny2 = new Circle(20, Color.LIGHTGREEN);
+		ny3 = new Circle(20, Color.LIGHTSKYBLUE);
+		ny4 = new Circle(20, Color.BLACK);
+		kapu = new Rectangle(20, 50, Color.CORAL);
+		
+		ny1sz = new Label("0");
+		ny1sz.setStyle("-fx-background-color: WHITE");
+		ny1sz.setMinSize(20, 27);
+		ny1sz.setTextAlignment(TextAlignment.CENTER);
+		
+		ny2sz = new Label("0");
+		ny2sz.setStyle("-fx-background-color: WHITE");
+		ny2sz.setMinSize(20, 27);
+		ny2sz.setTextAlignment(TextAlignment.CENTER);
+		
+		ny3sz = new Label("0");
+		ny3sz.setStyle("-fx-background-color: WHITE");
+		ny3sz.setMinSize(20, 27);
+		ny3sz.setTextAlignment(TextAlignment.CENTER);
+		
+		ny4sz = new Label("0");
+		ny4sz.setStyle("-fx-background-color: WHITE");
+		ny4sz.setMinSize(20, 27);
+		ny4sz.setTextAlignment(TextAlignment.CENTER);
+		
+		k = new Label("0");
+		k.setStyle("-fx-background-color: WHITE");
+		k.setMinSize(20, 27);
+		k.setTextAlignment(TextAlignment.CENTER);
+		
+		buttons2.add(mozog, 0, 0);
+		buttons2.add(banyasz, 1, 0);
+		buttons2.add(asas, 0, 1);
+		buttons2.add(visszatolt, 1, 1);
+		buttons2.setAlignment(Pos.CENTER);
+		root.getChildren().addAll(buttons2, robotep, kapuep, bazisep, ny1, ny1sz, ny2, ny2sz, ny3, ny3sz, ny4, ny4sz, kapu, k);
+		
+		root.setAlignment(Pos.CENTER);
+		root.setStyle("-fx-background-color: GOLDENROD");
+		
+		return root;
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		if(event.getSource() == asas) {
 			jatekter.getAktual().Furas();
+			if(jatekter.getAktual().getAszteroida().getKopenyVastagsag() == 0) {
+				//nyersanyag kirajzolása
+			}
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
 			setLabels(jatekter.getAktual());
+			//nyersanyag színének átállítása DARKSLATEBLUE-ra
 		}
 		else if(event.getSource() == mozog) {
 			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
+			//AszterG frissítése
 		}
 		else if(event.getSource() == robotep) {
 			jatekter.getAktual().RobotEpit();	
@@ -102,11 +168,14 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		}
 		else if(event.getSource() == bazisep) {
 			jtk.getKivalasztott().BazisEpit();
+			//jatek vege függvénye tud csak arról, hogy nyertek e vagy sem, õ hív grafikus függvényt, hogy csináljon ablakot?
 		}
 		else if(event.getSource() == visszatolt) {
 			jatekter.getAktual().Visszatolt();
 			setLabels(jatekter.getAktual());
+			//nyersanyag kirajzolása
 		}
+		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
 	}
 	
 	void setLabels(Telepes t) {
