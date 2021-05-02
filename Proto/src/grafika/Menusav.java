@@ -11,8 +11,7 @@ import javafx.scene.paint.Color;
 import proto.Aszteroidaov;
 
 public class Menusav {
-	Button menu;
-	ImageView ment;
+	
 	Aszteroidaov jatekter;
 	Jatekter jtk;
 	
@@ -33,6 +32,11 @@ public class Menusav {
 	 */
 	
 	Scene primaryStage;
+	
+	Button menu;
+	ImageView ment;
+	
+	
 	
 	public void felepit(Aszteroidaov ov, Jatekter j) {
 		jatekter = ov;
