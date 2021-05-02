@@ -16,6 +16,7 @@ import proto.Uran;
 import proto.Vas;
 import proto.Vizjeg;
 
+
 public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	
 	Nyersanyag valasztott;
@@ -39,6 +40,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	Aszteroidaov jatekter;
 	Jatekter jtk;
 
+	
 	public void felepit(Aszteroidaov ov, Jatekter j) {
 		jatekter = ov;
 		jtk = j;
