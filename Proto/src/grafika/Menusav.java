@@ -83,9 +83,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	ImageView mentesView;
    	
 	public void felepit(Aszteroidaov ov, Jatekter j) {
-		jatekter = ov;
-		jtk = j;
-		
+				
 		mentes = new Image("!!!!.png");
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
