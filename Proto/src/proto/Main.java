@@ -1,18 +1,24 @@
 package proto;
+import grafika.Fomenu;
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application{
 	public static Jatek game = new Jatek();
 	
-	public static void main(String[] args) {
-		//game.field(args);
-		launch(args);
-	}
-
 	@Override
 	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
+		Fomenu menu = new Fomenu();
+		arg0.setScene(new Scene(menu.felepit()));
+		arg0.show();
 		
 	}
+	
+	public static void main(String[] args) {
+		//game.field(args);
+		Application.launch(args);
+	}
+
+	
 }
