@@ -8,6 +8,8 @@ public class Telepes extends Entitas {
 	 * 
 	 */
 	private static final long serialVersionUID = 2561586624364419032L;
+	
+	private String nev;
 	/**
 	 * A telepes inventoryjában található kapuk
 	 */
@@ -27,6 +29,7 @@ public class Telepes extends Entitas {
 	Telepes(){
 		super();
 		ID="t0"+count++;
+		nev="jatekos;"
 	}
 	
 	/**
@@ -308,5 +311,12 @@ public class Telepes extends Entitas {
 	
 	public Nyersanyag getNy(int i) {
 		return nyersanyagok.get(i);
+	}
+	
+	public String GetNev() {
+		return nev;
+	}
+	public void SetNev(String name) {
+		nev=name;
 	}
 }
