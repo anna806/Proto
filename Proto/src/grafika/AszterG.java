@@ -134,5 +134,9 @@ public class AszterG extends Pane{
 	    return polygon;
 	}
 	
+	public Aszteroida GetAszteroida() {
+		return data;
+	}
+	
 }
 

@@ -29,7 +29,7 @@ public class Telepes extends Entitas {
 	Telepes(){
 		super();
 		ID="t0"+count++;
-		nev="jatekos;"
+		nev="jatekos";
 	}
 	
 	/**
