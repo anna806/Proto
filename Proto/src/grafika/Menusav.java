@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -30,26 +31,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	private AszterG aktualis;
 	private AszterG valasztott;
 	
-	//FELÉPÍTÉSI TERV
-	/*
-	 * 2 db gridpane
-	 * 1 db borderpane
-	 * 
-	 * mentés button
-	 * menü button
-	 * 
-	 * Piros:
-	 * 6 db label fentre
-	 * 4+3 db label lentre
-	 * 1 db listview 
-	 * 
-	 * Zöldre ugyanez:
-	 */
-	
-	Scene primaryStage;
-	
 	Button menu;
-	ImageView ment;
 	
 	Label rt1_a;
    	Label rt1_b;
@@ -86,18 +68,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Image mentes;
    	ImageView mentesView;
    	
-   	Stage primary;
-   	Scene oldscene;
-   
-   	private List<String> nevek;
-   	
-   	Menusav(Stage _primary, Scene _oldscene, List<String> _nevek){
-   		primary = _primary;
-   		oldscene = _oldscene;
-   		nevek = _nevek;
-   	}
-   	
-	public VBox felepit(Aszteroidaov ov, Jatekter j) {
+	public VBox felepit(List<String> nevek) {
 				
 		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
@@ -109,6 +80,11 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		menu.setStyle("-fx-background-color: DARKGOLDENROD");
 		menu.setTextFill(Color.WHITE);
 		menu.setMinSize(70, 45);
+		
+		FlowPane flowpane = new FlowPane();
+
+        flowpane.getChildren().add(menu);
+        flowpane.getChildren().add(mentesView);
 		
 		VBox base = new VBox();
 		base.setAlignment(Pos.BASELINE_CENTER);
@@ -123,7 +99,6 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	    rootR.setStyle("-fx-background-color: WHITE");
 	    rootR.setStyle("-fx-border-color: RED");
 	 
-	       
 	    rt1_a = new Label("Kéregvastagság");
 	   	rt1_b = new Label("");
 	   	rt2_a = new Label("Napközel");
@@ -223,25 +198,24 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	
 	   	setLabelsGreen(valasztott.GetAszteroida(), nevek);
 	   	
-	   	base.getChildren().addAll(rootR, rootG);
-	   	return base;
+	   	base.getChildren().addAll(flowpane, rootR, rootG);
+	   
 	       /*Scene scene = new Scene(root, 300, 300);
 	       primaryStage.setTitle("GridPanel Layout Demo (o7planning.org)");
 	       primaryStage.setScene(scene);
 	       primaryStage.show();*/
 	   	
-	   	menu.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		        //átlép a másik nézetbe
-		    }
-		});
+	   	
+		return base;
 		
 		
 	}
 	//mentés!!!
 	public void handle(ActionEvent event) {
-		if(event.getSource() == ment) {
-			jatekter.getAktual().Furas();
+		if(event.getSource() == menu) {
+			//átlép másik nézetbe
+		} else if(event.getSource() == mentesView) {
+			//játék.class mentése
 		}
 	}
 	
