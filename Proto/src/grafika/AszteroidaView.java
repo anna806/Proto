@@ -26,6 +26,7 @@ public class AszteroidaView {
 		kor.setFill(Color.CORNFLOWERBLUE);
 		if (data.getKopenyVastagsag()==0) {
 			anyag=new NyersanyagView(data.getBelsoAnyag(), x, y);
+			anyag.kitolt();
 		}
 		
 	}
