@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -58,7 +59,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Label rt3_b;
    	
    	Label rb1_a;
-   	ListView rb1_b;
+   	ListView<String> rb1_b;
    	Label rb2_a;
    	Label rb2_b;
    	Label rb3_a;
@@ -74,7 +75,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Label gt3_b;
    	
    	Label gb1_a;
-   	ListView gb1_b;
+   	ListView<String> gb1_b;
    	Label gb2_a;
    	Label gb2_b;
    	Label gb3_a;
@@ -93,13 +94,12 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Menusav(Stage _primary, Scene _oldscene, List<String> _nevek){
    		primary = _primary;
    		oldscene = _oldscene;
-   		
    		nevek = _nevek;
    	}
    	
-	public void felepit(Aszteroidaov ov, Jatekter j) {
+	public VBox felepit(Aszteroidaov ov, Jatekter j) {
 				
-		mentes = new Image("flop.png"); //kell könyvtár----------------------------------
+		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
 		
@@ -110,6 +110,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		menu.setTextFill(Color.WHITE);
 		menu.setMinSize(70, 45);
 		
+		VBox base = new VBox();
+		base.setAlignment(Pos.BASELINE_CENTER);
+		
 		//RED TABLE----------------------------------------------
 		
 		GridPane rootR = new GridPane();
@@ -117,6 +120,8 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	    rootR.setPadding(new Insets(20));
 	    rootR.setHgap(25);
 	    rootR.setVgap(15);
+	    rootR.setStyle("-fx-background-color: WHITE");
+	    rootR.setStyle("-fx-border-color: RED");
 	 
 	       
 	    rt1_a = new Label("Kéregvastagság");
@@ -162,15 +167,17 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	rootR.add(rb3_a, 3, 3);
        
 	   	//lenti értékek
-       setLabelsRed(aktualis.GetAszteroida(), nevek);
+	   	setLabelsRed(aktualis.GetAszteroida(), nevek);
 	    
-	  //RED TABLE----------------------------------------------
+       //RED TABLE----------------------------------------------
 	 
 	   	GridPane rootG = new GridPane();
 		 
 	    rootG.setPadding(new Insets(20));
 	    rootG.setHgap(25);
 	    rootG.setVgap(15);
+	    rootG.setStyle("-fx-background-color: WHITE");
+	    rootG.setStyle("-fx-border-color: GREEN");
 	       
 	    gt1_a = new Label("Kéregvastagság");
 	   	gt1_b = new Label("");
@@ -216,6 +223,8 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	
 	   	setLabelsGreen(valasztott.GetAszteroida(), nevek);
 	   	
+	   	base.getChildren().addAll(rootR, rootG);
+	   	return base;
 	       /*Scene scene = new Scene(root, 300, 300);
 	       primaryStage.setTitle("GridPanel Layout Demo (o7planning.org)");
 	       primaryStage.setScene(scene);
