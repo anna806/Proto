@@ -1,4 +1,5 @@
 package proto;
+
 import grafika.Fomenu;
 import javafx.application.Application;
 import javafx.scene.Scene;
