@@ -41,7 +41,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
-	    Scene scene = new Scene(borderPane, 300, 300); //méret
+	    Scene scene = new Scene(borderPane, 800, 600); //méret
 	    primary.setScene(scene);
 	    primary.show();
 	}

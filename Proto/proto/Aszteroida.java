@@ -117,7 +117,7 @@ public class Aszteroida extends Szomszed{
 	 * bázisépítés kezdeményezése, a függvény ellenõrzi, hogy megvannak-e a megfelelõ anyagok.
 	 * Ha megvannak, a játék végét true értékkel hívja- ilyenkor a játékosok nyernek
 	 */
-	public void BazisEpit() {
+	public String BazisEpit() {
 		List<Nyersanyag> kell = new ArrayList<Nyersanyag>();
 			
 		kell.add(new Uran());
@@ -138,18 +138,20 @@ public class Aszteroida extends Szomszed{
 		
 		Utmutato bazis = new Utmutato(kell);
 		boolean bazisepitheto = false;
+		String eredmeny = "";
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis);
 			if(bazisepitheto) {
 				for(int i = 0; i < entitasok.size(); i++) {
 					if(entitasok.get(i).AnyagokTorol(bazis)) {
-						Main.game.Vege(bazisepitheto);
+						eredmeny = Main.game.Vege(bazisepitheto);
 						break;
 					}
 				}
 				break;
 			}
 		}
+		return eredmeny;
 	}
 	
 	/**

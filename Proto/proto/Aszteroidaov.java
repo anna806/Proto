@@ -386,11 +386,23 @@ public class Aszteroidaov implements Serializable{
 		return null;
 	}
 	
+	/**
+	 * Visszaadja az aktuális soron lévõ Telepest.
+	 * @return az aktuálisan soron lévõ Telepes
+	 */
 	public Telepes getAktual() {
 		return aktualTelepes;
 	}
 	
+	/**
+	 * Továbblépteti az aktuális Telepes miután végzett a soron következõ Telepesre.
+	 */
 	public void aktualKesz() {
-		//soronkövetkezõ aktuálTelepes a listából
+		for(int i = 0; i < telepesek.size(); i++) {
+			if(telepesek.get(i).equals(aktualTelepes)) {
+				aktualTelepes = telepesek.get(i + 1);
+				break;
+			}
+		}
 	}
 }

@@ -22,7 +22,10 @@ public class AszteroidaView {
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
 	
-	public AszteroidaView(Aszteroida a, int kx, int ky) {
+	Group group;
+	
+	public AszteroidaView(Aszteroida a, int kx, int ky, Group g) {
+		group = g;
 		data=a;
 		x=kx;
 		y=ky;
@@ -63,28 +66,28 @@ public class AszteroidaView {
 		else
 			kor.setStroke(Color.TRANSPARENT);
 	}
-	public void felepit(Stage stage) {
-		Group group= new Group();
+	public void felepit() {
+//		Group group= new Group();
 		group.getChildren().add(kor);
 		if(anyag!=null) {
-			anyag.feltesz(stage);
+			anyag.feltesz(group);
 		}
 		if(kapunezet.size()>0) {
-//			foreach(KapuView nezet in kapunezet){
-//				nezet.feltesz(stage);
-//			}
+			for (KapuView nezet : kapunezet){
+				nezet.feltesz(group);
+			}
 		}
-		Scene scene= new Scene(group, 110, 110);
-		stage.setScene(scene);
-		stage.show();
+//		Scene scene= new Scene(group, 110, 110);
+//		stage.setScene(scene);
+//		stage.show();
 	}
 	
 	public void frissit() {
 		if(anyag != null) {
-//			anyag.feltesz(stage);
+			anyag.feltesz(group);
 		}
 		else if(anyag == null) {
-			
+			anyag.ures();
 		}
 	}
 }

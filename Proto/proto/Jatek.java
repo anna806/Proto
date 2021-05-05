@@ -24,10 +24,15 @@ public class Jatek {
 	/**
 	 * A játék kezdetekor létrehozza a pályát 20 és 50közötti aszteroidával, beállítja a szomszédságokat és ufokat helyez el egyes aszteroidákon
 	 */
-	public void Start() {
+	public void Start(int aszam) {
 		jatekter = new Aszteroidaov();
+		int db = 0;
 		Random rand = new Random();
-		int db= 20+rand.nextInt(30);
+		if(aszam == 0) {
+			db = 20+rand.nextInt(30);
+		}
+		else
+			db = aszam;
 		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
 			Aszteroida uj= new Aszteroida();
 			Random mag= new Random();
@@ -60,23 +65,7 @@ public class Jatek {
 				jatekter.addUfo(ufo);
 			}
 			jatekter.addAszteroida(uj);
-		}	
-		/*Telepes t = new Telepes();
-		t.AddNyersanyag(new Uran());
-	    jatekter.addTelepes(t);
-	    jatekter.GetAszteroida(db - 1).Befogad(t);
-	    //t.kiir();	    
-	    Robot r = new Robot();
-	    jatekter.addRobot(r);
-	    jatekter.GetAszteroida(db - 2).Befogad(r);
-	    r.kiir();
-	    for(int i = 0; i < jatekter.GetRobotokSize(); i++)
-			jatekter.GetRobot(i).kiir();
-	    Ufo u = new Ufo();
-	    jatekter.addUfo(u);
-	    jatekter.GetAszteroida(db - 3).Befogad(u);
-	    r.kiir();
-	    u.kiir();*/
+		}
 		for (int j=0; j<db; j++) {
 			for (int k=0; k<db; k++) {
 				if(j!=k) {
@@ -100,32 +89,32 @@ public class Jatek {
 	public void Kor() {
 		
 	 
-	jatekter.DoNapkozel();
-	
-	if(szamlalo>=5){
-	jatekter.DoNapvihar();
-	}
+		jatekter.DoNapkozel();
 		
-	int i =0;
-	 while(i < jatekter.GetTelepesekSize()) {
-		 jatekter.GetTelepes(i).Lep();
-		 i++;
-	 }
-	 i=0;
-	 while (i < jatekter.GetRobotokSize()) {
-		 jatekter.GetRobot(i).Lep();
-		 i++;
-	 }
-	 i=0;
-	 while (i < jatekter.GetUfokSize()) {
-		 jatekter.GetUfo(i).Lep();
-		 i++;
-	 }
-	 i=0;
-	 while (i < jatekter.GetKapukSize()){
-		 jatekter.GetKapu(i).RandomMozgas();
-	 }
-	 szamlalo+=1;
+		if(szamlalo>=5){
+			jatekter.DoNapvihar();
+		}
+			
+		int i =0;
+		while(i < jatekter.GetTelepesekSize()) {
+			jatekter.getAktual().Lep();
+			i++;
+		}
+		i=0;
+		while (i < jatekter.GetRobotokSize()) {
+			jatekter.GetRobot(i).Lep();
+			i++;
+		}
+		i=0;
+		while (i < jatekter.GetUfokSize()) {
+			jatekter.GetUfo(i).Lep();
+			i++;
+		}
+		i=0;
+		while (i < jatekter.GetKapukSize()){
+			jatekter.GetKapu(i).RandomMozgas();
+		}
+		szamlalo+=1;
 	}
 	
 	/**
@@ -133,13 +122,14 @@ public class Jatek {
 	 * vagy vereséggel zárja le a játékmenetet.
 	 * @param a a kapott logikai érték
 	 */
-	public void Vege(boolean a) {
+	public String Vege(boolean a) {
 		if (a==true) {
-			System.out.println("Gyõzelem! Gratulálunk, megnyerték a játékot!");
-			
+//			System.out.println("Gyõzelem! Gratulálunk, megnyerték a játékot!");
+			return "Gyõzelem! Gratulálunk, megnyerték a játékot!";
 		}
 		else {
-			System.out.println("A játék véget ért, sajnos vesztettek");
+//			System.out.println("A játék véget ért, sajnos vesztettek");
+			return "A játék véget ért, sajnos vesztettek";
 		}
 	}
 		
@@ -201,14 +191,14 @@ public class Jatek {
 	 */
 	public void field(String[] args) {
 		if(args.length == 0) {
-			Start();
+			Start(0);
 			String[] args1 = {"0", "0", "-1"};
 			Parancsok p1 = new Parancsok();
 			p1.Main(args1);
 		}
 		else {
 			if(args[0].equals("0"))
-				Start();
+				Start(0);
 			else {
 				load("map.txt");
 			}

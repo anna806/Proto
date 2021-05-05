@@ -4,8 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -106,27 +108,27 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		kapu = new Rectangle(20, 50, Color.CORAL);
 		
 		ny1sz = new Label("0");
-		ny1sz.setStyle("-fx-background-color: WHITE");
+		ny1sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny1sz.setMinSize(20, 27);
 		ny1sz.setTextAlignment(TextAlignment.CENTER);
 		
 		ny2sz = new Label("0");
-		ny2sz.setStyle("-fx-background-color: WHITE");
+		ny2sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny2sz.setMinSize(20, 27);
 		ny2sz.setTextAlignment(TextAlignment.CENTER);
 		
 		ny3sz = new Label("0");
-		ny3sz.setStyle("-fx-background-color: WHITE");
+		ny3sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny3sz.setMinSize(20, 27);
 		ny3sz.setTextAlignment(TextAlignment.CENTER);
 		
 		ny4sz = new Label("0");
-		ny4sz.setStyle("-fx-background-color: WHITE");
+		ny4sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny4sz.setMinSize(20, 27);
 		ny4sz.setTextAlignment(TextAlignment.CENTER);
 		
 		k = new Label("0");
-		k.setStyle("-fx-background-color: WHITE");
+		k.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		k.setMinSize(20, 27);
 		k.setTextAlignment(TextAlignment.CENTER);
 		
@@ -147,18 +149,16 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent event) {
 		if(event.getSource() == asas) {
 			jatekter.getAktual().Furas();
-			if(jatekter.getAktual().getAszteroida().getKopenyVastagsag() == 0) {
-				//nyersanyag kirajzolása
-			}
+			jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
 			setLabels(jatekter.getAktual());
-			//nyersanyag színének átállítása DARKSLATEBLUE-ra
+			jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
 		}
 		else if(event.getSource() == mozog) {
-//			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
-			//AszterG frissítése
+			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
+			jtk.getK().frissit(); 								//AszterG frissítése
 		}
 		else if(event.getSource() == robotep) {
 			jatekter.getAktual().RobotEpit();	
@@ -167,13 +167,16 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().KapuEpit();
 		}
 		else if(event.getSource() == bazisep) {
-//			jtk.getKivalasztott().BazisEpit();
+			String s = jtk.getKivalasztott().BazisEpit();
+			Alert a = new Alert(AlertType.INFORMATION);
+			a.setContentText(s);
+			a.show();
 			//jatek vege függvénye tud csak arról, hogy nyertek e vagy sem, õ hív grafikus függvényt, hogy csináljon ablakot?
 		}
 		else if(event.getSource() == visszatolt) {
 			jatekter.getAktual().Visszatolt();
 			setLabels(jatekter.getAktual());
-			//nyersanyag kirajzolása
+			jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
 		}
 		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
 	}

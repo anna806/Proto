@@ -33,11 +33,10 @@ public class KapuView {
 		else
 			teglalap.setFill(Color.RED);
 	}
-	public void feltesz(Stage stage) {
-		Group group=new Group();
+	public void feltesz(Group group) {
 		group.getChildren().add(teglalap);
-		Scene scene= new Scene(group, 60, 110);
-		stage.setScene(scene);
-		stage.show();
+//		Scene scene= new Scene(group, 60, 110);
+//		stage.setScene(scene);
+//		stage.show();
 	}
 }
