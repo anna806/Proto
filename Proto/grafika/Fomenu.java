@@ -2,6 +2,7 @@ package grafika;
 
 import java.util.List;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -32,25 +33,25 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		
 		indit  = new Button("Indítás");
 		indit.setStyle("-fx-background-color: DARKGOLDENROD");
-		indit.setTextFill(Color. GOLDENROD);
+		indit.setTextFill(Color.WHITE);
 		indit.setMinSize(140, 60);
 		indit.setOnAction(this);
 		
 		folyt  = new Button("Folytatás");
 		folyt.setStyle("-fx-background-color: DARKGOLDENROD");
-		folyt.setTextFill(Color. GOLDENROD);
+		folyt.setTextFill(Color.WHITE);
 		folyt.setMinSize(140, 60);
 		folyt.setOnAction(this);
 		
 		beall  = new Button("Beállítások");
 		beall.setStyle("-fx-background-color: DARKGOLDENROD");
-		beall.setTextFill(Color. GOLDENROD);
+		beall.setTextFill(Color.WHITE);
 		beall.setMinSize(140, 60);
 		beall.setOnAction(this);
 		
 		kilep  = new Button("Kilépés");
 		kilep.setStyle("-fx-background-color: DARKGOLDENROD");
-		kilep.setTextFill(Color. GOLDENROD);
+		kilep.setTextFill(Color.WHITE);
 		kilep.setMinSize(140, 60);
 		kilep.setOnAction(this);
 		
@@ -73,10 +74,12 @@ public class Fomenu implements EventHandler<ActionEvent> {
 			
 		}
 		else if(event.getSource() == beall) {
-			
+			//Beallitas = new Beallitas();
 		}
 		else if(event.getSource() == kilep) {
-			//???
+//			stage.close();
+			Platform.exit();
+		    System.exit(0);
 		}
 	}
 }

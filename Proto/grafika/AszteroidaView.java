@@ -2,11 +2,15 @@ package grafika;
 
 import proto.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 public class AszteroidaView {
 	private Aszteroida data;
@@ -35,7 +39,7 @@ public class AszteroidaView {
 		}
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
-			if(Main.game.GetOv().GetKapu(i).getAszteroida().equals(data)) {
+			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
 				kapulista.add(Main.game.GetOv().GetKapu(i));
 			}
 		}
@@ -66,14 +70,13 @@ public class AszteroidaView {
 			anyag.feltesz(stage);
 		}
 		if(kapunezet.size()>0) {
-			foreach(KapuView nezet in kapunezet){
-				nezet.feltesz(stage);
-			}
+//			foreach(KapuView nezet in kapunezet){
+//				nezet.feltesz(stage);
+//			}
 		}
 		Scene scene= new Scene(group, 110, 110);
 		stage.setScene(scene);
 		stage.show();
-		
 	}
 }
 	

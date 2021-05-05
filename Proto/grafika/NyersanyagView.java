@@ -1,8 +1,11 @@
 package grafika;
 
 import proto.*;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 public class NyersanyagView {
 
@@ -12,7 +15,6 @@ public class NyersanyagView {
 	public Circle kor;
 	
 	public NyersanyagView(Nyersanyag ny, int kx, int ky){
-		adat= new Nyersanyag();
 		adat=ny;
 		x=kx;
 		y=ky;
@@ -29,7 +31,7 @@ public class NyersanyagView {
 	
 	public void feltesz(Stage stage) {
 		Group group=new Group();
-		group.getChildren.add(kor);
+		group.getChildren().add(kor);
 		Scene scene= new Scene(group, 41, 41);
 		stage.setScene(scene);
 		stage.show();

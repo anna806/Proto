@@ -29,13 +29,13 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
 		menusavBox = menusav.felepit(nevek);
-		muveletsavBox = muveletsav.felepit(ov, j); //játéktérbõl szedi ki
+//		muveletsavBox = muveletsav.felepit(ov, j); //játéktérbõl szedi ki
 		
 		//mentés?
 		//scene váltás?
 		
 		BorderPane borderPane = new BorderPane();
-	    borderPane.setCenter(appContent);
+//	    borderPane.setCenter(appContent);
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
@@ -43,7 +43,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	    primaryStage.setScene(scene);
 	    primaryStage.show();
 	}
-	void handle(ActionEvent event) {
+	public void handle(ActionEvent event) {
 		
 	}
 }
