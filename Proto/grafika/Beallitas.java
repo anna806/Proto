@@ -24,12 +24,17 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	Button amin;
 	Button tplusz;
 	Button tmin;
+	Button menu;
 	TextField aszam;
 	TextField tnev;
 	TextField ttorol;
+	Stage s;
+	Scene scene;
+	Scene oldScene ;
 	
 	void felepit(Stage stage, Scene oldscene, int aszamn, List<String> nevek) {
-		
+		oldScene = oldscene;
+		s = stage;
 		GridPane panes = new GridPane();
 		panes.setPadding(new Insets(10, 10, 10, 10));
 		panes.setVgap(5); 
@@ -117,12 +122,21 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		 telpm.setStyle("-fx-font-size: 20");
 		 telpm.setTextAlignment(TextAlignment.LEFT);
 		 
+		 menu = new Button("Menu");
+		 menu.setOnAction(this);
+		 
+		 
 		 // ide kéne a játékosok listája, kiíró cucc
 		 
 		 panes.add(aster, 0, 0);
 		 panes.add(telp, 0, 1);
 		 panes.add(telm, 0, 2);
 		 panes.add(jatl, 1, 0, 1, 3);
+		 panes.add(menu, 1, 2);
+		 
+		 scene = new Scene(panes, 800, 600);
+		 s.setScene(scene);
+		 s.show();
 	}
 	
 	@Override
@@ -145,7 +159,9 @@ public class Beallitas implements EventHandler<ActionEvent>{
 				a.setContentText("Nincs ilyen nevû játékos");
 				a.show();
 			}
-				
+		}
+		else if(event.getSource() == menu) {
+			s.setScene(oldScene);
 		}
 	}
 }

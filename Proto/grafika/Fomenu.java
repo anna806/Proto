@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Fomenu implements EventHandler<ActionEvent> {
 	Button indit;
@@ -26,9 +27,12 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	
 	List<String> nevek;
 	int aszam;
+	Stage s;
+	Scene scene;
 	
-	public VBox felepit() {
-		
+//	public VBox felepit() {
+	public void felepit(Stage stage) {
+		s = stage;
 		VBox root = new VBox(5);
 		
 		indit  = new Button("Indítás");
@@ -62,22 +66,37 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		root.getChildren().addAll(cim, indit, folyt, beall, kilep);
 		root.setAlignment(Pos.CENTER);
 		
-		return root;	
+		scene = new Scene(root, 800, 600);
+		s.setTitle("Aszteroidabanyaszat");
+		s.setScene(scene);
+		s.show();
+		s.setOnCloseRequest(new EventHandler<WindowEvent>() {
+		    @Override
+		    public void handle(WindowEvent t) {
+		        Platform.exit();
+		        System.exit(0);
+		    }
+		});
+		
+//		return root;	
 	}
 	
 	@Override
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
-			
+			JatekAllapot jtk = new JatekAllapot();
+			jtk.felepit(s, scene, aszam, nevek);
 		}
 		else if(event.getSource() == folyt) {
-			
+			JatekAllapot jtk = new JatekAllapot();
+			jtk.felepit(s, scene, aszam, nevek);
 		}
 		else if(event.getSource() == beall) {
-			//Beallitas = new Beallitas();
+			Beallitas b = new Beallitas();
+			b.felepit(s, scene, aszam, nevek);
 		}
 		else if(event.getSource() == kilep) {
-//			stage.close();
+			s.close();
 			Platform.exit();
 		    System.exit(0);
 		}
