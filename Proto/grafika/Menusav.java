@@ -25,6 +25,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Aszteroidaov;
+import proto.Jatek;
 
 public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	
@@ -68,8 +69,17 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Image mentes;
    	ImageView mentesView;
    	
-	public VBox felepit(List<String> nevek) {
-				
+   	Jatek game;
+   	Scene oldscene;
+   	Stage primary;
+   	
+   	
+	public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _primary) {
+		
+		game = _game;
+		oldscene = _oldscene;
+	   	primary = _primary;
+		
 		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
@@ -213,9 +223,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	//mentés!!!
 	public void handle(ActionEvent event) {
 		if(event.getSource() == menu) {
-			//átlép másik nézetbe
+			primary.setScene(oldscene);
 		} else if(event.getSource() == mentesView) {
-			//játék.class mentése
+			game.ser(game.GetOv(), "jatek.txt");
 		}
 	}
 	

@@ -10,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import proto.Jatek;
 
 public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	
@@ -17,9 +18,10 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	Menusav menusav;
 	Muveletsav muveletsav;
 	
-	Stage primaryStage;
+	Jatek game;
 	
 	JatekAllapot(){
+		game = new Jatek();
 		jatekter = new Jatekter();
 		menusav = new Menusav();
 		muveletsav = new Muveletsav();
@@ -28,8 +30,8 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	void felepit(Stage primary, Scene oldscene, int aszam, List<String> nevek) {
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
-		menusavBox = menusav.felepit(nevek);
-//		muveletsavBox = muveletsav.felepit(ov, j); //játéktérbõl szedi ki
+		menusavBox = menusav.felepit(nevek, game, oldscene, primary);
+		muveletsavBox = muveletsav.felepit(game.GetOv(), jatekter); 
 		
 		//mentés?
 		//scene váltás?
@@ -40,8 +42,8 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	    borderPane.setBottom(muveletsavBox);
 	    
 	    Scene scene = new Scene(borderPane, 300, 300); //méret
-	    primaryStage.setScene(scene);
-	    primaryStage.show();
+	    primary.setScene(scene);
+	    primary.show();
 	}
 	public void handle(ActionEvent event) {
 		
