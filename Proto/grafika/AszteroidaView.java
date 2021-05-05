@@ -78,5 +78,14 @@ public class AszteroidaView {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	public void frissit() {
+		if(anyag != null) {
+			anyag.feltesz(stage);
+		}
+		else if(anyag == null) {
+			
+		}
+	}
 }
 	
