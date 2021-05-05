@@ -13,6 +13,7 @@ public class AszteroidaView {
 	public NyersanyagView anyag;
 	private boolean aktualis;
 	private boolean valasztott; 
+	private List<KapuView> kapunezet;
 	
 	public AszteroidaView(Aszteroida a, int kx, int ky) {
 		data=a;
@@ -27,6 +28,18 @@ public class AszteroidaView {
 		if (data.getKopenyVastagsag()==0) {
 			anyag=new NyersanyagView(data.getBelsoAnyag(), x, y);
 			anyag.kitolt();
+			
+		}
+		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
+		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
+			if(Main.game.GetOv().GetKapu(i).getAszteroida().equals(data)) {
+				kapulista.add(Main.game.GetOv().GetKapu(i));
+			}
+		}
+		if(kapulista.size()>0) 
+			for(int i=0; i<kapulista.size(); i++) {
+			KapuView kv= new KapuView(kapulista.get(i), x+60, 100);
+			kapunezet.add(kv);
 		}
 		
 	}
@@ -42,6 +55,22 @@ public class AszteroidaView {
 			kor.setStroke(Color.GREEN);
 		else
 			kor.setStroke(Color.TRANSPARENT);
+	}
+	public void felepit(Stage stage) {
+		Group group= new Group();
+		group.getChildren().add(kor);
+		if(anyag!=null) {
+			anyag.feltesz(stage);
+		}
+		if(kapunezet.size()>0) {
+			foreach(KapuView nezet in kapunezet){
+				nezet.feltesz(stage);
+			}
+		}
+		Scene scene= new Scene(group, 110, 110);
+		stage.setScene(scene);
+		stage.show();
+		
 	}
 }
 	

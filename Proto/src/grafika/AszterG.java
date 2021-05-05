@@ -79,7 +79,11 @@ public class AszterG extends Pane{
 		robot= new Polygon();
 		robot=createTriangle(new Point2D(-1,0), new Point2D(0,1), new Point2D(1,0));
 		
-		napkozel=new Label(data.getNapkozel());
+		napkozel=new Label();
+		if(data.getNapkozel())
+			napkozel.setText("+");
+		else
+			napkozel.setText("-");
 		
 		keret=new Rectangle();
 		keret.setX(0);

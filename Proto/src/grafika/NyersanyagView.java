@@ -27,5 +27,13 @@ public class NyersanyagView {
 	
 	public void kitolt() {}
 	
+	public void feltesz(Stage stage) {
+		Group group=new Group();
+		group.getChildren.add(kor);
+		Scene scene= new Scene(group, 41, 41);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
 	
 }

@@ -15,17 +15,24 @@ public class KapuView {
 		y=ky;
 		
 		teglalap= new Rectangle();
-		keret.setX(x);
-		keret.setY(y);
-		keret.setWidth(20);
-		keret.setHeight(50);
-		keret.SetFill(Color.WHITE);
+		teglalap.setX(x);
+		teglalap.setY(y);
+		teglalap.setWidth(20);
+		teglalap.setHeight(50);
+		teglalap.SetFill(Color.WHITE);
 	}
 	public SetVal(boolean val) {
 		if(val) {
-			keret.setFill(Color.RED);
+			teglalap.setFill(Color.RED);
 		}
 		else
-			keret.setFill(Color.RED);
+			teglalap.setFill(Color.RED);
+	}
+	public void feltesz(Stage stage) {
+		Group group=new Group();
+		group.getChildren.add(teglalap);
+		Scene scene= new Scene(group, 60, 110);
+		stage.setScene(scene);
+		stage.show();
 	}
 }
