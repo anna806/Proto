@@ -81,7 +81,7 @@ public class AszteroidaView {
 	
 	public void frissit() {
 		if(anyag != null) {
-			anyag.feltesz(stage);
+			//anyag.feltesz(stage);
 		}
 		else if(anyag == null) {
 			

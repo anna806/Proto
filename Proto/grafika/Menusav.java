@@ -137,9 +137,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	GridPane.setHalignment(rt1_b, HPos.LEFT);
 	   	GridPane.setHalignment(rt2_b, HPos.LEFT);
 	   	GridPane.setHalignment(rt3_b, HPos.LEFT);
-	   	rootR.add(rt1_a, 3, 0);
-	   	rootR.add(rt2_a, 3, 1);
-	   	rootR.add(rt3_a, 3, 2);
+	   	rootR.add(rt1_b, 3, 0);
+	   	rootR.add(rt2_b, 3, 1);
+	   	rootR.add(rt3_b, 3, 2);
 	   	
 	   	//lenti címek
 	   	GridPane.setHalignment(rb1_a, HPos.CENTER);
@@ -192,9 +192,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	GridPane.setHalignment(gt1_b, HPos.LEFT);
 	   	GridPane.setHalignment(gt2_b, HPos.LEFT);
 	   	GridPane.setHalignment(gt3_b, HPos.LEFT);
-	   	rootG.add(gt1_a, 3, 0);
-	   	rootG.add(gt2_a, 3, 1);
-	   	rootG.add(gt3_a, 3, 2);
+	   	rootG.add(gt1_b, 3, 0);
+	   	rootG.add(gt2_b, 3, 1);
+	   	rootG.add(gt3_b, 3, 2);
 	   	
 	   	//lenti címek
 	   	GridPane.setHalignment(gb1_a, HPos.CENTER);
