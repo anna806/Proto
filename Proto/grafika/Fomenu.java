@@ -10,6 +10,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -65,6 +71,13 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		
 		root.getChildren().addAll(cim, indit, folyt, beall, kilep);
 		root.setAlignment(Pos.CENTER);
+		
+//		root.setStyle("-fx-background-color: GOLDENROD");
+		BackgroundImage myBI= new BackgroundImage(new Image("hatter.png",32,32,false,true),
+		        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+		          BackgroundSize.DEFAULT);
+		//then you set to your node
+		root.setBackground(new Background(myBI));
 		
 		scene = new Scene(root, 800, 600);
 		s.setTitle("Aszteroidabanyaszat");
