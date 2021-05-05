@@ -81,7 +81,11 @@ public class AszteroidaView {
 	
 	public void frissit() {
 		if(anyag != null) {
+<<<<<<< HEAD
 //			anyag.feltesz(stage);
+=======
+			//anyag.feltesz(stage);
+>>>>>>> branch 'master' of https://github.com/anna806/Proto.git
 		}
 		else if(anyag == null) {
 			
