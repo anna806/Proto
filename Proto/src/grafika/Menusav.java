@@ -1,9 +1,12 @@
 package grafika;
 
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,38 +17,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Aszteroidaov;
 
 public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	
-	AszterG aktualis;
-	AszterG valasztott;
-	
-	//FELÉPÍTÉSI TERV
-	/*
-	 * 2 db gridpane
-	 * 1 db borderpane
-	 * 
-	 * mentés button
-	 * menü button
-	 * 
-	 * Piros:
-	 * 6 db label fentre
-	 * 4+3 db label lentre
-	 * 1 db listview 
-	 * 
-	 * Zöldre ugyanez:
-	 */
-	
-	Scene primaryStage;
+	private AszterG aktualis;
+	private AszterG valasztott;
 	
 	Button menu;
-	ImageView ment;
 	
 	Label rt1_a;
    	Label rt1_b;
@@ -55,7 +41,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Label rt3_b;
    	
    	Label rb1_a;
-   	ListView rb1_b;
+   	ListView<String> rb1_b;
    	Label rb2_a;
    	Label rb2_b;
    	Label rb3_a;
@@ -71,7 +57,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Label gt3_b;
    	
    	Label gb1_a;
-   	ListView gb1_b;
+   	ListView<String> gb1_b;
    	Label gb2_a;
    	Label gb2_b;
    	Label gb3_a;
@@ -82,16 +68,26 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Image mentes;
    	ImageView mentesView;
    	
-	public void felepit(Aszteroidaov ov, Jatekter j) {
+	public VBox felepit(List<String> nevek) {
 				
-		mentes = new Image("!!!!.png");
+		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
+		
+		//egészet egy panebe
 		
 		menu = new Button("Menü");
 		menu.setStyle("-fx-background-color: DARKGOLDENROD");
 		menu.setTextFill(Color.WHITE);
 		menu.setMinSize(70, 45);
+		
+		FlowPane flowpane = new FlowPane();
+
+        flowpane.getChildren().add(menu);
+        flowpane.getChildren().add(mentesView);
+		
+		VBox base = new VBox();
+		base.setAlignment(Pos.BASELINE_CENTER);
 		
 		//RED TABLE----------------------------------------------
 		
@@ -100,8 +96,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	    rootR.setPadding(new Insets(20));
 	    rootR.setHgap(25);
 	    rootR.setVgap(15);
+	    rootR.setStyle("-fx-background-color: WHITE");
+	    rootR.setStyle("-fx-border-color: RED");
 	 
-	       
 	    rt1_a = new Label("Kéregvastagság");
 	   	rt1_b = new Label("");
 	   	rt2_a = new Label("Napközel");
@@ -145,15 +142,17 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	rootR.add(rb3_a, 3, 3);
        
 	   	//lenti értékek
-       
+	   	setLabelsRed(aktualis.GetAszteroida(), nevek);
 	    
-	  //RED TABLE----------------------------------------------
+       //RED TABLE----------------------------------------------
 	 
 	   	GridPane rootG = new GridPane();
 		 
 	    rootG.setPadding(new Insets(20));
 	    rootG.setHgap(25);
 	    rootG.setVgap(15);
+	    rootG.setStyle("-fx-background-color: WHITE");
+	    rootG.setStyle("-fx-border-color: GREEN");
 	       
 	    gt1_a = new Label("Kéregvastagság");
 	   	gt1_b = new Label("");
@@ -197,24 +196,32 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	   	rootG.add(gb3_a, 2, 3);
 	   	rootG.add(gb3_a, 3, 3);
 	   	
+	   	setLabelsGreen(valasztott.GetAszteroida(), nevek);
 	   	
+	   	base.getChildren().addAll(flowpane, rootR, rootG);
+	   
 	       /*Scene scene = new Scene(root, 300, 300);
 	       primaryStage.setTitle("GridPanel Layout Demo (o7planning.org)");
 	       primaryStage.setScene(scene);
 	       primaryStage.show();*/
 	   	
-		
+	   	
+		return base;
 		
 		
 	}
-
+	//mentés!!!
 	public void handle(ActionEvent event) {
-		if(event.getSource() == ment) {
-			jatekter.getAktual().Furas();
+		if(event.getSource() == menu) {
+			//átlép másik nézetbe
+		} else if(event.getSource() == mentesView) {
+			//játék.class mentése
 		}
 	}
 	
-	public void setLabelsRed(Aszteroida a) {
+	
+	
+	public void setLabelsRed(Aszteroida a, List<String> nevek) {
 		rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
 		if(a.getNapkozel() == "true") {
 			rt2_b.setText("+");
@@ -222,20 +229,65 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 			rt2_b.setText("-");
 		}
 		
-		if(a.get == "true") {
-			rt3_b.setText("+");
+		int robot = 0;
+		int ufo = 0;
+		int kapu = 0;
+		
+		for(int i = 0; i<a.EntitasokSize(); i++) {
+			String ent = a.getEntitas(i);
+			if(ent.startsWith("r")) {
+				robot++;
+			}
+			if(ent.startsWith("u")) {
+				ufo++;
+			}
+		}
+		for(int i = 0; i<a.SzomszedokSize(); i++) {
+			String szom = a.getEntitas(i);
+			if(szom.startsWith("k")) {
+				kapu++;
+			}
+		}
+	   	for(String nev: nevek) {
+	   		rb1_b.getItems().add(nev);
+	   	}
+	   	rb2_b.setText(String.valueOf(robot));
+	   	rb3_b.setText(String.valueOf(ufo));
+	   	rb4_b.setText(String.valueOf(kapu));
+	}
+	
+	public void setLabelsGreen(Aszteroida a, List<String> nevek) {
+		gt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
+		if(a.getNapkozel() == "true") {
+			gt2_b.setText("+");
 		} else {
-			rt3_b.setText("-");
+			gt2_b.setText("-");
 		}
 		
-	   	
-
-	   	rb1_b = new ListView(nevek);
-	   	
-	   	
-	   	rb2_b = new Label("");
-
-	   	rb3_b = new Label("");
-	   	rb4_b = new Label("");
+		int robot = 0;
+		int ufo = 0;
+		int kapu = 0;
+		
+		for(int i = 0; i<a.EntitasokSize(); i++) {
+			String ent = a.getEntitas(i);
+			if(ent.startsWith("r")) {
+				robot++;
+			}
+			if(ent.startsWith("u")) {
+				ufo++;
+			}
+		}
+		for(int i = 0; i<a.SzomszedokSize(); i++) {
+			String szom = a.getEntitas(i);
+			if(szom.startsWith("k")) {
+				kapu++;
+			}
+		}
+	   	for(String nev: nevek) {
+	   		gb1_b.getItems().add(nev);
+	   	}
+	   	gb2_b.setText(String.valueOf(robot));
+	   	gb3_b.setText(String.valueOf(ufo));
+	   	gb4_b.setText(String.valueOf(kapu));
 	}
 }
