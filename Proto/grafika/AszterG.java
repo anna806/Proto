@@ -57,7 +57,7 @@ public class AszterG extends Pane{
 		
 		int kapuk=0;
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
-			if(Main.game.GetOv().GetKapu(i).getAszteroida().equals(data)) {
+			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
 				kapuk+=1;
 			}
 		}
@@ -69,7 +69,7 @@ public class AszterG extends Pane{
 			}
 		}
 		for(int i=0; i<jatekosok.size(); i++) {
-			telepesek.Add(jatekosok.get(i).GetNev());
+//			telepesek.Add(jatekosok.get(i).GetNev());
 		}
 		
 		rbt=new Label("Robotok száma: "+String.valueOf(robotok));
@@ -80,7 +80,7 @@ public class AszterG extends Pane{
 		robot=createTriangle(new Point2D(-1,0), new Point2D(0,1), new Point2D(1,0));
 		
 		napkozel=new Label();
-		if(data.getNapkozel())
+		if(data.getNap())
 			napkozel.setText("+");
 		else
 			napkozel.setText("-");

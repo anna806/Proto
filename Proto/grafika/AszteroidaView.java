@@ -1,6 +1,9 @@
 package grafika;
 
 import proto.*;
+
+import java.util.List;
+
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;

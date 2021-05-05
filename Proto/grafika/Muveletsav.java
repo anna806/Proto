@@ -157,7 +157,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			//nyersanyag színének átállítása DARKSLATEBLUE-ra
 		}
 		else if(event.getSource() == mozog) {
-			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
+//			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
 			//AszterG frissítése
 		}
 		else if(event.getSource() == robotep) {
@@ -167,7 +167,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().KapuEpit();
 		}
 		else if(event.getSource() == bazisep) {
-			jtk.getKivalasztott().BazisEpit();
+//			jtk.getKivalasztott().BazisEpit();
 			//jatek vege függvénye tud csak arról, hogy nyertek e vagy sem, õ hív grafikus függvényt, hogy csináljon ablakot?
 		}
 		else if(event.getSource() == visszatolt) {

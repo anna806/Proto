@@ -378,4 +378,11 @@ public class Aszteroida extends Szomszed{
 		else	
 			return "Ureges";
 	}
+	
+	public boolean getNap() {
+		if(napkozel)
+			return true;
+		else
+			return false;
+	}
 }
