@@ -10,8 +10,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.TextAlignment;
@@ -35,6 +37,9 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	void felepit(Stage stage, Scene oldscene, int aszamn, List<String> nevek) {
 		oldScene = oldscene;
 		s = stage;
+		cnta = aszamn;
+		tnevek = nevek;
+		
 		GridPane panes = new GridPane();
 		panes.setPadding(new Insets(10, 10, 10, 10));
 		panes.setVgap(5); 
@@ -62,6 +67,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		
 		aszam = new TextField(Integer.toString(aszamn));
 		aszam.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
+		aszam.setMaxSize(30, 30);
 		
 		aster.add(aszterl, 0, 0, 3 , 1);
 		aster.add(aplusz, 0, 1);
@@ -98,35 +104,39 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	    telm.setHgap(10);
 	    telm.setStyle("-fx-background-color: BEIGE");
 		
-	    Label telpm = new Label("Játékos törlése");
-	    telpm.setStyle("-fx-font-size: 20");
-	    telpm.setTextFill(Color.DARKRED);
-		telpm.setTextAlignment(TextAlignment.LEFT);
+	    Label telml = new Label("Játékos törlése");
+	    telml.setStyle("-fx-font-size: 20");
+	    telml.setTextFill(Color.DARKRED);
+		telml.setTextAlignment(TextAlignment.LEFT);
 		
 		 tmin  = new Button("OK");
 		 tmin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
 		 tmin.setMinSize(60, 30);
 		 tmin.setOnAction(this);
-		    
+		
 		 ttorol = new TextField();
 		 ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
 		 ttorol.setMinSize(150, 30);
 		 
-		 GridPane jatl = new GridPane();											// játékosok listája
+		 telm.add(telml, 0, 0);
+		 telm.add(ttorol, 0, 1);
+		 telm.add(tmin, 1, 1);
+		 
+		 VBox jatl = new VBox();											// játékosok listája
 		 jatl.setPadding(new Insets(10, 10, 10, 10));
-		 jatl.setVgap(5); 
-		 jatl.setHgap(5);
 		 jatl.setStyle("-fx-background-color: BEIGE");
 		 
 		 Label jatll = new Label("Játékosok");
-		 telpm.setStyle("-fx-font-size: 20");
-		 telpm.setTextAlignment(TextAlignment.LEFT);
+		 jatll.setStyle("-fx-font-size: 20");
+		 jatll.setTextAlignment(TextAlignment.LEFT);
+		 
+		 ListView<String> jatlist = new ListView<String>();
+		 jatlist.getItems().addAll(tnevek);
+		 
+		 jatl.getChildren().addAll(jatll, jatlist);
 		 
 		 menu = new Button("Menu");
 		 menu.setOnAction(this);
-		 
-		 
-		 // ide kéne a játékosok listája, kiíró cucc
 		 
 		 panes.add(aster, 0, 0);
 		 panes.add(telp, 0, 1);
