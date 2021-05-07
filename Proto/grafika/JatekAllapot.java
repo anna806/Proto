@@ -22,7 +22,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	Muveletsav muveletsav;
 	
 	Jatek game;
-	Random rand;
+	Random rand = new Random();
 	
 	JatekAllapot(List<Integer> asz, List<String> nev){
 		game = new Jatek();
@@ -37,11 +37,9 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 			t = new Telepes();
 			t.SetNev(nev.get(i));
 			int s = game.GetOv().getAszteroidak().size();
-			System.out.println(s);
-			t.SetAszteroida(game.GetOv().GetAszteroida(rand.nextInt(s) - 1));
+			t.SetAszteroida(game.GetOv().GetAszteroida(rand.nextInt(s)));
 			game.GetOv().addTelepes(t);
 		}
-		
 		 
 		game.GetOv().setAktual(t);
 		
