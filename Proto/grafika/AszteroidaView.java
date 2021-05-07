@@ -41,7 +41,7 @@ public class AszteroidaView extends SzomszedView {
 			
 		}
 		szomszedok=new ArrayList<SzomszedView>();
-		
+		kapunezet = new ArrayList<KapuView>();
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
 			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {

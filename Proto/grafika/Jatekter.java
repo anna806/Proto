@@ -53,7 +53,6 @@ public class Jatekter extends Pane{
 			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
 			aszteroidak.add(nezet);
 			nezet.felepit();
-			g.getChildren().add(nezet.kor);
 		}
 		for(Teleportkapu t : tk) {
 
