@@ -31,13 +31,15 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		muveletsav = new Muveletsav();
 		
 		game.Start(asz.get(0)); 
-		
+		Telepes t = null;
 		for(int i = 0; i<nev.size(); i++) {
-			Telepes t = new Telepes();
+			t = new Telepes();
 			t.SetNev(nev.get(i));
 			int s = game.GetOv().getAszteroidak().size();
 			t.SetAszteroida(game.GetOv().GetAszteroida(rand.nextInt(s)));
+			game.GetOv().addTelepes(t);
 		}
+		game.GetOv().setAktual(t);
 		
 	}
 	//jatekteret aszammal

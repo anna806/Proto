@@ -403,6 +403,10 @@ public class Aszteroidaov implements Serializable{
 		return aktualTelepes;
 	}
 	
+	public void setAktual(Telepes t) {
+		aktualTelepes = t;
+	}
+	
 	/**
 	 * Továbblépteti az aktuális Telepes miután végzett a soron következõ Telepesre.
 	 */
