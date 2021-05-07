@@ -84,9 +84,11 @@ public class Jatekter extends Pane{
 	        public void handle(MouseEvent t) {
 	        for(AszteroidaView av : aszteroidak) {
 	           if(((Circle)(t.getSource())).equals(av.kor)){
-	        	   if(kivalasztott!=null)
+	        	   if(kivalasztott!=null) {
 	        	   kivalasztott.setValaszt(false);
+	        	   }
 	        	   av.setValaszt(true);
+	        	   kivalasztott=av;
 	           }
 	           }
 	        }
