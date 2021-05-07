@@ -11,6 +11,14 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/ticka/git/Proto/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.base.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.media.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx.web.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Luca/git/Proto/openjfx-15_windows-x64_bin-sdk/javafx-sdk-15/lib/javafx-swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

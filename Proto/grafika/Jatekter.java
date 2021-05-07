@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Jatek;
@@ -15,7 +18,7 @@ import proto.Teleportkapu;
 
 public class Jatekter extends Pane{
  //!!!!!! a game átkerült a jatekallpotba
-	//ötletek-Luca
+	
 	private List<AszteroidaView> aszteroidak;
 	private List<KapuView> kapuk;
 	private AszteroidaView kivalasztott;
@@ -53,6 +56,7 @@ public class Jatekter extends Pane{
 			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
 			aszteroidak.add(nezet);
 			nezet.felepit();
+			nezet.kor.setOnMousePressed(KorLenyomasEventHandler);
 		}
 		for(Teleportkapu t : tk) {
 
@@ -66,10 +70,27 @@ public class Jatekter extends Pane{
 				}
 			}
 		}
+		
+		
 		 
 		//kell majd return 
 		return g;
+		
 	}
+	EventHandler<MouseEvent> KorLenyomasEventHandler = 
+	        new EventHandler<MouseEvent>() {
+	 
+	        @Override
+	        public void handle(MouseEvent t) {
+	        for(AszteroidaView av : aszteroidak) {
+	           if(((Circle)(t.getSource())).equals(av.kor)){
+	        	   if(kivalasztott!=null)
+	        	   kivalasztott.setValaszt(false);
+	        	   av.setValaszt(true);
+	           }
+	           }
+	        }
+	};
 	
 	public AszteroidaView getKivalasztott() {
 		return kivalasztott;
@@ -107,4 +128,5 @@ public class Jatekter extends Pane{
 		}
 		return null;
 	}
-}
+	}
+	
