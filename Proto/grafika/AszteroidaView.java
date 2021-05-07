@@ -21,6 +21,7 @@ public class AszteroidaView {
 	private boolean aktualis;
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
+	public List<Line> vonalak;
 	
 	Group group;
 	
@@ -53,6 +54,25 @@ public class AszteroidaView {
 		}
 		
 	}
+	public void SzomszedRajz(AszteroidaView ref) {
+		if(kor.getCenterX()<ref.kor.getCenterX()) {
+			Line line = new Line();
+			line.setStartX(kor.getCenterX()+50);
+			line.setStartY(kor.getCenterY());
+			line.setEndX(ref.kor.getCenterX()-50);
+			line.setEndY(ref.kor.getCenterY());
+		}
+		
+		else {
+			Line line = new Line();
+			line.setStartX(kor.getCenterX()-50);
+			line.setStartY(kor.getCenterY());
+			line.setEndX(ref.kor.getCenterX()+50);
+			line.setEndY(ref.kor.getCenterY());
+		}
+			
+	}
+	
 	public void setAktual(boolean akt) {
 		if (akt)
 			kor.setStroke(Color.RED);
