@@ -53,8 +53,13 @@ public class AszterG extends Pane{
    		a = _a;
    	}
    	
+   	Robot r ;
+	Ufo u ;
+	Teleportkapu k;
+   	
 	public VBox felepit(List<String> nevek) {
 		
+		 
 		VBox base = new VBox();		
 		GridPane rootR = new GridPane();
 		 
@@ -132,26 +137,32 @@ public class AszterG extends Pane{
 		int robot = 0;
 		int ufo = 0;
 		int kapu = 0;
-		//equals instenceof
+		
+		r = new Robot();
+		u = new Ufo();
+		k = new Teleportkapu();
+	
+		List<Entitas> entitas = new ArrayList<Entitas>();
+		entitas.add(r);
+		entitas.add(u);
+		
+		List<Szomszed> szomszedok = new ArrayList<Szomszed>();
+		szomszedok.add(k);
+		
 		for(int i = 0; i<a.EntitasokSize(); i++) {
-			String ent = a.getEntitas(i);
-			if(ent.startsWith("r")) {
+			if(a.getEntitasObj(i).Kompatibilis(entitas.get(0))) {
 				robot++;
 			}
-			if(ent.startsWith("u")) {
+			if(a.getEntitasObj(i).Kompatibilis(entitas.get(1))) {
 				ufo++;
 			}
 		}
 		for(int i = 0; i<a.SzomszedokSize(); i++) {
-			String szom = a.getEntitas(i);
-			if(szom.startsWith("k")) {
+			if(a.getSzomszedObj(i).Kompatibilis(szomszedok.get(0))) {
 				kapu++;
 			}
 		}
 		
-		for(int i = 0; i< a.EntitasokSize(); i++) {
-			
-		}
 		
 	   	for(String nev: nevek) {
 	   		rb1_b.getItems().add(nev);

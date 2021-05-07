@@ -387,7 +387,19 @@ public class Aszteroida extends Szomszed{
 		else
 			return false;
 	}
+<<<<<<< Updated upstream
 	public List<Szomszed> getSzomszedok(){
 		return szomszedok;
+=======
+	
+	public Entitas getEntitasObj(int i) {
+		return entitasok.get(i);
+	}
+	public boolean Kompatibilis(Szomszed sz) {
+		return sz instanceof Aszteroida;
+	}
+	public Szomszed getSzomszedObj(int i) {
+		return szomszedok.get(i);
+>>>>>>> Stashed changes
 	}
 }

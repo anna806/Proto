@@ -93,4 +93,5 @@ public abstract class Entitas implements Serializable {
 	 * @return kitörölte-e az összes anyagot ami az útmutatóban van 
 	 */
 	public abstract boolean AnyagokTorol(Utmutato bazis);
+	public abstract boolean Kompatibilis(Entitas e);
 }

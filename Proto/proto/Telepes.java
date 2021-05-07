@@ -319,4 +319,7 @@ public class Telepes extends Entitas {
 	public void SetNev(String name) {
 		nev=name;
 	}
+	public boolean Kompatibilis(Entitas e) {
+		return e instanceof Telepes;
+	}
 }

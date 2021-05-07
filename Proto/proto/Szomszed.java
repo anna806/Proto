@@ -73,4 +73,5 @@ public abstract class Szomszed implements Serializable{
 	public void setID(String id) {
 		ID = id;
 	}
+	public abstract boolean Kompatibilis(Szomszed sz);
 }
