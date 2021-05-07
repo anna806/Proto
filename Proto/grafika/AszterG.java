@@ -109,7 +109,7 @@ public class AszterG extends Pane{
 	   	rootR.add(rb1_a, 0, 3, 1, 6);
 	   	rootR.add(rb2_a, 1, 3);
 	   	rootR.add(rb3_a, 2, 3);
-	   	rootR.add(rb3_a, 3, 3);
+	   	rootR.add(rb4_a, 3, 3);
        
 	   	//lenti értékek
 	   	setLabelsRed(a, nevek);

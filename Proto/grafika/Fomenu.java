@@ -98,6 +98,8 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
+			aszam.add(5);
+			nevek.add("Valaki");
 			JatekAllapot jtk = new JatekAllapot(aszam, nevek);
 			jtk.felepit(s, scene, aszam, nevek);
 		}
