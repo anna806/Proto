@@ -19,7 +19,7 @@ public class AszteroidaView extends SzomszedView {
 	private boolean aktualis;
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
-	public List<javax.sound.sampled.Line> vonalak;
+	public List<Line> vonalak;
 	public List<SzomszedView> szomszedok;
 	
 	Group group;
@@ -87,14 +87,14 @@ public class AszteroidaView extends SzomszedView {
 			kor.setStroke(Color.RED);
 			aktualis=akt;
 			for(SzomszedView szv : szomszedok) {
-				sz.SzomszedMutat(this);
+				szv.SzomszedMutat(this);
 				
 			}
 		}
 		else { 
 			kor.setStroke(Color.TRANSPARENT);
 			aktualis=akt;
-			vonalak.Clear();
+			vonalak.clear();
 		}
 	}
 	

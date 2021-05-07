@@ -27,12 +27,14 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	Button tplusz;
 	Button tmin;
 	Button menu;
-	TextField aszam;
+	Label aszam;
 	TextField tnev;
 	TextField ttorol;
 	Stage s;
 	Scene scene;
 	Scene oldScene ;
+	
+	ListView<String> jatlist;
 	
 	void felepit(Stage stage, Scene oldscene, int aszamn, List<String> nevek) {
 		oldScene = oldscene;
@@ -65,7 +67,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		amin.setMinSize(30, 30);
 		amin.setOnAction(this);
 		
-		aszam = new TextField(Integer.toString(aszamn));
+		aszam = new Label(Integer.toString(cnta));
 		aszam.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
 		aszam.setMaxSize(30, 30);
 		
@@ -130,7 +132,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		 jatll.setStyle("-fx-font-size: 20");
 		 jatll.setTextAlignment(TextAlignment.LEFT);
 		 
-		 ListView<String> jatlist = new ListView<String>();
+		 jatlist = new ListView<String>();
 		 jatlist.getItems().addAll(tnevek);
 		 
 		 jatl.getChildren().addAll(jatll, jatlist);
@@ -160,8 +162,11 @@ public class Beallitas implements EventHandler<ActionEvent>{
 			aszam.setText(Integer.toString(cnta));
 		}
 		else if(event.getSource() == tplusz) {
-			if(tnev.getText()!="")
+			if(tnev.getText()!="") {
 				tnevek.add(tnev.getText());
+				jatlist.getItems().addAll(tnevek);
+			}
+				
 		}
 		else if(event.getSource() == tmin) {
 			if(!tnevek.remove(tnev.getText())) {

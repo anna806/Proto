@@ -31,7 +31,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	Label cim;
 	
 	List<String> nevek = new ArrayList<String>();
-	int aszam;
+	int aszam = 0;
 	Stage s;
 	Scene scene;
 	
