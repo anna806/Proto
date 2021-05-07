@@ -67,7 +67,8 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 		base.setAlignment(Pos.BASELINE_CENTER);
 		
 		aktualis = game.GetOv().getAktual().getAszteroida();
-		//valasztott = jatekter.getKivalasztott();
+		AszteroidaView aw= jatekter.getKivalasztott();
+		valasztott = aw.GetAszteroida();
 		
 		AszterG red = new AszterG(aktualis);
 		AszterG green = new AszterG(valasztott);
