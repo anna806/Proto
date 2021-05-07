@@ -28,7 +28,7 @@ public class Telepes extends Entitas {
 	/**
 	 * A telepes konstruktora
 	 */
-	Telepes(){
+	public Telepes(){
 		super();
 		ID="t0"+count++;
 		nev="jatekos";

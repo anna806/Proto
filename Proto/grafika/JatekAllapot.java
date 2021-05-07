@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import proto.Jatek;
+import proto.Telepes;
 
 public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	
@@ -21,14 +22,22 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	
 	Jatek game;
 	
-	JatekAllapot(){
+	JatekAllapot(List<Integer> asz, List<String> nev){
 		game = new Jatek();
 		jatekter = new Jatekter();
 		menusav = new Menusav();
 		muveletsav = new Muveletsav();
+		
+		game.Start(asz.get(0)); //átírni
+		
+		for(int i = 0; i<nev.size(); i++) {
+			Telepes t = new Telepes();
+			t.SetNev(nev.get(i));
+		}
+		
 	}
-	
-	void felepit(Stage primary, Scene oldscene, int aszam, List<String> nevek) {
+	//jatekteret aszammal
+	void felepit(Stage primary, Scene oldscene, List<Integer> aszam, List<String> nevek) {
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
 		Group jG = new Group();
