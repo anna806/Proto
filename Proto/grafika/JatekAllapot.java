@@ -4,6 +4,7 @@ import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -30,11 +31,15 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	void felepit(Stage primary, Scene oldscene, int aszam, List<String> nevek) {
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
+		Group jG = new Group();
+		HBox jatekterBox = new HBox();
 		menusavBox = menusav.felepit(nevek, game, oldscene, primary, jatekter);
 		muveletsavBox = muveletsav.felepit(game.GetOv(), jatekter); 
+		jG = jatekter.felepit(game, oldscene, primary);
+		jatekterBox.getChildren().addAll(jG);
 		
 		BorderPane borderPane = new BorderPane();
-//	    borderPane.setCenter(appContent);
+	    borderPane.setCenter(jatekterBox);
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
