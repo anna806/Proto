@@ -60,12 +60,22 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		aplusz  = new Button("+");
 		aplusz.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
 		aplusz.setMinSize(30, 30);
-		aplusz.setOnAction(this);
+		aplusz.setOnAction(actionEvent -> {
+			cnta++;
+			aszam.setText(Integer.toString(cnta));
+			aszamn.clear();
+			aszamn.add(cnta);
+		});
 		
 		amin  = new Button("-");
 		amin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
 		amin.setMinSize(30, 30);
-		amin.setOnAction(this);
+		amin.setOnAction(actionEvent -> {
+			cnta--;
+			aszam.setText(Integer.toString(cnta));
+			aszamn.clear();
+			aszamn.add(cnta);
+		});
 		
 		aszam = new Label(Integer.toString(cnta));
 		aszam.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
@@ -90,7 +100,14 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	    tplusz  = new Button("OK");
 	    tplusz.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
 	    tplusz.setMinSize(60, 30);
-	    tplusz.setOnAction(this);
+	    tplusz.setOnAction(actionEvent -> {
+	    	if(tnev.getText()!="") {
+				tnevek.add(tnev.getText());
+				jatlist.getItems().clear();
+				jatlist.getItems().addAll(tnevek);
+				tnev.clear();
+	    	}
+		});
 	    
 	    tnev = new TextField();
 		tnev.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
@@ -111,66 +128,10 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	    telml.setTextFill(Color.DARKRED);
 		telml.setTextAlignment(TextAlignment.LEFT);
 		
-		 tmin  = new Button("OK");
-		 tmin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
-		 tmin.setMinSize(60, 30);
-		 tmin.setOnAction(this);
-		
-		 ttorol = new TextField();
-		 ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
-		 ttorol.setMinSize(150, 30);
-		 
-		 telm.add(telml, 0, 0);
-		 telm.add(ttorol, 0, 1);
-		 telm.add(tmin, 1, 1);
-		 
-		 VBox jatl = new VBox();											// játékosok listája
-		 jatl.setPadding(new Insets(10, 10, 10, 10));
-		 jatl.setStyle("-fx-background-color: GOLDENROD");
-		 
-		 Label jatll = new Label("Játékosok");
-		 jatll.setStyle("-fx-font-size: 20");
-		 jatll.setTextAlignment(TextAlignment.LEFT);
-		 
-		 jatlist = new ListView<String>();
-		 jatlist.getItems().addAll(tnevek);
-		 
-		 jatl.getChildren().addAll(jatll, jatlist);
-		 
-		 menu = new Button("Menu");
-		 menu.setOnAction(this);
-		 
-		 panes.add(aster, 0, 0);
-		 panes.add(telp, 0, 1);
-		 panes.add(telm, 0, 2);
-		 panes.add(jatl, 1, 0, 1, 3);
-		 panes.add(menu, 1, 3);
-		 
-		 scene = new Scene(panes, 800, 600);
-		 s.setScene(scene);
-		 s.show();
-	}
-	
-	@Override
-	public void handle(ActionEvent event){
-		if(event.getSource() == aplusz) {
-			cnta++;
-			aszam.setText(Integer.toString(cnta));
-		}
-		else if(event.getSource() == amin) {
-			cnta--;
-			aszam.setText(Integer.toString(cnta));
-		}
-		else if(event.getSource() == tplusz) {
-			if(tnev.getText()!="") {
-				tnevek.add(tnev.getText());
-				jatlist.getItems().clear();
-				jatlist.getItems().addAll(tnevek);
-				tnev.clear();
-			}
-				
-		}
-		else if(event.getSource() == tmin) {
+		tmin  = new Button("OK");
+		tmin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
+		tmin.setMinSize(60, 30);
+		tmin.setOnAction(actionEvent -> {
 			if(!tnevek.contains(ttorol.getText())) {
 				Alert a = new Alert(AlertType.ERROR);
 				a.setContentText("Nincs ilyen nevû játékos");
@@ -182,9 +143,47 @@ public class Beallitas implements EventHandler<ActionEvent>{
 				jatlist.getItems().addAll(tnevek);
 				ttorol.clear();
 			}
-		}
-		else if(event.getSource() == menu) {
+		});
+		
+		ttorol = new TextField();
+		ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
+		ttorol.setMinSize(150, 30);
+		
+		telm.add(telml, 0, 0);
+		telm.add(ttorol, 0, 1);
+		telm.add(tmin, 1, 1);
+		 
+		VBox jatl = new VBox();											// játékosok listája
+		jatl.setPadding(new Insets(10, 10, 10, 10));
+		jatl.setStyle("-fx-background-color: GOLDENROD");
+		 
+		Label jatll = new Label("Játékosok");
+		jatll.setStyle("-fx-font-size: 20");
+		jatll.setTextAlignment(TextAlignment.LEFT);
+		 
+		jatlist = new ListView<String>();
+		jatlist.getItems().addAll(tnevek);
+		
+		jatl.getChildren().addAll(jatll, jatlist);
+		 
+		menu = new Button("Menu");
+		menu.setOnAction(actionEvent -> {
+			jatlist.getItems().clear();
 			s.setScene(oldScene);
-		}
+		});
+		 
+		panes.add(aster, 0, 0);
+		panes.add(telp, 0, 1);
+		panes.add(telm, 0, 2);
+		panes.add(jatl, 1, 0, 1, 3);
+		panes.add(menu, 1, 3);
+		 		 
+		scene = new Scene(panes, 800, 600);
+		s.setScene(scene);
+		s.show();
+	}
+	
+	@Override
+	public void handle(ActionEvent event){
 	}
 }
