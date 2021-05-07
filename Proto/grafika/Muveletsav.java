@@ -157,8 +157,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
 		}
 		else if(event.getSource() == mozog) {
-			jatekter.getAktual().Mozog(jtk.getKivalasztott());	//egérkattintással kiválasztott aszteroida
-			jtk.getK().frissit(); 								//AszterG frissítése
+			jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
 		}
 		else if(event.getSource() == robotep) {
 			jatekter.getAktual().RobotEpit();	
@@ -167,7 +166,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().KapuEpit();
 		}
 		else if(event.getSource() == bazisep) {
-			String s = jtk.getKivalasztott().BazisEpit();
+			String s = jtk.getKivalasztott().getAszteroida().BazisEpit();
 			Alert a = new Alert(AlertType.INFORMATION);
 			a.setContentText(s);
 			a.show();

@@ -138,7 +138,7 @@ public class Aszteroida extends Szomszed{
 		
 		Utmutato bazis = new Utmutato(kell);
 		boolean bazisepitheto = false;
-		String eredmeny = "";
+		String eredmeny = "Nem sikerült bázist építeni.";
 		for (int j = 0; j < entitasok.size(); j++) {
 			bazisepitheto = entitasok.get(j).BazisEpit(bazis);
 			if(bazisepitheto) {
