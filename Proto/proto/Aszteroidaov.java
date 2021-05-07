@@ -33,6 +33,11 @@ public class Aszteroidaov implements Serializable{
 	 * Az adott körben lépõ telepes
 	 */
 	private Telepes aktualTelepes;
+	
+	
+	public List<Aszteroida> getAszteroidak(){
+		return aszteroidak;
+	}
 	/**
 	 * Intézi az Aszteroidaövben a napvihart, meghívja az Aszteroidákon a Napvihar függvényüket.
 	 */

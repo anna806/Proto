@@ -5,6 +5,8 @@ import proto.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sound.sampled.Line;
+
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -21,6 +23,7 @@ public class AszteroidaView {
 	private boolean aktualis;
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
+	public List<Line> vonalak;
 	
 	Group group;
 	
@@ -48,23 +51,51 @@ public class AszteroidaView {
 		}
 		if(kapulista.size()>0) 
 			for(int i=0; i<kapulista.size(); i++) {
-			KapuView kv= new KapuView(kapulista.get(i), x+60, 100);
+			KapuView kv= new KapuView(kapulista.get(i), x+60, y);
 			kapunezet.add(kv);
 		}
 		
 	}
+	public void SzomszedRajz(AszteroidaView ref) {
+		vonalak= new ArrayList<Line>();
+		if(kor.getCenterX()<ref.kor.getCenterX()) {
+			Line line = new Line();
+			line.setStartX(kor.getCenterX()+50);
+			line.setStartY(kor.getCenterY());
+			line.setEndX(ref.kor.getCenterX()-50);
+			line.setEndY(ref.kor.getCenterY());
+			vonalak.add(line);
+		}
+		
+		else {
+			Line line = new Line();
+			line.setStartX(kor.getCenterX()-50);
+			line.setStartY(kor.getCenterY());
+			line.setEndX(ref.kor.getCenterX()+50);
+			line.setEndY(ref.kor.getCenterY());
+			vonalak.add(line);
+		}
+			
+	}
+	
+	
+	
 	public void setAktual(boolean akt) {
 		if (akt)
 			kor.setStroke(Color.RED);
+		aktualis=true;
 		else
 			kor.setStroke(Color.TRANSPARENT);
+		aktualis=false;
 	}
 	
 	public void setValaszt(boolean val) {
 		if(val)
 			kor.setStroke(Color.GREEN);
+		valasztott=true;
 		else
 			kor.setStroke(Color.TRANSPARENT);
+		valasztott=false;
 	}
 	public void felepit() {
 //		Group group= new Group();
@@ -75,6 +106,18 @@ public class AszteroidaView {
 		if(kapunezet.size()>0) {
 			for (KapuView nezet : kapunezet){
 				nezet.feltesz(group);
+			}
+		}
+		if(aktualis) {
+			foreach (Line l in vonalak){
+				l.setFill(color.RED);
+				group.getChildren().add(l);
+			}
+		}
+		if(valasztott) {
+			foreach (Line l in vonalak){
+				l.setFill(color.GREEN);
+				group.getChildren().add(l);
 			}
 		}
 //		Scene scene= new Scene(group, 110, 110);
