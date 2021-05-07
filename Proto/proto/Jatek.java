@@ -87,7 +87,6 @@ public class Jatek {
 	 * a számláló körönként eggyel nõ
 	 */
 	public void Kor() {
-		
 	 
 		jatekter.DoNapkozel();
 		
@@ -96,10 +95,19 @@ public class Jatek {
 		}
 			
 		int i =0;
-		while(i < jatekter.GetTelepesekSize()) {
-			jatekter.getAktual().Lep();
-			i++;
+//		while(i < jatekter.GetTelepesekSize()) {
+//			jatekter.getAktual().Lep();
+//			i++;
+//		}
+		boolean done = false;
+		while(!done) {
+			int k = jatekter.GetTelepes(0).getKor();
+			for(int j = 0; j < jatekter.GetTelepesekSize(); j++) {
+				if(j != k)
+					
+			}
 		}
+		
 		i=0;
 		while (i < jatekter.GetRobotokSize()) {
 			jatekter.GetRobot(i).Lep();

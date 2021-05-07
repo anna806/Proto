@@ -23,6 +23,8 @@ public class Telepes extends Entitas {
 	 */
 	private static int count=1;
 	
+	private int korCount = 0;
+	
 	/**
 	 * A telepes konstruktora
 	 */
@@ -316,7 +318,12 @@ public class Telepes extends Entitas {
 	public String GetNev() {
 		return nev;
 	}
+	
 	public void SetNev(String name) {
 		nev=name;
+	}
+	
+	public int getKor() {
+		return korCount;
 	}
 }
