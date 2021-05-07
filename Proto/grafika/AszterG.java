@@ -149,7 +149,9 @@ public class AszterG extends Pane{
 			}
 		}
 		
-		//for(Entitas e: )
+		for(int i = 0; i< a.EntitasokSize(); i++) {
+			
+		}
 		
 	   	for(String nev: nevek) {
 	   		rb1_b.getItems().add(nev);

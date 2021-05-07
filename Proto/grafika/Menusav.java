@@ -38,14 +38,16 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Jatek game;
    	Scene oldscene;
    	Stage primary;
+   	Jatekter jatekter;
 	
 	Button menu;
 	
-public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _primary) {
+public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
 		
 		game = _game;
 		oldscene = _oldscene;
 	   	primary = _primary;
+	   	jatekter = _jatekter;
 		
 		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
@@ -65,6 +67,7 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 		base.setAlignment(Pos.BASELINE_CENTER);
 		
 		aktualis = game.GetOv().getAktual().getAszteroida();
+		//valasztott = jatekter.getKivalasztott();
 		
 		AszterG red = new AszterG(aktualis);
 		AszterG green = new AszterG(valasztott);

@@ -30,7 +30,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	void felepit(Stage primary, Scene oldscene, int aszam, List<String> nevek) {
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
-		menusavBox = menusav.felepit(nevek, game, oldscene, primary);
+		menusavBox = menusav.felepit(nevek, game, oldscene, primary, jatekter);
 		muveletsavBox = muveletsav.felepit(game.GetOv(), jatekter); 
 		
 		BorderPane borderPane = new BorderPane();
