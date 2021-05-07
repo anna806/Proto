@@ -20,6 +20,7 @@ public class AszteroidaView extends SzomszedView {
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
 	public List<Line> vonalak;
+	public List<SzomszedView> szomszedok;
 	
 	Group group;
 	
@@ -39,6 +40,12 @@ public class AszteroidaView extends SzomszedView {
 			anyag.kitolt();
 			
 		}
+		szomszedok=new ArrayList<SzomszedView>();
+		foreach (Szomszed sz in data.GetSzomszedok()){
+			SzomszedView szv= new SzomszedView(sz);   	//ez még nem jó így
+			szomszedok.add(szv);
+		}
+		
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
 			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
