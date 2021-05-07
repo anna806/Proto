@@ -55,7 +55,7 @@ public class AszteroidaView extends SzomszedView {
 		}
 		
 	}
-	public void SzomszedRajz(AszteroidaView ref) {
+	public void SzomszedMutat(AszteroidaView ref) {
 		vonalak= new ArrayList<Line>();
 		if(kor.getCenterX()<ref.kor.getCenterX()) {
 			Line line = new Line();
