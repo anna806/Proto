@@ -5,13 +5,10 @@ import proto.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.scene.shape.Line
+import javafx.scene.shape.Line;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
 public class AszteroidaView extends SzomszedView {
 	private Aszteroida data;
@@ -77,25 +74,28 @@ public class AszteroidaView extends SzomszedView {
 			
 	}
 	
-	
-	
 	public void setAktual(boolean akt) {
-		if (akt)
+		if (akt) {
 			kor.setStroke(Color.RED);
-		aktualis=true;
-		else
+			aktualis=akt;
+		}
+		else {
 			kor.setStroke(Color.TRANSPARENT);
-		aktualis=false;
+			aktualis=akt;
+		}
 	}
 	
 	public void setValaszt(boolean val) {
-		if(val)
+		if(val) {
 			kor.setStroke(Color.GREEN);
-		valasztott=true;
-		else
+			valasztott=val;
+		}
+		else {
 			kor.setStroke(Color.TRANSPARENT);
-		valasztott=false;
+			valasztott=val;
+		}
 	}
+	
 	public void felepit() {
 //		Group group= new Group();
 		group.getChildren().add(kor);
@@ -108,14 +108,14 @@ public class AszteroidaView extends SzomszedView {
 			}
 		}
 		if(aktualis) {
-			foreach (Line l in vonalak){
-				l.setFill(color.RED);
+			for (Line l : vonalak){
+				l.setFill(Color.RED);
 				group.getChildren().add(l);
 			}
 		}
 		if(valasztott) {
-			foreach (Line l in vonalak){
-				l.setFill(color.GREEN);
+			for (Line l : vonalak){
+				l.setFill(Color.GREEN);
 				group.getChildren().add(l);
 			}
 		}
@@ -131,6 +131,10 @@ public class AszteroidaView extends SzomszedView {
 		else if(anyag == null) {
 			anyag.ures();
 		}
+	}
+	
+	public Aszteroida getAszteroida() {
+		return data;
 	}
 }
 	
