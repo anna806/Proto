@@ -6,7 +6,7 @@ public class Jatekter {
 	private List<AszteroidaView> aszteroidak;
 	private Jatek game;
 	
-	
+	 
 	public ... felepit(Jatek _game, Scene _oldscene, Stage _primary){
 		game=_game;
 		int szeles=600;																	// jatekter merete
