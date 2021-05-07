@@ -5,13 +5,24 @@ import proto.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.event.ActionEvent;
+import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
@@ -20,127 +31,148 @@ import javafx.stage.Stage;
 
 public class AszterG extends Pane{
 
-	private Aszteroida data;
-	public Rectangle keret;
-	public Polygon robot;
-	public Circle ufo;
-	public TableView<String> telepesek;
-	public Label rbt;
-	public Label ufl;
-	public Label kpu;
-	public Label kereg;
-	public Label napkozel;
-	public Label napvihar;
-	private boolean valasztott;
-	private boolean aktualis;
+	Aszteroida a;
 	
-	public AszterG(Aszteroida a, boolean aktual, boolean valaszt) {
-		data=a; aktualis=aktual; valasztott=valaszt;
+	Label rt1_a;
+   	Label rt1_b;
+   	Label rt2_a;
+   	Label rt2_b;
+   	Label rt3_a;
+   	Label rt3_b;
+   	
+   	Label rb1_a;
+   	ListView<String> rb1_b;
+   	Label rb2_a;
+   	Label rb2_b;
+   	Label rb3_a;
+   	Label rb3_b;
+   	Label rb4_a;
+   	Label rb4_b;
+		
+   	Label gt1_a;
+   	Label gt1_b;
+   	Label gt2_a;
+   	Label gt2_b;
+   	Label gt3_a;
+   	Label gt3_b;
+   	
+   	Label gb1_a;
+   	ListView<String> gb1_b;
+   	Label gb2_a;
+   	Label gb2_b;
+   	Label gb3_a;
+   	Label gb3_b;
+   	Label gb4_a;
+   	Label gb4_b;
+   	
+   	AszterG(Aszteroida _a){
+   		a = _a;
+   	}
+   	
+	public VBox felepit(List<String> nevek) {
+		
+		VBox base = new VBox();
+		
+		//RED TABLE----------------------------------------------
+		
+		GridPane rootR = new GridPane();
+		 
+	    rootR.setPadding(new Insets(20));
+	    rootR.setHgap(25);
+	    rootR.setVgap(15);
+	    rootR.setStyle("-fx-background-color: WHITE");
+	    rootR.setStyle("-fx-border-color: RED");
+	 
+	    rt1_a = new Label("Kéregvastagság");
+	   	rt1_b = new Label("");
+	   	rt2_a = new Label("Napközel");
+	   	rt2_b = new Label("");
+	   	rt3_a = new Label("Napvihar");
+	   	rt3_b = new Label("");
+	   	
+	   	rb1_a = new Label("Telepes");
+	   	rb1_b = new ListView<String>();
+	   	rb2_a = new Label("Robot");
+	   	rb2_b = new Label("");
+	   	rb3_a = new Label("Ufó");
+	   	rb3_b = new Label("");
+	   	rb4_a = new Label("Kapu");
+	   	rb4_b = new Label("");
+	 
+	   	//fenti címek
+	   	GridPane.setHalignment(rt1_a, HPos.LEFT);
+	   	GridPane.setHalignment(rt2_a, HPos.LEFT);
+	   	GridPane.setHalignment(rt3_a, HPos.LEFT);
+	   	rootR.add(rt1_a, 0, 0, 3, 1);
+	   	rootR.add(rt2_a, 0, 1, 3, 1);
+	   	rootR.add(rt3_a, 0, 2, 3, 1);
+	       
+	   	//fenti értékek
+	   	GridPane.setHalignment(rt1_b, HPos.LEFT);
+	   	GridPane.setHalignment(rt2_b, HPos.LEFT);
+	   	GridPane.setHalignment(rt3_b, HPos.LEFT);
+	   	rootR.add(rt1_b, 3, 0);
+	   	rootR.add(rt2_b, 3, 1);
+	   	rootR.add(rt3_b, 3, 2);
+	   	
+	   	//lenti címek
+	   	GridPane.setHalignment(rb1_a, HPos.CENTER);
+	   	GridPane.setHalignment(rb2_a, HPos.CENTER);
+	   	GridPane.setHalignment(rb3_a, HPos.CENTER);
+	   	GridPane.setHalignment(rb4_a, HPos.CENTER);
+	   	rootR.add(rb1_a, 0, 3, 1, 6);
+	   	rootR.add(rb2_a, 1, 3);
+	   	rootR.add(rb3_a, 2, 3);
+	   	rootR.add(rb3_a, 3, 3);
+       
+	   	//lenti értékek
+	   	setLabelsRed(a, nevek);
+	   	
+	   	base.getChildren().addAll(rootR);	   	
+		return base;
+		
+		
 	}
-	public void felepit(Stage primary) {
-		kereg= new Label();
-		kereg.setText(String.valueOf(data.getKopenyVastagsag()));
+	//mentés!!!
+	public void handle(ActionEvent event) {
 		
-		int robotok=0;
-		for(int i=0; i<Main.game.GetOv().GetRobotokSize(); i++) {
-			if(Main.game.GetOv().GetRobot(i).getAszteroida().equals(data)) {
-				robotok+=1;
-			}
-		}
-		
-		int ufok=0;
-		for(int i=0; i<Main.game.GetOv().GetUfokSize(); i++) {
-			if(Main.game.GetOv().GetUfo(i).getAszteroida().equals(data)) {
-				ufok+=1;
-			}
-		}
-		
-		int kapuk=0;
-		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
-			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
-				kapuk+=1;
-			}
-		}
-		
-		List<Telepes> jatekosok=new ArrayList<Telepes>();
-		for(int i=0; i<Main.game.GetOv().GetTelepesekSize(); i++) {
-			if(Main.game.GetOv().GetTelepes(i).getAszteroida().equals(data)) {
-				jatekosok.add(Main.game.GetOv().GetTelepes(i));
-			}
-		}
-		for(int i=0; i<jatekosok.size(); i++) {
-//			telepesek.Add(jatekosok.get(i).GetNev());
-		}
-		
-		rbt=new Label("Robotok száma: "+String.valueOf(robotok));
-		ufl=new Label("Ufok száma: "+String.valueOf(ufok));
-		kpu= new Label("Kapuk száma: "+String.valueOf(kapuk));
-		
-		robot= new Polygon();
-		robot=createTriangle(new Point2D(-1,0), new Point2D(0,1), new Point2D(1,0));
-		
-		napkozel=new Label();
-		if(data.getNap())
-			napkozel.setText("+");
-		else
-			napkozel.setText("-");
-		
-		keret=new Rectangle();
-		keret.setX(0);
-		keret.setY(220);
-		keret.setWidth(200);
-		keret.setHeight(200);
-		keret.setArcWidth(20);
-		keret.setArcHeight(20);
-		
-		keret.setFill(Color.TRANSPARENT);
-		if(valasztott==true)
-			keret.setStroke(Color.GREEN);
-		if(aktualis==true)
-			keret.setStroke(Color.RED);
-		
-		//már csak fel kéne pakolni
-		
-		
-		Group group = new Group();
-		group.getChildren().add(kereg);
-		group.getChildren().add(napkozel);
-		group.getChildren().add(telepesek);
-		group.getChildren().add(robot);
-		group.getChildren().add(rbt);
-		group.getChildren().add(ufo);
-		group.getChildren().add(ufl);
-		group.getChildren().add(kpu);
-		
-		group.getChildren().add(kereg);
-		group.getChildren().add(napkozel);
-		
-		StackPane sp=new StackPane();
-		sp.getChildren().addAll(keret, group);
-		Scene scene= new Scene(group, 220, 220);
-		primary.setScene(scene);
-		primary.show();
-		
-	}
-	
-	Polygon createTriangle(Point2D p1, Point2D p2, Point2D p3){
-	    Point2D centre = p1.midpoint(p2).midpoint(p3);
-	    Point2D p1Corrected = p1.subtract(centre);
-	    Point2D p2Corrected = p2.subtract(centre);
-	    Point2D p3Corrected = p3.subtract(centre);
-	    Polygon polygon = new Polygon(
-	            p1Corrected.getX(), p1Corrected.getY(),
-	            p2Corrected.getX(), p2Corrected.getY(),
-	            p3Corrected.getX(), p3Corrected.getY()
-	    );
-	    polygon.setLayoutX(centre.getX());
-	    polygon.setLayoutY(centre.getY());
-	    return polygon;
 	}
 	
-	public Aszteroida GetAszteroida() {
-		return data;
-	}
 	
+	
+	public void setLabelsRed(Aszteroida a, List<String> nevek) {
+		rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
+		if(a.getNapkozel() == "true") {
+			rt2_b.setText("+");
+		} else {
+			rt2_b.setText("-");
+		}
+		
+		int robot = 0;
+		int ufo = 0;
+		int kapu = 0;
+		
+		for(int i = 0; i<a.EntitasokSize(); i++) {
+			String ent = a.getEntitas(i);
+			if(ent.startsWith("r")) {
+				robot++;
+			}
+			if(ent.startsWith("u")) {
+				ufo++;
+			}
+		}
+		for(int i = 0; i<a.SzomszedokSize(); i++) {
+			String szom = a.getEntitas(i);
+			if(szom.startsWith("k")) {
+				kapu++;
+			}
+		}
+	   	for(String nev: nevek) {
+	   		rb1_b.getItems().add(nev);
+	   	}
+	   	rb2_b.setText(String.valueOf(robot));
+	   	rb3_b.setText(String.valueOf(ufo));
+	   	rb4_b.setText(String.valueOf(kapu));
+	}	
 }
 
