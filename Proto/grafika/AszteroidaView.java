@@ -43,7 +43,7 @@ public class AszteroidaView extends SzomszedView {
 		szomszedok=new ArrayList<SzomszedView>();
 		foreach (Szomszed sz in data.GetSzomszedok()){
 			SzomszedView szv= new SzomszedView(sz);   	//ez még nem jó így
-			szomszedok.add(szv);
+			szomszedok.add(szv);  
 		}
 		
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
