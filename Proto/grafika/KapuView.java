@@ -8,12 +8,14 @@ import proto.*;
 
 public class KapuView extends SzomszedView{
 	private Teleportkapu kapu;
-	int x;
-	int y;
+	double x;
+	double y;
 	public Rectangle teglalap;
 	boolean valasztott;
+	Group group;
 	
-	public KapuView(Teleportkapu tk, int kx, int ky) {
+	public KapuView(Teleportkapu tk, double kx, double ky, Group g) {
+		group = g;
 		kapu= new Teleportkapu(); 
 		kapu=tk;
 		x=kx;

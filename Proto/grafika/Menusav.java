@@ -1,5 +1,6 @@
 package grafika;
 
+import java.io.File;
 import java.util.List;
 
 import javafx.event.ActionEvent;
@@ -52,7 +53,11 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 	   	primary = _primary;
 	   	jatekter = _jatekter;
 		
-		mentes = new Image("file:flop.png"); //kell könyvtár----------------------------------
+	   	String dir = System.getProperty("user.dir");
+    	File dirf = new File(dir);
+    	String parentPath = dirf.getParent();
+		String imagePath = "file:\\" + parentPath + "\\images\\flop.png";
+		mentes = new Image(imagePath); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
 
