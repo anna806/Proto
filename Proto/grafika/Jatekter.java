@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Jatek;
+import proto.Szomszed;
 import proto.Teleportkapu;
 
 public class Jatekter extends Pane{
@@ -26,8 +27,8 @@ public class Jatekter extends Pane{
 		game=_game;
 		int szeles=600;																	// jatekter merete
 		int magas=500;
-		int[] xek;																		//létrehozott aszteroidaviewek x koordinátája
-		int[] yok;																		//y koordinátája
+		int[] xek = null;																		//létrehozott aszteroidaviewek x koordinátája
+		int[] yok = null;																		//y koordinátája
 		List<Aszteroida> bolygok= new ArrayList<Aszteroida>();
 		bolygok=game.GetOv().getAszteroidak();
 		aszteroidak= new ArrayList<AszteroidaView>();
@@ -41,10 +42,12 @@ public class Jatekter extends Pane{
 		for(Aszteroida b : bolygok){
 			int x = rand.nextInt(szeles);
 			int y = rand.nextInt(magas);
-			for(int i=0; i<bolygok.size();i++) {
+			for(int i=0; i<aszteroidak.size();i++) {
 				if(Math.abs(x-xek[i])<100 && Math.abs(y-yok[i])<100) {					//ha túl közel van,újraszámol, 
 					x+=110;
 					y+=110;
+					xek[i] = x;
+					yok[i] = y;
 				}
 			}
 			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
@@ -83,10 +86,10 @@ public class Jatekter extends Pane{
 	
 	public void szomszedgeneral() {
 		for (AszteroidaView av : aszteroidak) {
-			for(Szomszed sz :av.getAszteroida().getSzomszedok()) {
+			for(Szomszed sz : av.getAszteroida().getSzomszedok()) {
 				for(AszteroidaView avk : aszteroidak ) {
 					if(av!=avk) {
-						if(sz.equals(avk.getAszteroida))
+						if(sz.equals(avk.getAszteroida()))
 							av.addSzomszed(avk);
 					}
 				}
