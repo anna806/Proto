@@ -5,8 +5,7 @@ import proto.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sound.sampled.Line;
-
+import javafx.scene.shape.Line
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;

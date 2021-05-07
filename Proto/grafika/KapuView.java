@@ -6,7 +6,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import proto.*;
 
-public class KapuView {
+public class KapuView extends SzomszedView{
 	private Teleportkapu kapu;
 	int x;
 	int y;
@@ -28,10 +28,15 @@ public class KapuView {
 	}
 	public void SetVal(boolean val) {
 		if(val) {
-			teglalap.setFill(Color.RED);
+			teglalap.setFill(Color.GREEN);
 		}
 		else
-			teglalap.setFill(Color.RED);
+			teglalap.setFill(Color.WHITE);
+	}
+	
+	public void SzomszedMutat(AszteroidaView av) {
+		
+		
 	}
 	public void feltesz(Group group) {
 		group.getChildren().add(teglalap);
