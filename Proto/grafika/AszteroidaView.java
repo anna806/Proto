@@ -41,10 +41,11 @@ public class AszteroidaView extends SzomszedView {
 			
 		}
 		szomszedok=new ArrayList<SzomszedView>();
-		foreach (Szomszed sz in data.GetSzomszedok()){
-			SzomszedView szv= new SzomszedView(sz);   	//ez még nem jó így
-			szomszedok.add(szv);  
+		
 		}
+	publicvoid addSzomszed(Szomszed sz) {
+		szomszedok.add(sz);
+	}
 		
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {

@@ -387,4 +387,7 @@ public class Aszteroida extends Szomszed{
 		else
 			return false;
 	}
+	public List<Szomszed> getSzomszedok(){
+		return szomszedok;
+	}
 }

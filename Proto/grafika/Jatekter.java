@@ -47,7 +47,7 @@ public class Jatekter {
 			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
 			nezet.feltesz();
 		}
-		foreach(Teleportkapu t : tk) {
+		for(Teleportkapu t : tk) {
 			foreach (AszteroidaView av : aszteroidak){
 				if(t.getAszter().equals(av.getAszteroida())) {
 					KapuView uj= new KapuView(t, av.kor.getCenterX()-70, av.kor.getCenterY()-50, g);
@@ -62,5 +62,30 @@ public class Jatekter {
 	
 	public AszteroidaView getKivalasztott() {
 		return kivalasztott;
+	}
+	
+	public List<AszteroidaView> getaszteroidak(){
+		return aszteroidak;
+	}
+	
+	public List<KapuView> getKapuk(){
+		return kapuk;
+	}
+	
+	public void szomszedgeneral() {
+		for (AszteroidaView av : aszteroidak) {
+			for(Szomszed sz :av.getAszteroida().getSzomszedok()) {
+				for(AszteroidaView avk : aszteroidak ) {
+					if(av!=avk) {
+						if(sz.equals(avk.getAszteroida))
+							av.addSzomszed(avk);
+					}
+				}
+				for(KapuView kv: kapuk) {
+					if(sz.equals(kv.getAszter()))
+						av.addSzomszed(kv)
+				}
+			}
+		}
 	}
 }
