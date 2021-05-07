@@ -23,7 +23,7 @@ public class Jatekter {
 			int x = rand.nextInt(szeles);
 			int y = rand.nextInt(magas);
 			for(int i=0; i<aszteroidak.size()) {
-				if(abs(x-xek.i)<100 && abs(y-yok.i)<100) {
+				if(abs(x-xek.i)<100 && abs(y-yok.i)<100) {					//ha túl közel van,újraszámol, 
 					x+=110;
 					y+=110;
 				}

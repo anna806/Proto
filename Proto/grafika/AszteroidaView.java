@@ -14,7 +14,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class AszteroidaView {
+public class AszteroidaView extends SzomszedView {
 	private Aszteroida data;
 	public Circle kor;
 	public int x;
