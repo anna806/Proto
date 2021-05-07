@@ -49,7 +49,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		aster.setPadding(new Insets(10, 10, 10, 10));
 		aster.setVgap(5); 
 	    aster.setHgap(5);
-	    aster.setStyle("-fx-background-color: BEIGE");
+	    aster.setStyle("-fx-background-color: GOLDENROD");
 	    
 	    Label aszterl = new Label("Aszteroidák száma");
 	    aszterl.setStyle("-fx-font-size: 20");
@@ -78,7 +78,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		telp.setPadding(new Insets(10, 10, 10, 10));
 		telp.setVgap(5); 
 	    telp.setHgap(10);
-	    telp.setStyle("-fx-background-color: BEIGE");
+	    telp.setStyle("-fx-background-color: GOLDENROD");
 	    
 	    Label telpl = new Label("Játékos hozzáadása");
 	    telpl.setStyle("-fx-font-size: 20");
@@ -102,7 +102,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		telm.setPadding(new Insets(10, 10, 10, 10));
 		telm.setVgap(5); 
 	    telm.setHgap(10);
-	    telm.setStyle("-fx-background-color: BEIGE");
+	    telm.setStyle("-fx-background-color: GOLDENROD");
 		
 	    Label telml = new Label("Játékos törlése");
 	    telml.setStyle("-fx-font-size: 20");
@@ -124,7 +124,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		 
 		 VBox jatl = new VBox();											// játékosok listája
 		 jatl.setPadding(new Insets(10, 10, 10, 10));
-		 jatl.setStyle("-fx-background-color: BEIGE");
+		 jatl.setStyle("-fx-background-color: GOLDENROD");
 		 
 		 Label jatll = new Label("Játékosok");
 		 jatll.setStyle("-fx-font-size: 20");
@@ -142,7 +142,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		 panes.add(telp, 0, 1);
 		 panes.add(telm, 0, 2);
 		 panes.add(jatl, 1, 0, 1, 3);
-		 panes.add(menu, 1, 2);
+		 panes.add(menu, 1, 3);
 		 
 		 scene = new Scene(panes, 800, 600);
 		 s.setScene(scene);

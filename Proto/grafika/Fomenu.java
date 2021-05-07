@@ -1,25 +1,22 @@
 package grafika;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
@@ -33,7 +30,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	Button kilep;
 	Label cim;
 	
-	List<String> nevek;
+	List<String> nevek = new ArrayList<String>();
 	int aszam;
 	Stage s;
 	Scene scene;
