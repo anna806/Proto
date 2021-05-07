@@ -127,49 +127,53 @@ public class AszterG extends Pane{
 	
 	
 	public void setLabelsRed(Aszteroida a, List<String> nevek) {
-		rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
-		if(a.getNapkozel() == "true") {
-			rt2_b.setText("+");
-		} else {
-			rt2_b.setText("-");
-		}
-		
-		int robot = 0;
-		int ufo = 0;
-		int kapu = 0;
-		
-		r = new Robot();
-		u = new Ufo();
-		k = new Teleportkapu();
-	
-		List<Entitas> entitas = new ArrayList<Entitas>();
-		entitas.add(r);
-		entitas.add(u);
-		
-		List<Szomszed> szomszedok = new ArrayList<Szomszed>();
-		szomszedok.add(k);
-		
-		for(int i = 0; i<a.EntitasokSize(); i++) {
-			if(a.getEntitasObj(i).Kompatibilis(entitas.get(0))) {
-				robot++;
+		if(a != null) {
+			rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
+//			String kp = "" + a.getKopenyVastagsag();
+//			rt1_b.setText(kp);
+			if(a.getNapkozel() == "true") {
+				rt2_b.setText("+");
+			} else {
+				rt2_b.setText("-");
 			}
-			if(a.getEntitasObj(i).Kompatibilis(entitas.get(1))) {
-				ufo++;
-			}
-		}
-		for(int i = 0; i<a.SzomszedokSize(); i++) {
-			if(a.getSzomszedObj(i).Kompatibilis(szomszedok.get(0))) {
-				kapu++;
-			}
-		}
+			
+			int robot = 0;
+			int ufo = 0;
+			int kapu = 0;
+			
+			r = new Robot();
+			u = new Ufo();
+			k = new Teleportkapu();
 		
-		
-	   	for(String nev: nevek) {
-	   		rb1_b.getItems().add(nev);
-	   	}
-	   	rb2_b.setText(String.valueOf(robot));
-	   	rb3_b.setText(String.valueOf(ufo));
-	   	rb4_b.setText(String.valueOf(kapu));
+			List<Entitas> entitas = new ArrayList<Entitas>();
+			entitas.add(r);
+			entitas.add(u);
+			
+			List<Szomszed> szomszedok = new ArrayList<Szomszed>();
+			szomszedok.add(k);
+			
+			for(int i = 0; i<a.EntitasokSize(); i++) {
+				if(a.getEntitasObj(i).Kompatibilis(entitas.get(0))) {
+					robot++;
+				}
+				if(a.getEntitasObj(i).Kompatibilis(entitas.get(1))) {
+					ufo++;
+				}
+			}
+			for(int i = 0; i<a.SzomszedokSize(); i++) {
+				if(a.getSzomszedObj(i).Kompatibilis(szomszedok.get(0))) {
+					kapu++;
+				}
+			}
+			
+			
+		   	for(String nev: nevek) {
+		   		rb1_b.getItems().add(nev);
+		   	}
+		   	rb2_b.setText(String.valueOf(robot));
+		   	rb3_b.setText(String.valueOf(ufo));
+		   	rb4_b.setText(String.valueOf(kapu));
+		}
 	}	
 }
 
