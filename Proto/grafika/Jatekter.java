@@ -14,6 +14,7 @@ public class Jatekter {
  //!!!!!! a game átkerült a jatekallpotba
 	//ötletek-Luca
 	private List<AszteroidaView> aszteroidak;
+	private List<KapuView> kapuk;
 	private AszteroidaView kivalasztott;
 	private Jatek game;
 	
@@ -27,11 +28,14 @@ public class Jatekter {
 		List<Aszteroida> bolygok= new ArrayList<Aszteroida>();
 		bolygok=game.GetOv().GetAszteroidak();
 		aszteroidak= new ArrayList<AszteroidaView>();
+		kapuk=new ArrayList<KapuView>();
+		List<Teleportkapu> tk= new ArrayList<Teleportkapu>();
+		tk=game.GetOv().GetKapuk();
 		
 		Group g= new Group();
 		Random rand = new Random();
 		
-		for(AszteroidaView a : aszteroidak){
+		for(Aszteroida b : bolygok){
 			int x = rand.nextInt(szeles);
 			int y = rand.nextInt(magas);
 			for(int i=0; i<aszteroidak.size();i++) {
@@ -40,9 +44,19 @@ public class Jatekter {
 					y+=110;
 				}
 			}
-			AszteroidaView nezet= new AszteroidaView(a, x, y, g);
+			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
 			nezet.feltesz();
 		}
+		foreach(Teleportkapu t : tk) {
+			foreach (AszteroidaView av : aszteroidak){
+				if(t.getAszter().equals(av.getAszteroida())) {
+					KapuView uj= new KapuView(t, av.kor.getCenterX()-70, av.kor.getCenterY()-50, g);
+					kapuk.add(uj);
+					uj.feltesz();
+				}
+			}
+		}
+		 
 		//kell majd return 
 	}
 	

@@ -38,6 +38,10 @@ public class Aszteroidaov implements Serializable{
 	public List<Aszteroida> getAszteroidak(){
 		return aszteroidak;
 	}
+	
+	public List<Telepotkapu> GetKapuk(){
+		return kapuk;
+	}
 	/**
 	 * Intézi az Aszteroidaövben a napvihart, meghívja az Aszteroidákon a Napvihar függvényüket.
 	 */
