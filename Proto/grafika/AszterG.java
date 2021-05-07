@@ -132,7 +132,7 @@ public class AszterG extends Pane{
 		int robot = 0;
 		int ufo = 0;
 		int kapu = 0;
-		
+		//equals instenceof
 		for(int i = 0; i<a.EntitasokSize(); i++) {
 			String ent = a.getEntitas(i);
 			if(ent.startsWith("r")) {
@@ -148,6 +148,9 @@ public class AszterG extends Pane{
 				kapu++;
 			}
 		}
+		
+		//for(Entitas e: )
+		
 	   	for(String nev: nevek) {
 	   		rb1_b.getItems().add(nev);
 	   	}
