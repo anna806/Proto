@@ -51,7 +51,7 @@ public class AszteroidaView {
 		}
 		if(kapulista.size()>0) 
 			for(int i=0; i<kapulista.size(); i++) {
-			KapuView kv= new KapuView(kapulista.get(i), x+60, 100);
+			KapuView kv= new KapuView(kapulista.get(i), x+60, y);
 			kapunezet.add(kv);
 		}
 		
