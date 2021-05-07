@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import proto.Jatek;
+import proto.Main;
 import proto.Telepes;
 
 public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
@@ -25,23 +26,23 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	Random rand = new Random();
 	
 	JatekAllapot(List<Integer> asz, List<String> nev){
-		game = new Jatek();
+		//game = new Jatek();
 		jatekter = new Jatekter();
 		menusav = new Menusav();
 		muveletsav = new Muveletsav();
 		
-		game.Start(asz.get(0));
+		Main.game.Start(asz.get(0));
 		
 		Telepes t = null;
 		for(int i = 0; i<nev.size(); i++) {
 			t = new Telepes();
 			t.SetNev(nev.get(i));
-			int s = game.GetOv().getAszteroidak().size();
-			t.SetAszteroida(game.GetOv().GetAszteroida(rand.nextInt(s)));
-			game.GetOv().addTelepes(t);
+			int s = Main.game.GetOv().getAszteroidak().size();
+			t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
+			Main.game.GetOv().addTelepes(t);
 		}
 		 
-		game.GetOv().setAktual(t);
+		Main.game.GetOv().setAktual(t);
 		
 	}
 	//jatekteret aszammal
@@ -50,7 +51,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		HBox muveletsavBox = new HBox();
 		Group jG = new Group();
 		HBox jatekterBox = new HBox();
-		menusavBox = menusav.felepit(nevek, game, oldscene, primary, jatekter);
+		menusavBox = menusav.felepit(nevek, Main.game, oldscene, primary, jatekter);
 		muveletsavBox = muveletsav.felepit(game.GetOv(), jatekter); 
 		jG = jatekter.felepit(game, oldscene, primary);
 		jatekterBox.getChildren().addAll(jG);

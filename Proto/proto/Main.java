@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-	//public static Jatek game = new Jatek();
+	public static Jatek game = new Jatek();
 	
 	@Override
 	public void start(Stage arg0) throws Exception {
