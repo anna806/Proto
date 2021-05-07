@@ -42,6 +42,9 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	
 	Button menu;
 	
+	AszterG red;
+	AszterG green;
+	
 public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
 		
 		game = _game;
@@ -68,10 +71,10 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 		
 		aktualis = game.GetOv().getAktual().getAszteroida();
 		AszteroidaView aw= jatekter.getKivalasztott();
-		valasztott = aw.GetAszteroida();
+		valasztott = aw.getAszteroida();
 		
-		AszterG red = new AszterG(aktualis);
-		AszterG green = new AszterG(valasztott);
+		red = new AszterG(aktualis);
+		green = new AszterG(valasztott);
 		
 		VBox aRed = red.felepit(nevek);
 		VBox aGreen = green.felepit(nevek);
