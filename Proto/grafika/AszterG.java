@@ -57,7 +57,7 @@ public class AszterG extends Pane{
 	Ufo u ;
 	Teleportkapu k;
    	
-	public VBox felepit(List<String> nevek) {
+	public VBox felepit(List<String> nevek, String color) {
 		
 		 
 		VBox base = new VBox();		
@@ -67,7 +67,7 @@ public class AszterG extends Pane{
 	    rootR.setHgap(25);
 	    rootR.setVgap(15);
 	    rootR.setStyle("-fx-background-color: WHITE");
-	    rootR.setStyle("-fx-border-color: RED");
+	    rootR.setStyle("-fx-border-color: " + color);
 	 
 	    rt1_a = new Label("Kéregvastagság");
 	   	rt1_b = new Label("");

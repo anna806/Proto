@@ -86,10 +86,11 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 		red = new AszterG(aktualis);
 		green = new AszterG(valasztott);
 		
-		aRed = red.felepit(nevek);
-		aGreen = green.felepit(nevek);
+		aRed = red.felepit(nevek, "RED");
+		aGreen = green.felepit(nevek, "GREEN");
 		
 		base.getChildren().addAll(flowpane, aRed, aGreen);
+		base.setStyle("-fx-background-color: GOLDENROD");
 		
 		return base;
 }
