@@ -39,7 +39,7 @@ public class Aszteroidaov implements Serializable{
 		return aszteroidak;
 	}
 	
-	public List<Telepotkapu> GetKapuk(){
+	public List<Teleportkapu> GetKapuk(){
 		return kapuk;
 	}
 	/**
