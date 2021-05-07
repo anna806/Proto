@@ -36,10 +36,10 @@ public class Beallitas implements EventHandler<ActionEvent>{
 	
 	ListView<String> jatlist;
 	
-	void felepit(Stage stage, Scene oldscene, int aszamn, List<String> nevek) {
+	void felepit(Stage stage, Scene oldscene, List<Integer> aszamn, List<String> nevek) {
 		oldScene = oldscene;
 		s = stage;
-		cnta = aszamn;
+		cnta = aszamn.get(0);
 		tnevek = nevek;
 		
 		GridPane panes = new GridPane();
@@ -164,15 +164,23 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		else if(event.getSource() == tplusz) {
 			if(tnev.getText()!="") {
 				tnevek.add(tnev.getText());
+				jatlist.getItems().clear();
 				jatlist.getItems().addAll(tnevek);
+				tnev.clear();
 			}
 				
 		}
 		else if(event.getSource() == tmin) {
-			if(!tnevek.remove(tnev.getText())) {
+			if(!tnevek.contains(ttorol.getText())) {
 				Alert a = new Alert(AlertType.ERROR);
 				a.setContentText("Nincs ilyen nevû játékos");
 				a.show();
+			}
+			else {
+				tnevek.remove(ttorol.getText());
+				jatlist.getItems().clear();
+				jatlist.getItems().addAll(tnevek);
+				ttorol.clear();
 			}
 		}
 		else if(event.getSource() == menu) {

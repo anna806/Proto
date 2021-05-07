@@ -31,7 +31,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	Label cim;
 	
 	List<String> nevek = new ArrayList<String>();
-	int aszam = 0;
+	List<Integer> aszam = new ArrayList<Integer>();
 	Stage s;
 	Scene scene;
 	
@@ -107,6 +107,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		}
 		else if(event.getSource() == beall) {
 			Beallitas b = new Beallitas();
+			aszam.add(0);
 			b.felepit(s, scene, aszam, nevek);
 		}
 		else if(event.getSource() == kilep) {
