@@ -27,8 +27,8 @@ public class Jatekter extends Pane{
 		game=_game;
 		int szeles=600;																	// jatekter merete
 		int magas=500;
-		int[] xek = null;																		//létrehozott aszteroidaviewek x koordinátája
-		int[] yok = null;																		//y koordinátája
+		List<Integer> xek = new ArrayList<>();																		//létrehozott aszteroidaviewek x koordinátája
+		List<Integer> yok = new ArrayList<>();																		//y koordinátája
 		List<Aszteroida> bolygok= new ArrayList<Aszteroida>();
 		bolygok=game.GetOv().getAszteroidak();
 		aszteroidak= new ArrayList<AszteroidaView>();
@@ -43,13 +43,13 @@ public class Jatekter extends Pane{
 			int x = rand.nextInt(szeles);
 			int y = rand.nextInt(magas);
 			for(int i=0; i<aszteroidak.size();i++) {
-				if(Math.abs(x-xek[i])<100 && Math.abs(y-yok[i])<100) {					//ha túl közel van,újraszámol, 
+				if(Math.abs(x-xek.get(i))<100 && Math.abs(y-yok.get(i))<100) {					//ha túl közel van,újraszámol, 
 					x+=110;
 					y+=110;
-					xek[i] = x;
-					yok[i] = y;
 				}
 			}
+			xek.add(x);
+			yok.add(y);
 			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
 			aszteroidak.add(nezet);
 			nezet.felepit();
