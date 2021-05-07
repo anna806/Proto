@@ -35,7 +35,7 @@ public class KapuView extends SzomszedView{
 	}
 	
 	public void SzomszedMutat(AszteroidaView av) {
-		
+		teglalap.setFill(Color.RED);
 		
 	}
 	public void feltesz(Group group) {
