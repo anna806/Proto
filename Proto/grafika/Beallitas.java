@@ -172,6 +172,17 @@ public class Beallitas implements EventHandler<ActionEvent>{
 			s.setScene(oldScene);
 		});
 		 
+		String dir = System.getProperty("user.dir");
+    		File dirf = new File(dir);
+    		String parentPath = dirf.getParent();
+		String imagePath = "file:\\" + parentPath + "\\images\\hatter.png";
+		
+		Image image = new Image(imagePath);
+		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 800, 600, false, true),
+		        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+		          BackgroundSize.DEFAULT);
+		panes.setBackground(new Background(myBI));
+
 		panes.add(aster, 0, 0);
 		panes.add(telp, 0, 1);
 		panes.add(telm, 0, 2);
