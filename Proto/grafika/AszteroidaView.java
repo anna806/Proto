@@ -42,24 +42,24 @@ public class AszteroidaView extends SzomszedView {
 		}
 		szomszedok=new ArrayList<SzomszedView>();
 		
-		}
-	publicvoid addSzomszed(Szomszed sz) {
-		szomszedok.add(sz);
-	}
-		
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
 			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
 				kapulista.add(Main.game.GetOv().GetKapu(i));
 			}
 		}
-		if(kapulista.size()>0) 
+		if(kapulista.size()>0) {
 			for(int i=0; i<kapulista.size(); i++) {
-			KapuView kv= new KapuView(kapulista.get(i), x+60, y);
+			KapuView kv= new KapuView(kapulista.get(i), x+60, y, group);
 			kapunezet.add(kv);
+			}
 		}
-		
 	}
+	
+	public void addSzomszed(SzomszedView sz) {
+		szomszedok.add(sz);
+	}
+	
 	public void SzomszedMutat(AszteroidaView ref) {
 		vonalak= new ArrayList<Line>();
 		if(kor.getCenterX()<ref.kor.getCenterX()) {

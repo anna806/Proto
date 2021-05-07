@@ -46,4 +46,8 @@ public class KapuView extends SzomszedView{
 //		stage.setScene(scene);
 //		stage.show();
 	}
+	
+	public Teleportkapu getKapu() {
+		return kapu;
+	}
 }

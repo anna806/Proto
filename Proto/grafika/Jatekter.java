@@ -94,10 +94,18 @@ public class Jatekter extends Pane{
 					}
 				}
 				for(KapuView kv: kapuk) {
-					if(sz.equals(kv.getAszter()))
-						av.addSzomszed(kv)
+					if(sz.equals(kv.getKapu().getAszter()))
+						av.addSzomszed(kv);
 				}
 			}
 		}
+	}
+	
+	public AszteroidaView getAszteroidaView(Aszteroida a) {
+		for(int i = 0; i < aszteroidak.size(); i++) {
+			if(aszteroidak.get(i).getAszteroida().equals(a))
+				return aszteroidak.get(i);
+		}
+		return null;
 	}
 }
