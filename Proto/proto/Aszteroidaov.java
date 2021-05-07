@@ -411,7 +411,7 @@ public class Aszteroidaov implements Serializable{
 	 * Továbblépteti az aktuális Telepes miután végzett a soron következõ Telepesre.
 	 */
 	public void aktualKesz() {
-		for(int i = 0; i < telepesek.size(); i++) {
+		for(int i = 0; i+1 < telepesek.size(); i++) {
 			if(telepesek.get(i).equals(aktualTelepes)) {
 				aktualTelepes = telepesek.get(i + 1);
 				break;
