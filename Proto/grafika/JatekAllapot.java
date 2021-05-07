@@ -33,9 +33,6 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		menusavBox = menusav.felepit(nevek, game, oldscene, primary);
 		muveletsavBox = muveletsav.felepit(game.GetOv(), jatekter); 
 		
-		//mentés?
-		//scene váltás?
-		
 		BorderPane borderPane = new BorderPane();
 //	    borderPane.setCenter(appContent);
 	    borderPane.setRight(menusavBox);
