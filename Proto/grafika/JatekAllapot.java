@@ -1,6 +1,7 @@
 package grafika;
 
 import java.util.List;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,6 +22,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	Muveletsav muveletsav;
 	
 	Jatek game;
+	Random rand;
 	
 	JatekAllapot(List<Integer> asz, List<String> nev){
 		game = new Jatek();
@@ -28,11 +30,13 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		menusav = new Menusav();
 		muveletsav = new Muveletsav();
 		
-		game.Start(asz.get(0)); //átírni
+		game.Start(asz.get(0)); 
 		
 		for(int i = 0; i<nev.size(); i++) {
 			Telepes t = new Telepes();
 			t.SetNev(nev.get(i));
+			int s = game.GetOv().getAszteroidak().size();
+			t.SetAszteroida(game.GetOv().GetAszteroida(rand.nextInt(s)));
 		}
 		
 	}
