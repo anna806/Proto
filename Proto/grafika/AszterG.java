@@ -48,22 +48,6 @@ public class AszterG extends Pane{
    	Label rb3_b;
    	Label rb4_a;
    	Label rb4_b;
-		
-   	Label gt1_a;
-   	Label gt1_b;
-   	Label gt2_a;
-   	Label gt2_b;
-   	Label gt3_a;
-   	Label gt3_b;
-   	
-   	Label gb1_a;
-   	ListView<String> gb1_b;
-   	Label gb2_a;
-   	Label gb2_b;
-   	Label gb3_a;
-   	Label gb3_b;
-   	Label gb4_a;
-   	Label gb4_b;
    	
    	AszterG(Aszteroida _a){
    		a = _a;
@@ -71,10 +55,7 @@ public class AszterG extends Pane{
    	
 	public VBox felepit(List<String> nevek) {
 		
-		VBox base = new VBox();
-		
-		//RED TABLE----------------------------------------------
-		
+		VBox base = new VBox();		
 		GridPane rootR = new GridPane();
 		 
 	    rootR.setPadding(new Insets(20));
@@ -133,7 +114,7 @@ public class AszterG extends Pane{
 		
 		
 	}
-	//mentés!!!
+
 	public void handle(ActionEvent event) {
 		
 	}
