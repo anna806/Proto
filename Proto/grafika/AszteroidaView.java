@@ -91,7 +91,7 @@ public class AszteroidaView extends SzomszedView {
 				
 			}
 		}
-		else {
+		else { 
 			kor.setStroke(Color.TRANSPARENT);
 			aktualis=akt;
 			vonalak.Clear();
