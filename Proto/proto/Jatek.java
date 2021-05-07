@@ -100,13 +100,13 @@ public class Jatek {
 //			i++;
 //		}
 		boolean done = false;
-		while(!done) {
-			int k = jatekter.GetTelepes(0).getKor();
-			for(int j = 0; j < jatekter.GetTelepesekSize(); j++) {
-				if(j != k)
-					
-			}
-		}
+//		while(!done) {
+//			int k = jatekter.GetTelepes(0).getKor();
+//			for(int j = 0; j < jatekter.GetTelepesekSize(); j++) {
+//				if(j != k)
+//					
+//			}
+//		}
 		
 		i=0;
 		while (i < jatekter.GetRobotokSize()) {

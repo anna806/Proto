@@ -322,8 +322,13 @@ public class Telepes extends Entitas {
 	public void SetNev(String name) {
 		nev=name;
 	}
+<<<<<<< HEAD
 	
 	public int getKor() {
 		return korCount;
+=======
+	public boolean Kompatibilis(Entitas e) {
+		return e instanceof Telepes;
+>>>>>>> branch 'master' of https://github.com/anna806/Proto.git
 	}
 }

@@ -19,7 +19,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	/**
 	 * Ufó konstruktora
 	 */
-	Ufo(){
+	public Ufo(){
 		super();
 		ID="u0"+count++;
 	}
@@ -102,5 +102,7 @@ public class Ufo extends Entitas implements Intelligencia {
 	 * @return a robot nem tud építeni, így nemmel tér vissza
 	 */
 	public boolean AnyagokTorol(Utmutato bazis) { return false; }
-	
+	public boolean Kompatibilis(Entitas e) {
+		return e instanceof Ufo;
+	}
 }

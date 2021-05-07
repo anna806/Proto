@@ -18,7 +18,7 @@ public class Robot extends Entitas implements Intelligencia {
 	 * A Robot osztály konstruktora, meghívja az õsosztály konstruktorát
 	 * és beállítja a robot egyedi azonosítóját 
 	 */
-	Robot(){
+	public Robot(){
 		super();
 		ID="r0"+count++;
 	}
@@ -110,5 +110,9 @@ public class Robot extends Entitas implements Intelligencia {
 	 */
 	public boolean AnyagokTorol(Utmutato bazis) {
 		return false;
+	}
+	
+	public boolean Kompatibilis(Entitas e) {
+		return e instanceof Robot;
 	}
 }

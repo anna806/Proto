@@ -168,4 +168,8 @@ public class Teleportkapu extends Szomszed implements Intelligencia{
 				"\n\"megkergult\": \"" + megkergult + "\"\n\"parja\": \"" + parja.getID() + "\n";
 		return s;
 	}
+	
+	public boolean Kompatibilis(Szomszed sz) {
+		return sz instanceof Teleportkapu;
+	}
 }
