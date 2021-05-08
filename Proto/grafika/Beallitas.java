@@ -27,22 +27,82 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class Beallitas {
+	/**
+	 * Az aszteroidák számát tároló adattag
+	 */
 	int cnta;
+	
+	/**
+	 * Lista, amelyik a játszani kívánó játékosok neveit tárolja
+	 */
 	List<String> tnevek;
+	
+	/**
+	 * Az aszteroidaszámot növelõ gomb
+	 */
 	Button aplusz;
+	
+	/**
+	 * Az aszteroidaszámot csökkentõ gomb
+	 */
 	Button amin;
+	
+	/**
+	 * A listához telepes hozzáadását végzõ gomb
+	 */
 	Button tplusz;
+	
+	/**
+	 * A listából telepes eltávolítását végzõ gomb
+	 */
 	Button tmin;
+	
+	/**
+	 * A fõmenübe való visszatérést szabályzó gomb
+	 */
 	Button menu;
+	
+	/**
+	 * Felirat, ami a beállított aszteroidák számát jelzi
+	 */
 	Label aszam;
+	
+	/**
+	 * A listához játékos hozzáadásához tartozó TextField mezõ
+	 */
 	TextField tnev;
+	
+	/**
+	 * A játékos eltávolításához tartozó TextField mezõ
+	 */
 	TextField ttorol;
+	
+	/**
+	 * A Stage objektum, amin a jeleneteket megjelenítkük
+	 */
 	Stage s;
+	
+	/**
+	 * A jelenlegi jelenet
+	 */
 	Scene scene;
+	
+	/**
+	 * Az ezelõtt megjelenített jelenet
+	 */
 	Scene oldScene ;
 	
+	/**
+	 * A játékosok neveit megjelenítõ nézet
+	 */
 	ListView<String> jatlist;
 	
+	/**
+	 * @param stage - a Stage objektum, amin felépítjük a Beállításokhoz tartozó jelenetet
+	 * @param oldscene - Az elõzõ jelenet, ahonnan meghívtuk, hogy vissza tudjunk térni oda
+	 * @param aszamn - az aszteeroidák száma, ha már be van állítva
+	 * @param nevek - nevek listája, akik már játékban vannak. 
+	 */
 	void felepit(Stage stage, Scene oldscene, List<Integer> aszamn, List<String> nevek) {
 		oldScene = oldscene;
 		s = stage;
