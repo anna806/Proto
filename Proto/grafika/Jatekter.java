@@ -57,7 +57,7 @@ public class Jatekter extends Pane{
 			}
 			xek.add(x);
 			yok.add(y);
-			AszteroidaView nezet= new AszteroidaView(b, x, y, g);
+			AszteroidaView nezet= new AszteroidaView(b, x, y, p);
 			aszteroidak.add(nezet);
 			nezet.felepit();
 			nezet.kor.setOnMousePressed(KorLenyomasEventHandler);
@@ -67,7 +67,7 @@ public class Jatekter extends Pane{
 			for (AszteroidaView av : aszteroidak){
 
 				if(t.getAszter().equals(av.getAszteroida())) {
-					KapuView uj= new KapuView(t, av.kor.getCenterX()-70, av.kor.getCenterY()-50, g);
+					KapuView uj= new KapuView(t, av.kor.getCenterX()-70, av.kor.getCenterY()-50);
 					kapuk.add(uj);
 					//uj.feltesz();
 					g.getChildren().add(uj.teglalap);

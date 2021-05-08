@@ -1,12 +1,9 @@
 package grafika;
 
 import proto.*;
-import javafx.scene.Group;
-import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
 public class NyersanyagView {
 
@@ -69,11 +66,8 @@ public class NyersanyagView {
 	 * 
 	 * @param group - a Group objektum ami a nyersanyagokat tárolja
 	 */
-	public void feltesz(Group group) {
-		group.getChildren().add(kor);
-//		Scene scene= new Scene(group, 41, 41);
-//		stage.setScene(scene);
-//		stage.show();
+	public void feltesz(Pane pane) {
+		pane.getChildren().add(kor);
 	}
 	
 	

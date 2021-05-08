@@ -1,10 +1,7 @@
 package grafika;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 import proto.*;
 
 public class KapuView extends SzomszedView{

@@ -7,6 +7,7 @@ import java.util.List;
 
 import javafx.scene.shape.Line;
 import javafx.scene.Group;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
@@ -22,10 +23,10 @@ public class AszteroidaView extends SzomszedView {
 	public List<Line> vonalak;
 	public List<SzomszedView> szomszedok;
 	
-	Group group;
+	Pane pane;
 	
-	public AszteroidaView(Aszteroida a, int kx, int ky, Group g) {
-		group = g;
+	public AszteroidaView(Aszteroida a, int kx, int ky, Pane p) {
+		pane = p;
 		data=a;
 		x=kx;
 		y=ky;
@@ -68,7 +69,7 @@ public class AszteroidaView extends SzomszedView {
 		}
 		if(kapulista.size()>0) {
 			for(int i=0; i<kapulista.size(); i++) {
-			KapuView kv= new KapuView(kapulista.get(i), x+60, y, group);
+			KapuView kv= new KapuView(kapulista.get(i), x+60, y);
 			kapunezet.add(kv);
 			}
 		}
@@ -129,25 +130,25 @@ public class AszteroidaView extends SzomszedView {
 	
 	public void felepit() {
 //		Group group= new Group();
-		group.getChildren().add(kor);
+		pane.getChildren().add(kor);
 		if(anyag!=null && data.getKopenyVastagsag() == 0) {
-			anyag.feltesz(group);
+			anyag.feltesz(pane);
 		}
 		if(kapunezet.size()>0) {
 			for (KapuView nezet : kapunezet){
-				nezet.feltesz(group);
+				nezet.feltesz(pane);
 			}
 		}
 		if(aktualis) {
 			for (Line l : vonalak){
 				l.setFill(Color.RED);
-				group.getChildren().add(l);
+				pane.getChildren().add(l);
 			}
 		}
 		if(valasztott) {
 			for (Line l : vonalak){
 				l.setFill(Color.GREEN);
-				group.getChildren().add(l);
+				pane.getChildren().add(l);
 			}
 		}
 //		Scene scene= new Scene(group, 110, 110);
@@ -160,7 +161,7 @@ public class AszteroidaView extends SzomszedView {
 			if(visszatolt)
 				anyag.kitolt();
 			else
-				anyag.feltesz(group);
+				anyag.feltesz(pane);
 		}
 		else if(data.getBelsoAnyag() == null) {
 			System.out.println(anyag.toString());
