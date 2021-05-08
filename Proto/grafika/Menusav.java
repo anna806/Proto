@@ -76,6 +76,7 @@ public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jat
 
         flowpane.getChildren().add(menu);
         flowpane.getChildren().add(mentesView);
+        flowpane.setStyle("-fx-background-color: DARKGOLDENROD");
 		
 		VBox base = new VBox();
 		base.setAlignment(Pos.BASELINE_CENTER);
