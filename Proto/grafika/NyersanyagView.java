@@ -16,7 +16,8 @@ public class NyersanyagView {
 	public Circle kor;
 	
 	public NyersanyagView(Nyersanyag ny, int kx, int ky){
-		adat=ny;
+		if(ny != null)
+			adat=ny;
 		x=kx;
 		y=ky;
 		

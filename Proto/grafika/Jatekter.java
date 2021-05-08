@@ -89,6 +89,7 @@ public class Jatekter extends Pane{
 	        	   }
 	        	   av.setValaszt(true);
 	        	   kivalasztott=av;
+	        	   //itt kéne egy update a menüsávra
 	           }
 	           }
 	        }
