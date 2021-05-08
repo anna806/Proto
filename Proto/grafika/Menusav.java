@@ -69,11 +69,11 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		mentesView.setImage(mentes);
 		ment = new Button();
 		ment.setGraphic(mentesView);
-		ment.setStyle("-fx-background-color: GOLDENROD");
+		ment.setStyle("-fx-background-color: DARKGOLDENROD");
 		ment.setOnAction(this);
 
 		menu = new Button("Menü");
-		menu.setStyle("-fx-background-color: DARKGOLDENROD");
+		menu.setStyle("-fx-background-color: DARKGOLDENROD; -fx-font-size: 20;");
 		menu.setTextFill(Color.WHITE);
 		menu.setMinSize(70, 45);
 		menu.setOnAction(this);
@@ -105,12 +105,11 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		return base;
 	}
 
-	public void Update(AszteroidaView a) {
-		//return felepit( game, oldscene, primary, jatekter);
-		if(red.getA().equals(a.getAszteroida()))
-			red.setLabelsRed(a.getAszteroida());
-		else if(green.getA().equals(a.getAszteroida()))
+	public void Update(AszteroidaView a, boolean kivalasztott) {
+		if(kivalasztott) 
 			green.setLabelsRed(a.getAszteroida());
+		else
+			red.setLabelsRed(a.getAszteroida());
 	}
 
 	@Override

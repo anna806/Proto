@@ -24,9 +24,11 @@ public class Jatekter extends Pane{
 	private AszteroidaView kivalasztott;
 	private Jatek game;
 	private Group g;
+	private Menusav m;
 	
 	 
-	public Group felepit(Jatek _game, Scene _oldscene, Stage _primary){
+	public Group felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
+		m = menu;
 		game=_game;
 		int szeles=600;																	// jatekter merete
 		int magas=500;
@@ -89,7 +91,7 @@ public class Jatekter extends Pane{
 	        	   }
 	        	   av.setValaszt(true);
 	        	   kivalasztott=av;
-	        	   //itt kéne egy update a menüsávra
+	        	   m.Update(kivalasztott, true);
 	           }
 	           }
 	        }
@@ -131,5 +133,5 @@ public class Jatekter extends Pane{
 		}
 		return null;
 	}
-	}
+}
 	

@@ -115,7 +115,8 @@ public class AszterG extends Pane{
 	   	if(a!=null)
 	   	setLabelsRed(a);
 	   	
-	   	base.getChildren().addAll(rootR);	   	
+	   	base.getChildren().addAll(rootR);
+	   	base.setStyle("-fx-background-color: LIGHTGREY");
 		return base;
 		
 		
