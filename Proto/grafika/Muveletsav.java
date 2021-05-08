@@ -155,13 +155,13 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		if(event.getSource() == asas) {
 			jatekter.getAktual().Furas();
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
-				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
+				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
 			setLabels(jatekter.getAktual());
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
-				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
+				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
 		}
 		else if(event.getSource() == mozog) {
 			jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
@@ -183,7 +183,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().Visszatolt();
 			setLabels(jatekter.getAktual());
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
-				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit();
+				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(true);
 		}
 		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
 	}

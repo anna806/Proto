@@ -35,10 +35,28 @@ public class AszteroidaView extends SzomszedView {
 		kor.setCenterY(y);
 		kor.setRadius(50.0f);
 		kor.setFill(Color.CORNFLOWERBLUE);
-		if (data.getKopenyVastagsag()==0) {
+		/*if (data.getKopenyVastagsag()==0) {
 			anyag=new NyersanyagView(data.getBelsoAnyag(), x, y);
 			anyag.kitolt();
 			
+		}*/
+		if(data.getBelsoAnyag() != null) {
+			if(data.getBelsoAnyag().Kompatibilis(new Uran())) {
+				anyag = new UranView(data.getBelsoAnyag(), x, y);
+			}
+			else if(data.getBelsoAnyag().Kompatibilis(new Szen())) {
+				anyag = new SzenView(data.getBelsoAnyag(), x, y);
+			}
+			else if(data.getBelsoAnyag().Kompatibilis(new Vas())) {
+				anyag = new VasView(data.getBelsoAnyag(), x, y);
+			}
+			else if(data.getBelsoAnyag().Kompatibilis(new Vizjeg())) {
+				anyag = new VizjegView(data.getBelsoAnyag(), x, y);
+			}				
+		}
+		else {
+			anyag = new NyersanyagView(data.getBelsoAnyag(), x, y);
+			anyag.ures();
 		}
 		szomszedok=new ArrayList<SzomszedView>();
 		kapunezet = new ArrayList<KapuView>();
@@ -112,7 +130,7 @@ public class AszteroidaView extends SzomszedView {
 	public void felepit() {
 //		Group group= new Group();
 		group.getChildren().add(kor);
-		if(anyag!=null) {
+		if(anyag!=null && data.getKopenyVastagsag() == 0) {
 			anyag.feltesz(group);
 		}
 		if(kapunezet.size()>0) {
@@ -137,9 +155,12 @@ public class AszteroidaView extends SzomszedView {
 //		stage.show();
 	}
 	
-	public void frissit() {
-		if(anyag != null) {
-			anyag.feltesz(group);
+	public void frissit(boolean visszatolt) {
+		if(data.getBelsoAnyag() != null && data.getKopenyVastagsag() == 0) {
+			if(visszatolt)
+				anyag.kitolt();
+			else
+				anyag.feltesz(group);
 		}
 		else if(data.getBelsoAnyag() == null) {
 			System.out.println(anyag.toString());
