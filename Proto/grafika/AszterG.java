@@ -50,7 +50,6 @@ public class AszterG extends Pane{
    	Label rb4_b;
    	
    	AszterG(Aszteroida _a){
-   		a = new Aszteroida();
    		a= _a;
    	}
    	
@@ -113,6 +112,7 @@ public class AszterG extends Pane{
 	   	rootR.add(rb4_a, 3, 3);
        
 	   	//lenti értékek
+	   	if(a!=null)
 	   	setLabelsRed(a, a.getNevek());
 	   	
 	   	base.getChildren().addAll(rootR);	   	
