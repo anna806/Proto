@@ -169,7 +169,12 @@ public class Beallitas {
 	    tplusz.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
 	    tplusz.setMinSize(60, 10);
 	    tplusz.setOnAction(actionEvent -> {
-	    	if(tnev.getText()!="") {
+	    	if(tnev.getText().isEmpty()) {
+	    		Alert a = new Alert(AlertType.ERROR);
+				a.setContentText("Nem adott meg nevet!");
+				a.show();
+	    	}
+	    	else {
 				tnevek.add(tnev.getText());
 				jatlist.getItems().clear();
 				jatlist.getItems().addAll(tnevek);
@@ -200,21 +205,28 @@ public class Beallitas {
 		tmin.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
 		tmin.setMinSize(60, 30);
 		tmin.setOnAction(actionEvent -> {
-			if(!tnevek.contains(ttorol.getText())) {
+			if(ttorol.getText().isEmpty()) {
 				Alert a = new Alert(AlertType.ERROR);
-				a.setContentText("Nincs ilyen nevû játékos");
+				a.setContentText("Nem adott meg nevet!");
 				a.show();
 			}
 			else {
-				tnevek.remove(ttorol.getText());
-				jatlist.getItems().clear();
-				jatlist.getItems().addAll(tnevek);
-				ttorol.clear();
+				if(!tnevek.contains(ttorol.getText())) {
+					Alert a = new Alert(AlertType.ERROR);
+					a.setContentText("Nincs ilyen nevû játékos");
+					a.show();
+				}
+				else {
+					tnevek.remove(ttorol.getText());
+					jatlist.getItems().clear();
+					jatlist.getItems().addAll(tnevek);
+					ttorol.clear();
+				}
 			}
 		});
 		
 		ttorol = new TextField();
-		ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		
+		ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY");		
 		ttorol.setMinSize(150, 30);
 		
 		telm.add(telml, 0, 0);
@@ -231,6 +243,7 @@ public class Beallitas {
 		 
 		jatlist = new ListView<String>();
 		jatlist.getItems().addAll(tnevek);
+		jatlist.setStyle("-fx-background-color: LIGHTGREY");
 		
 		jatl.getChildren().addAll(jatll, jatlist);
 		 

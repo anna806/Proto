@@ -42,8 +42,8 @@ public class Jatekter extends Pane{
 		List<Teleportkapu> tk= new ArrayList<Teleportkapu>();
 		tk=game.GetOv().GetKapuk();
 		
-		g= new Group();
-//		p = new Pane();
+//		g= new Group();
+		p = new Pane();
 		Random rand = new Random();
 		
 		for(Aszteroida b : bolygok){
@@ -76,8 +76,8 @@ public class Jatekter extends Pane{
 		}
 		
 		
-		g.setStyle("-fx-background-color: MIDNIGHTBLUE");
-		return g;
+		p.setStyle("-fx-background-color: MIDNIGHTBLUE");
+		return p;
 		
 	}
 	EventHandler<MouseEvent> KorLenyomasEventHandler = 
