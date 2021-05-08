@@ -25,9 +25,10 @@ public class Jatekter extends Pane{
 	private Jatek game;
 	private Group g;
 	private Menusav m;
+	private Pane p;
 	
 	 
-	public Group felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
+	public Pane felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
 		m = menu;
 		game=_game;
 		int szeles=600;																	// jatekter merete
@@ -42,6 +43,7 @@ public class Jatekter extends Pane{
 		tk=game.GetOv().GetKapuk();
 		
 		g= new Group();
+//		p = new Pane();
 		Random rand = new Random();
 		
 		for(Aszteroida b : bolygok){
@@ -74,8 +76,7 @@ public class Jatekter extends Pane{
 		}
 		
 		
-		 
-		//kell majd return 
+		g.setStyle("-fx-background-color: MIDNIGHTBLUE");
 		return g;
 		
 	}

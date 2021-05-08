@@ -85,7 +85,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
         flowpane.setStyle("-fx-background-color: DARKGOLDENROD");
 		
 		VBox base = new VBox();
-		base.setAlignment(Pos.BASELINE_CENTER);
+//		base.setAlignment(Pos.BASELINE_CENTER);
 		
 		aktualis = game.GetOv().getAktual().getAszteroida();
 		if(jatekter.getKivalasztott() != null)

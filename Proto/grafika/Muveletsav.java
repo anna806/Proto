@@ -62,43 +62,43 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		asas  = new Button("Furas");
 		asas.setStyle("-fx-background-color: DARKGOLDENROD");
 		asas.setTextFill(Color.WHITE);
-		asas.setMinSize(70, 45);
+		asas.setMinSize(70, 30);
 		asas.setOnAction(this);
 		
 		banyasz = new Button("Banyaszas");
 		banyasz.setStyle("-fx-background-color: DARKGOLDENROD");
 		banyasz.setTextFill(Color.WHITE);
-		banyasz.setMinSize(70, 45);
+		banyasz.setMinSize(70, 30);
 		banyasz.setOnAction(this);
 		
 		mozog = new Button("Mozgas");
 		mozog.setStyle("-fx-background-color: DARKGOLDENROD");
 		mozog.setTextFill(Color.WHITE);
-		mozog.setMinSize(70, 45);
+		mozog.setMinSize(70, 30);
 		mozog.setOnAction(this);
 		
 		robotep = new Button("Robot");
 		robotep.setStyle("-fx-background-color: DARKGOLDENROD");
 		robotep.setTextFill(Color.WHITE);
-		robotep.setMinSize(70, 45);
+		robotep.setMinSize(70, 30);
 		robotep.setOnAction(this);
 		
 		kapuep = new Button("Kapu");
 		kapuep.setStyle("-fx-background-color: DARKGOLDENROD");
 		kapuep.setTextFill(Color.WHITE);
-		kapuep.setMinSize(70, 45);
+		kapuep.setMinSize(70, 30);
 		kapuep.setOnAction(this);
 		
 		bazisep = new Button("Bazis");
 		bazisep.setStyle("-fx-background-color: DARKGOLDENROD");
 		bazisep.setTextFill(Color.WHITE);
-		bazisep.setMinSize(70, 45);
+		bazisep.setMinSize(70, 30);
 		bazisep.setOnAction(this);
 		
 		visszatolt = new Button("Visszatolt");
 		visszatolt.setStyle("-fx-background-color: DARKGOLDENROD");
 		visszatolt.setTextFill(Color.WHITE);
-		visszatolt.setMinSize(70, 45);
+		visszatolt.setMinSize(70, 30);
 		visszatolt.setOnAction(this);
 		
 		ny1 = new Circle(20, Color.DIMGREY);
