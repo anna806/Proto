@@ -30,11 +30,21 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	Button kilep;
 	Label cim;
 	
+	/**
+	 * A létrehozandó telepesek neveit tárolja
+	 */
 	List<String> nevek = new ArrayList<String>();
+	/**
+	 * A létrehozandó aszteroidák számát tárolja
+	 */
 	List<Integer> aszam = new ArrayList<Integer>();
 	Stage s;
 	Scene scene;
 	
+	/**
+	 * Felépíti a fõmenüt, beállítja a gombokat és a címet, majd belerakja a fõablakba
+	 * @param stage : a fõablak
+	 */
 	public void felepit(Stage stage) {
 		s = stage;
 		VBox root = new VBox(10);
@@ -95,6 +105,9 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		});	
 	}
 	
+	/**
+	 * Az egyes gombok által kiváltott eseményeket kezeli
+	 */
 	@Override
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
