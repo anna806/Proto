@@ -141,7 +141,7 @@ public class AszteroidaView extends SzomszedView {
 		if(anyag != null) {
 			anyag.feltesz(group);
 		}
-		else if(anyag == null) {
+		else if(data.getBelsoAnyag() == null) {
 			anyag.ures();
 		}
 	}
