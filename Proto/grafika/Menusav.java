@@ -49,12 +49,15 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	VBox aGreen;
 	VBox aRed;
 	
-public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
+	
+	
+public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
 		
 		game = _game;
 		oldscene = _oldscene;
 	   	primary = _primary;
 	   	jatekter = _jatekter;
+	   	
 		
 	   	String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
@@ -86,13 +89,18 @@ public VBox felepit(List<String> nevek, Jatek _game, Scene _oldscene, Stage _pri
 		red = new AszterG(aktualis);
 		green = new AszterG(valasztott);
 		
-		aRed = red.felepit(nevek, "RED");
-		aGreen = green.felepit(nevek, "GREEN");
+		aRed = red.felepit( "RED");
+		aGreen = green.felepit("GREEN");
 		
 		base.getChildren().addAll(flowpane, aRed, aGreen);
 		base.setStyle("-fx-background-color: GOLDENROD");
 		
 		return base;
+}
+
+public VBox Update() {
+	return felepit( game, oldscene, primary, jatekter);
+	
 }
 
 		@Override

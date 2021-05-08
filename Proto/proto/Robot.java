@@ -115,4 +115,9 @@ public class Robot extends Entitas implements Intelligencia {
 	public boolean Kompatibilis(Entitas e) {
 		return e instanceof Robot;
 	}
+
+	@Override
+	public String getNev() {
+		return null;
+	}
 }

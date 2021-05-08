@@ -50,14 +50,15 @@ public class AszterG extends Pane{
    	Label rb4_b;
    	
    	AszterG(Aszteroida _a){
-   		a = _a;
+   		a = new Aszteroida();
+   		a= _a;
    	}
    	
    	Robot r ;
 	Ufo u ;
 	Teleportkapu k;
    	
-	public VBox felepit(List<String> nevek, String color) {
+	public VBox felepit( String color) {
 		
 		 
 		VBox base = new VBox();		
@@ -112,7 +113,7 @@ public class AszterG extends Pane{
 	   	rootR.add(rb4_a, 3, 3);
        
 	   	//lenti értékek
-	   	setLabelsRed(a, nevek);
+	   	setLabelsRed(a, a.getNevek());
 	   	
 	   	base.getChildren().addAll(rootR);	   	
 		return base;

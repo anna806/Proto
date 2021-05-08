@@ -402,4 +402,11 @@ public class Aszteroida extends Szomszed{
 		return szomszedok.get(i);
 
 	}
+	public List<String> getNevek(){
+		List<String> nevek= new ArrayList<String>();
+		for(Entitas e : entitasok) {
+			nevek.add(e.getNev());
+		}
+	return nevek;
+	}
 }

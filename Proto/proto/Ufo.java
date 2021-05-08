@@ -105,4 +105,9 @@ public class Ufo extends Entitas implements Intelligencia {
 	public boolean Kompatibilis(Entitas e) {
 		return e instanceof Ufo;
 	}
+
+	@Override
+	public String getNev() {
+		return null;
+	}
 }

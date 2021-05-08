@@ -94,4 +94,6 @@ public abstract class Entitas implements Serializable {
 	 */
 	public abstract boolean AnyagokTorol(Utmutato bazis);
 	public abstract boolean Kompatibilis(Entitas e);
+	
+	public abstract String getNev();
 }

@@ -315,7 +315,7 @@ public class Telepes extends Entitas {
 		return nyersanyagok.get(i);
 	}
 	
-	public String GetNev() {
+	public String getNev() {
 		return nev;
 	}
 	
