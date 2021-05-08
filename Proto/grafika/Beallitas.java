@@ -3,10 +3,9 @@ package grafika;
 import java.io.File;
 import java.util.List;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -22,14 +21,12 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-public class Beallitas implements EventHandler<ActionEvent>{
+public class Beallitas {
 	int cnta;
 	List<String> tnevek;
 	Button aplusz;
@@ -57,10 +54,9 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		panes.setVgap(10); 
 	    panes.setHgap(20);
 	    
-	    
-	    GridPane aster = new GridPane();									//aszteroida beállítása
+	    GridPane aster = new GridPane();									
 		aster.setPadding(new Insets(10, 10, 10, 10));
-		aster.setVgap(5); 
+		aster.setVgap(10); 
 	    aster.setHgap(5);
 	    aster.setStyle("-fx-background-color: BEIGE");
 	    
@@ -69,8 +65,8 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		aszterl.setTextAlignment(TextAlignment.LEFT);
 		
 		aplusz  = new Button("+");
-		aplusz.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
-		aplusz.setMinSize(20, 10);
+		aplusz.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
+		aplusz.setMaxSize(50, 10);
 		aplusz.setOnAction(actionEvent -> {
 			cnta++;
 			aszam.setText(Integer.toString(cnta));
@@ -78,9 +74,9 @@ public class Beallitas implements EventHandler<ActionEvent>{
 			aszamn.add(cnta);
 		});
 		
-		amin  = new Button("-");
-		amin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
-		amin.setMinSize(20, 10);
+		amin = new Button("-");
+		amin.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
+		amin.setMinSize(50, 10);
 		amin.setOnAction(actionEvent -> {
 			cnta--;
 			aszam.setText(Integer.toString(cnta));
@@ -89,27 +85,28 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		});
 		
 		aszam = new Label(Integer.toString(cnta));
-		aszam.setStyle("-fx-font-size: 30;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
-		aszam.setMinSize(20, 10);
+		aszam.setStyle("-fx-font-size: 20;-fx-background-color: LIGHTGREY");		
+		aszam.setMinSize(40, 10);
+		aszam.setAlignment(Pos.CENTER);
 		
 		aster.add(aszterl, 0, 0, 3 , 1);
 		aster.add(amin, 0, 1);
 		aster.add(aszam, 1, 1);
 		aster.add(aplusz, 2, 1);
 
-		GridPane telp = new GridPane();												// játékos hozzáad
+		GridPane telp = new GridPane();												
 		telp.setPadding(new Insets(10, 10, 10, 10));
-		telp.setVgap(5); 
+		telp.setVgap(10); 
 	    telp.setHgap(10);
 	    telp.setStyle("-fx-background-color: BEIGE");
 	    
 	    Label telpl = new Label("Játékos hozzáadása");
 	    telpl.setStyle("-fx-font-size: 20");
-	    telpl.setTextFill(Color.LAWNGREEN);
+	    telpl.setTextFill(Color.LIMEGREEN);
 		telpl.setTextAlignment(TextAlignment.LEFT);
 	    
 	    tplusz  = new Button("OK");
-	    tplusz.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
+	    tplusz.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
 	    tplusz.setMinSize(60, 10);
 	    tplusz.setOnAction(actionEvent -> {
 	    	if(tnev.getText()!="") {
@@ -121,16 +118,16 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		});
 	    
 	    tnev = new TextField();
-		tnev.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
+		tnev.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		
 		tnev.setMinSize(150, 30);
 		
 		telp.add(telpl, 0, 0);
 		telp.add(tnev, 0, 1);
 		telp.add(tplusz, 1, 1);
 		
-		GridPane telm = new GridPane();												// játékos törlése
+		GridPane telm = new GridPane();												
 		telm.setPadding(new Insets(10, 10, 10, 10));
-		telm.setVgap(5); 
+		telm.setVgap(10); 
 	    telm.setHgap(10);
 	    telm.setStyle("-fx-background-color: BEIGE");
 		
@@ -140,7 +137,7 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		telml.setTextAlignment(TextAlignment.LEFT);
 		
 		tmin  = new Button("OK");
-		tmin.setStyle("-fx-font-size: 30;-fx-background-color: GREY;");
+		tmin.setStyle("-fx-font-size: 20;-fx-background-color: GREY; -fx-font-weight: bold");
 		tmin.setMinSize(60, 30);
 		tmin.setOnAction(actionEvent -> {
 			if(!tnevek.contains(ttorol.getText())) {
@@ -157,14 +154,14 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		});
 		
 		ttorol = new TextField();
-		ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		//itt kell kezelni actiont?
+		ttorol.setStyle("-fx-font-size: 25;-fx-background-color: LIGHTGREY;");		
 		ttorol.setMinSize(150, 30);
 		
 		telm.add(telml, 0, 0);
 		telm.add(ttorol, 0, 1);
 		telm.add(tmin, 1, 1);
 		 
-		VBox jatl = new VBox();											// játékosok listája
+		VBox jatl = new VBox();											
 		jatl.setPadding(new Insets(10, 10, 10, 10));
 		jatl.setStyle("-fx-background-color: BEIGE");
 		 
@@ -177,8 +174,8 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		
 		jatl.getChildren().addAll(jatll, jatlist);
 		 
-		menu = new Button("Menu");
-		menu.setStyle("-fx-background-color: DARKGOLDENROD");
+		menu = new Button("Menü");
+		menu.setStyle("-fx-background-color: DARKGOLDENROD; -fx-font-size: 15");
 		menu.setTextFill(Color.WHITE);
 		menu.setOnAction(actionEvent -> {
 			jatlist.getItems().clear();
@@ -194,42 +191,25 @@ public class Beallitas implements EventHandler<ActionEvent>{
 		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 800, 600, false, true),
 		        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
 		          BackgroundSize.DEFAULT);
-//		panes.setBackground(new Background(myBI));
 		panes.setStyle("-fx-background-color: GOLDENROD");
-		
-//		HBox hbox = new HBox(20);
-//		hbox.setMaxSize(400, 370);
-//	    
-//		VBox vbox = new VBox(10);
-//		vbox.getChildren().addAll(aster, telp, telm);
-//		
-//		VBox vb = new VBox(10);
-//		vb.getChildren().addAll(menu, jatl);
-//		hbox.getChildren().addAll(vbox, vb);
-//		hbox.setStyle("-fx-background-color: GOLDENROD");
 		
 		panes.add(aster, 0, 0);
 		panes.add(telp, 0, 1);
 		panes.add(telm, 0, 2);
 		panes.add(jatl, 1, 0, 1, 3);
 		panes.add(menu, 0, 3);
-		panes.setAlignment(Pos.CENTER);
-		panes.setPrefSize(10, 10);
-	    panes.setMaxSize(10, 10);
-//		BorderPane bp = new BorderPane();
-//		bp.getChildren().add(panes);
-//		bp.setCenter(panes);
-//		bp.setCenter(hbox);
-//		bp.setBackground(new Background(myBI));
-//		hbox.setAlignment(Pos.CENTER);
+				
+		panes.setMaxSize(750, 500);
+		Group p = new Group();
+		p.getChildren().add(panes);
 		
-		scene = new Scene(panes, 800, 600);
-//		scene.setFill(Color.DARKBLUE);
+		BorderPane bp = new BorderPane();
+		bp.setCenter(p);
+//		bp.setStyle("-fx-background-color: MIDNIGHTBLUE");
+		bp.setBackground(new Background(myBI));
+	    
+		scene = new Scene(bp, 800, 600);
 		s.setScene(scene);
 		s.show();
-	}
-	
-	@Override
-	public void handle(ActionEvent event){
 	}
 }

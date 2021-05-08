@@ -111,26 +111,31 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		ny1sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny1sz.setMinSize(20, 27);
 		ny1sz.setTextAlignment(TextAlignment.CENTER);
+		ny1sz.setAlignment(Pos.CENTER);
 		
 		ny2sz = new Label("0");
 		ny2sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny2sz.setMinSize(20, 27);
 		ny2sz.setTextAlignment(TextAlignment.CENTER);
+		ny2sz.setAlignment(Pos.CENTER);
 		
 		ny3sz = new Label("0");
 		ny3sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny3sz.setMinSize(20, 27);
 		ny3sz.setTextAlignment(TextAlignment.CENTER);
+		ny3sz.setAlignment(Pos.CENTER);
 		
 		ny4sz = new Label("0");
 		ny4sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny4sz.setMinSize(20, 27);
 		ny4sz.setTextAlignment(TextAlignment.CENTER);
+		ny4sz.setAlignment(Pos.CENTER);
 		
 		k = new Label("0");
 		k.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		k.setMinSize(20, 27);
 		k.setTextAlignment(TextAlignment.CENTER);
+		k.setAlignment(Pos.CENTER);
 		
 		buttons2.add(mozog, 0, 0);
 		buttons2.add(banyasz, 1, 0);
