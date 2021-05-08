@@ -82,6 +82,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 
         flowpane.getChildren().add(menu);
         flowpane.getChildren().add(ment);
+        flowpane.setStyle("-fx-background-color: DARKGOLDENROD");
 		
 		VBox base = new VBox();
 		base.setAlignment(Pos.BASELINE_CENTER);
