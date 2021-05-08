@@ -106,7 +106,7 @@ public class AszterG extends Pane{
 	   	GridPane.setHalignment(rb2_a, HPos.CENTER);
 	   	GridPane.setHalignment(rb3_a, HPos.CENTER);
 	   	GridPane.setHalignment(rb4_a, HPos.CENTER);
-	   	rootR.add(rb1_a, 0, 3, 1, 6);
+	   	rootR.add(rb1_a, 0, 3); //1, 6);
 	   	rootR.add(rb2_a, 1, 3);
 	   	rootR.add(rb3_a, 2, 3);
 	   	rootR.add(rb4_a, 3, 3);
@@ -114,6 +114,15 @@ public class AszterG extends Pane{
 	   	//lenti értékek
 	   	if(a!=null)
 	   	setLabelsRed(a);
+	   	
+		GridPane.setHalignment(rb1_b, HPos.CENTER);
+	   	GridPane.setHalignment(rb2_b, HPos.CENTER);
+	   	GridPane.setHalignment(rb3_b, HPos.CENTER);
+	   	GridPane.setHalignment(rb4_b, HPos.CENTER);
+	   	rootR.add(rb1_b, 0, 4, 1, 6);
+	   	rootR.add(rb2_b, 1, 4);
+	   	rootR.add(rb3_b, 2, 4);
+	   	rootR.add(rb4_b, 3, 4);
 	   	
 	   	base.getChildren().addAll(rootR);
 	   	base.setStyle("-fx-background-color: LIGHTGREY");
@@ -172,7 +181,7 @@ public class AszterG extends Pane{
 		   	for(String nev: a.getNevek()) {
 		   		rb1_b.getItems().add(nev);
 		   	}
-		   	rb2_b.setText(String.valueOf(robot));
+		   	rb2_b.setText("hahooo");//String.valueOf(robot));
 		   	rb3_b.setText(String.valueOf(ufo));
 		   	rb4_b.setText(String.valueOf(kapu));
 		}
