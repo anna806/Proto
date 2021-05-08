@@ -106,7 +106,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	}
 	
 	/**
-	 * Az egyes gombok lenyomása utáni eseményeket kezeli
+	 * Az egyes gombok által kiváltott eseményeket kezeli
 	 */
 	@Override
 	public void handle(ActionEvent event){
