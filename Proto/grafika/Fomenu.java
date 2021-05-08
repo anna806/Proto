@@ -24,10 +24,25 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 public class Fomenu implements EventHandler<ActionEvent> {
+	/**
+	 * A játékot elindító gomb
+	 */
 	Button indit;
+	/**
+	 * A játék folytatása gomb
+	 */
 	Button folyt;
+	/**
+	 * A játék beállítások gomb
+	 */
 	Button beall;
+	/**
+	 * A kilépés gomb
+	 */
 	Button kilep;
+	/**
+	 * A játék címe kiírás
+	 */
 	Label cim;
 	
 	/**
