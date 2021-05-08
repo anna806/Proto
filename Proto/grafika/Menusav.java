@@ -42,6 +42,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
    	Jatekter jatekter;
 	
 	Button menu;
+	Button ment;
 	
 	AszterG red;
 	AszterG green;
@@ -51,7 +52,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	
 	
 	
-public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
+	public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jatekter) {
 		
 		game = _game;
 		oldscene = _oldscene;
@@ -66,16 +67,22 @@ public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jat
 		mentes = new Image(imagePath); //kell könyvtár----------------------------------
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
+		ment = new Button();
+		ment.setGraphic(mentesView);
+		ment.setStyle("-fx-background-color: GOLDENROD");
+		ment.setOnAction(this);
 
 		menu = new Button("Menü");
 		menu.setStyle("-fx-background-color: DARKGOLDENROD");
 		menu.setTextFill(Color.WHITE);
 		menu.setMinSize(70, 45);
+		menu.setOnAction(this);
 		
 		FlowPane flowpane = new FlowPane();
 
         flowpane.getChildren().add(menu);
-        flowpane.getChildren().add(mentesView);
+        flowpane.getChildren().add(ment);
+        flowpane.setStyle("-fx-background-color: DARKGOLDENROD");
 		
 		VBox base = new VBox();
 		base.setAlignment(Pos.BASELINE_CENTER);
@@ -96,19 +103,22 @@ public VBox felepit( Jatek _game, Scene _oldscene, Stage _primary, Jatekter _jat
 		base.setStyle("-fx-background-color: GOLDENROD");
 		
 		return base;
-}
+	}
 
-public VBox Update() {
-	return felepit( game, oldscene, primary, jatekter);
-	
-}
+	public void Update(AszteroidaView a) {
+		//return felepit( game, oldscene, primary, jatekter);
+		if(red.getA().equals(a.getAszteroida()))
+			red.setLabelsRed(a.getAszteroida());
+		else if(green.getA().equals(a.getAszteroida()))
+			green.setLabelsRed(a.getAszteroida());
+	}
 
-		@Override
-		public void handle(ActionEvent event) {
-			if(event.getSource() == menu) {
-				primary.setScene(oldscene);
-			} else if(event.getSource() == mentesView) {
-				game.ser(game.GetOv(), "jatek.txt");
-			}
+	@Override
+	public void handle(ActionEvent event) {
+		if(event.getSource() == menu) {
+			primary.setScene(oldscene);
+		} else if(event.getSource() == ment) {
+			game.ser(game.GetOv(), "jatek.txt");
 		}
+	}
 }

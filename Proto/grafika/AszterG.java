@@ -113,7 +113,7 @@ public class AszterG extends Pane{
        
 	   	//lenti értékek
 	   	if(a!=null)
-	   	setLabelsRed(a, a.getNevek());
+	   	setLabelsRed(a);
 	   	
 	   	base.getChildren().addAll(rootR);	   	
 		return base;
@@ -127,7 +127,7 @@ public class AszterG extends Pane{
 	
 	
 	
-	public void setLabelsRed(Aszteroida a, List<String> nevek) {
+	public void setLabelsRed(Aszteroida a) {
 		if(a != null) {
 			rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
 //			String kp = "" + a.getKopenyVastagsag();
@@ -168,7 +168,7 @@ public class AszterG extends Pane{
 			}
 			
 			
-		   	for(String nev: nevek) {
+		   	for(String nev: a.getNevek()) {
 		   		rb1_b.getItems().add(nev);
 		   	}
 		   	rb2_b.setText(String.valueOf(robot));
@@ -176,5 +176,9 @@ public class AszterG extends Pane{
 		   	rb4_b.setText(String.valueOf(kapu));
 		}
 	}	
+	
+	public Aszteroida getA() {
+		return a;
+	}
 }
 
