@@ -22,6 +22,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import proto.Main;
 
 public class Fomenu implements EventHandler<ActionEvent> {
 	/**

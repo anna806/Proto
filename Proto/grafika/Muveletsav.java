@@ -193,7 +193,8 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(true);
 		}
-		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
+//		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
+		notify();
 	}
 	
 	void setLabels(Telepes t) {

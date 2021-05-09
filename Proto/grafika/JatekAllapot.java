@@ -44,6 +44,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		}
 		 
 		Main.game.GetOv().setAktual(t);
+		Main.game.Kor();
 		
 	}
 	//jatekteret aszammal
@@ -59,9 +60,9 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		jatekterBox.getChildren().addAll(p);
 		
 		menusavBox.setMaxSize(280, 650);
-		menusavBox.setMaxSize(450, 300);
+//		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(810, 70);
-		p.setMinSize(620, 650);
+		p.setMinSize(620, 600);
 		
 		BorderPane borderPane = new BorderPane();
 	    borderPane.setCenter(jatekterBox);

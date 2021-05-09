@@ -108,6 +108,11 @@ public class Jatek {
 //			}
 //		}
 		
+		while(i < jatekter.GetTelepesekSize()) {
+			jatekter.getAktual().Lep();
+			jatekter.aktualKesz();
+		}
+		
 		i=0;
 		while (i < jatekter.GetRobotokSize()) {
 			jatekter.GetRobot(i).Lep();

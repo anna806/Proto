@@ -52,7 +52,8 @@ public class Aszteroida extends Szomszed{
 	 */
 	public void setNapkozel(boolean b) {
 		napkozel=b;
-		belsoAnyag.setExp(belsoAnyag.getExp() + 1);
+		if(belsoAnyag != null)
+			belsoAnyag.setExp(belsoAnyag.getExp() + 1);
 	}
 	
 	
