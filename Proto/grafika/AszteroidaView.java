@@ -20,8 +20,9 @@ public class AszteroidaView extends SzomszedView {
 	private boolean aktualis;
 	private boolean valasztott; 
 	private List<KapuView> kapunezet;
-	public List<Line> vonalak;
+	public List<Line> vonalak= new ArrayList<Line>();
 	public List<SzomszedView> szomszedok;
+	public Jatekter jt;
 	
 	Pane pane;
 	
@@ -65,6 +66,7 @@ public class AszteroidaView extends SzomszedView {
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
 			if(Main.game.GetOv().GetKapu(i).getAszter().equals(data)) {
 				kapulista.add(Main.game.GetOv().GetKapu(i));
+				
 			}
 		}
 		if(kapulista.size()>0) {
@@ -80,7 +82,7 @@ public class AszteroidaView extends SzomszedView {
 	}
 	
 	public void SzomszedMutat(AszteroidaView ref) {
-		vonalak= new ArrayList<Line>();
+		
 		if(kor.getCenterX()<ref.kor.getCenterX()) {
 			Line line = new Line();
 			line.setStartX(kor.getCenterX()+50);
@@ -106,7 +108,10 @@ public class AszteroidaView extends SzomszedView {
 			kor.setStroke(Color.RED);
 			aktualis=akt;
 			for(SzomszedView szv : szomszedok) {
+				System.out.println("setaktual");
+				
 				szv.SzomszedMutat(this);
+				
 				
 			}
 		}
