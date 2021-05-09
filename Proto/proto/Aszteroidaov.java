@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 public class Aszteroidaov implements Serializable{
 	/**
 	 * szerializ·È·st segÌtı ID
@@ -49,6 +52,9 @@ public class Aszteroidaov implements Serializable{
 		Random rand = new Random();
 		int n= rand.nextInt(aszteroidak.size());
 		(aszteroidak.get(n)).StartNapvihar();
+		Alert a = new Alert(AlertType.INFORMATION);
+		a.setContentText("A napvihar " +n+"db aszteroid·t Èrintett!");
+		a.show();
 	}
 	
 	/**

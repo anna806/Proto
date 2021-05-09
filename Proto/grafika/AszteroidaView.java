@@ -35,7 +35,7 @@ public class AszteroidaView extends SzomszedView {
 		kor= new Circle();
 		kor.setCenterX(x);
 		kor.setCenterY(y);
-		kor.setRadius(50.0f);
+		kor.setRadius(30.0f);
 		kor.setFill(Color.CORNFLOWERBLUE);
 		/*if (data.getKopenyVastagsag()==0) {
 			anyag=new NyersanyagView(data.getBelsoAnyag(), x, y);
