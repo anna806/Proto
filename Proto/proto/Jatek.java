@@ -118,7 +118,6 @@ public class Jatek {
 			szamlalo+=1;
 		}
 		
-		boolean done = false;
 //		while(!done) {
 //			int k = jatekter.GetTelepes(0).getKor();
 //			for(int j = 0; j < jatekter.GetTelepesekSize(); j++) {

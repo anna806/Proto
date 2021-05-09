@@ -190,7 +190,7 @@ public class Telepes extends Entitas {
 			kapuk.get(i).Robban();
 		}
 		nyersanyagok.removeAll(nyersanyagok);
-		//aszteroida.Ledob(this);
+		aszteroida.Ledob(this);
 		Main.game.GetOv().MinuszTelepes(this);
 	}
 	

@@ -38,8 +38,10 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		for(int i = 0; i<nev.size(); i++) {
 			t = new Telepes();
 			t.SetNev(nev.get(i));
+			System.out.println(nev + " " + t.getNev());
 			int s = Main.game.GetOv().getAszteroidak().size();
 			t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
+			t.getAszteroida().Befogad(t);
 			Main.game.GetOv().addTelepes(t);
 			
 		}
@@ -65,11 +67,14 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		menusavBox.setMaxSize(280, 650);
 //		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(810, 70);
-		p.setMinSize(620, 600);
-		AszteroidaView akt= jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida());
-		akt.setAktual(true);
-		for(SzomszedView szv : akt.szomszedok) {
-			szv.SzomszedMutat(akt);
+//		AszteroidaView akt= jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida());
+//		akt.setAktual(true);
+//		for(SzomszedView szv : akt.szomszedok) {
+//			szv.SzomszedMutat(akt);
+//		}
+		jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()).setAktual(true);
+		for(SzomszedView szv : jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()).szomszedok) {
+			szv.SzomszedMutat(jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()));
 		}
 		p.setMinSize(620, 650);
 		
