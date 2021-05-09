@@ -112,14 +112,17 @@ public class AszteroidaView extends SzomszedView {
 			aktualis=akt;
 			for(SzomszedView szv : szomszedok) {
 				System.out.println("setaktual");
-				
+				szv.getVonalak().clear();
 				szv.SzomszedMutat(this);
 			}
 		}
 		else { 
 			kor.setStroke(Color.TRANSPARENT);
 			aktualis=akt;
-			
+			for(SzomszedView szv : szomszedok) {
+				for(int i = 0; i < szv.getVonalak().size(); i++)
+					pane.getChildren().remove(szv.getVonalak().get(i));
+			}
 		}
 		jt.Update(this, akt);
 	}

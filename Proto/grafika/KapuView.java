@@ -1,6 +1,9 @@
 package grafika;
+import java.util.List;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import proto.*;
 
@@ -84,5 +87,11 @@ public class KapuView extends SzomszedView{
 	 */
 	public Teleportkapu getKapu() {
 		return kapu;
+	}
+
+	@Override
+	public List<Line> getVonalak() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

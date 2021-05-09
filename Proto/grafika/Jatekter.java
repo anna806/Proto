@@ -133,7 +133,7 @@ public class Jatekter extends Pane{
 		if(akt) {
 				for (Line l : av.vonalak){
 					l.setFill(Color.RED);
-					p.getChildren().add(l);
+//					p.getChildren().add(l);
 				}
 		}
 	}
