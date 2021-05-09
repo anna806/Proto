@@ -281,7 +281,7 @@ public class Beallitas {
 //		bp.setStyle("-fx-background-color: MIDNIGHTBLUE");
 		bp.setBackground(new Background(myBI));
 	    
-		scene = new Scene(bp, 800, 600);
+		scene = new Scene(bp, 900, 700);
 		s.setScene(scene);
 		s.show();
 	}

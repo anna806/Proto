@@ -84,6 +84,8 @@ public class AszterG extends Pane{
 	   	rb3_b = new Label("");
 	   	rb4_a = new Label("Kapu");
 	   	rb4_b = new Label("");
+	   	
+	   	rb1_b.setMaxSize(60, 60);
 	 
 	   	//fenti címek
 	   	GridPane.setHalignment(rt1_a, HPos.LEFT);

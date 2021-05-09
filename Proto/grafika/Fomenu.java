@@ -102,12 +102,12 @@ public class Fomenu implements EventHandler<ActionEvent> {
 		String imagePath = "file:\\" + parentPath + "\\images\\hatter.png";
 		
 		Image image = new Image(imagePath);
-		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 800, 600, false, true),
+		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 900, 700, false, true),
 		        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
 		          BackgroundSize.DEFAULT);
 		root.setBackground(new Background(myBI));
 		
-		scene = new Scene(root, 800, 600);
+		scene = new Scene(root, 900, 700);
 		s.setTitle("Aszteroidabanyaszat");
 		s.setScene(scene);
 		s.show();

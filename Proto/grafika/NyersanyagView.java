@@ -44,7 +44,7 @@ public class NyersanyagView {
 		kor=new Circle();
 		kor.setCenterX(x);
 		kor.setCenterY(y);
-		kor.setRadius(20.0f);
+		kor.setRadius(15.0f);
 		
 		
 	}

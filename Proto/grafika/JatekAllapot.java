@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import proto.Jatek;
 import proto.Main;
@@ -57,15 +58,17 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		p = jatekter.felepit(Main.game, oldscene, primary, menusav);
 		jatekterBox.getChildren().addAll(p);
 		
-		menusavBox.setMaxSize(250, 300);
+		menusavBox.setMaxSize(280, 650);
 		muveletsavBox.setMinSize(810, 70);
+		p.setMinSize(620, 650);
 		
 		BorderPane borderPane = new BorderPane();
 	    borderPane.setCenter(jatekterBox);
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
-	    Scene scene = new Scene(borderPane, 800, 600); //méret
+	    Scene scene = new Scene(borderPane, 900, 700); //méret
+	    scene.setFill(Color.MIDNIGHTBLUE);
 	    primary.setScene(scene);
 	    primary.show();
 	}
