@@ -45,6 +45,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		}
 		 
 		Main.game.GetOv().setAktual(t);
+		Main.game.Kor();
 		
 
 			
@@ -57,13 +58,14 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		Pane p = new Pane();
 		HBox jatekterBox = new HBox();
 		menusavBox = menusav.felepit( Main.game, oldscene, primary, jatekter);
-		muveletsavBox = muveletsav.felepit(Main.game.GetOv(), jatekter, menusav); 
+		muveletsavBox = muveletsav.felepit(Main.game.GetOv(), jatekter, menusav, this); 
 		p = jatekter.felepit(Main.game, oldscene, primary, menusav);
 		jatekterBox.getChildren().addAll(p);
 		
 		menusavBox.setMaxSize(280, 650);
-		menusavBox.setMaxSize(450, 300);
+//		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(810, 70);
+		p.setMinSize(620, 600);
 		AszteroidaView akt= jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida());
 		akt.setAktual(true);
 		for(SzomszedView szv : akt.szomszedok) {
@@ -83,5 +85,12 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	}
 	public void handle(ActionEvent event) {
 		
+	}
+	
+	void ujJatekosJon() {
+		Main.game.Kor();
+		AszteroidaView red = jatekter.getAView(Main.game.GetOv().getAktual().getAszteroida());
+		menusav.Update(red, false);
+		System.out.println("Uj jon");
 	}
 }

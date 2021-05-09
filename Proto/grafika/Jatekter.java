@@ -145,5 +145,14 @@ public class Jatekter extends Pane{
 		}
 		return null;
 	}
+
+	public AszteroidaView getAView(Aszteroida aszteroida) {
+		for(AszteroidaView av: aszteroidak) {
+			if(av.getAszteroida().equals(aszteroida)) {
+				return av;
+			}
+		}
+		return null;
+	}
 }
 	

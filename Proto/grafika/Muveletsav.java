@@ -50,9 +50,10 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	Jatekter jtk;
 	Menusav m;
 	Aszteroida aktualis;
-
+	JatekAllapot jatek;
 	
-	public HBox felepit(Aszteroidaov ov, Jatekter j, Menusav menu) {
+	public HBox felepit(Aszteroidaov ov, Jatekter j, Menusav menu, JatekAllapot ja) {
+		jatek = ja;
 		jatekter = ov;
 		jtk = j;
 		m=menu;
@@ -193,7 +194,9 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(true);
 		}
+//		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
 		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
+		jatek.ujJatekosJon();
 	}
 	
 	void setLabels(Telepes t) {

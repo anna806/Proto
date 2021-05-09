@@ -261,7 +261,7 @@ public class Beallitas {
 		String imagePath = "file:\\" + parentPath + "\\images\\hatter.png";
 		
 		Image image = new Image(imagePath);
-		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 800, 600, false, true),
+		BackgroundImage myBI= new BackgroundImage(new Image(imagePath, 900, 700, false, true),
 		        BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
 		          BackgroundSize.DEFAULT);
 		panes.setStyle("-fx-background-color: GOLDENROD");

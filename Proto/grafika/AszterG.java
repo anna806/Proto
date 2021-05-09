@@ -179,8 +179,9 @@ public class AszterG extends Pane{
 				}
 			}			
 			
+			rb1_b.getItems().clear();
 		   	for(String nev: a.getNevek()) {
-		   		rb1_b.getItems().clear();
+		   		System.out.println(nev);
 		   		rb1_b.getItems().add(nev);
 		   	}
 		   	rb2_b.setText("hahooo");//String.valueOf(robot));
