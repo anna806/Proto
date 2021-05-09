@@ -9,7 +9,9 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Jatek;
@@ -57,7 +59,7 @@ public class Jatekter extends Pane{
 			}
 			xek.add(x);
 			yok.add(y);
-			AszteroidaView nezet= new AszteroidaView(b, x, y, p);
+			AszteroidaView nezet= new AszteroidaView(b, x, y, p, this);
 			aszteroidak.add(nezet);
 			nezet.felepit();
 			nezet.kor.setOnMousePressed(KorLenyomasEventHandler);
@@ -124,6 +126,15 @@ public class Jatekter extends Pane{
 						av.addSzomszed(kv);
 				}
 			}
+		}
+	}
+	
+	public void Update(AszteroidaView av, boolean akt) {
+		if(akt) {
+				for (Line l : av.vonalak){
+					l.setFill(Color.RED);
+					p.getChildren().add(l);
+				}
 		}
 	}
 	
