@@ -82,25 +82,22 @@ public class AszteroidaView extends SzomszedView {
 	}
 	
 	public void SzomszedMutat(AszteroidaView ref) {
-		
+		Line line = new Line();
 		if(kor.getCenterX()<ref.kor.getCenterX()) {
-			Line line = new Line();
+			
 			line.setStartX(kor.getCenterX()+50);
 			line.setStartY(kor.getCenterY());
 			line.setEndX(ref.kor.getCenterX()-50);
 			line.setEndY(ref.kor.getCenterY());
-			vonalak.add(line);
 		}
 		
 		else {
-			Line line = new Line();
 			line.setStartX(kor.getCenterX()-50);
 			line.setStartY(kor.getCenterY());
 			line.setEndX(ref.kor.getCenterX()+50);
 			line.setEndY(ref.kor.getCenterY());
-			vonalak.add(line);
 		}
-			
+		vonalak.add(line);
 	}
 	
 	public void setAktual(boolean akt) {
