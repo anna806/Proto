@@ -74,7 +74,10 @@ public class Telepes extends Entitas {
      *  Visszatölti a telepes inventoryjában található utolsó anyagot az aszteroidába
      */
 	public void Visszatolt() {
-		aszteroida.Raktaroz(nyersanyagok.get(nyersanyagok.size() - 1), this);
+		int size = nyersanyagok.size();
+		if(size != 0) {
+			aszteroida.Raktaroz(nyersanyagok.get(size - 1), this);
+		}
 	}
 	
 	/**
