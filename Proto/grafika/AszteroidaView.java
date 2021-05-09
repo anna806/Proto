@@ -62,6 +62,9 @@ public class AszteroidaView extends SzomszedView {
 			anyag.ures();
 		}
 		szomszedok=new ArrayList<SzomszedView>();
+		for(int i = 0; i < data.SzomszedokSize(); i++) {
+		}
+		
 		kapunezet = new ArrayList<KapuView>();
 		List<Teleportkapu> kapulista=new ArrayList<Teleportkapu>();
 		for(int i=0; i<Main.game.GetOv().GetKapukSize(); i++) {
@@ -116,9 +119,7 @@ public class AszteroidaView extends SzomszedView {
 		else { 
 			kor.setStroke(Color.TRANSPARENT);
 			aktualis=akt;
-			for(int i = 0; i < vonalak.size(); i++)
-				pane.getChildren().remove(vonalak.get(i));
-			vonalak.clear();
+			
 		}
 		jt.Update(this, akt);
 	}
@@ -166,6 +167,10 @@ public class AszteroidaView extends SzomszedView {
 	
 	public Aszteroida getAszteroida() {
 		return data;
+	}
+	
+	public List<Line> getVonalak(){
+		return vonalak;
 	}
 }
 	
