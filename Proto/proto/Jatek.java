@@ -15,7 +15,8 @@ public class Jatek {
 	/**
 	 * A körök számát nyilvántartó számláló
 	 */
-	private int szamlalo=0;									
+	private int szamlalo=0;					
+	private int telepesSzamlalo = 0;
 	/**
 	 * Az aszteroidaöv, amiben a játék zajlik.
 	 */
@@ -87,18 +88,36 @@ public class Jatek {
 	 * a számláló körönként eggyel nõ
 	 */
 	public void Kor() {
-	 
-		jatekter.DoNapkozel();
-		
-		if(szamlalo>=5){
-			jatekter.DoNapvihar();
+		if(telepesSzamlalo < jatekter.GetTelepesekSize()) {
+			//jatekter.getAktual().Lep();
+			jatekter.setAktualByIndex(telepesSzamlalo);
+			telepesSzamlalo++;
 		}
+		if(telepesSzamlalo == jatekter.GetTelepesekSize()) {
+			telepesSzamlalo = 0;
+			jatekter.DoNapkozel();
 			
-		int i =0;
-//		while(i < jatekter.GetTelepesekSize()) {
-//			jatekter.getAktual().Lep();
-//			i++;
-//		}
+			if(szamlalo>=5){
+				jatekter.DoNapvihar();
+			}
+			int i;
+			i=0;
+			while (i < jatekter.GetRobotokSize()) {
+				jatekter.GetRobot(i).Lep();
+				i++;
+			}
+			i=0;
+			while (i < jatekter.GetUfokSize()) {
+				jatekter.GetUfo(i).Lep();
+				i++;
+			}
+			i=0;
+			while (i < jatekter.GetKapukSize()){
+				jatekter.GetKapu(i).RandomMozgas();
+			}
+			szamlalo+=1;
+		}
+		
 		boolean done = false;
 //		while(!done) {
 //			int k = jatekter.GetTelepes(0).getKor();
@@ -108,21 +127,6 @@ public class Jatek {
 //			}
 //		}
 		
-		i=0;
-		while (i < jatekter.GetRobotokSize()) {
-			jatekter.GetRobot(i).Lep();
-			i++;
-		}
-		i=0;
-		while (i < jatekter.GetUfokSize()) {
-			jatekter.GetUfo(i).Lep();
-			i++;
-		}
-		i=0;
-		while (i < jatekter.GetKapukSize()){
-			jatekter.GetKapu(i).RandomMozgas();
-		}
-		szamlalo+=1;
 	}
 	
 	/**
