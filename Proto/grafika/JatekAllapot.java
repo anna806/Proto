@@ -53,7 +53,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		Pane p = new Pane();
 		HBox jatekterBox = new HBox();
 		menusavBox = menusav.felepit( Main.game, oldscene, primary, jatekter);
-		muveletsavBox = muveletsav.felepit(Main.game.GetOv(), jatekter); 
+		muveletsavBox = muveletsav.felepit(Main.game.GetOv(), jatekter, menusav); 
 		p = jatekter.felepit(Main.game, oldscene, primary, menusav);
 		jatekterBox.getChildren().addAll(p);
 		

@@ -63,7 +63,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	public void felepit(Stage stage) {
 		s = stage;
 		VBox root = new VBox(10);
-		
+		aszam.add(10);
 		indit  = new Button("Indítás");
 		indit.setStyle("-fx-background-color: DARKGOLDENROD; -fx-font-size: 25");
 		indit.setTextFill(Color.WHITE);
@@ -126,7 +126,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
-			aszam.add(5);
+			
 			nevek.add("Valaki");
 			JatekAllapot jtk = new JatekAllapot(aszam, nevek);
 			jtk.felepit(s, scene, aszam, nevek);

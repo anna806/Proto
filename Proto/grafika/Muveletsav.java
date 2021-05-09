@@ -15,7 +15,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
+import proto.Aszteroida;
 import proto.Aszteroidaov;
+import proto.Main;
 import proto.Nyersanyag;
 import proto.Szen;
 import proto.Telepes;
@@ -46,11 +48,15 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	Label k;
 	Aszteroidaov jatekter;
 	Jatekter jtk;
+	Menusav m;
+	Aszteroida aktualis;
 
 	
-	public HBox felepit(Aszteroidaov ov, Jatekter j) {
+	public HBox felepit(Aszteroidaov ov, Jatekter j, Menusav menu) {
 		jatekter = ov;
 		jtk = j;
+		m=menu;
+		aktualis= Main.game.GetOv().getAktual().getAszteroida();
 		
 		HBox root = new HBox(8);
 		
@@ -156,6 +162,8 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().Furas();
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
+			AszteroidaView aktview=jtk.getAszteroidaView(aktualis);
+			m.Update(aktview, false);
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
