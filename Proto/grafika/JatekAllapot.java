@@ -41,11 +41,14 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 			int s = Main.game.GetOv().getAszteroidak().size();
 			t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
 			Main.game.GetOv().addTelepes(t);
+			
 		}
 		 
 		Main.game.GetOv().setAktual(t);
 		Main.game.Kor();
 		
+
+			
 	}
 	//jatekteret aszammal
 	void felepit(Stage primary, Scene oldscene, List<Integer> aszam, List<String> nevek) {
@@ -63,6 +66,12 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 //		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(810, 70);
 		p.setMinSize(620, 600);
+		AszteroidaView akt= jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida());
+		akt.setAktual(true);
+		for(SzomszedView szv : akt.szomszedok) {
+			szv.SzomszedMutat(akt);
+		}
+		p.setMinSize(620, 650);
 		
 		BorderPane borderPane = new BorderPane();
 	    borderPane.setCenter(jatekterBox);

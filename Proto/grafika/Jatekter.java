@@ -75,7 +75,7 @@ public class Jatekter extends Pane{
 			}
 		}
 		
-		
+		szomszedgeneral();
 		p.setStyle("-fx-background-color: MIDNIGHTBLUE");
 		return p;
 		
