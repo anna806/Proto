@@ -131,6 +131,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 			nevek.add("Valaki");
 			JatekAllapot jtk = new JatekAllapot(aszam, nevek);
 			jtk.felepit(s, scene, aszam, nevek);
+			System.out.println(nevek.get(0));
 		}
 		else if(event.getSource() == folyt) {
 			JatekAllapot jtk = new JatekAllapot(aszam, nevek);

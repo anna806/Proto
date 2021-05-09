@@ -26,11 +26,12 @@ public class AszteroidaView extends SzomszedView {
 	
 	Pane pane;
 	
-	public AszteroidaView(Aszteroida a, int kx, int ky, Pane p) {
+	public AszteroidaView(Aszteroida a, int kx, int ky, Pane p, Jatekter j) {
 		pane = p; 
 		data=a;
 		x=kx;
 		y=ky;
+		jt=j;
 		
 		kor= new Circle();
 		kor.setCenterX(x);
@@ -108,8 +109,6 @@ public class AszteroidaView extends SzomszedView {
 				System.out.println("setaktual");
 				
 				szv.SzomszedMutat(this);
-				
-				
 			}
 		}
 		else { 
@@ -117,6 +116,7 @@ public class AszteroidaView extends SzomszedView {
 			aktualis=akt;
 			vonalak.clear();
 		}
+		jt.Update(this, akt);
 	}
 	
 	public void setValaszt(boolean val) {
@@ -141,18 +141,8 @@ public class AszteroidaView extends SzomszedView {
 				nezet.feltesz(pane);
 			}
 		}
-		if(aktualis) {
-			for (Line l : vonalak){
-				l.setFill(Color.RED);
-				pane.getChildren().add(l);
-			}
-		}
-		if(valasztott) {
-			for (Line l : vonalak){
-				l.setFill(Color.GREEN);
-				pane.getChildren().add(l);
-			}
-		}
+		
+		
 //		Scene scene= new Scene(group, 110, 110);
 //		stage.setScene(scene);
 //		stage.show();

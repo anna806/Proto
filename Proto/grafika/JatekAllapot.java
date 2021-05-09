@@ -94,6 +94,8 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	
 	void ujJatekosJon() {
 		Main.game.Kor();
+		AszteroidaView red = jatekter.getAView(Main.game.GetOv().getAktual().getAszteroida());
+		menusav.Update(red, false);
 		System.out.println("Uj jon");
 	}
 }
