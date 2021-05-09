@@ -57,7 +57,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		p = jatekter.felepit(Main.game, oldscene, primary, menusav);
 		jatekterBox.getChildren().addAll(p);
 		
-		menusavBox.setMaxSize(250, 300);
+		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(810, 70);
 		
 		BorderPane borderPane = new BorderPane();

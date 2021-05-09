@@ -73,7 +73,7 @@ public class AszterG extends Pane{
 	   	rt1_b = new Label("");
 	   	rt2_a = new Label("Napközel");
 	   	rt2_b = new Label("");
-	   	rt3_a = new Label("Napvihar");
+	   	rt3_a = new Label("");
 	   	rt3_b = new Label("");
 	   	
 	   	rb1_a = new Label("Telepes");
@@ -175,10 +175,10 @@ public class AszterG extends Pane{
 				if(a.getSzomszedObj(i).Kompatibilis(szomszedok.get(0))) {
 					kapu++;
 				}
-			}
-			
+			}			
 			
 		   	for(String nev: a.getNevek()) {
+		   		rb1_b.getItems().clear();
 		   		rb1_b.getItems().add(nev);
 		   	}
 		   	rb2_b.setText("hahooo");//String.valueOf(robot));
