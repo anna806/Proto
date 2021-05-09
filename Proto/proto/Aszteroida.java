@@ -89,7 +89,7 @@ public class Aszteroida extends Szomszed{
 	 * lévõ kapuk meg tudjanak kergülni
 	 */
 	public void Napvihar() {
-		if(belsoAnyag != null) {
+		if(belsoAnyag != null&&entitasok.size()!=0) {
 			for(Entitas e: entitasok) {
 				e.Halal();
 			}	
