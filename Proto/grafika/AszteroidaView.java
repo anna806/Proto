@@ -86,19 +86,21 @@ public class AszteroidaView extends SzomszedView {
 		Line line = new Line();
 		if(kor.getCenterX()<ref.kor.getCenterX()) {
 			
-			line.setStartX(kor.getCenterX()+50);
+			line.setStartX(kor.getCenterX()+30);
 			line.setStartY(kor.getCenterY());
-			line.setEndX(ref.kor.getCenterX()-50);
+			line.setEndX(ref.kor.getCenterX()-30);
 			line.setEndY(ref.kor.getCenterY());
 		}
 		
 		else {
-			line.setStartX(kor.getCenterX()-50);
+			line.setStartX(kor.getCenterX()-30);
 			line.setStartY(kor.getCenterY());
-			line.setEndX(ref.kor.getCenterX()+50);
+			line.setEndX(ref.kor.getCenterX()+30);
 			line.setEndY(ref.kor.getCenterY());
 		}
+		line.setStroke(Color.RED);
 		vonalak.add(line);
+		pane.getChildren().add(line);
 	}
 	
 	public void setAktual(boolean akt) {
@@ -114,6 +116,8 @@ public class AszteroidaView extends SzomszedView {
 		else { 
 			kor.setStroke(Color.TRANSPARENT);
 			aktualis=akt;
+			for(int i = 0; i < vonalak.size(); i++)
+				pane.getChildren().remove(vonalak.get(i));
 			vonalak.clear();
 		}
 		jt.Update(this, akt);
@@ -156,7 +160,6 @@ public class AszteroidaView extends SzomszedView {
 				anyag.feltesz(pane);
 		}
 		else if(data.getBelsoAnyag() == null) {
-			System.out.println(anyag.toString());
 			anyag.ures();
 		}
 	}
