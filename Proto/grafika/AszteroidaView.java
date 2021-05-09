@@ -27,7 +27,7 @@ public class AszteroidaView extends SzomszedView {
 	Pane pane;
 	
 	public AszteroidaView(Aszteroida a, int kx, int ky, Pane p) {
-		pane = p;
+		pane = p; 
 		data=a;
 		x=kx;
 		y=ky;
