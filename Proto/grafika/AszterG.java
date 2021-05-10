@@ -169,7 +169,7 @@ public class AszterG extends Pane{
 		   		rb1_b.getItems().add(nev);
 		   	}
 		   	
-		   	rb2_b.setText("hahooo");//String.valueOf(robot));
+		   	rb2_b.setText(String.valueOf(robot));
 		   	rb3_b.setText(String.valueOf(ufo));
 		   	rb4_b.setText(String.valueOf(kapu));
 		}
