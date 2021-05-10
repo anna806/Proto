@@ -130,10 +130,6 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
 			JatekAllapot jtk;
-//			if(nevek == null) {
-//				Main.game.load("map.txt");
-//				jtk = new JatekAllapot(null, null);
-//			}
 			if(!beallitasok) {
 				Main.game.load("map.txt");
 				jtk = new JatekAllapot(null, null);

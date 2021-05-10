@@ -1,31 +1,19 @@
 package grafika;
 
 import java.io.File;
-import java.util.List;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import proto.Aszteroida;
-import proto.Aszteroidaov;
 import proto.Jatek;
 import proto.Main;
 
@@ -65,7 +53,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
 		String imagePath = "file:\\" + parentPath + "\\images\\flop.png";
-		mentes = new Image(imagePath); //kell könyvtár----------------------------------
+		mentes = new Image(imagePath); 
 		mentesView = new ImageView();
 		mentesView.setImage(mentes);
 		ment = new Button();
@@ -86,7 +74,6 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
         flowpane.setStyle("-fx-background-color: DARKGOLDENROD");
 		
 		VBox base = new VBox();
-//		base.setAlignment(Pos.BASELINE_CENTER);
 		
 		aktualis = Main.game.GetOv().getAktual().getAszteroida();
 		if(jatekter.getKivalasztott() != null)

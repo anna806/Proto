@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 
@@ -34,7 +32,7 @@ public class Jatek {
 		}
 		else
 			db = aszam;
-		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
+		for(int i=0; i<db; i++) {							
 			Aszteroida uj= new Aszteroida();
 			Random mag= new Random();
 			if(mag.nextInt()%4==0) {
@@ -117,14 +115,6 @@ public class Jatek {
 			}
 			szamlalo+=1;
 		}
-		
-//		while(!done) {
-//			int k = jatekter.GetTelepes(0).getKor();
-//			for(int j = 0; j < jatekter.GetTelepesekSize(); j++) {
-//				if(j != k)
-//					
-//			}
-//		}
 	}
 	
 	/**
@@ -134,11 +124,9 @@ public class Jatek {
 	 */
 	public String Vege(boolean a) {
 		if (a==true) {
-//			System.out.println("Gyõzelem! Gratulálunk, megnyerték a játékot!");
 			return "Gyõzelem! Gratulálunk, megnyerték a játékot!";
 		}
 		else {
-//			System.out.println("A játék véget ért, sajnos vesztettek");
 			return "A játék véget ért, sajnos vesztettek";
 		}
 	}

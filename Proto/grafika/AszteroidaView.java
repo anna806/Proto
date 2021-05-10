@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.shape.Line;
-import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -38,11 +37,6 @@ public class AszteroidaView extends SzomszedView {
 		kor.setCenterY(y);
 		kor.setRadius(30.0f);
 		kor.setFill(Color.CORNFLOWERBLUE);
-		/*if (data.getKopenyVastagsag()==0) {
-			anyag=new NyersanyagView(data.getBelsoAnyag(), x, y);
-			anyag.kitolt();
-			
-		}*/
 		if(data.getBelsoAnyag() != null) {
 			if(data.getBelsoAnyag().Kompatibilis(new Uran())) {
 				anyag = new UranView(data.getBelsoAnyag(), x, y);
@@ -138,7 +132,6 @@ public class AszteroidaView extends SzomszedView {
 	}
 	
 	public void felepit() {
-//		Group group= new Group();
 		pane.getChildren().add(kor);
 		if(anyag!=null && data.getKopenyVastagsag() == 0) {
 			anyag.feltesz(pane);
@@ -148,11 +141,6 @@ public class AszteroidaView extends SzomszedView {
 				nezet.feltesz(pane);
 			}
 		}
-		
-		
-//		Scene scene= new Scene(group, 110, 110);
-//		stage.setScene(scene);
-//		stage.show();
 	}
 	
 	public void frissit(boolean visszatolt) {

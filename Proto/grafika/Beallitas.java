@@ -278,7 +278,6 @@ public class Beallitas {
 		
 		BorderPane bp = new BorderPane();
 		bp.setCenter(p);
-//		bp.setStyle("-fx-background-color: MIDNIGHTBLUE");
 		bp.setBackground(new Background(myBI));
 	    
 		scene = new Scene(bp, 1100, 700);
