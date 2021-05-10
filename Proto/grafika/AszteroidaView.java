@@ -112,7 +112,6 @@ public class AszteroidaView extends SzomszedView {
 			aktualis=akt;
 			for(SzomszedView szv : szomszedok) {
 				System.out.println("setaktual");
-				szv.getVonalak().clear();
 				szv.SzomszedMutat(this);
 			}
 		}
@@ -122,6 +121,7 @@ public class AszteroidaView extends SzomszedView {
 			for(SzomszedView szv : szomszedok) {
 				for(int i = 0; i < szv.getVonalak().size(); i++)
 					pane.getChildren().remove(szv.getVonalak().get(i));
+				szv.getVonalak().clear();
 			}
 		}
 		jt.Update(this, akt);

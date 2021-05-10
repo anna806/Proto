@@ -163,7 +163,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().Furas();
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
-			m.Update(jtk.getAszteroidaView(aktualis), false);
+//			m.Update(jtk.getAszteroidaView(aktualis), false);
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
@@ -172,8 +172,10 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
 		}
 		else if(event.getSource() == mozog) {
-			jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
-			jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
+			if(jatekter.getAktual().getAszteroida().getSzomszedok().contains(jtk.getKivalasztott().getAszteroida())){
+				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
+				jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
+			}
 		}
 		else if(event.getSource() == robotep) {
 			jatekter.getAktual().RobotEpit();	
@@ -199,6 +201,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		jatek.ujJatekosJon();
 		m.Update(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()), false);
 		jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(true);
+		setLabels(jatekter.getAktual());
 	}
 	
 	void setLabels(Telepes t) {
