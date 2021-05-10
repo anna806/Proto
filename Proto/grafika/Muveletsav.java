@@ -197,7 +197,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().KapuEpit();
 		}
 		else if(event.getSource() == bazisep) {
-			String s = jtk.getKivalasztott().getAszteroida().BazisEpit();
+			String s = Main.game.GetOv().getAktual().getAszteroida().BazisEpit();
 			Alert a = new Alert(AlertType.INFORMATION);
 			a.setContentText(s);
 			a.show();
