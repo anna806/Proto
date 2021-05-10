@@ -19,7 +19,6 @@ import javafx.scene.text.TextAlignment;
 import proto.Aszteroida;
 import proto.Aszteroidaov;
 import proto.Main;
-import proto.Nyersanyag;
 import proto.Szen;
 import proto.Telepes;
 import proto.Uran;
@@ -29,7 +28,9 @@ import proto.Vizjeg;
 
 public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	
-	Nyersanyag valasztott;
+	/**
+	 * 
+	 */
 	Button asas;
 	Button banyasz;
 	Button mozog;

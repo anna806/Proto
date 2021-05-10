@@ -92,11 +92,11 @@ public class KapuView extends SzomszedView{
 	@Override
 	public List<Line> getVonalak() {
 		Line l = new Line();
-//		l.setStartX(teglalap.getX());
-//		l.setStartY(teglalap.getX());
-//		l.setEndX(teglalap.getX());
-//		l.setEndY(teglalap.getX());
-//		l.setStroke(Color.TRANSPARENT);
+		l.setStartX(teglalap.getX());
+		l.setStartY(teglalap.getX());
+		l.setEndX(teglalap.getX());
+		l.setEndY(teglalap.getX());
+		l.setStroke(Color.TRANSPARENT);
 		lines.add(l);
 		return lines;
 	}
