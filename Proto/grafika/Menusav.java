@@ -118,7 +118,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		if(event.getSource() == menu) {
 			primary.setScene(oldscene);
 		} else if(event.getSource() == ment) {
-			game.ser(game.GetOv(), "jatek.txt");
+			game.ser(game.GetOv(), "map.txt");
 		}
 	}
 }

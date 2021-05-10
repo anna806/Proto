@@ -37,7 +37,7 @@ public class Jatek {
 		for(int i=0; i<db; i++) {							//létrehozza az aszteroidákat és beállítja a magot
 			Aszteroida uj= new Aszteroida();
 			Random mag= new Random();
-			if(mag.nextInt()%5==0) {
+			if(mag.nextInt()%4==0) {
 				Uran u= new Uran();
 				uj.setNyersanyag(u);
 			}
@@ -53,7 +53,7 @@ public class Jatek {
 				Vas v= new Vas();
 				uj.setNyersanyag(v);
 			}
-			if(mag.nextInt()%11==0) {
+			if(mag.nextInt()%50==0) {
 				uj.setNyersanyag(null);
 			}
 			int kop= 2+ rand.nextInt(3);
