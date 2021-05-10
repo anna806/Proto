@@ -69,7 +69,7 @@ public class AszteroidaView extends SzomszedView {
 		}
 		if(kapulista.size()>0) {
 			for(int i=0; i<kapulista.size(); i++) {
-			KapuView kv= new KapuView(kapulista.get(i), x+60, y);
+			KapuView kv= new KapuView(kapulista.get(i), x+40, y-30);
 			kapunezet.add(kv);
 			}
 		}

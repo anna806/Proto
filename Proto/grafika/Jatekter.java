@@ -68,9 +68,9 @@ public class Jatekter extends Pane{
 			for (AszteroidaView av : aszteroidak){
 
 				if(t.getAszter().equals(av.getAszteroida())) {
-					KapuView uj= new KapuView(t, av.kor.getCenterX()-70, av.kor.getCenterY()-50);
+					KapuView uj= new KapuView(t, av.kor.getCenterX()+40, av.kor.getCenterY()-30);
 					kapuk.add(uj);
-					g.getChildren().add(uj.teglalap);
+					p.getChildren().add(uj.teglalap);
 				}
 			}
 		}
