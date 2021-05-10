@@ -65,6 +65,20 @@ public class Jatek {
 				uj.Befogad(ufo);
 				jatekter.addUfo(ufo);
 			}
+			if(i%3==0&&i!=0) {
+			Teleportkapu tk=new Teleportkapu();
+			Teleportkapu tk2=new Teleportkapu();
+			tk.setAszter(uj);
+			
+			tk2.setAszter(jatekter.GetAszteroida(i-1));
+			tk.setParja(tk2);
+			tk2.setParja(tk);
+			jatekter.addKapu(tk2);
+			jatekter.addKapu(tk);
+			uj.KapuBefogad(tk);
+			jatekter.GetAszteroida(i-1).KapuBefogad(tk2);
+			}
+			
 			jatekter.addAszteroida(uj);
 		}
 		for (int j=0; j<db; j++) {
