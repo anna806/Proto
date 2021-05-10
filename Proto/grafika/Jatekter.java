@@ -20,15 +20,29 @@ import proto.Teleportkapu;
 
 public class Jatekter extends Pane{
 	
+	/**
+	 * Az aszteroidaöv összes aszteroidájának megjelenése
+	 * Az aszteroidaövben lévõ kapuk megjelenése
+	 * A kiválaszott (zöld keretes) aszteroida megjelenése
+	 * A játéklogika
+	 * A jobboldali, táblázatokat tároló menüsáv
+	 * A játéktér alapja, amire az elemeket tesszük
+	 */
 	private List<AszteroidaView> aszteroidak;
 	private List<KapuView> kapuk;
 	private AszteroidaView kivalasztott;
 	private Jatek game;
-	private Group g;
 	private Menusav m;
 	private Pane p;
 	
 	 
+	/**
+	 * @param _game: játéklogika
+	 * @param _oldscene: a korábbi megjelenés
+	 * @param _primary: a fõ bázisa a játéknak, amire az elemek és tárolók kerülnek
+	 * @param menu: a játék menüsávja (jobboldai táblázatos felület)
+	 * @return
+	 */
 	public Pane felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
 		m = menu;
 		game=_game;
@@ -80,6 +94,9 @@ public class Jatekter extends Pane{
 		return p;
 		
 	}
+	/**
+	 * Aszteroida kiválasztása az aszteroidaövbõl
+	 */
 	EventHandler<MouseEvent> KorLenyomasEventHandler = 
 	        new EventHandler<MouseEvent>() {
 	 
@@ -98,18 +115,33 @@ public class Jatekter extends Pane{
 	        }
 	};
 	
+	/**
+	 * Kiválasztott (zöld keretes) aszteroida kiadása
+	 * @return kiválaszott aszteroida megjelenése
+	 */
 	public AszteroidaView getKivalasztott() {
 		return kivalasztott;
 	}
 	
+	/**
+	 * 	Az aszteroidaövben lévõ aszteroidák listájának visszaadása
+	 * @return aszteroidák listája
+	 */
 	public List<AszteroidaView> getaszteroidak(){
 		return aszteroidak;
 	}
 	
+	/**
+	 * Az aszteroidaövben lévõ megépített kapuk listájának visszaadása
+	 * @return kapuk listája
+	 */
 	public List<KapuView> getKapuk(){
 		return kapuk;
 	}
 	
+	/**
+	 * Szomszédsági viszonyok beállítása minden AszteroidaView-ra
+	 */
 	public void szomszedgeneral() {
 		for (AszteroidaView av : aszteroidak) {
 			for(Szomszed sz : av.getAszteroida().getSzomszedok()) {
@@ -127,6 +159,11 @@ public class Jatekter extends Pane{
 		}
 	}
 	
+	/**
+	 * Szomszédságvonalak frissítése az aktuális játékos aszteroidájával 
+	 * @param av: aktuális aszteroida nézete
+	 * @param akt: igaz, ha az aktuális aszteroidára hívódik meg
+	 */
 	public void Update(AszteroidaView av, boolean akt) {
 		if(akt) {
 				for (Line l : av.vonalak){
@@ -135,6 +172,11 @@ public class Jatekter extends Pane{
 		}
 	}
 	
+	/**
+	 * Visszaadja a paraméterként megadott aszteroida nézetét
+	 * @param a: aszteroida, amelynek az AszteroidaViewját meg szeretnénk kapni
+	 * @return AszteroidaView
+	 */
 	public AszteroidaView getAszteroidaView(Aszteroida a) {
 		for(int i = 0; i < aszteroidak.size(); i++) {
 			if(aszteroidak.get(i).getAszteroida().equals(a))
