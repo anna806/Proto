@@ -29,32 +29,106 @@ import proto.Vizjeg;
 public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	
 	/**
-	 * 
+	 * Az ásás függvényt meghívó gomb
 	 */
 	Button asas;
+	/**
+	 * A bányászás függvényt meghívó gomb
+	 */
 	Button banyasz;
+	/**
+	 * A mozgás függvényt meghívó gomb
+	 */
 	Button mozog;
+	/**
+	 * A robotépítés függvényt meghívó gomb
+	 */
 	Button robotep;
+	/**
+	 * A kapuépítés függvényt meghívó gomb
+	 */
 	Button kapuep;
+	/**
+	 * A bázisépítés függvényt meghívó gomb
+	 */
 	Button bazisep;
+	/**
+	 * A visszatölt függvényt meghívó gomb
+	 */
 	Button visszatolt;
-	Circle ny1;		//vas
-	Circle ny2;		//uran
-	Circle ny3;		//vizjeg
-	Circle ny4;		//szen
+	/**
+	 * A vasat jelképezõ kör
+	 */
+	Circle ny1;	
+	/**
+	 * Az uránt jelképezõ kör
+	 */
+	Circle ny2;	
+	/**
+	 * A vízjeget jelképezõ kör
+	 */
+	Circle ny3;	
+	/**
+	 * A szenet jelképezõ kör
+	 */
+	Circle ny4;
+	/**
+	 * A kaput jelképezõ téglalap
+	 */
 	Rectangle kapu;
+	/**
+	 * Az aktuális játékos nevét kiíró label
+	 */
 	Label jatekos;
-	Label ny1sz;	//vas
-	Label ny2sz;	//uran
-	Label ny3sz;	//vizjeg
-	Label ny4sz;	//szen
+	/**
+	 * A vas nevét kiíró label
+	 */
+	Label ny1sz;
+	/**
+	 * Az urán nevét kiíró label
+	 */
+	Label ny2sz;
+	/**
+	 * A vízjég nevét kiíró label
+	 */
+	Label ny3sz;
+	/**
+	 * A szén nevét kiíró label
+	 */
+	Label ny4sz;
+	/**
+	 * A kapuk számát kiíró label
+	 */
 	Label k;
+	/**
+	 * Az aszteroidaöv, amiben a játék játszódik
+	 */
 	Aszteroidaov jatekter;
+	/**
+	 * A játéktér
+	 */
 	Jatekter jtk;
+	/**
+	 * A menüsáv
+	 */
 	Menusav m;
+	/**
+	 * Az aszteroida, aminaz aktuális telepes van
+	 */
 	Aszteroida aktualis;
+	/**
+	 * A játékállapot
+	 */
 	JatekAllapot jatek;
 	
+	/**
+	 * Felépíti a menüsáv grafikus kinézetét és visszaadja azt
+	 * @param ov : Az aszteroidaöv, amiben a játék játszódik
+	 * @param j : A játéktér
+	 * @param menu : A menüsáv
+	 * @param ja : A Játék állapot
+	 * @return menüsáv grafikus kinézete
+	 */
 	public HBox felepit(Aszteroidaov ov, Jatekter j, Menusav menu, JatekAllapot ja) {
 		jatek = ja;
 		jatekter = ov;
@@ -168,6 +242,9 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		return root;
 	}
 
+	/**
+	 * Ez a függvény kezeli a mûveletsávon található gombok lenyomását
+	 */
 	@Override
 	public void handle(ActionEvent event) {
 		if(event.getSource() == asas) {
@@ -215,6 +292,10 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		setLabels(jatekter.getAktual());
 	}
 	
+	/**
+	 * Beállítja az egyes nyersanyagokat jelképezõ labeleket és a hozzájuk tartozó mennyiségeket.
+	 * @param t : A telepes, akinek a tárolójából lekérdezik a nyersanyagok mennyiségét
+	 */
 	void setLabels(Telepes t) {
 		Uran u = new Uran();
 		Vas v = new Vas();
