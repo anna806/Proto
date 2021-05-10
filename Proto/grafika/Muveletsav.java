@@ -182,10 +182,13 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
 		}
 		else if(event.getSource() == mozog) {
-			if(jatekter.getAktual().getAszteroida().getSzomszedok().contains(jtk.getKivalasztott().getAszteroida())){
-				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
-				jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
+			if(jtk.getKivalasztott()!=null) {
+				if(jatekter.getAktual().getAszteroida().getSzomszedok().contains(jtk.getKivalasztott().getAszteroida())){
+					jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
+					jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
+				}
 			}
+			
 		}
 		else if(event.getSource() == robotep) {
 			jatekter.getAktual().RobotEpit();	

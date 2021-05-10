@@ -80,6 +80,7 @@ public class NyersanyagView {
 	 * @param group - a Group objektum ami a nyersanyagokat tárolja
 	 */
 	public void feltesz(Pane pane) {
+		pane.getChildren().remove(kor);
 		pane.getChildren().add(kor);
 	}
 	

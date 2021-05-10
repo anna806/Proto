@@ -165,12 +165,12 @@ public class AszteroidaView extends SzomszedView {
 			else
 				anyag.feltesz(pane);
 		}
-		else if(data.getBelsoAnyag() == null) {
-			anyag.ures();
-		}
-		else if(anyag.getData() == null && data.getKopenyVastagsag() == 0) {
+		else if(data.getBelsoAnyag() == null && data.getKopenyVastagsag() == 0 && anyag.getData() == null) {
 			anyag.ures();
 			anyag.feltesz(pane);
+		}
+		else if(data.getBelsoAnyag() == null) {
+			anyag.ures();
 		}
 	}
 	
