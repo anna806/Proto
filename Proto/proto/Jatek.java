@@ -41,19 +41,19 @@ public class Jatek {
 				Uran u= new Uran();
 				uj.setNyersanyag(u);
 			}
-			if(mag.nextInt()%5==1) {
+			if(mag.nextInt()%4==1) {
 				Vizjeg j= new Vizjeg();
 				uj.setNyersanyag(j);
 			}
-			if(mag.nextInt()%5==2) {
+			if(mag.nextInt()%4==2) {
 				Szen sz= new Szen();
 				uj.setNyersanyag(sz);
 			}
-			if(mag.nextInt()%3==0) {
+			if(mag.nextInt()%4==3) {
 				Vas v= new Vas();
 				uj.setNyersanyag(v);
 			}
-			if(mag.nextInt()%4==0) {
+			if(mag.nextInt()%11==0) {
 				uj.setNyersanyag(null);
 			}
 			int kop= 2+ rand.nextInt(3);
@@ -149,7 +149,6 @@ public class Jatek {
 	 * @param filename a célfájl, ahová szerializáljuk az aszteroidaövet
 	 */
 	public void ser(Aszteroidaov ao, String filename) {
-		System.out.println(jatekter.getAktual().getNev());
 		final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
@@ -185,7 +184,6 @@ public class Jatek {
 		catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
-		System.out.println(jatekter.getAktual().getNev() + " " + jatekter.getAktual().getAszteroida().getID());
 	}
 
 	/**
