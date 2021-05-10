@@ -111,7 +111,6 @@ public class AszteroidaView extends SzomszedView {
 			kor.setStroke(Color.RED);
 			aktualis=akt;
 			for(SzomszedView szv : szomszedok) {
-				System.out.println("setaktual");
 				szv.SzomszedMutat(this);
 			}
 		}
