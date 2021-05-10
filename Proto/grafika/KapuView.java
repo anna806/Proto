@@ -1,4 +1,5 @@
 package grafika;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.layout.Pane;
@@ -88,6 +89,14 @@ public class KapuView extends SzomszedView{
 
 	@Override
 	public List<Line> getVonalak() {
-		return null;
+		List<Line> lines = new ArrayList<Line>();
+		Line l = new Line();
+//		l.setStartX(teglalap.getX());
+//		l.setStartY(teglalap.getX());
+//		l.setEndX(teglalap.getX());
+//		l.setEndY(teglalap.getX());
+//		l.setStroke(Color.TRANSPARENT);
+		lines.add(l);
+		return lines;
 	}
 }
