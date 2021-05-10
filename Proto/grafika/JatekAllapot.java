@@ -38,7 +38,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 			for(int i = 0; i<nev.size(); i++) {
 				t = new Telepes();
 				t.SetNev(nev.get(i));
-				System.out.println(nev + " " + t.getNev());
+				//System.out.println(nev + " " + t.getNev());
 				int s = Main.game.GetOv().getAszteroidak().size();
 				t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
 				t.getAszteroida().Befogad(t);
@@ -96,6 +96,6 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		Main.game.Kor();
 //		AszteroidaView red = jatekter.getAView(Main.game.GetOv().getAktual().getAszteroida());
 //		menusav.Update(red, false);
-		System.out.println("Uj jon");
+		//System.out.println("Uj jon");
 	}
 }
