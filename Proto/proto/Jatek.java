@@ -44,7 +44,7 @@ public class Jatek {
 			if(mag.nextInt()%4==1) {
 				Vizjeg j= new Vizjeg();
 				uj.setNyersanyag(j);
-			}
+			} 
 			if(mag.nextInt()%4==2) {
 				Szen sz= new Szen();
 				uj.setNyersanyag(sz);
