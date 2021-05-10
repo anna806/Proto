@@ -36,7 +36,7 @@ public class NyersanyagView {
 	 * @param ky - A megjelenítéshez szükséges y koordináta
 	 */
 	public NyersanyagView(Nyersanyag ny, int kx, int ky){
-		if(ny != null)
+//		if(ny != null)
 			adat=ny;
 		x=kx;
 		y=ky;
@@ -59,7 +59,20 @@ public class NyersanyagView {
 	/**
 	 * Betöltött nyersanyag esetén beállítja a kitöltést a megfelelõ színûre
 	 */
-	public void kitolt() {}
+	public void kitolt() {
+		if(adat.Kompatibilis(new Uran())) {
+			kor.setFill(Color.SPRINGGREEN);
+		}
+		else if(adat.Kompatibilis(new Szen())) {
+			kor.setFill(Color.BLACK);
+		}
+		else if(adat.Kompatibilis(new Vas())) {
+			kor.setFill(Color.GREY);
+		}
+		else if(adat.Kompatibilis(new Vizjeg())) {
+			kor.setFill(Color.LIGHTBLUE);
+		}		
+	}
 	
 	/**
 	 * Felveszi a nyersanyagot a listára
@@ -70,5 +83,11 @@ public class NyersanyagView {
 		pane.getChildren().add(kor);
 	}
 	
+	public void setData(Nyersanyag d) {
+		adat = d;
+	}
 	
+	public Nyersanyag getData() {
+		return adat;
+	}
 }

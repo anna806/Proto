@@ -158,13 +158,19 @@ public class AszteroidaView extends SzomszedView {
 	
 	public void frissit(boolean visszatolt) {
 		if(data.getBelsoAnyag() != null && data.getKopenyVastagsag() == 0) {
-			if(visszatolt)
+			if(visszatolt) {
+				anyag.setData(data.getBelsoAnyag());
 				anyag.kitolt();
+			}
 			else
 				anyag.feltesz(pane);
 		}
 		else if(data.getBelsoAnyag() == null) {
 			anyag.ures();
+		}
+		else if(anyag.getData() == null && data.getKopenyVastagsag() == 0) {
+			anyag.ures();
+			anyag.feltesz(pane);
 		}
 	}
 	
