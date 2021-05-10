@@ -173,7 +173,6 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().Furas();
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(false);
-//			m.Update(jtk.getAszteroidaView(aktualis), false);
 		}
 		else if(event.getSource() == banyasz) {
 			jatekter.getAktual().Banyaszat();
@@ -185,7 +184,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			if(jtk.getKivalasztott()!=null) {
 				if(jatekter.getAktual().getAszteroida().getSzomszedok().contains(jtk.getKivalasztott().getAszteroida())){
 					jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
-					jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	//egérkattintással kiválasztott aszteroida
+					jatekter.getAktual().Mozgas(jtk.getKivalasztott().getAszteroida());	
 				}
 			}
 			
@@ -197,11 +196,10 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			jatekter.getAktual().KapuEpit();
 		}
 		else if(event.getSource() == bazisep) {
-			String s = jtk.getKivalasztott().getAszteroida().BazisEpit();
+			String s = Main.game.GetOv().getAktual().getAszteroida().BazisEpit();
 			Alert a = new Alert(AlertType.INFORMATION);
 			a.setContentText(s);
 			a.show();
-			//jatek vege függvénye tud csak arról, hogy nyertek e vagy sem, õ hív grafikus függvényt, hogy csináljon ablakot?
 		}
 		else if(event.getSource() == visszatolt) {
 			jatekter.getAktual().Visszatolt();
@@ -209,7 +207,6 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 			if(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()) != null)
 				jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).frissit(true);
 		}
-//		jatekter.aktualKesz(); //játékos továbbléptetése a köre után
 		jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()).setAktual(false);
 		jatek.ujJatekosJon();
 		m.Update(jtk.getAszteroidaView(jatekter.getAktual().getAszteroida()), false);

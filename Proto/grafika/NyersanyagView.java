@@ -36,8 +36,7 @@ public class NyersanyagView {
 	 * @param ky - A megjelenítéshez szükséges y koordináta
 	 */
 	public NyersanyagView(Nyersanyag ny, int kx, int ky){
-//		if(ny != null)
-			adat=ny;
+		adat=ny;
 		x=kx;
 		y=ky;
 		
@@ -45,8 +44,6 @@ public class NyersanyagView {
 		kor.setCenterX(x);
 		kor.setCenterY(y);
 		kor.setRadius(15.0f);
-		
-		
 	}
 	
 	/**

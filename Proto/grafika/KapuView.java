@@ -76,9 +76,6 @@ public class KapuView extends SzomszedView{
 	 */
 	public void feltesz(Pane pane) {
 		pane.getChildren().add(teglalap);
-//		Scene scene= new Scene(group, 60, 110);
-//		stage.setScene(scene);
-//		stage.show();
 	}
 	
 	/**
@@ -91,7 +88,6 @@ public class KapuView extends SzomszedView{
 
 	@Override
 	public List<Line> getVonalak() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

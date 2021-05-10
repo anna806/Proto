@@ -19,7 +19,6 @@ import proto.Szomszed;
 import proto.Teleportkapu;
 
 public class Jatekter extends Pane{
- //!!!!!! a game átkerült a jatekallpotba
 	
 	private List<AszteroidaView> aszteroidak;
 	private List<KapuView> kapuk;
@@ -33,10 +32,10 @@ public class Jatekter extends Pane{
 	public Pane felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
 		m = menu;
 		game=_game;
-		int szeles=550;																	// jatekter merete
+		int szeles=550;	
 		int magas=450;
-		List<Integer> xek = new ArrayList<>();																		//létrehozott aszteroidaviewek x koordinátája
-		List<Integer> yok = new ArrayList<>();																		//y koordinátája
+		List<Integer> xek = new ArrayList<>();																		
+		List<Integer> yok = new ArrayList<>();																	
 		List<Aszteroida> bolygok= new ArrayList<Aszteroida>();
 		bolygok=game.GetOv().getAszteroidak();
 		aszteroidak= new ArrayList<AszteroidaView>();
@@ -44,7 +43,6 @@ public class Jatekter extends Pane{
 		List<Teleportkapu> tk= new ArrayList<Teleportkapu>();
 		tk=game.GetOv().GetKapuk();
 		
-//		g= new Group();
 		p = new Pane();
 		Random rand = new Random();
 		
@@ -53,7 +51,7 @@ public class Jatekter extends Pane{
 			if(x<50) x+=50;
 			int y = rand.nextInt(magas);
 			for(int i=0; i<aszteroidak.size();i++) {
-				if(Math.abs(x-xek.get(i))<100 && Math.abs(y-yok.get(i))<100) {					//ha túl közel van,újraszámol, 
+				if(Math.abs(x-xek.get(i))<100 && Math.abs(y-yok.get(i))<100) {	 
 					x+=110;
 					y+=110;
 				}
@@ -133,7 +131,6 @@ public class Jatekter extends Pane{
 		if(akt) {
 				for (Line l : av.vonalak){
 					l.setFill(Color.RED);
-//					p.getChildren().add(l);
 				}
 		}
 	}
@@ -145,14 +142,5 @@ public class Jatekter extends Pane{
 		}
 		return null;
 	}
-
-//	public AszteroidaView getAView(Aszteroida aszteroida) {
-//		for(AszteroidaView av: aszteroidak) {
-//			if(av.getAszteroida().equals(aszteroida)) {
-//				return av;
-//			}
-//		}
-//		return null;
-//	}
 }
 	

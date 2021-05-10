@@ -5,7 +5,6 @@ import proto.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.event.ActionEvent;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -117,12 +116,6 @@ public class AszterG extends Pane{
 		
 		
 	}
-
-	public void handle(ActionEvent event) {
-		
-	}
-	
-	
 	
 	public void setLabelsRed(Aszteroida a) {
 		if(a != null) {

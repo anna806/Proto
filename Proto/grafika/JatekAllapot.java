@@ -3,10 +3,11 @@ package grafika;
 import java.util.List;
 import java.util.Random;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -17,7 +18,7 @@ import proto.Jatek;
 import proto.Main;
 import proto.Telepes;
 
-public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
+public class JatekAllapot extends Pane {
 	
 	Jatekter jatekter;
 	Menusav menusav;
@@ -25,6 +26,8 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	
 	Jatek game;
 	Random rand = new Random();
+	
+	Stage stage;
 	
 	JatekAllapot(List<Integer> asz, List<String> nev){
 		jatekter = new Jatekter();
@@ -54,6 +57,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	}
 	//jatekteret aszammal
 	void felepit(Stage primary, Scene oldscene) {
+		stage = primary;
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
 		Group jG = new Group();
@@ -65,13 +69,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 		jatekterBox.getChildren().addAll(p);
 		
 		menusavBox.setMaxSize(280, 650);
-//		menusavBox.setMaxSize(450, 300);
 		muveletsavBox.setMinSize(610, 50);
-//		AszteroidaView akt= jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida());
-//		akt.setAktual(true);
-//		for(SzomszedView szv : akt.szomszedok) {
-//			szv.SzomszedMutat(akt);
-//		}
 		jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()).setAktual(true);
 		for(SzomszedView szv : jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()).szomszedok) {
 			szv.SzomszedMutat(jatekter.getAszteroidaView(Main.game.GetOv().getAktual().getAszteroida()));
@@ -83,19 +81,22 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
-	    Scene scene = new Scene(borderPane, 1100, 700); //méret
+	    Scene scene = new Scene(borderPane, 1100, 700);
 	    scene.setFill(Color.MIDNIGHTBLUE);
 	    primary.setScene(scene);
 	    primary.show();
 	}
-	public void handle(ActionEvent event) {
-		
-	}
 	
 	void ujJatekosJon() {
+		if(Main.game.GetOv().GetTelepesekSize() == 0) {
+			String s = Main.game.Vege(true);
+			Alert a = new Alert(AlertType.INFORMATION);
+			a.setContentText(s);
+			a.show();
+			stage.close();
+			Platform.exit();
+		    System.exit(0);
+		}
 		Main.game.Kor();
-//		AszteroidaView red = jatekter.getAView(Main.game.GetOv().getAktual().getAszteroida());
-//		menusav.Update(red, false);
-		//System.out.println("Uj jon");
 	}
 }
