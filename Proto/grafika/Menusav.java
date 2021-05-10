@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 import proto.Aszteroida;
 import proto.Aszteroidaov;
 import proto.Jatek;
+import proto.Main;
 
 public class Menusav extends Pane implements EventHandler<ActionEvent>{
 	
@@ -87,7 +88,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		VBox base = new VBox();
 //		base.setAlignment(Pos.BASELINE_CENTER);
 		
-		aktualis = game.GetOv().getAktual().getAszteroida();
+		aktualis = Main.game.GetOv().getAktual().getAszteroida();
 		if(jatekter.getKivalasztott() != null)
 			valasztott = jatekter.getKivalasztott().getAszteroida();
 		else 
@@ -117,7 +118,7 @@ public class Menusav extends Pane implements EventHandler<ActionEvent>{
 		if(event.getSource() == menu) {
 			primary.setScene(oldscene);
 		} else if(event.getSource() == ment) {
-			game.ser(game.GetOv(), "jatek.txt");
+			game.ser(game.GetOv(), "map.txt");
 		}
 	}
 }

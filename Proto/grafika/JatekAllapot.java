@@ -53,7 +53,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 			
 	}
 	//jatekteret aszammal
-	void felepit(Stage primary, Scene oldscene, List<Integer> aszam, List<String> nevek) {
+	void felepit(Stage primary, Scene oldscene) {
 		VBox menusavBox = new VBox();
 		HBox muveletsavBox = new HBox();
 		Group jG = new Group();

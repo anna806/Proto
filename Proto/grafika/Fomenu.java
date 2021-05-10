@@ -57,6 +57,8 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	Stage s;
 	Scene scene;
 	
+	private boolean beallitasok = false;
+	
 	/**
 	 * Felépíti a fõmenüt, beállítja a gombokat és a címet, majd belerakja a fõablakba
 	 * @param stage : a fõablak
@@ -64,7 +66,7 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	public void felepit(Stage stage) {
 		s = stage;
 		VBox root = new VBox(10);
-		aszam.add(10);
+		aszam.add(0);
 		indit  = new Button("Indítás");
 		indit.setStyle("-fx-background-color: DARKGOLDENROD; -fx-font-size: 25");
 		indit.setTextFill(Color.WHITE);
@@ -128,23 +130,27 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
 			JatekAllapot jtk;
-			if(aszam == null && nevek == null) {
-				Main.game.load("jatek.txt");
+//			if(nevek == null) {
+//				Main.game.load("map.txt");
+//				jtk = new JatekAllapot(null, null);
+//			}
+			if(!beallitasok) {
+				Main.game.load("map.txt");
 				jtk = new JatekAllapot(null, null);
 			}
 			else
 				jtk = new JatekAllapot(aszam, nevek);
-			jtk.felepit(s, scene, aszam, nevek);
+			jtk.felepit(s, scene);
 		}
 		else if(event.getSource() == folyt) {
 			Main.game.load("jatek.txt");
 			JatekAllapot jtk = new JatekAllapot(null, null);
-			jtk.felepit(s, scene, aszam, nevek);
+			jtk.felepit(s, scene);
 		}
 		else if(event.getSource() == beall) {
 			Beallitas b = new Beallitas();
-			aszam.add(0);
 			b.felepit(s, scene, aszam, nevek);
+			beallitasok = true;
 		}
 		else if(event.getSource() == kilep) {
 			s.close();

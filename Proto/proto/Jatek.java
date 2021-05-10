@@ -149,6 +149,7 @@ public class Jatek {
 	 * @param filename a célfájl, ahová szerializáljuk az aszteroidaövet
 	 */
 	public void ser(Aszteroidaov ao, String filename) {
+		System.out.println(jatekter.getAktual().getNev());
 		final String dir = System.getProperty("user.dir");
     	File dirf = new File(dir);
     	String parentPath = dirf.getParent();
@@ -184,6 +185,7 @@ public class Jatek {
 		catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
+		System.out.println(jatekter.getAktual().getNev() + " " + jatekter.getAktual().getAszteroida().getID());
 	}
 
 	/**
