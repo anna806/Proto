@@ -3,7 +3,7 @@ package grafika;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+ 
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
