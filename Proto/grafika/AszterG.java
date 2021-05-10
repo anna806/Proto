@@ -163,11 +163,18 @@ public class AszterG extends Pane{
 					kapu++;
 				}
 			}			
-			
+			int row = 0;
+			int index = 0;
 			rb1_b.getItems().clear();
 		   	for(String nev: a.getNevek()) {
 		   		rb1_b.getItems().add(nev);
+		   		if(nev == Main.game.GetOv().getAktual().getNev()) {
+		   			index = row;
+		   		}
+		   		row++;
 		   	}
+		   	
+		   	
 		   	rb2_b.setText("hahooo");//String.valueOf(robot));
 		   	rb3_b.setText(String.valueOf(ufo));
 		   	rb4_b.setText(String.valueOf(kapu));
