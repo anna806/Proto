@@ -127,8 +127,6 @@ public class AszterG extends Pane{
 	public void setLabelsRed(Aszteroida a) {
 		if(a != null) {
 			rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
-//			String kp = "" + a.getKopenyVastagsag();
-//			rt1_b.setText(kp);
 			if(a.getNapkozel() == "true") {
 				rt2_b.setText("+");
 			} else {
