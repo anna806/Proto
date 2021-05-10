@@ -33,8 +33,8 @@ public class Jatekter extends Pane{
 	public Pane felepit(Jatek _game, Scene _oldscene, Stage _primary, Menusav menu){
 		m = menu;
 		game=_game;
-		int szeles=600;																	// jatekter merete
-		int magas=500;
+		int szeles=550;																	// jatekter merete
+		int magas=450;
 		List<Integer> xek = new ArrayList<>();																		//létrehozott aszteroidaviewek x koordinátája
 		List<Integer> yok = new ArrayList<>();																		//y koordinátája
 		List<Aszteroida> bolygok= new ArrayList<Aszteroida>();
@@ -50,6 +50,7 @@ public class Jatekter extends Pane{
 		
 		for(Aszteroida b : bolygok){
 			int x = rand.nextInt(szeles);
+			if(x<50) x+=50;
 			int y = rand.nextInt(magas);
 			for(int i=0; i<aszteroidak.size();i++) {
 				if(Math.abs(x-xek.get(i))<100 && Math.abs(y-yok.get(i))<100) {					//ha túl közel van,újraszámol, 
