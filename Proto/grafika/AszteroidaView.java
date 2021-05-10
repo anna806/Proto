@@ -17,8 +17,6 @@ public class AszteroidaView extends SzomszedView {
 	public int x;
 	public int y;
 	public NyersanyagView anyag;
-	private boolean aktualis;
-	private boolean valasztott; 
 	private List<KapuView> kapunezet;
 	public List<Line> vonalak= new ArrayList<Line>();
 	public List<SzomszedView> szomszedok;

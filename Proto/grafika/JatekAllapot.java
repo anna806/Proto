@@ -27,26 +27,29 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	Random rand = new Random();
 	
 	JatekAllapot(List<Integer> asz, List<String> nev){
-		//game = new Jatek();
 		jatekter = new Jatekter();
 		menusav = new Menusav();
 		muveletsav = new Muveletsav();
 		
-		Main.game.Start(asz.get(0));
+		if(asz != null && nev != null) {
+			Main.game.Start(asz.get(0));
 		
-		Telepes t = null;
-		for(int i = 0; i<nev.size(); i++) {
-			t = new Telepes();
-			t.SetNev(nev.get(i));
-			System.out.println(nev + " " + t.getNev());
-			int s = Main.game.GetOv().getAszteroidak().size();
-			t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
-			t.getAszteroida().Befogad(t);
-			Main.game.GetOv().addTelepes(t);
-			
+			Telepes t = null;
+			for(int i = 0; i<nev.size(); i++) {
+				t = new Telepes();
+				t.SetNev(nev.get(i));
+				System.out.println(nev + " " + t.getNev());
+				int s = Main.game.GetOv().getAszteroidak().size();
+				t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
+				t.getAszteroida().Befogad(t);
+				Main.game.GetOv().addTelepes(t);
+				
+			}
+			Main.game.GetOv().setAktual(t);
 		}
-		 
-		Main.game.GetOv().setAktual(t);
+		else
+			Main.game.GetOv().setAktual(Main.game.GetOv().getAktual());
+		
 		Main.game.Kor();
 		
 
