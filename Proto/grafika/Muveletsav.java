@@ -129,7 +129,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		ny1sz.setMinSize(20, 27);
 		ny1sz.setTextAlignment(TextAlignment.CENTER);
 		ny1sz.setAlignment(Pos.CENTER);
-		
+		 
 		ny2sz = new Label("0");
 		ny2sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny2sz.setMinSize(20, 27);
