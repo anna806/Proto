@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import proto.Aszteroida;
 import proto.Aszteroidaov;
@@ -41,6 +42,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 	Circle ny3;		//vizjeg
 	Circle ny4;		//szen
 	Rectangle kapu;
+	Label jatekos;
 	Label ny1sz;	//vas
 	Label ny2sz;	//uran
 	Label ny3sz;	//vizjeg
@@ -114,12 +116,20 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		ny4 = new Circle(20, Color.BLACK);
 		kapu = new Rectangle(20, 50, Color.CORAL);
 		
+		jatekos=new Label(jatekter.getAktual().getNev());
+		jatekos.setStyle("-fx-font-weight: bold");
+		jatekos.setMinSize(300, 27);
+		jatekos.setTextAlignment(TextAlignment.CENTER);
+		jatekos.setAlignment(Pos.CENTER);
+		jatekos.setFont(new Font("Cambria", 32));
+		jatekos.setTextFill(Color.RED);
+		
 		ny1sz = new Label("0");
 		ny1sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny1sz.setMinSize(20, 27);
 		ny1sz.setTextAlignment(TextAlignment.CENTER);
 		ny1sz.setAlignment(Pos.CENTER);
-		
+		 
 		ny2sz = new Label("0");
 		ny2sz.setStyle("-fx-background-color: WHITE; -fx-font-weight: bold");
 		ny2sz.setMinSize(20, 27);
@@ -149,7 +159,7 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		buttons2.add(asas, 0, 1);
 		buttons2.add(visszatolt, 1, 1);
 		buttons2.setAlignment(Pos.CENTER);
-		root.getChildren().addAll(buttons2, robotep, kapuep, bazisep, ny1, ny1sz, ny2, ny2sz, ny3, ny3sz, ny4, ny4sz, kapu, k);
+		root.getChildren().addAll(jatekos, buttons2, robotep, kapuep, bazisep, ny1, ny1sz, ny2, ny2sz, ny3, ny3sz, ny4, ny4sz, kapu, k);
 		
 		root.setAlignment(Pos.CENTER);
 		root.setStyle("-fx-background-color: GOLDENROD");
@@ -236,5 +246,6 @@ public class Muveletsav extends Pane implements EventHandler<ActionEvent>{
 		ny4sz.setText(sz_s);
 		String k_s = "" + t.KapukSize();
 		k.setText(k_s);
+		jatekos.setText(jatekter.getAktual().getNev());
 	}
 }
