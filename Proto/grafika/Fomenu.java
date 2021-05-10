@@ -127,7 +127,13 @@ public class Fomenu implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent event){
 		if(event.getSource() == indit) {
-			JatekAllapot jtk = new JatekAllapot(aszam, nevek);
+			JatekAllapot jtk;
+			if(aszam == null && nevek == null) {
+				Main.game.load("jatek.txt");
+				jtk = new JatekAllapot(null, null);
+			}
+			else
+				jtk = new JatekAllapot(aszam, nevek);
 			jtk.felepit(s, scene, aszam, nevek);
 		}
 		else if(event.getSource() == folyt) {
