@@ -20,15 +20,40 @@ import proto.Telepes;
 
 public class JatekAllapot extends Pane {
 	
+	/**
+	 * Itt látható maga a pálya
+	 */
 	Jatekter jatekter;
+	/**
+	 * A játékhoz tartozó menüsáv, ahol a menü gomb, mentés gomb és az aszteroidák adatlapjai találhatók
+	 */
 	Menusav menusav;
+	/**
+	 * A játékhoz tartozó mûveletsáv, amivel a telepesek akciókat tudnak végezni
+	 */
 	Muveletsav muveletsav;
 	
+	/**
+	 * Maga a játék
+	 */
 	Jatek game;
+	/**
+	 * Egy random szám, a játék generálásához szükséges
+	 */
 	Random rand = new Random();
 	
+	/**
+	 * Az ablak, amiben játszódik a játék
+	 */
 	Stage stage;
 	
+	/**
+	 * A játékállapot konstruktora
+	 * Paraméterként megkapja az aszteroidák számát és a telepesek neveit, majd
+	 * ezeknek megfelelõen létrehoz egy játékot.
+	 * @param asz : Az aszteroidák száma
+	 * @param nev : A telepeseknevei
+	 */
 	JatekAllapot(List<Integer> asz, List<String> nev){
 		jatekter = new Jatekter();
 		menusav = new Menusav();
@@ -41,7 +66,6 @@ public class JatekAllapot extends Pane {
 			for(int i = 0; i<nev.size(); i++) {
 				t = new Telepes();
 				t.SetNev(nev.get(i));
-				//System.out.println(nev + " " + t.getNev());
 				int s = Main.game.GetOv().getAszteroidak().size();
 				t.SetAszteroida(Main.game.GetOv().GetAszteroida(rand.nextInt(s)));
 				t.getAszteroida().Befogad(t);
@@ -50,12 +74,15 @@ public class JatekAllapot extends Pane {
 			}
 			Main.game.GetOv().setAktual(t);
 		}
-		Main.game.Kor();
-		
-
-			
+		Main.game.Kor();	
 	}
-	//jatekteret aszammal
+	
+	/**
+	 * Felépíti a Játékállapotot és belerakja a fõablakba.
+	 * Átadja a fõmenüt is paraméter ként, hogy vissza tudjon lépni a játékból.
+	 * @param primary : a fõablak
+	 * @param oldscene : a fõmenü
+	 */
 	void felepit(Stage primary, Scene oldscene) {
 		stage = primary;
 		VBox menusavBox = new VBox();
@@ -87,6 +114,9 @@ public class JatekAllapot extends Pane {
 	    primary.show();
 	}
 	
+	/**
+	 * A játékosok közötti lépegetést kezeli
+	 */
 	void ujJatekosJon() {
 		if(Main.game.GetOv().GetTelepesekSize() == 0) {
 			String s = Main.game.Vege(true);

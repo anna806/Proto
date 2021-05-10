@@ -13,34 +13,96 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author ltama
+ *
+ */
 public class AszterG extends Pane{
 
+	/**
+	 * az AszterG-hez tatrtozó aszteroida
+	 */
 	Aszteroida a;
 	
+	/**
+	 * A kéregvastagság leíró labelje
+	 */
 	Label rt1_a;
+	/**
+	 * A kéregvastagság adat labelje
+	 */
    	Label rt1_b;
+   	/**
+	 * A Napközel leíró labelje
+	 */
    	Label rt2_a;
+   	/**
+	 * A Napközel adat labelje
+	 */
    	Label rt2_b;
    	Label rt3_a;
    	Label rt3_b;
    	
+   	/**
+	 * A telepesek leíró labelje
+	 */
    	Label rb1_a;
+   	/**
+	 * A telepesek adattagjait tartalmazó tömb
+	 */
    	ListView<String> rb1_b;
+   	/**
+	 * A Robot leíró labelje
+	 */
    	Label rb2_a;
+   	/**
+	 * A robotok számát tartalmazó label
+	 */
    	Label rb2_b;
+   	/**
+	 * Az Ufó leíró labelje
+	 */
    	Label rb3_a;
+   	/**
+	 * Az Ufók számát tartalmazó label
+	 */
    	Label rb3_b;
+   	/**
+	 * Az Kapuk leíró labelje
+	 */
    	Label rb4_a;
+   	/**
+	 * Az Kapukk számát tartalmazó label
+	 */
    	Label rb4_b;
    	
+   	
+   	/**
+   	 * Az AszterG konstruktora, beállítja az AszterG-hez tatrtozó aszteroidát
+   	 * @param _a : az AszterG-hez tatrtozó aszteroida
+   	 */
    	AszterG(Aszteroida _a){
    		a= _a;
    	}
    	
+   	/**
+	 * Az AszterG aszteroidáján lévõ robotok száma
+	 */
    	Robot r ;
+   	/**
+	 * Az AszterG aszteroidáján lévõ ufók száma
+	 */
 	Ufo u ;
+	/**
+	 * Az AszterG aszteroidáján lévõ kapuk száma
+	 */
 	Teleportkapu k;
    	
+	/**
+	 * Felépíti és visszaadja az AszterG-t
+	 * @param color : az AszterG körvonalának színe
+	 * @return az AszterG kinézete
+	 */
 	public VBox felepit( String color) {
 		
 		 
@@ -117,6 +179,10 @@ public class AszterG extends Pane{
 		
 	}
 	
+	/**
+	 * Beállítja az AszterG Labeljeit, a megkapott aszteroidának megfelelõen
+	 * @param a: a kapott aszteroida 
+	 */
 	public void setLabelsRed(Aszteroida a) {
 		if(a != null) {
 			rt1_b.setText(String.valueOf(a.getKopenyVastagsag()));
@@ -166,6 +232,10 @@ public class AszterG extends Pane{
 		}
 	}	
 	
+	/**
+	 * Visszaadja az AszterG-hez tartozó aszteroidát
+	 * @return az aszteroida
+	 */
 	public Aszteroida getA() {
 		return a;
 	}
