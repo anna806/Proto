@@ -21,8 +21,8 @@ public class AszteroidaView extends SzomszedView {
 	public List<Line> vonalak= new ArrayList<Line>();
 	public List<SzomszedView> szomszedok;
 	public Jatekter jt;
-	boolean aktualis;
-	boolean valasztott;
+	private boolean aktualis;
+	private boolean valasztott;
 	
 	Pane pane;
 	

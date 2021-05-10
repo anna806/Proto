@@ -47,9 +47,6 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 			}
 			Main.game.GetOv().setAktual(t);
 		}
-		else
-			Main.game.GetOv().setAktual(Main.game.GetOv().getAktual());
-		
 		Main.game.Kor();
 		
 
@@ -86,7 +83,7 @@ public class JatekAllapot extends Pane implements EventHandler<ActionEvent>{
 	    borderPane.setRight(menusavBox);
 	    borderPane.setBottom(muveletsavBox);
 	    
-	    Scene scene = new Scene(borderPane, 900, 700); //méret
+	    Scene scene = new Scene(borderPane, 1100, 700); //méret
 	    scene.setFill(Color.MIDNIGHTBLUE);
 	    primary.setScene(scene);
 	    primary.show();
